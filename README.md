@@ -4,15 +4,14 @@
 **UTApp**
 
 ## 📝 Descripción del Proyecto
-UTApp es una aplicación académica desarrollada en Windows Forms con el objetivo de simular la gestión integral de procesos administrativos en el entorno universitario.    
+UTApp es una aplicación académica desarrollada en Windows Forms con el objetivo de simular la gestión integral de procesos administrativos en el entorno universitario.
 
 La versión actual del proyecto presenta una serie de pantallas diseñadas en **Windows Forms**, cada una orientada al desarrollo de funcionalidades **CRUD** (*Crear, Leer, Actualizar, Eliminar*) para distintos catálogos del sistema, incluyendo:
 
 - Materias 
 - Estudiantes  
 - Asignaciones  
-- Docentes  
-- Carreras
+- Docentes
 - Grupos
 
 Cada pantalla representa un módulo independiente, con enfoque en la **organización de datos**, **diseño visual funcional** y **estructuración lógica** mediante diagramas técnicos.

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UTApp
+namespace UTApp.Forms.Estudiantes
 {
-    public partial class Form1 : Form
+    public partial class FormEstudiantes : Form
     {
-        public Form1()
+        public FormEstudiantes()
         {
             InitializeComponent();
         }

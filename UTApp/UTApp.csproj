@@ -46,11 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\Asignaciones\FormAsignaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\Asignaciones\FormAsignaciones.Designer.cs">
+      <DependentUpon>FormAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Docentes\FormDocentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Docentes\FormDocentes.Designer.cs">
+      <DependentUpon>FormDocentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Estudiantes\FormEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Estudiantes\FormEstudiantes.Designer.cs">
+      <DependentUpon>FormEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grupos\FormGrupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grupos\FormGrupos.Designer.cs">
+      <DependentUpon>FormGrupos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Materias\FormMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Materias\FormMaterias.Designer.cs">
+      <DependentUpon>FormMaterias.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,5 +106,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

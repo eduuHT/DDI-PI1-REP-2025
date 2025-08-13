@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Asignaciones\AgregarAsignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asignaciones\AgregarAsignacion.Designer.cs">
+      <DependentUpon>AgregarAsignacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asignaciones\EditarAsignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asignaciones\EditarAsignacion.Designer.cs">
+      <DependentUpon>EditarAsignacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Asignaciones\FormAsignaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,14 +94,20 @@
     <Compile Include="Forms\Materias\FormMaterias.Designer.cs">
       <DependentUpon>FormMaterias.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Menu Principal\Menu_Principal.cs">
+    <Compile Include="Forms\Menu Principal\FormMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Menu Principal\Menu_Principal.Designer.cs">
-      <DependentUpon>Menu_Principal.cs</DependentUpon>
+    <Compile Include="Forms\Menu Principal\FormMenuPrincipal.Designer.cs">
+      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Asignaciones\AgregarAsignacion.resx">
+      <DependentUpon>AgregarAsignacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asignaciones\EditarAsignacion.resx">
+      <DependentUpon>EditarAsignacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Asignaciones\FormAsignaciones.resx">
       <DependentUpon>FormAsignaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,8 +126,8 @@
     <EmbeddedResource Include="Forms\Materias\FormMaterias.resx">
       <DependentUpon>FormMaterias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Menu Principal\Menu_Principal.resx">
-      <DependentUpon>Menu_Principal.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Menu Principal\FormMenuPrincipal.resx">
+      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

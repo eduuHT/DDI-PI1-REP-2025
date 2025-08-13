@@ -28,7 +28,7 @@ namespace UTApp
         {
             if (txtUser.Text == User && txtPassword.Text == Password)
             {
-                Menu_Principal menu_Principal = new Menu_Principal();
+                FormMenuPrincipal menu_Principal = new FormMenuPrincipal();
                 this.Hide();
                 menu_Principal.Show();
             }

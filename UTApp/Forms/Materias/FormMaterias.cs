@@ -16,5 +16,10 @@ namespace UTApp.Forms.Materias
         {
             InitializeComponent();
         }
+
+        private void FormMaterias_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -43,6 +43,7 @@
             this.Name = "FormMaterias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Materias";
+            this.Load += new System.EventHandler(this.FormMaterias_Load);
             this.ResumeLayout(false);
 
         }

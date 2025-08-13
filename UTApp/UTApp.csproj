@@ -82,6 +82,12 @@
     <Compile Include="Forms\Materias\FormMaterias.Designer.cs">
       <DependentUpon>FormMaterias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Menu Principal\Menu_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Menu Principal\Menu_Principal.Designer.cs">
+      <DependentUpon>Menu_Principal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Asignaciones\FormAsignaciones.resx">
@@ -102,6 +108,9 @@
     <EmbeddedResource Include="Forms\Materias\FormMaterias.resx">
       <DependentUpon>FormMaterias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Menu Principal\Menu_Principal.resx">
+      <DependentUpon>Menu_Principal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -110,6 +119,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -124,6 +134,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\add.png" />
+    <Content Include="Resources\delete.png" />
+    <Content Include="Resources\dots.png" />
+    <Content Include="Resources\edit.png" />
+    <Content Include="Resources\left-chevron.png" />
+    <Content Include="Resources\LogoWindosForm.ico" />
+    <Content Include="Resources\scan.png" />
+    <Content Include="Resources\UTAppLogo.png" />
+    <Content Include="Resources\UTAppLogoBlanco.png" />
+    <None Include="Resources\UTAppLogoBlanco1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

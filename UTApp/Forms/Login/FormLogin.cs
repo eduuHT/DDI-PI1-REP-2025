@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UTApp.Forms.Menu_Principal;
 
 namespace UTApp
 {
@@ -27,7 +28,9 @@ namespace UTApp
         {
             if (txtUser.Text == User && txtPassword.Text == Password)
             {
-
+                Menu_Principal menu_Principal = new Menu_Principal();
+                this.Hide();
+                menu_Principal.Show();
             }
             else
             {
@@ -37,12 +40,11 @@ namespace UTApp
 
         private void lklRecuperarContraseña_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show($"Hagamos como que hiciste un proceso de recuperación\n Usuario:{User}\n Contraseña:{Password}","",MessageBoxButtons.OK);
+            MessageBox.Show($"Hagamos como que hiciste un proceso de recuperación\n\n\n Usuario:{User}\n Contraseña:{Password}","",MessageBoxButtons.OK);
         }
 
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
         }
     }
 }

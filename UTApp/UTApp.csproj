@@ -198,22 +198,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\goBackBlanco.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\left-chevron.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\square.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pen.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\scan.png" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

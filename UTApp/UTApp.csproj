@@ -64,6 +64,12 @@
     <Compile Include="Forms\Estudiantes\FormEstudiantes.Designer.cs">
       <DependentUpon>FormEstudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Estudiantes\FormEstudiantesAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Estudiantes\FormEstudiantesAgregar.Designer.cs">
+      <DependentUpon>FormEstudiantesAgregar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Grupos\FormGrupos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     <EmbeddedResource Include="Forms\Estudiantes\FormEstudiantes.resx">
       <DependentUpon>FormEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Estudiantes\FormEstudiantesAgregar.resx">
+      <DependentUpon>FormEstudiantesAgregar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Grupos\FormGrupos.resx">
       <DependentUpon>FormGrupos.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +119,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -124,6 +134,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\goBackBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-chevron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scan.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

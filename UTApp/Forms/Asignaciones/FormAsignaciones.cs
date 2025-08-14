@@ -49,8 +49,13 @@ namespace UTApp.Forms.Asignaciones
         private void btnBack_Click(object sender, EventArgs e)
         {
             FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
+            this.Hide();
             menuPrincipal.Show();
-            this.Close();
+        }
+
+        private void FormAsignaciones_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

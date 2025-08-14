@@ -81,6 +81,7 @@
             this.Name = "EditarAsignacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarAsignacion";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditarAsignacion_FormClosed);
             this.pnlBanner.ResumeLayout(false);
             this.pnlBanner.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();

@@ -21,7 +21,17 @@ namespace UTApp.Forms.Asignaciones
         {
             FormAsignaciones asignaciones = new FormAsignaciones();
             asignaciones.Show();
-            this.Close();
+            this.Hide();
+        }
+
+        private void AgregarAsignacion_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

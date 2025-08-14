@@ -30,20 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAsignaciones));
             this.pnlBanner = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.PictureBox();
             this.lblAsignaciones = new System.Windows.Forms.Label();
             this.gridAsignaciones = new System.Windows.Forms.DataGridView();
             this.btnScan = new System.Windows.Forms.PictureBox();
             this.btnEdit = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.PictureBox();
             this.btnAdd = new System.Windows.Forms.PictureBox();
-            this.btnBack = new System.Windows.Forms.PictureBox();
             this.pnlBanner.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAsignaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnScan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBanner
@@ -55,6 +55,17 @@
             this.pnlBanner.Name = "pnlBanner";
             this.pnlBanner.Size = new System.Drawing.Size(356, 92);
             this.pnlBanner.TabIndex = 1;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Image = global::UTApp.Properties.Resources.left_chevron;
+            this.btnBack.Location = new System.Drawing.Point(13, 14);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(37, 58);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBack.TabIndex = 1;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblAsignaciones
             // 
@@ -123,17 +134,6 @@
             this.btnAdd.TabStop = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnBack
-            // 
-            this.btnBack.Image = global::UTApp.Properties.Resources.left_chevron;
-            this.btnBack.Location = new System.Drawing.Point(13, 14);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(37, 58);
-            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnBack.TabIndex = 1;
-            this.btnBack.TabStop = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // FormAsignaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,15 +152,16 @@
             this.Name = "FormAsignaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asignaciones";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAsignaciones_FormClosed);
             this.Load += new System.EventHandler(this.FormAsignaciones_Load);
             this.pnlBanner.ResumeLayout(false);
             this.pnlBanner.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAsignaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnScan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.ResumeLayout(false);
 
         }

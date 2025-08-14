@@ -37,8 +37,6 @@
             this.txtEstudianteGrupo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEstudianteNombre = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtEstudianteApellido = new System.Windows.Forms.TextBox();
             this.txtEstudianteMatricula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelCatálogoMaterias = new System.Windows.Forms.Label();
@@ -57,7 +55,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(78, 461);
+            this.label2.Location = new System.Drawing.Point(78, 422);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 16);
             this.label2.TabIndex = 121;
@@ -67,7 +65,7 @@
             // 
             this.txtEstudianteCorreo.Enabled = false;
             this.txtEstudianteCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstudianteCorreo.Location = new System.Drawing.Point(135, 460);
+            this.txtEstudianteCorreo.Location = new System.Drawing.Point(135, 421);
             this.txtEstudianteCorreo.Name = "txtEstudianteCorreo";
             this.txtEstudianteCorreo.Size = new System.Drawing.Size(180, 20);
             this.txtEstudianteCorreo.TabIndex = 120;
@@ -76,7 +74,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(50, 502);
+            this.label5.Location = new System.Drawing.Point(50, 461);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 16);
             this.label5.TabIndex = 119;
@@ -86,7 +84,7 @@
             // 
             this.txtEstudiantePass.Enabled = false;
             this.txtEstudiantePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstudiantePass.Location = new System.Drawing.Point(135, 501);
+            this.txtEstudiantePass.Location = new System.Drawing.Point(135, 460);
             this.txtEstudiantePass.Name = "txtEstudiantePass";
             this.txtEstudiantePass.PasswordChar = '•';
             this.txtEstudiantePass.Size = new System.Drawing.Size(180, 20);
@@ -129,25 +127,6 @@
             this.txtEstudianteNombre.Name = "txtEstudianteNombre";
             this.txtEstudianteNombre.Size = new System.Drawing.Size(180, 20);
             this.txtEstudianteNombre.TabIndex = 113;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(69, 422);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 16);
-            this.label6.TabIndex = 112;
-            this.label6.Text = "Apellido:";
-            // 
-            // txtEstudianteApellido
-            // 
-            this.txtEstudianteApellido.Enabled = false;
-            this.txtEstudianteApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstudianteApellido.Location = new System.Drawing.Point(135, 421);
-            this.txtEstudianteApellido.Name = "txtEstudianteApellido";
-            this.txtEstudianteApellido.Size = new System.Drawing.Size(180, 20);
-            this.txtEstudianteApellido.TabIndex = 111;
             // 
             // txtEstudianteMatricula
             // 
@@ -260,8 +239,6 @@
             this.Controls.Add(this.txtEstudianteGrupo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtEstudianteNombre);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtEstudianteApellido);
             this.Controls.Add(this.txtEstudianteMatricula);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelCatálogoMaterias);
@@ -292,8 +269,6 @@
         private System.Windows.Forms.TextBox txtEstudianteGrupo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEstudianteNombre;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtEstudianteApellido;
         private System.Windows.Forms.TextBox txtEstudianteMatricula;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelCatálogoMaterias;

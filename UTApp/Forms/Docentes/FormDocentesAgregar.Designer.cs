@@ -35,8 +35,6 @@
             this.labelMaterias = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDocenteCorreo = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtDocenteApellido = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDocenteTitulo = new System.Windows.Forms.TextBox();
             this.Nombre = new System.Windows.Forms.Label();
@@ -100,7 +98,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 398);
+            this.label2.Location = new System.Drawing.Point(60, 349);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 100;
@@ -109,34 +107,16 @@
             // txtDocenteCorreo
             // 
             this.txtDocenteCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocenteCorreo.Location = new System.Drawing.Point(60, 377);
+            this.txtDocenteCorreo.Location = new System.Drawing.Point(60, 325);
             this.txtDocenteCorreo.Name = "txtDocenteCorreo";
             this.txtDocenteCorreo.Size = new System.Drawing.Size(225, 20);
             this.txtDocenteCorreo.TabIndex = 99;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(60, 295);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 16);
-            this.label4.TabIndex = 96;
-            this.label4.Text = "Apellido";
-            // 
-            // txtDocenteApellido
-            // 
-            this.txtDocenteApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocenteApellido.Location = new System.Drawing.Point(60, 274);
-            this.txtDocenteApellido.Name = "txtDocenteApellido";
-            this.txtDocenteApellido.Size = new System.Drawing.Size(225, 20);
-            this.txtDocenteApellido.TabIndex = 95;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(60, 346);
+            this.label6.Location = new System.Drawing.Point(60, 297);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 16);
             this.label6.TabIndex = 94;
@@ -145,7 +125,7 @@
             // txtDocenteTitulo
             // 
             this.txtDocenteTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocenteTitulo.Location = new System.Drawing.Point(60, 325);
+            this.txtDocenteTitulo.Location = new System.Drawing.Point(60, 274);
             this.txtDocenteTitulo.Name = "txtDocenteTitulo";
             this.txtDocenteTitulo.Size = new System.Drawing.Size(225, 20);
             this.txtDocenteTitulo.TabIndex = 93;
@@ -166,7 +146,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGuardar.Location = new System.Drawing.Point(60, 500);
+            this.btnGuardar.Location = new System.Drawing.Point(60, 460);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(225, 50);
             this.btnGuardar.TabIndex = 90;
@@ -196,7 +176,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(60, 449);
+            this.label3.Location = new System.Drawing.Point(60, 400);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 16);
             this.label3.TabIndex = 104;
@@ -205,7 +185,7 @@
             // txtDocentePass
             // 
             this.txtDocentePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocentePass.Location = new System.Drawing.Point(60, 428);
+            this.txtDocentePass.Location = new System.Drawing.Point(60, 377);
             this.txtDocentePass.Name = "txtDocentePass";
             this.txtDocentePass.Size = new System.Drawing.Size(225, 20);
             this.txtDocentePass.TabIndex = 103;
@@ -239,8 +219,6 @@
             this.Controls.Add(this.txtDocenteEmpleado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDocenteCorreo);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtDocenteApellido);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDocenteTitulo);
             this.Controls.Add(this.Nombre);
@@ -271,8 +249,6 @@
         private System.Windows.Forms.Label labelMaterias;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDocenteCorreo;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtDocenteApellido;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDocenteTitulo;
         private System.Windows.Forms.Label Nombre;

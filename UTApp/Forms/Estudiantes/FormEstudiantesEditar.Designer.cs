@@ -38,8 +38,6 @@
             this.txtEstudianteGrupo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEstudianteNombre = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtEstudianteApellido = new System.Windows.Forms.TextBox();
             this.labelIIngresarValores = new System.Windows.Forms.Label();
             this.txtEstudianteMatricula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -112,7 +110,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(74, 281);
+            this.label3.Location = new System.Drawing.Point(73, 280);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 16);
             this.label3.TabIndex = 100;
@@ -130,7 +128,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(64, 322);
+            this.label4.Location = new System.Drawing.Point(61, 321);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 16);
             this.label4.TabIndex = 98;
@@ -143,24 +141,6 @@
             this.txtEstudianteNombre.Name = "txtEstudianteNombre";
             this.txtEstudianteNombre.Size = new System.Drawing.Size(190, 20);
             this.txtEstudianteNombre.TabIndex = 97;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(61, 361);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 16);
-            this.label6.TabIndex = 96;
-            this.label6.Text = "Apellido:";
-            // 
-            // txtEstudianteApellido
-            // 
-            this.txtEstudianteApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstudianteApellido.Location = new System.Drawing.Point(126, 359);
-            this.txtEstudianteApellido.Name = "txtEstudianteApellido";
-            this.txtEstudianteApellido.Size = new System.Drawing.Size(190, 20);
-            this.txtEstudianteApellido.TabIndex = 95;
             // 
             // labelIIngresarValores
             // 
@@ -175,7 +155,7 @@
             // txtEstudianteMatricula
             // 
             this.txtEstudianteMatricula.Enabled = false;
-            this.txtEstudianteMatricula.Location = new System.Drawing.Point(190, 174);
+            this.txtEstudianteMatricula.Location = new System.Drawing.Point(126, 174);
             this.txtEstudianteMatricula.Name = "txtEstudianteMatricula";
             this.txtEstudianteMatricula.Size = new System.Drawing.Size(90, 20);
             this.txtEstudianteMatricula.TabIndex = 93;
@@ -184,11 +164,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 175);
+            this.label1.Location = new System.Drawing.Point(53, 175);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 16);
+            this.label1.Size = new System.Drawing.Size(67, 16);
             this.label1.TabIndex = 92;
-            this.label1.Text = "Matrícula del estudiante:";
+            this.label1.Text = "Matrícula :";
             // 
             // btnGuardar
             // 
@@ -207,7 +187,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(65, 399);
+            this.label2.Location = new System.Drawing.Point(69, 361);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 16);
             this.label2.TabIndex = 105;
@@ -216,7 +196,7 @@
             // txtEstudianteCorreo
             // 
             this.txtEstudianteCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstudianteCorreo.Location = new System.Drawing.Point(126, 398);
+            this.txtEstudianteCorreo.Location = new System.Drawing.Point(126, 360);
             this.txtEstudianteCorreo.Name = "txtEstudianteCorreo";
             this.txtEstudianteCorreo.Size = new System.Drawing.Size(190, 20);
             this.txtEstudianteCorreo.TabIndex = 104;
@@ -225,7 +205,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(37, 440);
+            this.label5.Location = new System.Drawing.Point(41, 402);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 16);
             this.label5.TabIndex = 103;
@@ -235,7 +215,7 @@
             // 
             this.txtEstudiantePass.Enabled = false;
             this.txtEstudiantePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstudiantePass.Location = new System.Drawing.Point(126, 439);
+            this.txtEstudiantePass.Location = new System.Drawing.Point(126, 401);
             this.txtEstudiantePass.Name = "txtEstudiantePass";
             this.txtEstudiantePass.PasswordChar = '•';
             this.txtEstudiantePass.Size = new System.Drawing.Size(190, 20);
@@ -255,8 +235,6 @@
             this.Controls.Add(this.txtEstudianteGrupo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtEstudianteNombre);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtEstudianteApellido);
             this.Controls.Add(this.labelIIngresarValores);
             this.Controls.Add(this.txtEstudianteMatricula);
             this.Controls.Add(this.label1);
@@ -289,8 +267,6 @@
         private System.Windows.Forms.TextBox txtEstudianteGrupo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEstudianteNombre;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtEstudianteApellido;
         private System.Windows.Forms.Label labelIIngresarValores;
         private System.Windows.Forms.TextBox txtEstudianteMatricula;
         private System.Windows.Forms.Label label1;

@@ -38,8 +38,6 @@
             this.txtDocenteCorreo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDocenteNombre = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtDocenteApellido = new System.Windows.Forms.TextBox();
             this.labelIIngresarValores = new System.Windows.Forms.Label();
             this.txtDocenteNombre_Apellido = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -112,7 +110,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(79, 382);
+            this.label5.Location = new System.Drawing.Point(78, 344);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 16);
             this.label5.TabIndex = 116;
@@ -121,7 +119,7 @@
             // txtDocenteCorreo
             // 
             this.txtDocenteCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocenteCorreo.Location = new System.Drawing.Point(135, 381);
+            this.txtDocenteCorreo.Location = new System.Drawing.Point(135, 343);
             this.txtDocenteCorreo.Name = "txtDocenteCorreo";
             this.txtDocenteCorreo.Size = new System.Drawing.Size(190, 20);
             this.txtDocenteCorreo.TabIndex = 115;
@@ -130,7 +128,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(71, 263);
+            this.label3.Location = new System.Drawing.Point(70, 263);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 16);
             this.label3.TabIndex = 114;
@@ -141,26 +139,8 @@
             this.txtDocenteNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDocenteNombre.Location = new System.Drawing.Point(135, 262);
             this.txtDocenteNombre.Name = "txtDocenteNombre";
-            this.txtDocenteNombre.Size = new System.Drawing.Size(189, 20);
+            this.txtDocenteNombre.Size = new System.Drawing.Size(190, 20);
             this.txtDocenteNombre.TabIndex = 113;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(70, 304);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 16);
-            this.label4.TabIndex = 112;
-            this.label4.Text = "Apellido:";
-            // 
-            // txtDocenteApellido
-            // 
-            this.txtDocenteApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocenteApellido.Location = new System.Drawing.Point(135, 303);
-            this.txtDocenteApellido.Name = "txtDocenteApellido";
-            this.txtDocenteApellido.Size = new System.Drawing.Size(190, 20);
-            this.txtDocenteApellido.TabIndex = 111;
             // 
             // labelIIngresarValores
             // 
@@ -184,7 +164,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 168);
+            this.label1.Location = new System.Drawing.Point(32, 168);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 16);
             this.label1.TabIndex = 106;
@@ -194,7 +174,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(51, 421);
+            this.label7.Location = new System.Drawing.Point(50, 383);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 16);
             this.label7.TabIndex = 120;
@@ -204,7 +184,7 @@
             // 
             this.txtDocentePass.Enabled = false;
             this.txtDocentePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocentePass.Location = new System.Drawing.Point(134, 420);
+            this.txtDocentePass.Location = new System.Drawing.Point(134, 382);
             this.txtDocentePass.Name = "txtDocentePass";
             this.txtDocentePass.PasswordChar = '•';
             this.txtDocentePass.Size = new System.Drawing.Size(190, 20);
@@ -216,7 +196,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGuardar.Location = new System.Drawing.Point(60, 490);
+            this.btnGuardar.Location = new System.Drawing.Point(60, 460);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(225, 50);
             this.btnGuardar.TabIndex = 121;
@@ -227,7 +207,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 342);
+            this.label2.Location = new System.Drawing.Point(15, 304);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 16);
             this.label2.TabIndex = 123;
@@ -236,7 +216,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(135, 341);
+            this.textBox1.Location = new System.Drawing.Point(135, 303);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(190, 20);
             this.textBox1.TabIndex = 122;
@@ -255,8 +235,6 @@
             this.Controls.Add(this.txtDocenteCorreo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtDocenteNombre);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtDocenteApellido);
             this.Controls.Add(this.labelIIngresarValores);
             this.Controls.Add(this.txtDocenteNombre_Apellido);
             this.Controls.Add(this.label1);
@@ -289,8 +267,6 @@
         private System.Windows.Forms.TextBox txtDocenteCorreo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDocenteNombre;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtDocenteApellido;
         private System.Windows.Forms.Label labelIIngresarValores;
         private System.Windows.Forms.TextBox txtDocenteNombre_Apellido;
         private System.Windows.Forms.Label label1;

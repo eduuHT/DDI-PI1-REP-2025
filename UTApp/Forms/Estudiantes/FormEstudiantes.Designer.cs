@@ -40,7 +40,7 @@
             this.pbEliminar = new System.Windows.Forms.PictureBox();
             this.pbBuscar = new System.Windows.Forms.PictureBox();
             this.gridEstudianteMatricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridEstudianteNombre_Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridEstudianteNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridEstudianteGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridEstudiantes)).BeginInit();
             this.panelHeader.SuspendLayout();
@@ -61,7 +61,7 @@
             this.gridEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridEstudiantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gridEstudianteMatricula,
-            this.gridEstudianteNombre_Apellido,
+            this.gridEstudianteNombre,
             this.gridEstudianteGrupo});
             this.gridEstudiantes.Location = new System.Drawing.Point(17, 170);
             this.gridEstudiantes.Name = "gridEstudiantes";
@@ -176,13 +176,13 @@
             this.gridEstudianteMatricula.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.gridEstudianteMatricula.Width = 60;
             // 
-            // gridEstudianteNombre_Apellido
+            // gridEstudianteNombre
             // 
-            this.gridEstudianteNombre_Apellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.gridEstudianteNombre_Apellido.HeaderText = "Nombre";
-            this.gridEstudianteNombre_Apellido.MinimumWidth = 20;
-            this.gridEstudianteNombre_Apellido.Name = "gridEstudianteNombre_Apellido";
-            this.gridEstudianteNombre_Apellido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridEstudianteNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.gridEstudianteNombre.HeaderText = "Nombre";
+            this.gridEstudianteNombre.MinimumWidth = 20;
+            this.gridEstudianteNombre.Name = "gridEstudianteNombre";
+            this.gridEstudianteNombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // gridEstudianteGrupo
             // 
@@ -238,7 +238,7 @@
         private System.Windows.Forms.Label labelMaterias;
         private System.Windows.Forms.PictureBox pbBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn gridEstudianteMatricula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gridEstudianteNombre_Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridEstudianteNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn gridEstudianteGrupo;
     }
 }

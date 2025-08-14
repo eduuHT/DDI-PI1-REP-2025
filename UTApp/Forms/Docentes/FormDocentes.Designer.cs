@@ -40,7 +40,7 @@
             this.pbAgregar = new System.Windows.Forms.PictureBox();
             this.pbEliminar = new System.Windows.Forms.PictureBox();
             this.gridDocentesNumeroEmpleados = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridDocentesNombre_Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridDocentesNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridDocentesClasesAsociadas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridDocentes)).BeginInit();
             this.panelHeader.SuspendLayout();
@@ -61,7 +61,7 @@
             this.gridDocentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridDocentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gridDocentesNumeroEmpleados,
-            this.gridDocentesNombre_Apellido,
+            this.gridDocentesNombre,
             this.gridDocentesClasesAsociadas});
             this.gridDocentes.Location = new System.Drawing.Point(17, 170);
             this.gridDocentes.Name = "gridDocentes";
@@ -175,12 +175,12 @@
             this.gridDocentesNumeroEmpleados.Name = "gridDocentesNumeroEmpleados";
             this.gridDocentesNumeroEmpleados.Width = 60;
             // 
-            // gridDocentesNombre_Apellido
+            // gridDocentesNombre
             // 
-            this.gridDocentesNombre_Apellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.gridDocentesNombre_Apellido.HeaderText = "Nombre";
-            this.gridDocentesNombre_Apellido.MaxInputLength = 200;
-            this.gridDocentesNombre_Apellido.Name = "gridDocentesNombre_Apellido";
+            this.gridDocentesNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.gridDocentesNombre.HeaderText = "Nombre";
+            this.gridDocentesNombre.MaxInputLength = 200;
+            this.gridDocentesNombre.Name = "gridDocentesNombre";
             // 
             // gridDocentesClasesAsociadas
             // 
@@ -236,7 +236,7 @@
         private System.Windows.Forms.PictureBox pbRegresar;
         private System.Windows.Forms.Label labelMaterias;
         private System.Windows.Forms.DataGridViewTextBoxColumn gridDocentesNumeroEmpleados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gridDocentesNombre_Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridDocentesNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn gridDocentesClasesAsociadas;
     }
 }

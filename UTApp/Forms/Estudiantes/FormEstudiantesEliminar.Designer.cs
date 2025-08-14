@@ -35,10 +35,10 @@
             this.labelMaterias = new System.Windows.Forms.Label();
             this.labelCatálogoMaterias = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEstudianteCorreo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.txtEstudiantePass = new System.Windows.Forms.TextBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtEstudianteGrupo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -118,13 +118,13 @@
             this.label2.TabIndex = 119;
             this.label2.Text = "Correo:";
             // 
-            // textBox1
+            // txtEstudianteCorreo
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(126, 398);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 20);
-            this.textBox1.TabIndex = 118;
+            this.txtEstudianteCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstudianteCorreo.Location = new System.Drawing.Point(126, 398);
+            this.txtEstudianteCorreo.Name = "txtEstudianteCorreo";
+            this.txtEstudianteCorreo.Size = new System.Drawing.Size(190, 20);
+            this.txtEstudianteCorreo.TabIndex = 118;
             // 
             // label5
             // 
@@ -136,26 +136,26 @@
             this.label5.TabIndex = 117;
             this.label5.Text = "Contraseña:";
             // 
-            // textBox2
+            // txtEstudiantePass
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(126, 439);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(190, 20);
-            this.textBox2.TabIndex = 116;
+            this.txtEstudiantePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstudiantePass.Location = new System.Drawing.Point(126, 439);
+            this.txtEstudiantePass.Name = "txtEstudiantePass";
+            this.txtEstudiantePass.Size = new System.Drawing.Size(190, 20);
+            this.txtEstudiantePass.TabIndex = 116;
             // 
-            // btnGuardar
+            // btnEliminar
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGuardar.Location = new System.Drawing.Point(66, 498);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(225, 50);
-            this.btnGuardar.TabIndex = 115;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnEliminar.BackColor = System.Drawing.Color.Red;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEliminar.Location = new System.Drawing.Point(60, 510);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(225, 50);
+            this.btnEliminar.TabIndex = 115;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -245,10 +245,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 601);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEstudianteCorreo);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.txtEstudiantePass);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtEstudianteGrupo);
             this.Controls.Add(this.label4);
@@ -284,10 +284,10 @@
         private System.Windows.Forms.Label labelMaterias;
         private System.Windows.Forms.Label labelCatálogoMaterias;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEstudianteCorreo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.TextBox txtEstudiantePass;
+        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtEstudianteGrupo;
         private System.Windows.Forms.Label label4;

@@ -58,6 +58,24 @@
     <Compile Include="Forms\Docentes\FormDocentes.Designer.cs">
       <DependentUpon>FormDocentes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Docentes\FormDocentesAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Docentes\FormDocentesAgregar.Designer.cs">
+      <DependentUpon>FormDocentesAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Docentes\FormDocentesEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Docentes\FormDocentesEditar.Designer.cs">
+      <DependentUpon>FormDocentesEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Docentes\FormDocentesEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Docentes\FormDocentesEliminar.Designer.cs">
+      <DependentUpon>FormDocentesEliminar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Estudiantes\FormEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +125,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Docentes\FormDocentes.resx">
       <DependentUpon>FormDocentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Docentes\FormDocentesAgregar.resx">
+      <DependentUpon>FormDocentesAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Docentes\FormDocentesEditar.resx">
+      <DependentUpon>FormDocentesEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Docentes\FormDocentesEliminar.resx">
+      <DependentUpon>FormDocentesEliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Estudiantes\FormEstudiantes.resx">
       <DependentUpon>FormEstudiantes.cs</DependentUpon>

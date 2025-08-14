@@ -64,6 +64,12 @@
     <Compile Include="Forms\Docentes\FormDocentesAgregar.Designer.cs">
       <DependentUpon>FormDocentesAgregar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Docentes\FormDocentesBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Docentes\FormDocentesBuscar.Designer.cs">
+      <DependentUpon>FormDocentesBuscar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Docentes\FormDocentesEditar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,12 @@
     </Compile>
     <Compile Include="Forms\Estudiantes\FormEstudiantesAgregar.Designer.cs">
       <DependentUpon>FormEstudiantesAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Estudiantes\FormEstudiantesBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Estudiantes\FormEstudiantesBuscar.Designer.cs">
+      <DependentUpon>FormEstudiantesBuscar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Estudiantes\FormEstudiantesEditar.cs">
       <SubType>Form</SubType>
@@ -129,6 +141,9 @@
     <EmbeddedResource Include="Forms\Docentes\FormDocentesAgregar.resx">
       <DependentUpon>FormDocentesAgregar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Docentes\FormDocentesBuscar.resx">
+      <DependentUpon>FormDocentesBuscar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Docentes\FormDocentesEditar.resx">
       <DependentUpon>FormDocentesEditar.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Estudiantes\FormEstudiantesAgregar.resx">
       <DependentUpon>FormEstudiantesAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Estudiantes\FormEstudiantesBuscar.resx">
+      <DependentUpon>FormEstudiantesBuscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Estudiantes\FormEstudiantesEditar.resx">
       <DependentUpon>FormEstudiantesEditar.cs</DependentUpon>

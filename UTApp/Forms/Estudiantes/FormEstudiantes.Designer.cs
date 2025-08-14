@@ -29,70 +29,52 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEstudiantes));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.EstudianteMatricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstudianteApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstudianteGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridEstudiantes = new System.Windows.Forms.DataGridView();
             this.labelCatálogoMaterias = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelMaterias = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbEditarEstudiante = new System.Windows.Forms.PictureBox();
             this.pbEliminarEstudiante = new System.Windows.Forms.PictureBox();
             this.pbAgregarEstudiante = new System.Windows.Forms.PictureBox();
             this.botonOpciones = new System.Windows.Forms.PictureBox();
             this.pbRegresar = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.EstudianteMatricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstudianteNombre_Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstudianteGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEstudiantes)).BeginInit();
             this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditarEstudiante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminarEstudiante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAgregarEstudiante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // gridEstudiantes
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.SeaGreen;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridEstudiantes.AllowUserToAddRows = false;
+            this.gridEstudiantes.AllowUserToDeleteRows = false;
+            this.gridEstudiantes.AllowUserToResizeRows = false;
+            this.gridEstudiantes.BackgroundColor = System.Drawing.Color.SeaGreen;
+            this.gridEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridEstudiantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EstudianteMatricula,
-            this.EstudianteApellido,
+            this.EstudianteNombre_Apellido,
             this.EstudianteGrupo});
-            this.dataGridView1.Location = new System.Drawing.Point(17, 170);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(310, 385);
-            this.dataGridView1.TabIndex = 16;
-            // 
-            // EstudianteMatricula
-            // 
-            this.EstudianteMatricula.HeaderText = "Matrícula";
-            this.EstudianteMatricula.Name = "EstudianteMatricula";
-            this.EstudianteMatricula.Width = 75;
-            // 
-            // EstudianteApellido
-            // 
-            this.EstudianteApellido.HeaderText = "Apellido";
-            this.EstudianteApellido.Name = "EstudianteApellido";
-            this.EstudianteApellido.Width = 160;
-            // 
-            // EstudianteGrupo
-            // 
-            this.EstudianteGrupo.HeaderText = "Grupo";
-            this.EstudianteGrupo.Name = "EstudianteGrupo";
-            this.EstudianteGrupo.Width = 55;
+            this.gridEstudiantes.Location = new System.Drawing.Point(17, 170);
+            this.gridEstudiantes.Name = "gridEstudiantes";
+            this.gridEstudiantes.RowHeadersVisible = false;
+            this.gridEstudiantes.Size = new System.Drawing.Size(310, 385);
+            this.gridEstudiantes.TabIndex = 16;
             // 
             // labelCatálogoMaterias
             // 
             this.labelCatálogoMaterias.AutoSize = true;
             this.labelCatálogoMaterias.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCatálogoMaterias.ForeColor = System.Drawing.Color.Black;
-            this.labelCatálogoMaterias.Location = new System.Drawing.Point(21, 123);
+            this.labelCatálogoMaterias.Location = new System.Drawing.Point(20, 120);
             this.labelCatálogoMaterias.Name = "labelCatálogoMaterias";
             this.labelCatálogoMaterias.Size = new System.Drawing.Size(105, 23);
             this.labelCatálogoMaterias.TabIndex = 14;
@@ -120,6 +102,17 @@
             this.labelMaterias.Size = new System.Drawing.Size(134, 25);
             this.labelMaterias.TabIndex = 0;
             this.labelMaterias.Text = "Estudiantes";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::UTApp.Properties.Resources.square;
+            this.pictureBox1.Location = new System.Drawing.Point(177, 563);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
             // 
             // pbEditarEstudiante
             // 
@@ -175,16 +168,23 @@
             this.pbRegresar.TabIndex = 1;
             this.pbRegresar.TabStop = false;
             // 
-            // pictureBox1
+            // EstudianteMatricula
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::UTApp.Properties.Resources.square;
-            this.pictureBox1.Location = new System.Drawing.Point(177, 563);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 33);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.EstudianteMatricula.HeaderText = "Matrícula";
+            this.EstudianteMatricula.Name = "EstudianteMatricula";
+            this.EstudianteMatricula.Width = 60;
+            // 
+            // EstudianteNombre_Apellido
+            // 
+            this.EstudianteNombre_Apellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.EstudianteNombre_Apellido.HeaderText = "Nombre";
+            this.EstudianteNombre_Apellido.Name = "EstudianteNombre_Apellido";
+            // 
+            // EstudianteGrupo
+            // 
+            this.EstudianteGrupo.HeaderText = "Grupo";
+            this.EstudianteGrupo.Name = "EstudianteGrupo";
+            this.EstudianteGrupo.Width = 75;
             // 
             // FormEstudiantes
             // 
@@ -194,7 +194,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbEditarEstudiante);
             this.Controls.Add(this.pbEliminarEstudiante);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gridEstudiantes);
             this.Controls.Add(this.pbAgregarEstudiante);
             this.Controls.Add(this.labelCatálogoMaterias);
             this.Controls.Add(this.panelHeader);
@@ -205,15 +205,15 @@
             this.Name = "FormEstudiantes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estudiantes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEstudiantes)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditarEstudiante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminarEstudiante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAgregarEstudiante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,10 +223,7 @@
 
         private System.Windows.Forms.PictureBox pbEditarEstudiante;
         private System.Windows.Forms.PictureBox pbEliminarEstudiante;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstudianteMatricula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstudianteApellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstudianteGrupo;
+        private System.Windows.Forms.DataGridView gridEstudiantes;
         private System.Windows.Forms.PictureBox pbAgregarEstudiante;
         private System.Windows.Forms.Label labelCatálogoMaterias;
         private System.Windows.Forms.Panel panelHeader;
@@ -234,5 +231,8 @@
         private System.Windows.Forms.PictureBox pbRegresar;
         private System.Windows.Forms.Label labelMaterias;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstudianteMatricula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstudianteNombre_Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstudianteGrupo;
     }
 }

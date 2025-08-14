@@ -202,9 +202,11 @@
             // 
             // txtDocentePass
             // 
+            this.txtDocentePass.Enabled = false;
             this.txtDocentePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDocentePass.Location = new System.Drawing.Point(134, 420);
             this.txtDocentePass.Name = "txtDocentePass";
+            this.txtDocentePass.PasswordChar = '•';
             this.txtDocentePass.Size = new System.Drawing.Size(190, 20);
             this.txtDocentePass.TabIndex = 119;
             // 

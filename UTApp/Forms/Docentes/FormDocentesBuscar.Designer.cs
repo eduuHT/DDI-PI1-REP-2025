@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDocentesBuscar));
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.botonOpciones = new System.Windows.Forms.PictureBox();
+            this.pbRegresar = new System.Windows.Forms.PictureBox();
             this.labelMaterias = new System.Windows.Forms.Label();
             this.labelCatálogoMaterias = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtDocenteApellido = new System.Windows.Forms.TextBox();
             this.labelIIngresarValores = new System.Windows.Forms.Label();
-            this.botonOpciones = new System.Windows.Forms.PictureBox();
-            this.pbRegresar = new System.Windows.Forms.PictureBox();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
@@ -63,6 +63,27 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(343, 94);
             this.panelHeader.TabIndex = 21;
+            // 
+            // botonOpciones
+            // 
+            this.botonOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonOpciones.Location = new System.Drawing.Point(293, 46);
+            this.botonOpciones.Name = "botonOpciones";
+            this.botonOpciones.Size = new System.Drawing.Size(23, 24);
+            this.botonOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.botonOpciones.TabIndex = 2;
+            this.botonOpciones.TabStop = false;
+            // 
+            // pbRegresar
+            // 
+            this.pbRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
+            this.pbRegresar.Location = new System.Drawing.Point(25, 30);
+            this.pbRegresar.Name = "pbRegresar";
+            this.pbRegresar.Size = new System.Drawing.Size(25, 40);
+            this.pbRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRegresar.TabIndex = 1;
+            this.pbRegresar.TabStop = false;
             // 
             // labelMaterias
             // 
@@ -154,6 +175,7 @@
             this.txtDocentePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDocentePass.Location = new System.Drawing.Point(133, 500);
             this.txtDocentePass.Name = "txtDocentePass";
+            this.txtDocentePass.PasswordChar = '•';
             this.txtDocentePass.Size = new System.Drawing.Size(180, 20);
             this.txtDocentePass.TabIndex = 146;
             // 
@@ -223,27 +245,6 @@
             this.labelIIngresarValores.Size = new System.Drawing.Size(198, 16);
             this.labelIIngresarValores.TabIndex = 139;
             this.labelIIngresarValores.Text = "Resultado de la búsqueda:";
-            // 
-            // botonOpciones
-            // 
-            this.botonOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonOpciones.Location = new System.Drawing.Point(293, 46);
-            this.botonOpciones.Name = "botonOpciones";
-            this.botonOpciones.Size = new System.Drawing.Size(23, 24);
-            this.botonOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.botonOpciones.TabIndex = 2;
-            this.botonOpciones.TabStop = false;
-            // 
-            // pbRegresar
-            // 
-            this.pbRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
-            this.pbRegresar.Location = new System.Drawing.Point(25, 30);
-            this.pbRegresar.Name = "pbRegresar";
-            this.pbRegresar.Size = new System.Drawing.Size(25, 40);
-            this.pbRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRegresar.TabIndex = 1;
-            this.pbRegresar.TabStop = false;
             // 
             // FormDocentesBuscar
             // 

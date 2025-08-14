@@ -88,6 +88,7 @@
             this.txtEstudiantePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstudiantePass.Location = new System.Drawing.Point(135, 501);
             this.txtEstudiantePass.Name = "txtEstudiantePass";
+            this.txtEstudiantePass.PasswordChar = '•';
             this.txtEstudiantePass.Size = new System.Drawing.Size(180, 20);
             this.txtEstudiantePass.TabIndex = 118;
             // 

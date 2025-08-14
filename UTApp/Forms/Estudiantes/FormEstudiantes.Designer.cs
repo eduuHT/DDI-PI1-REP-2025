@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEstudiantes));
             this.gridEstudiantes = new System.Windows.Forms.DataGridView();
-            this.EstudianteMatricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstudianteNombre_Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstudianteGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelCatálogoMaterias = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.botonOpciones = new System.Windows.Forms.PictureBox();
@@ -42,6 +39,9 @@
             this.pbAgregar = new System.Windows.Forms.PictureBox();
             this.pbEliminar = new System.Windows.Forms.PictureBox();
             this.pbBuscar = new System.Windows.Forms.PictureBox();
+            this.gridEstudianteMatricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridEstudianteNombre_Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridEstudianteGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridEstudiantes)).BeginInit();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
@@ -60,32 +60,14 @@
             this.gridEstudiantes.BackgroundColor = System.Drawing.Color.SeaGreen;
             this.gridEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridEstudiantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EstudianteMatricula,
-            this.EstudianteNombre_Apellido,
-            this.EstudianteGrupo});
+            this.gridEstudianteMatricula,
+            this.gridEstudianteNombre_Apellido,
+            this.gridEstudianteGrupo});
             this.gridEstudiantes.Location = new System.Drawing.Point(17, 170);
             this.gridEstudiantes.Name = "gridEstudiantes";
             this.gridEstudiantes.RowHeadersVisible = false;
             this.gridEstudiantes.Size = new System.Drawing.Size(310, 385);
             this.gridEstudiantes.TabIndex = 16;
-            // 
-            // EstudianteMatricula
-            // 
-            this.EstudianteMatricula.HeaderText = "Matrícula";
-            this.EstudianteMatricula.Name = "EstudianteMatricula";
-            this.EstudianteMatricula.Width = 60;
-            // 
-            // EstudianteNombre_Apellido
-            // 
-            this.EstudianteNombre_Apellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.EstudianteNombre_Apellido.HeaderText = "Nombre";
-            this.EstudianteNombre_Apellido.Name = "EstudianteNombre_Apellido";
-            // 
-            // EstudianteGrupo
-            // 
-            this.EstudianteGrupo.HeaderText = "Grupo";
-            this.EstudianteGrupo.Name = "EstudianteGrupo";
-            this.EstudianteGrupo.Width = 75;
             // 
             // labelCatálogoMaterias
             // 
@@ -186,6 +168,30 @@
             this.pbBuscar.TabIndex = 27;
             this.pbBuscar.TabStop = false;
             // 
+            // gridEstudianteMatricula
+            // 
+            this.gridEstudianteMatricula.HeaderText = "Matrícula";
+            this.gridEstudianteMatricula.MaxInputLength = 10;
+            this.gridEstudianteMatricula.Name = "gridEstudianteMatricula";
+            this.gridEstudianteMatricula.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridEstudianteMatricula.Width = 60;
+            // 
+            // gridEstudianteNombre_Apellido
+            // 
+            this.gridEstudianteNombre_Apellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.gridEstudianteNombre_Apellido.HeaderText = "Nombre";
+            this.gridEstudianteNombre_Apellido.MinimumWidth = 20;
+            this.gridEstudianteNombre_Apellido.Name = "gridEstudianteNombre_Apellido";
+            this.gridEstudianteNombre_Apellido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // gridEstudianteGrupo
+            // 
+            this.gridEstudianteGrupo.HeaderText = "Grupo";
+            this.gridEstudianteGrupo.MaxInputLength = 7;
+            this.gridEstudianteGrupo.Name = "gridEstudianteGrupo";
+            this.gridEstudianteGrupo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridEstudianteGrupo.Width = 75;
+            // 
             // FormEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,9 +236,9 @@
         private System.Windows.Forms.PictureBox botonOpciones;
         private System.Windows.Forms.PictureBox pbRegresar;
         private System.Windows.Forms.Label labelMaterias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstudianteMatricula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstudianteNombre_Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstudianteGrupo;
         private System.Windows.Forms.PictureBox pbBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridEstudianteMatricula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridEstudianteNombre_Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridEstudianteGrupo;
     }
 }

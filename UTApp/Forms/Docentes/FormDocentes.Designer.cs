@@ -29,41 +29,45 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDocentes));
-            this.gridEstudiantes = new System.Windows.Forms.DataGridView();
+            this.gridDocentes = new System.Windows.Forms.DataGridView();
             this.labelCatálogoMaterias = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.botonOpciones = new System.Windows.Forms.PictureBox();
+            this.pbRegresar = new System.Windows.Forms.PictureBox();
             this.labelMaterias = new System.Windows.Forms.Label();
             this.pbBuscar = new System.Windows.Forms.PictureBox();
             this.pbEditar = new System.Windows.Forms.PictureBox();
             this.pbAgregar = new System.Windows.Forms.PictureBox();
             this.pbEliminar = new System.Windows.Forms.PictureBox();
-            this.botonOpciones = new System.Windows.Forms.PictureBox();
-            this.pbRegresar = new System.Windows.Forms.PictureBox();
-            this.Nombre_Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.gridEstudiantes)).BeginInit();
+            this.gridDocentesNumeroEmpleados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridDocentesNombre_Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridDocentesClasesAsociadas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDocentes)).BeginInit();
             this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAgregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridEstudiantes
+            // gridDocentes
             // 
-            this.gridEstudiantes.AllowUserToAddRows = false;
-            this.gridEstudiantes.AllowUserToDeleteRows = false;
-            this.gridEstudiantes.AllowUserToResizeRows = false;
-            this.gridEstudiantes.BackgroundColor = System.Drawing.Color.SeaGreen;
-            this.gridEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridEstudiantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nombre_Apellido});
-            this.gridEstudiantes.Location = new System.Drawing.Point(17, 170);
-            this.gridEstudiantes.Name = "gridEstudiantes";
-            this.gridEstudiantes.RowHeadersVisible = false;
-            this.gridEstudiantes.Size = new System.Drawing.Size(310, 385);
-            this.gridEstudiantes.TabIndex = 23;
+            this.gridDocentes.AllowUserToAddRows = false;
+            this.gridDocentes.AllowUserToDeleteRows = false;
+            this.gridDocentes.AllowUserToResizeRows = false;
+            this.gridDocentes.BackgroundColor = System.Drawing.Color.SeaGreen;
+            this.gridDocentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridDocentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridDocentesNumeroEmpleados,
+            this.gridDocentesNombre_Apellido,
+            this.gridDocentesClasesAsociadas});
+            this.gridDocentes.Location = new System.Drawing.Point(17, 170);
+            this.gridDocentes.Name = "gridDocentes";
+            this.gridDocentes.RowHeadersVisible = false;
+            this.gridDocentes.Size = new System.Drawing.Size(310, 385);
+            this.gridDocentes.TabIndex = 23;
             // 
             // labelCatálogoMaterias
             // 
@@ -86,6 +90,27 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(343, 94);
             this.panelHeader.TabIndex = 20;
+            // 
+            // botonOpciones
+            // 
+            this.botonOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonOpciones.Location = new System.Drawing.Point(293, 46);
+            this.botonOpciones.Name = "botonOpciones";
+            this.botonOpciones.Size = new System.Drawing.Size(23, 24);
+            this.botonOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.botonOpciones.TabIndex = 2;
+            this.botonOpciones.TabStop = false;
+            // 
+            // pbRegresar
+            // 
+            this.pbRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
+            this.pbRegresar.Location = new System.Drawing.Point(25, 30);
+            this.pbRegresar.Name = "pbRegresar";
+            this.pbRegresar.Size = new System.Drawing.Size(25, 40);
+            this.pbRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRegresar.TabIndex = 1;
+            this.pbRegresar.TabStop = false;
             // 
             // labelMaterias
             // 
@@ -143,32 +168,27 @@
             this.pbEliminar.TabIndex = 22;
             this.pbEliminar.TabStop = false;
             // 
-            // botonOpciones
+            // gridDocentesNumeroEmpleados
             // 
-            this.botonOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonOpciones.Location = new System.Drawing.Point(293, 46);
-            this.botonOpciones.Name = "botonOpciones";
-            this.botonOpciones.Size = new System.Drawing.Size(23, 24);
-            this.botonOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.botonOpciones.TabIndex = 2;
-            this.botonOpciones.TabStop = false;
+            this.gridDocentesNumeroEmpleados.HeaderText = "Número Empleado";
+            this.gridDocentesNumeroEmpleados.MaxInputLength = 5;
+            this.gridDocentesNumeroEmpleados.Name = "gridDocentesNumeroEmpleados";
+            this.gridDocentesNumeroEmpleados.Width = 60;
             // 
-            // pbRegresar
+            // gridDocentesNombre_Apellido
             // 
-            this.pbRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
-            this.pbRegresar.Location = new System.Drawing.Point(25, 30);
-            this.pbRegresar.Name = "pbRegresar";
-            this.pbRegresar.Size = new System.Drawing.Size(25, 40);
-            this.pbRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRegresar.TabIndex = 1;
-            this.pbRegresar.TabStop = false;
+            this.gridDocentesNombre_Apellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.gridDocentesNombre_Apellido.HeaderText = "Nombre";
+            this.gridDocentesNombre_Apellido.MaxInputLength = 200;
+            this.gridDocentesNombre_Apellido.Name = "gridDocentesNombre_Apellido";
             // 
-            // Nombre_Apellido
+            // gridDocentesClasesAsociadas
             // 
-            this.Nombre_Apellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nombre_Apellido.HeaderText = "Nombre";
-            this.Nombre_Apellido.Name = "Nombre_Apellido";
+            this.gridDocentesClasesAsociadas.HeaderText = "# Clases";
+            this.gridDocentesClasesAsociadas.MaxInputLength = 2;
+            this.gridDocentesClasesAsociadas.MinimumWidth = 2;
+            this.gridDocentesClasesAsociadas.Name = "gridDocentesClasesAsociadas";
+            this.gridDocentesClasesAsociadas.Width = 75;
             // 
             // FormDocentes
             // 
@@ -178,7 +198,7 @@
             this.Controls.Add(this.pbBuscar);
             this.Controls.Add(this.pbEditar);
             this.Controls.Add(this.pbAgregar);
-            this.Controls.Add(this.gridEstudiantes);
+            this.Controls.Add(this.gridDocentes);
             this.Controls.Add(this.pbEliminar);
             this.Controls.Add(this.labelCatálogoMaterias);
             this.Controls.Add(this.panelHeader);
@@ -189,15 +209,15 @@
             this.Name = "FormDocentes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Docentes";
-            ((System.ComponentModel.ISupportInitialize)(this.gridEstudiantes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDocentes)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAgregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,13 +228,15 @@
         private System.Windows.Forms.PictureBox pbBuscar;
         private System.Windows.Forms.PictureBox pbEditar;
         private System.Windows.Forms.PictureBox pbAgregar;
-        private System.Windows.Forms.DataGridView gridEstudiantes;
+        private System.Windows.Forms.DataGridView gridDocentes;
         private System.Windows.Forms.PictureBox pbEliminar;
         private System.Windows.Forms.Label labelCatálogoMaterias;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.PictureBox botonOpciones;
         private System.Windows.Forms.PictureBox pbRegresar;
         private System.Windows.Forms.Label labelMaterias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridDocentesNumeroEmpleados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridDocentesNombre_Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridDocentesClasesAsociadas;
     }
 }

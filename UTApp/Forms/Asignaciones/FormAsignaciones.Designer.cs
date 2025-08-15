@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAsignaciones));
             this.pnlBanner = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.PictureBox();
@@ -37,6 +38,15 @@
             this.btnEdit = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.PictureBox();
             this.btnAdd = new System.Windows.Forms.PictureBox();
+            this.uTApp_Integradora1DataSet = new UTApp.UTApp_Integradora1DataSet();
+            this.asignacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.asignacionTableAdapter = new UTApp.UTApp_Integradora1DataSetTableAdapters.AsignacionTableAdapter();
+            this.asignacionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asignacionTituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asignacionDescripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asignacionFechaLimiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.plataformaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.claseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlBanner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAsignaciones)).BeginInit();
@@ -44,6 +54,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uTApp_Integradora1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asignacionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBanner
@@ -84,10 +96,22 @@
             this.gridAsignaciones.AllowUserToDeleteRows = false;
             this.gridAsignaciones.AllowUserToResizeColumns = false;
             this.gridAsignaciones.AllowUserToResizeRows = false;
+            this.gridAsignaciones.AutoGenerateColumns = false;
             this.gridAsignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridAsignaciones.Location = new System.Drawing.Point(31, 121);
+            this.gridAsignaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.asignacionIDDataGridViewTextBoxColumn,
+            this.asignacionTituloDataGridViewTextBoxColumn,
+            this.asignacionDescripcionDataGridViewTextBoxColumn,
+            this.asignacionFechaLimiteDataGridViewTextBoxColumn,
+            this.plataformaIDDataGridViewTextBoxColumn,
+            this.claseIDDataGridViewTextBoxColumn});
+            this.gridAsignaciones.DataSource = this.asignacionBindingSource;
+            this.gridAsignaciones.Location = new System.Drawing.Point(-1, 129);
+            this.gridAsignaciones.MultiSelect = false;
             this.gridAsignaciones.Name = "gridAsignaciones";
-            this.gridAsignaciones.Size = new System.Drawing.Size(287, 404);
+            this.gridAsignaciones.ReadOnly = true;
+            this.gridAsignaciones.RowHeadersVisible = false;
+            this.gridAsignaciones.Size = new System.Drawing.Size(345, 404);
             this.gridAsignaciones.TabIndex = 2;
             // 
             // btnScan
@@ -134,6 +158,68 @@
             this.btnAdd.TabStop = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // uTApp_Integradora1DataSet
+            // 
+            this.uTApp_Integradora1DataSet.DataSetName = "UTApp_Integradora1DataSet";
+            this.uTApp_Integradora1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // asignacionBindingSource
+            // 
+            this.asignacionBindingSource.DataMember = "Asignacion";
+            this.asignacionBindingSource.DataSource = this.uTApp_Integradora1DataSet;
+            // 
+            // asignacionTableAdapter
+            // 
+            this.asignacionTableAdapter.ClearBeforeFill = true;
+            // 
+            // asignacionIDDataGridViewTextBoxColumn
+            // 
+            this.asignacionIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.asignacionIDDataGridViewTextBoxColumn.DataPropertyName = "AsignacionID";
+            this.asignacionIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.asignacionIDDataGridViewTextBoxColumn.Name = "asignacionIDDataGridViewTextBoxColumn";
+            this.asignacionIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.asignacionIDDataGridViewTextBoxColumn.Width = 43;
+            // 
+            // asignacionTituloDataGridViewTextBoxColumn
+            // 
+            this.asignacionTituloDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.asignacionTituloDataGridViewTextBoxColumn.DataPropertyName = "AsignacionTitulo";
+            this.asignacionTituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
+            this.asignacionTituloDataGridViewTextBoxColumn.Name = "asignacionTituloDataGridViewTextBoxColumn";
+            this.asignacionTituloDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // asignacionDescripcionDataGridViewTextBoxColumn
+            // 
+            this.asignacionDescripcionDataGridViewTextBoxColumn.DataPropertyName = "AsignacionDescripcion";
+            this.asignacionDescripcionDataGridViewTextBoxColumn.HeaderText = "AsignacionDescripcion";
+            this.asignacionDescripcionDataGridViewTextBoxColumn.Name = "asignacionDescripcionDataGridViewTextBoxColumn";
+            this.asignacionDescripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.asignacionDescripcionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // asignacionFechaLimiteDataGridViewTextBoxColumn
+            // 
+            this.asignacionFechaLimiteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.asignacionFechaLimiteDataGridViewTextBoxColumn.DataPropertyName = "AsignacionFechaLimite";
+            this.asignacionFechaLimiteDataGridViewTextBoxColumn.HeaderText = "Entrega";
+            this.asignacionFechaLimiteDataGridViewTextBoxColumn.Name = "asignacionFechaLimiteDataGridViewTextBoxColumn";
+            this.asignacionFechaLimiteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // plataformaIDDataGridViewTextBoxColumn
+            // 
+            this.plataformaIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.plataformaIDDataGridViewTextBoxColumn.DataPropertyName = "PlataformaID";
+            this.plataformaIDDataGridViewTextBoxColumn.HeaderText = "Plataforma";
+            this.plataformaIDDataGridViewTextBoxColumn.Name = "plataformaIDDataGridViewTextBoxColumn";
+            this.plataformaIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // claseIDDataGridViewTextBoxColumn
+            // 
+            this.claseIDDataGridViewTextBoxColumn.DataPropertyName = "ClaseID";
+            this.claseIDDataGridViewTextBoxColumn.HeaderText = "Clase";
+            this.claseIDDataGridViewTextBoxColumn.Name = "claseIDDataGridViewTextBoxColumn";
+            this.claseIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // FormAsignaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,6 +248,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uTApp_Integradora1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asignacionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -171,10 +259,19 @@
         private System.Windows.Forms.Panel pnlBanner;
         private System.Windows.Forms.PictureBox btnBack;
         private System.Windows.Forms.Label lblAsignaciones;
-        private System.Windows.Forms.DataGridView gridAsignaciones;
         private System.Windows.Forms.PictureBox btnAdd;
         private System.Windows.Forms.PictureBox btnDelete;
         private System.Windows.Forms.PictureBox btnEdit;
         private System.Windows.Forms.PictureBox btnScan;
+        private System.Windows.Forms.DataGridView gridAsignaciones;
+        private UTApp_Integradora1DataSet uTApp_Integradora1DataSet;
+        private System.Windows.Forms.BindingSource asignacionBindingSource;
+        private UTApp_Integradora1DataSetTableAdapters.AsignacionTableAdapter asignacionTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asignacionIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asignacionTituloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asignacionDescripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asignacionFechaLimiteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn plataformaIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn claseIDDataGridViewTextBoxColumn;
     }
 }

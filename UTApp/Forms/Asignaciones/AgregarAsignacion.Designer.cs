@@ -113,7 +113,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 259);
+            this.label5.Location = new System.Drawing.Point(5, 258);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 13);
             this.label5.TabIndex = 8;
@@ -140,15 +140,15 @@
             this.CBGrupo.FormattingEnabled = true;
             this.CBGrupo.Location = new System.Drawing.Point(59, 150);
             this.CBGrupo.Name = "CBGrupo";
-            this.CBGrupo.Size = new System.Drawing.Size(95, 21);
+            this.CBGrupo.Size = new System.Drawing.Size(71, 21);
             this.CBGrupo.TabIndex = 12;
             // 
             // CBMateria
             // 
             this.CBMateria.FormattingEnabled = true;
-            this.CBMateria.Location = new System.Drawing.Point(211, 150);
+            this.CBMateria.Location = new System.Drawing.Point(190, 150);
             this.CBMateria.Name = "CBMateria";
-            this.CBMateria.Size = new System.Drawing.Size(121, 21);
+            this.CBMateria.Size = new System.Drawing.Size(142, 21);
             this.CBMateria.TabIndex = 13;
             // 
             // CBDocente
@@ -178,7 +178,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(160, 153);
+            this.label7.Location = new System.Drawing.Point(139, 153);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 13);
             this.label7.TabIndex = 18;
@@ -197,7 +197,7 @@
             // 
             this.DTEntrega.CustomFormat = "";
             this.DTEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTEntrega.Location = new System.Drawing.Point(122, 257);
+            this.DTEntrega.Location = new System.Drawing.Point(105, 256);
             this.DTEntrega.MinDate = new System.DateTime(2025, 8, 13, 0, 0, 0, 0);
             this.DTEntrega.Name = "DTEntrega";
             this.DTEntrega.Size = new System.Drawing.Size(210, 20);
@@ -216,6 +216,7 @@
             this.btnAgregar.TabIndex = 21;
             this.btnAgregar.Text = "Agregar Asignacion";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // AgregarAsignacion
             // 

@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UTApp.Clases;
 using UTApp.Forms.Menu_Principal;
 
 namespace UTApp.Forms.Asignaciones
 {
     public partial class FormAsignaciones : Form
     {
+        AsignacionControlador controlador = new AsignacionControlador();
+        List<Asignacion> asignaciones = new List<Asignacion>();
         public FormAsignaciones()
         {
             InitializeComponent();
@@ -20,7 +23,8 @@ namespace UTApp.Forms.Asignaciones
 
         private void FormAsignaciones_Load(object sender, EventArgs e)
         {
-
+            // TODO: esta línea de código carga datos en la tabla 'uTApp_Integradora1DataSet.Asignacion' Puede moverla o quitarla según sea necesario.
+            this.asignacionTableAdapter.Fill(this.uTApp_Integradora1DataSet.Asignacion);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

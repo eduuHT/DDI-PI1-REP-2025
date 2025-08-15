@@ -33,5 +33,10 @@ namespace UTApp.Forms.Asignaciones
         {
 
         }
+
+        private void AgregarAsignacion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

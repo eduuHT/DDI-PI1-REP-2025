@@ -30,82 +30,85 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGrupos));
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.botonRegresar = new System.Windows.Forms.PictureBox();
-            this.labelGrupos = new System.Windows.Forms.Label();
-            this.labelCatálogo = new System.Windows.Forms.Label();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.btnRegresar = new System.Windows.Forms.PictureBox();
+            this.lblGrupos = new System.Windows.Forms.Label();
+            this.lblCatálogo = new System.Windows.Forms.Label();
+            this.gridGrupos = new System.Windows.Forms.DataGridView();
             this.GrupoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GrupoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBoxEditar = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEliminar = new System.Windows.Forms.PictureBox();
-            this.pictureBoxAgregar = new System.Windows.Forms.PictureBox();
+            this.btnEditar = new System.Windows.Forms.PictureBox();
+            this.btnEliminar = new System.Windows.Forms.PictureBox();
+            this.btnAgregar = new System.Windows.Forms.PictureBox();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.PictureBox();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonRegresar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEditar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEliminar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAgregar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridGrupos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.SeaGreen;
-            this.panelHeader.Controls.Add(this.botonRegresar);
-            this.panelHeader.Controls.Add(this.labelGrupos);
+            this.panelHeader.Controls.Add(this.btnRegresar);
+            this.panelHeader.Controls.Add(this.lblGrupos);
             this.panelHeader.Location = new System.Drawing.Point(-5, -4);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(353, 99);
             this.panelHeader.TabIndex = 1;
             // 
-            // botonRegresar
+            // btnRegresar
             // 
-            this.botonRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
-            this.botonRegresar.Location = new System.Drawing.Point(24, 46);
-            this.botonRegresar.Name = "botonRegresar";
-            this.botonRegresar.Size = new System.Drawing.Size(16, 24);
-            this.botonRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.botonRegresar.TabIndex = 1;
-            this.botonRegresar.TabStop = false;
+            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
+            this.btnRegresar.Location = new System.Drawing.Point(24, 46);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(16, 24);
+            this.btnRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRegresar.TabIndex = 1;
+            this.btnRegresar.TabStop = false;
             // 
-            // labelGrupos
+            // lblGrupos
             // 
-            this.labelGrupos.AutoSize = true;
-            this.labelGrupos.BackColor = System.Drawing.Color.Transparent;
-            this.labelGrupos.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGrupos.ForeColor = System.Drawing.Color.White;
-            this.labelGrupos.Location = new System.Drawing.Point(134, 45);
-            this.labelGrupos.Name = "labelGrupos";
-            this.labelGrupos.Size = new System.Drawing.Size(87, 25);
-            this.labelGrupos.TabIndex = 0;
-            this.labelGrupos.Text = "Grupos";
+            this.lblGrupos.AutoSize = true;
+            this.lblGrupos.BackColor = System.Drawing.Color.Transparent;
+            this.lblGrupos.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrupos.ForeColor = System.Drawing.Color.White;
+            this.lblGrupos.Location = new System.Drawing.Point(134, 45);
+            this.lblGrupos.Name = "lblGrupos";
+            this.lblGrupos.Size = new System.Drawing.Size(87, 25);
+            this.lblGrupos.TabIndex = 0;
+            this.lblGrupos.Text = "Grupos";
             // 
-            // labelCatálogo
+            // lblCatálogo
             // 
-            this.labelCatálogo.AutoSize = true;
-            this.labelCatálogo.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCatálogo.ForeColor = System.Drawing.Color.Black;
-            this.labelCatálogo.Location = new System.Drawing.Point(16, 120);
-            this.labelCatálogo.Name = "labelCatálogo";
-            this.labelCatálogo.Size = new System.Drawing.Size(105, 23);
-            this.labelCatálogo.TabIndex = 2;
-            this.labelCatálogo.Text = "Catálogo";
+            this.lblCatálogo.AutoSize = true;
+            this.lblCatálogo.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCatálogo.ForeColor = System.Drawing.Color.Black;
+            this.lblCatálogo.Location = new System.Drawing.Point(16, 120);
+            this.lblCatálogo.Name = "lblCatálogo";
+            this.lblCatálogo.Size = new System.Drawing.Size(105, 23);
+            this.lblCatálogo.TabIndex = 2;
+            this.lblCatálogo.Text = "Catálogo";
             // 
-            // dataGridView
+            // gridGrupos
             // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToResizeRows = false;
-            this.dataGridView.BackgroundColor = System.Drawing.Color.SeaGreen;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridGrupos.AllowUserToAddRows = false;
+            this.gridGrupos.AllowUserToDeleteRows = false;
+            this.gridGrupos.AllowUserToResizeRows = false;
+            this.gridGrupos.BackgroundColor = System.Drawing.Color.SeaGreen;
+            this.gridGrupos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridGrupos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GrupoID,
             this.GrupoNombre});
-            this.dataGridView.Location = new System.Drawing.Point(12, 167);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowHeadersVisible = false;
-            this.dataGridView.Size = new System.Drawing.Size(320, 385);
-            this.dataGridView.TabIndex = 6;
+            this.gridGrupos.Location = new System.Drawing.Point(12, 202);
+            this.gridGrupos.Name = "gridGrupos";
+            this.gridGrupos.RowHeadersVisible = false;
+            this.gridGrupos.Size = new System.Drawing.Size(320, 350);
+            this.gridGrupos.TabIndex = 6;
             // 
             // GrupoID
             // 
@@ -119,49 +122,69 @@
             this.GrupoNombre.Name = "GrupoNombre";
             this.GrupoNombre.Width = 240;
             // 
-            // pictureBoxEditar
+            // btnEditar
             // 
-            this.pictureBoxEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxEditar.Image = global::UTApp.Properties.Resources.edit;
-            this.pictureBoxEditar.Location = new System.Drawing.Point(260, 558);
-            this.pictureBoxEditar.Name = "pictureBoxEditar";
-            this.pictureBoxEditar.Size = new System.Drawing.Size(33, 33);
-            this.pictureBoxEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxEditar.TabIndex = 10;
-            this.pictureBoxEditar.TabStop = false;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.Image = global::UTApp.Properties.Resources.edit;
+            this.btnEditar.Location = new System.Drawing.Point(260, 558);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(33, 33);
+            this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditar.TabIndex = 10;
+            this.btnEditar.TabStop = false;
             // 
-            // pictureBoxEliminar
+            // btnEliminar
             // 
-            this.pictureBoxEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxEliminar.Image = global::UTApp.Properties.Resources.delete;
-            this.pictureBoxEliminar.Location = new System.Drawing.Point(221, 558);
-            this.pictureBoxEliminar.Name = "pictureBoxEliminar";
-            this.pictureBoxEliminar.Size = new System.Drawing.Size(33, 33);
-            this.pictureBoxEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxEliminar.TabIndex = 9;
-            this.pictureBoxEliminar.TabStop = false;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.Image = global::UTApp.Properties.Resources.delete;
+            this.btnEliminar.Location = new System.Drawing.Point(221, 558);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(33, 33);
+            this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.TabStop = false;
             // 
-            // pictureBoxAgregar
+            // btnAgregar
             // 
-            this.pictureBoxAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxAgregar.Image = global::UTApp.Properties.Resources.add;
-            this.pictureBoxAgregar.Location = new System.Drawing.Point(299, 558);
-            this.pictureBoxAgregar.Name = "pictureBoxAgregar";
-            this.pictureBoxAgregar.Size = new System.Drawing.Size(33, 33);
-            this.pictureBoxAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxAgregar.TabIndex = 8;
-            this.pictureBoxAgregar.TabStop = false;
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.Image = global::UTApp.Properties.Resources.add;
+            this.btnAgregar.Location = new System.Drawing.Point(299, 558);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(33, 33);
+            this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAgregar.TabIndex = 8;
+            this.btnAgregar.TabStop = false;
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Location = new System.Drawing.Point(12, 163);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(281, 20);
+            this.txtBusqueda.TabIndex = 12;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.Image = global::UTApp.Properties.Resources.scan;
+            this.btnBuscar.Location = new System.Drawing.Point(299, 150);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(33, 33);
+            this.btnBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBuscar.TabIndex = 13;
+            this.btnBuscar.TabStop = false;
             // 
             // FormGrupos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 601);
-            this.Controls.Add(this.pictureBoxEditar);
-            this.Controls.Add(this.pictureBoxEliminar);
-            this.Controls.Add(this.pictureBoxAgregar);
-            this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.labelCatálogo);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtBusqueda);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.gridGrupos);
+            this.Controls.Add(this.lblCatálogo);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -172,11 +195,12 @@
             this.Text = "Grupos";
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonRegresar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEditar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEliminar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAgregar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridGrupos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,14 +209,16 @@
         #endregion
 
         private System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.PictureBox botonRegresar;
-        private System.Windows.Forms.Label labelGrupos;
-        private System.Windows.Forms.Label labelCatálogo;
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.PictureBox btnRegresar;
+        private System.Windows.Forms.Label lblGrupos;
+        private System.Windows.Forms.Label lblCatálogo;
+        private System.Windows.Forms.DataGridView gridGrupos;
         private System.Windows.Forms.DataGridViewTextBoxColumn GrupoID;
         private System.Windows.Forms.DataGridViewTextBoxColumn GrupoNombre;
-        private System.Windows.Forms.PictureBox pictureBoxEditar;
-        private System.Windows.Forms.PictureBox pictureBoxEliminar;
-        private System.Windows.Forms.PictureBox pictureBoxAgregar;
+        private System.Windows.Forms.PictureBox btnEditar;
+        private System.Windows.Forms.PictureBox btnEliminar;
+        private System.Windows.Forms.PictureBox btnAgregar;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.PictureBox btnBuscar;
     }
 }

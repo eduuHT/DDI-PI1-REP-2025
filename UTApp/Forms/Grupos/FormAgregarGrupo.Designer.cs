@@ -29,113 +29,113 @@
         private void InitializeComponent()
         {
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.botonRegresar = new System.Windows.Forms.PictureBox();
-            this.labelGrupos = new System.Windows.Forms.Label();
-            this.labelNuevoGrupo = new System.Windows.Forms.Label();
-            this.botonCancelarAdicion = new System.Windows.Forms.Button();
-            this.botonConfirmarAdicion = new System.Windows.Forms.Button();
-            this.textBoxNombreGrupo = new System.Windows.Forms.TextBox();
-            this.labelNombreGrupo = new System.Windows.Forms.Label();
+            this.btnRegresar = new System.Windows.Forms.PictureBox();
+            this.lblGrupos = new System.Windows.Forms.Label();
+            this.lblNuevoGrupo = new System.Windows.Forms.Label();
+            this.btnCancelarAdicion = new System.Windows.Forms.Button();
+            this.btnConfirmarAdicion = new System.Windows.Forms.Button();
+            this.txtNombreGrupo = new System.Windows.Forms.TextBox();
+            this.lblNombreGrupo = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonRegresar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.SeaGreen;
-            this.panelHeader.Controls.Add(this.botonRegresar);
-            this.panelHeader.Controls.Add(this.labelGrupos);
+            this.panelHeader.Controls.Add(this.btnRegresar);
+            this.panelHeader.Controls.Add(this.lblGrupos);
             this.panelHeader.Location = new System.Drawing.Point(-5, -4);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(353, 99);
             this.panelHeader.TabIndex = 4;
             // 
-            // botonRegresar
+            // btnRegresar
             // 
-            this.botonRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
-            this.botonRegresar.Location = new System.Drawing.Point(24, 46);
-            this.botonRegresar.Name = "botonRegresar";
-            this.botonRegresar.Size = new System.Drawing.Size(16, 24);
-            this.botonRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.botonRegresar.TabIndex = 1;
-            this.botonRegresar.TabStop = false;
+            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
+            this.btnRegresar.Location = new System.Drawing.Point(24, 46);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(16, 24);
+            this.btnRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRegresar.TabIndex = 1;
+            this.btnRegresar.TabStop = false;
             // 
-            // labelGrupos
+            // lblGrupos
             // 
-            this.labelGrupos.AutoSize = true;
-            this.labelGrupos.BackColor = System.Drawing.Color.Transparent;
-            this.labelGrupos.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGrupos.ForeColor = System.Drawing.Color.White;
-            this.labelGrupos.Location = new System.Drawing.Point(134, 45);
-            this.labelGrupos.Name = "labelGrupos";
-            this.labelGrupos.Size = new System.Drawing.Size(87, 25);
-            this.labelGrupos.TabIndex = 0;
-            this.labelGrupos.Text = "Grupos";
+            this.lblGrupos.AutoSize = true;
+            this.lblGrupos.BackColor = System.Drawing.Color.Transparent;
+            this.lblGrupos.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrupos.ForeColor = System.Drawing.Color.White;
+            this.lblGrupos.Location = new System.Drawing.Point(134, 45);
+            this.lblGrupos.Name = "lblGrupos";
+            this.lblGrupos.Size = new System.Drawing.Size(87, 25);
+            this.lblGrupos.TabIndex = 0;
+            this.lblGrupos.Text = "Grupos";
             // 
-            // labelNuevoGrupo
+            // lblNuevoGrupo
             // 
-            this.labelNuevoGrupo.AutoSize = true;
-            this.labelNuevoGrupo.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNuevoGrupo.ForeColor = System.Drawing.Color.Black;
-            this.labelNuevoGrupo.Location = new System.Drawing.Point(16, 120);
-            this.labelNuevoGrupo.Name = "labelNuevoGrupo";
-            this.labelNuevoGrupo.Size = new System.Drawing.Size(149, 23);
-            this.labelNuevoGrupo.TabIndex = 21;
-            this.labelNuevoGrupo.Text = "Nuevo Grupo";
+            this.lblNuevoGrupo.AutoSize = true;
+            this.lblNuevoGrupo.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevoGrupo.ForeColor = System.Drawing.Color.Black;
+            this.lblNuevoGrupo.Location = new System.Drawing.Point(16, 120);
+            this.lblNuevoGrupo.Name = "lblNuevoGrupo";
+            this.lblNuevoGrupo.Size = new System.Drawing.Size(149, 23);
+            this.lblNuevoGrupo.TabIndex = 21;
+            this.lblNuevoGrupo.Text = "Nuevo Grupo";
             // 
-            // botonCancelarAdicion
+            // btnCancelarAdicion
             // 
-            this.botonCancelarAdicion.BackColor = System.Drawing.SystemColors.Control;
-            this.botonCancelarAdicion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonCancelarAdicion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonCancelarAdicion.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.botonCancelarAdicion.Location = new System.Drawing.Point(11, 550);
-            this.botonCancelarAdicion.Name = "botonCancelarAdicion";
-            this.botonCancelarAdicion.Size = new System.Drawing.Size(150, 40);
-            this.botonCancelarAdicion.TabIndex = 20;
-            this.botonCancelarAdicion.Text = "Cancelar";
-            this.botonCancelarAdicion.UseVisualStyleBackColor = false;
+            this.btnCancelarAdicion.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCancelarAdicion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelarAdicion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarAdicion.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnCancelarAdicion.Location = new System.Drawing.Point(11, 550);
+            this.btnCancelarAdicion.Name = "btnCancelarAdicion";
+            this.btnCancelarAdicion.Size = new System.Drawing.Size(150, 40);
+            this.btnCancelarAdicion.TabIndex = 20;
+            this.btnCancelarAdicion.Text = "Cancelar";
+            this.btnCancelarAdicion.UseVisualStyleBackColor = false;
             // 
-            // botonConfirmarAdicion
+            // btnConfirmarAdicion
             // 
-            this.botonConfirmarAdicion.BackColor = System.Drawing.Color.PaleGreen;
-            this.botonConfirmarAdicion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonConfirmarAdicion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonConfirmarAdicion.Location = new System.Drawing.Point(182, 550);
-            this.botonConfirmarAdicion.Name = "botonConfirmarAdicion";
-            this.botonConfirmarAdicion.Size = new System.Drawing.Size(150, 40);
-            this.botonConfirmarAdicion.TabIndex = 19;
-            this.botonConfirmarAdicion.Text = "Agregar";
-            this.botonConfirmarAdicion.UseVisualStyleBackColor = false;
+            this.btnConfirmarAdicion.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnConfirmarAdicion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmarAdicion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmarAdicion.Location = new System.Drawing.Point(182, 550);
+            this.btnConfirmarAdicion.Name = "btnConfirmarAdicion";
+            this.btnConfirmarAdicion.Size = new System.Drawing.Size(150, 40);
+            this.btnConfirmarAdicion.TabIndex = 19;
+            this.btnConfirmarAdicion.Text = "Agregar";
+            this.btnConfirmarAdicion.UseVisualStyleBackColor = false;
             // 
-            // textBoxNombreGrupo
+            // txtNombreGrupo
             // 
-            this.textBoxNombreGrupo.Location = new System.Drawing.Point(19, 225);
-            this.textBoxNombreGrupo.Name = "textBoxNombreGrupo";
-            this.textBoxNombreGrupo.Size = new System.Drawing.Size(292, 20);
-            this.textBoxNombreGrupo.TabIndex = 16;
+            this.txtNombreGrupo.Location = new System.Drawing.Point(19, 225);
+            this.txtNombreGrupo.Name = "txtNombreGrupo";
+            this.txtNombreGrupo.Size = new System.Drawing.Size(292, 20);
+            this.txtNombreGrupo.TabIndex = 16;
             // 
-            // labelNombreGrupo
+            // lblNombreGrupo
             // 
-            this.labelNombreGrupo.AutoSize = true;
-            this.labelNombreGrupo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombreGrupo.Location = new System.Drawing.Point(16, 185);
-            this.labelNombreGrupo.Name = "labelNombreGrupo";
-            this.labelNombreGrupo.Size = new System.Drawing.Size(129, 16);
-            this.labelNombreGrupo.TabIndex = 15;
-            this.labelNombreGrupo.Text = "Nombre del Grupo:";
+            this.lblNombreGrupo.AutoSize = true;
+            this.lblNombreGrupo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreGrupo.Location = new System.Drawing.Point(16, 185);
+            this.lblNombreGrupo.Name = "lblNombreGrupo";
+            this.lblNombreGrupo.Size = new System.Drawing.Size(129, 16);
+            this.lblNombreGrupo.TabIndex = 15;
+            this.lblNombreGrupo.Text = "Nombre del Grupo:";
             // 
             // FormAgregarGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 601);
-            this.Controls.Add(this.labelNuevoGrupo);
-            this.Controls.Add(this.botonCancelarAdicion);
-            this.Controls.Add(this.botonConfirmarAdicion);
-            this.Controls.Add(this.textBoxNombreGrupo);
-            this.Controls.Add(this.labelNombreGrupo);
+            this.Controls.Add(this.lblNuevoGrupo);
+            this.Controls.Add(this.btnCancelarAdicion);
+            this.Controls.Add(this.btnConfirmarAdicion);
+            this.Controls.Add(this.txtNombreGrupo);
+            this.Controls.Add(this.lblNombreGrupo);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -146,7 +146,7 @@
             this.Text = "Agregar Grupo";
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonRegresar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,12 +155,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.PictureBox botonRegresar;
-        private System.Windows.Forms.Label labelGrupos;
-        private System.Windows.Forms.Label labelNuevoGrupo;
-        private System.Windows.Forms.Button botonCancelarAdicion;
-        private System.Windows.Forms.Button botonConfirmarAdicion;
-        private System.Windows.Forms.TextBox textBoxNombreGrupo;
-        private System.Windows.Forms.Label labelNombreGrupo;
+        private System.Windows.Forms.PictureBox btnRegresar;
+        private System.Windows.Forms.Label lblGrupos;
+        private System.Windows.Forms.Label lblNuevoGrupo;
+        private System.Windows.Forms.Button btnCancelarAdicion;
+        private System.Windows.Forms.Button btnConfirmarAdicion;
+        private System.Windows.Forms.TextBox txtNombreGrupo;
+        private System.Windows.Forms.Label lblNombreGrupo;
     }
 }

@@ -31,4 +31,5 @@ El proyecto ofrece una interfaz sencilla e intuitiva que permite visualizar asig
 
 ## 🔗 Enlaces de interés
 - **Notion**: [Tablero del Proyecto](https://www.notion.so/Home-2199deaf935d8080a341c0a3e97b2b5e?source=copy_link)  
-- **Google Drive**: [Carpeta del Proyecto](https://drive.google.com/drive/folders/1-GV_TXQZxc62VAb77Ig_qKTlR34mU1Aw?usp=sharing)  
+- **Google Drive**: [Carpeta del Proyecto](https://drive.google.com/drive/folders/1-GV_TXQZxc62VAb77Ig_qKTlR34mU1Aw?usp=sharing)
+- **Queries para la BD**: [Archivos desde Drive](https://drive.google.com/drive/folders/1_yFtqZ9xp5YDol_cABKz8S3h5CtrUvtB?usp=drive_link)

@@ -29,134 +29,134 @@
         private void InitializeComponent()
         {
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.labelMaterias = new System.Windows.Forms.Label();
-            this.botonRegresar = new System.Windows.Forms.PictureBox();
-            this.labelEditarMateria = new System.Windows.Forms.Label();
-            this.buttonCancelarEdicionMateria = new System.Windows.Forms.Button();
-            this.buttonEditarMateria = new System.Windows.Forms.Button();
-            this.textBoxNuevoNombre = new System.Windows.Forms.TextBox();
-            this.labelNuevoNombre = new System.Windows.Forms.Label();
-            this.textBoxIDMateriaEditada = new System.Windows.Forms.TextBox();
-            this.labelIDMateriaEditada = new System.Windows.Forms.Label();
+            this.btnRegresar = new System.Windows.Forms.PictureBox();
+            this.lblMaterias = new System.Windows.Forms.Label();
+            this.lblEditarMateria = new System.Windows.Forms.Label();
+            this.btnCancelarEdicionMateria = new System.Windows.Forms.Button();
+            this.btnEditarMateria = new System.Windows.Forms.Button();
+            this.txtNuevoNombre = new System.Windows.Forms.TextBox();
+            this.lblNuevoNombre = new System.Windows.Forms.Label();
+            this.txtMateriaEditadaID = new System.Windows.Forms.TextBox();
+            this.lblMateriaEditadaID = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonRegresar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.SeaGreen;
-            this.panelHeader.Controls.Add(this.botonRegresar);
-            this.panelHeader.Controls.Add(this.labelMaterias);
+            this.panelHeader.Controls.Add(this.btnRegresar);
+            this.panelHeader.Controls.Add(this.lblMaterias);
             this.panelHeader.Location = new System.Drawing.Point(-4, -5);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(352, 102);
             this.panelHeader.TabIndex = 2;
             // 
-            // labelMaterias
+            // btnRegresar
             // 
-            this.labelMaterias.AutoSize = true;
-            this.labelMaterias.BackColor = System.Drawing.Color.Transparent;
-            this.labelMaterias.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMaterias.ForeColor = System.Drawing.Color.White;
-            this.labelMaterias.Location = new System.Drawing.Point(121, 45);
-            this.labelMaterias.Name = "labelMaterias";
-            this.labelMaterias.Size = new System.Drawing.Size(103, 25);
-            this.labelMaterias.TabIndex = 0;
-            this.labelMaterias.Text = "Materias";
+            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
+            this.btnRegresar.Location = new System.Drawing.Point(24, 46);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(16, 24);
+            this.btnRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRegresar.TabIndex = 1;
+            this.btnRegresar.TabStop = false;
             // 
-            // botonRegresar
+            // lblMaterias
             // 
-            this.botonRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
-            this.botonRegresar.Location = new System.Drawing.Point(24, 46);
-            this.botonRegresar.Name = "botonRegresar";
-            this.botonRegresar.Size = new System.Drawing.Size(16, 24);
-            this.botonRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.botonRegresar.TabIndex = 1;
-            this.botonRegresar.TabStop = false;
+            this.lblMaterias.AutoSize = true;
+            this.lblMaterias.BackColor = System.Drawing.Color.Transparent;
+            this.lblMaterias.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaterias.ForeColor = System.Drawing.Color.White;
+            this.lblMaterias.Location = new System.Drawing.Point(121, 45);
+            this.lblMaterias.Name = "lblMaterias";
+            this.lblMaterias.Size = new System.Drawing.Size(103, 25);
+            this.lblMaterias.TabIndex = 0;
+            this.lblMaterias.Text = "Materias";
             // 
-            // labelEditarMateria
+            // lblEditarMateria
             // 
-            this.labelEditarMateria.AutoSize = true;
-            this.labelEditarMateria.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEditarMateria.ForeColor = System.Drawing.Color.Black;
-            this.labelEditarMateria.Location = new System.Drawing.Point(16, 120);
-            this.labelEditarMateria.Name = "labelEditarMateria";
-            this.labelEditarMateria.Size = new System.Drawing.Size(163, 23);
-            this.labelEditarMateria.TabIndex = 26;
-            this.labelEditarMateria.Text = "Editar Materia";
+            this.lblEditarMateria.AutoSize = true;
+            this.lblEditarMateria.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditarMateria.ForeColor = System.Drawing.Color.Black;
+            this.lblEditarMateria.Location = new System.Drawing.Point(16, 120);
+            this.lblEditarMateria.Name = "lblEditarMateria";
+            this.lblEditarMateria.Size = new System.Drawing.Size(163, 23);
+            this.lblEditarMateria.TabIndex = 26;
+            this.lblEditarMateria.Text = "Editar Materia";
             // 
-            // buttonCancelarEdicionMateria
+            // btnCancelarEdicionMateria
             // 
-            this.buttonCancelarEdicionMateria.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonCancelarEdicionMateria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCancelarEdicionMateria.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarEdicionMateria.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.buttonCancelarEdicionMateria.Location = new System.Drawing.Point(11, 550);
-            this.buttonCancelarEdicionMateria.Name = "buttonCancelarEdicionMateria";
-            this.buttonCancelarEdicionMateria.Size = new System.Drawing.Size(150, 40);
-            this.buttonCancelarEdicionMateria.TabIndex = 25;
-            this.buttonCancelarEdicionMateria.Text = "Cancelar";
-            this.buttonCancelarEdicionMateria.UseVisualStyleBackColor = false;
+            this.btnCancelarEdicionMateria.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCancelarEdicionMateria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelarEdicionMateria.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarEdicionMateria.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnCancelarEdicionMateria.Location = new System.Drawing.Point(11, 550);
+            this.btnCancelarEdicionMateria.Name = "btnCancelarEdicionMateria";
+            this.btnCancelarEdicionMateria.Size = new System.Drawing.Size(150, 40);
+            this.btnCancelarEdicionMateria.TabIndex = 25;
+            this.btnCancelarEdicionMateria.Text = "Cancelar";
+            this.btnCancelarEdicionMateria.UseVisualStyleBackColor = false;
             // 
-            // buttonEditarMateria
+            // btnEditarMateria
             // 
-            this.buttonEditarMateria.BackColor = System.Drawing.Color.PaleGreen;
-            this.buttonEditarMateria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonEditarMateria.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditarMateria.Location = new System.Drawing.Point(182, 550);
-            this.buttonEditarMateria.Name = "buttonEditarMateria";
-            this.buttonEditarMateria.Size = new System.Drawing.Size(150, 40);
-            this.buttonEditarMateria.TabIndex = 24;
-            this.buttonEditarMateria.Text = "Editar";
-            this.buttonEditarMateria.UseVisualStyleBackColor = false;
+            this.btnEditarMateria.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnEditarMateria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarMateria.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarMateria.Location = new System.Drawing.Point(182, 550);
+            this.btnEditarMateria.Name = "btnEditarMateria";
+            this.btnEditarMateria.Size = new System.Drawing.Size(150, 40);
+            this.btnEditarMateria.TabIndex = 24;
+            this.btnEditarMateria.Text = "Editar";
+            this.btnEditarMateria.UseVisualStyleBackColor = false;
             // 
-            // textBoxNuevoNombre
+            // txtNuevoNombre
             // 
-            this.textBoxNuevoNombre.Location = new System.Drawing.Point(20, 296);
-            this.textBoxNuevoNombre.Name = "textBoxNuevoNombre";
-            this.textBoxNuevoNombre.Size = new System.Drawing.Size(312, 20);
-            this.textBoxNuevoNombre.TabIndex = 23;
+            this.txtNuevoNombre.Location = new System.Drawing.Point(20, 296);
+            this.txtNuevoNombre.Name = "txtNuevoNombre";
+            this.txtNuevoNombre.Size = new System.Drawing.Size(312, 20);
+            this.txtNuevoNombre.TabIndex = 23;
             // 
-            // labelNuevoNombre
+            // lblNuevoNombre
             // 
-            this.labelNuevoNombre.AutoSize = true;
-            this.labelNuevoNombre.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNuevoNombre.Location = new System.Drawing.Point(17, 263);
-            this.labelNuevoNombre.Name = "labelNuevoNombre";
-            this.labelNuevoNombre.Size = new System.Drawing.Size(105, 14);
-            this.labelNuevoNombre.TabIndex = 22;
-            this.labelNuevoNombre.Text = "Nuevo Nombre:";
+            this.lblNuevoNombre.AutoSize = true;
+            this.lblNuevoNombre.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevoNombre.Location = new System.Drawing.Point(17, 263);
+            this.lblNuevoNombre.Name = "lblNuevoNombre";
+            this.lblNuevoNombre.Size = new System.Drawing.Size(105, 14);
+            this.lblNuevoNombre.TabIndex = 22;
+            this.lblNuevoNombre.Text = "Nuevo Nombre:";
             // 
-            // textBoxIDMateriaEditada
+            // txtMateriaEditadaID
             // 
-            this.textBoxIDMateriaEditada.Location = new System.Drawing.Point(197, 190);
-            this.textBoxIDMateriaEditada.Name = "textBoxIDMateriaEditada";
-            this.textBoxIDMateriaEditada.Size = new System.Drawing.Size(135, 20);
-            this.textBoxIDMateriaEditada.TabIndex = 17;
+            this.txtMateriaEditadaID.Location = new System.Drawing.Point(197, 190);
+            this.txtMateriaEditadaID.Name = "txtMateriaEditadaID";
+            this.txtMateriaEditadaID.Size = new System.Drawing.Size(135, 20);
+            this.txtMateriaEditadaID.TabIndex = 17;
             // 
-            // labelIDMateriaEditada
+            // lblMateriaEditadaID
             // 
-            this.labelIDMateriaEditada.AutoSize = true;
-            this.labelIDMateriaEditada.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIDMateriaEditada.Location = new System.Drawing.Point(17, 191);
-            this.labelIDMateriaEditada.Name = "labelIDMateriaEditada";
-            this.labelIDMateriaEditada.Size = new System.Drawing.Size(172, 16);
-            this.labelIDMateriaEditada.TabIndex = 16;
-            this.labelIDMateriaEditada.Text = "ID de la Materia editada:";
+            this.lblMateriaEditadaID.AutoSize = true;
+            this.lblMateriaEditadaID.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMateriaEditadaID.Location = new System.Drawing.Point(17, 191);
+            this.lblMateriaEditadaID.Name = "lblMateriaEditadaID";
+            this.lblMateriaEditadaID.Size = new System.Drawing.Size(172, 16);
+            this.lblMateriaEditadaID.TabIndex = 16;
+            this.lblMateriaEditadaID.Text = "ID de la Materia editada:";
             // 
             // FormEditarMateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 601);
-            this.Controls.Add(this.labelEditarMateria);
-            this.Controls.Add(this.buttonCancelarEdicionMateria);
-            this.Controls.Add(this.buttonEditarMateria);
-            this.Controls.Add(this.textBoxNuevoNombre);
-            this.Controls.Add(this.labelNuevoNombre);
-            this.Controls.Add(this.textBoxIDMateriaEditada);
-            this.Controls.Add(this.labelIDMateriaEditada);
+            this.Controls.Add(this.lblEditarMateria);
+            this.Controls.Add(this.btnCancelarEdicionMateria);
+            this.Controls.Add(this.btnEditarMateria);
+            this.Controls.Add(this.txtNuevoNombre);
+            this.Controls.Add(this.lblNuevoNombre);
+            this.Controls.Add(this.txtMateriaEditadaID);
+            this.Controls.Add(this.lblMateriaEditadaID);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -167,7 +167,7 @@
             this.Text = "Editar Materia";
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonRegresar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,14 +176,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.PictureBox botonRegresar;
-        private System.Windows.Forms.Label labelMaterias;
-        private System.Windows.Forms.Label labelEditarMateria;
-        private System.Windows.Forms.Button buttonCancelarEdicionMateria;
-        private System.Windows.Forms.Button buttonEditarMateria;
-        private System.Windows.Forms.TextBox textBoxNuevoNombre;
-        private System.Windows.Forms.Label labelNuevoNombre;
-        private System.Windows.Forms.TextBox textBoxIDMateriaEditada;
-        private System.Windows.Forms.Label labelIDMateriaEditada;
+        private System.Windows.Forms.PictureBox btnRegresar;
+        private System.Windows.Forms.Label lblMaterias;
+        private System.Windows.Forms.Label lblEditarMateria;
+        private System.Windows.Forms.Button btnCancelarEdicionMateria;
+        private System.Windows.Forms.Button btnEditarMateria;
+        private System.Windows.Forms.TextBox txtNuevoNombre;
+        private System.Windows.Forms.Label lblNuevoNombre;
+        private System.Windows.Forms.TextBox txtMateriaEditadaID;
+        private System.Windows.Forms.Label lblMateriaEditadaID;
     }
 }

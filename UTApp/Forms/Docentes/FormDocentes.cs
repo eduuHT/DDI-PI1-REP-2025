@@ -13,7 +13,8 @@ namespace UTApp.Forms.Docentes
 {
     public partial class FormDocentes : Form
     {
-        public static string connectionString = "workstation id=UTApp_Integradora1.mssql.somee.com;packet size=4096;user id=LuisRomán123_SQLLogin_1;pwd=b7jxk7yxyk;data source=UTApp_Integradora1.mssql.somee.com;persist security info=False;initial catalog=UTApp_Integradora1;TrustServerCertificate=True";
+        public static string connectionString = "user id=sa;password=uts;server=.;database=UTApp_Integradora1";
+        //public static string connectionString = "workstation id=UTApp_Integradora1.mssql.somee.com;packet size=4096;user id=LuisRomán123_SQLLogin_1;pwd=b7jxk7yxyk;data source=UTApp_Integradora1.mssql.somee.com;persist security info=False;initial catalog=UTApp_Integradora1;TrustServerCertificate=True";
         public FormDocentes()
         {
             InitializeComponent();
@@ -31,6 +32,13 @@ namespace UTApp.Forms.Docentes
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             gridDocentes.DataSource = dt;
+        }
+
+        private void pbAgregar_Click(object sender, EventArgs e)
+        {
+            FormDocentesAgregar nuevoDocente = new FormDocentesAgregar();
+            this.Hide();
+            nuevoDocente.Show();
         }
     }
 }

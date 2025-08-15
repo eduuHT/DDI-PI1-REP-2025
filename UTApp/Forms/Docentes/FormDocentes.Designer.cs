@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDocentes));
             this.gridDocentes = new System.Windows.Forms.DataGridView();
+            this.DocenteNumeroEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DocenteNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelCatálogoMaterias = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.botonOpciones = new System.Windows.Forms.PictureBox();
@@ -39,8 +41,6 @@
             this.pbEditar = new System.Windows.Forms.PictureBox();
             this.pbAgregar = new System.Windows.Forms.PictureBox();
             this.pbEliminar = new System.Windows.Forms.PictureBox();
-            this.DocenteNumeroEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DocenteNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridDocentes)).BeginInit();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
@@ -62,11 +62,31 @@
             this.DocenteNumeroEmpleado,
             this.DocenteNombreCompleto});
             this.gridDocentes.Location = new System.Drawing.Point(17, 170);
+            this.gridDocentes.MultiSelect = false;
             this.gridDocentes.Name = "gridDocentes";
+            this.gridDocentes.ReadOnly = true;
             this.gridDocentes.RowHeadersVisible = false;
             this.gridDocentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridDocentes.Size = new System.Drawing.Size(310, 385);
             this.gridDocentes.TabIndex = 23;
+            // 
+            // DocenteNumeroEmpleado
+            // 
+            this.DocenteNumeroEmpleado.DataPropertyName = "DocenteNumeroEmpleado";
+            this.DocenteNumeroEmpleado.HeaderText = "Empleado";
+            this.DocenteNumeroEmpleado.MaxInputLength = 4;
+            this.DocenteNumeroEmpleado.Name = "DocenteNumeroEmpleado";
+            this.DocenteNumeroEmpleado.ReadOnly = true;
+            this.DocenteNumeroEmpleado.Width = 80;
+            // 
+            // DocenteNombreCompleto
+            // 
+            this.DocenteNombreCompleto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DocenteNombreCompleto.DataPropertyName = "DocenteNombreCompleto";
+            this.DocenteNombreCompleto.HeaderText = "Nombre";
+            this.DocenteNombreCompleto.MaxInputLength = 200;
+            this.DocenteNombreCompleto.Name = "DocenteNombreCompleto";
+            this.DocenteNombreCompleto.ReadOnly = true;
             // 
             // labelCatálogoMaterias
             // 
@@ -155,6 +175,7 @@
             this.pbAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbAgregar.TabIndex = 24;
             this.pbAgregar.TabStop = false;
+            this.pbAgregar.Click += new System.EventHandler(this.pbAgregar_Click);
             // 
             // pbEliminar
             // 
@@ -166,22 +187,6 @@
             this.pbEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbEliminar.TabIndex = 22;
             this.pbEliminar.TabStop = false;
-            // 
-            // DocenteNumeroEmpleado
-            // 
-            this.DocenteNumeroEmpleado.DataPropertyName = "DocenteNumeroEmpleado";
-            this.DocenteNumeroEmpleado.HeaderText = "Empleado";
-            this.DocenteNumeroEmpleado.MaxInputLength = 4;
-            this.DocenteNumeroEmpleado.Name = "DocenteNumeroEmpleado";
-            this.DocenteNumeroEmpleado.Width = 80;
-            // 
-            // DocenteNombreCompleto
-            // 
-            this.DocenteNombreCompleto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DocenteNombreCompleto.DataPropertyName = "DocenteNombreCompleto";
-            this.DocenteNombreCompleto.HeaderText = "Nombre";
-            this.DocenteNombreCompleto.MaxInputLength = 200;
-            this.DocenteNombreCompleto.Name = "DocenteNombreCompleto";
             // 
             // FormDocentes
             // 

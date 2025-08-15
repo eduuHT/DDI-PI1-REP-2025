@@ -152,6 +152,7 @@
             this.btnGuardar.TabIndex = 90;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // labelCatálogoMaterias
             // 
@@ -197,6 +198,7 @@
             this.txtDocenteEmpleado.Name = "txtDocenteEmpleado";
             this.txtDocenteEmpleado.Size = new System.Drawing.Size(100, 20);
             this.txtDocenteEmpleado.TabIndex = 101;
+            this.txtDocenteEmpleado.Leave += new System.EventHandler(this.txtDocenteEmpleado_Leave);
             // 
             // label1
             // 
@@ -233,6 +235,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Docente";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDocentesAgregar_FormClosed);
+            this.Click += new System.EventHandler(this.FormDocentesAgregar_Click);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).EndInit();

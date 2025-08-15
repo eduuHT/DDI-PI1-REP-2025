@@ -46,6 +46,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
@@ -154,10 +155,9 @@
             // 
             // txtDocenteNombre_Apellido
             // 
-            this.txtDocenteNombre_Apellido.Enabled = false;
             this.txtDocenteNombre_Apellido.Location = new System.Drawing.Point(135, 167);
             this.txtDocenteNombre_Apellido.Name = "txtDocenteNombre_Apellido";
-            this.txtDocenteNombre_Apellido.Size = new System.Drawing.Size(100, 20);
+            this.txtDocenteNombre_Apellido.Size = new System.Drawing.Size(90, 20);
             this.txtDocenteNombre_Apellido.TabIndex = 107;
             // 
             // label1
@@ -221,11 +221,25 @@
             this.textBox1.Size = new System.Drawing.Size(190, 20);
             this.textBox1.TabIndex = 122;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBuscar.Location = new System.Drawing.Point(232, 165);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(94, 25);
+            this.btnBuscar.TabIndex = 124;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
             // FormDocentesEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 601);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnGuardar);
@@ -276,5 +290,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

@@ -53,6 +53,8 @@
     <Compile Include="Forms\Asignaciones\FormAsignaciones.Designer.cs">
       <DependentUpon>FormAsignaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Docentes\Docente.cs" />
+    <Compile Include="Forms\Docentes\DocenteControlador.cs" />
     <Compile Include="Forms\Docentes\FormDocentes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +85,8 @@
     <Compile Include="Forms\Docentes\FormDocentesEliminar.Designer.cs">
       <DependentUpon>FormDocentesEliminar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Estudiantes\Estudiante.cs" />
+    <Compile Include="Forms\Estudiantes\EstudianteControlador.cs" />
     <Compile Include="Forms\Estudiantes\FormEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>

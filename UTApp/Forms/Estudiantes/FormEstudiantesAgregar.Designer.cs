@@ -44,7 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtEstudianteCorreo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtEstidiantePass = new System.Windows.Forms.TextBox();
+            this.txtEstudiantePass = new System.Windows.Forms.TextBox();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
@@ -122,6 +122,7 @@
             this.txtEstudianteGrupo.Name = "txtEstudianteGrupo";
             this.txtEstudianteGrupo.Size = new System.Drawing.Size(93, 20);
             this.txtEstudianteGrupo.TabIndex = 83;
+            this.txtEstudianteGrupo.Leave += new System.EventHandler(this.txtEstudianteGrupo_Leave);
             // 
             // label4
             // 
@@ -158,6 +159,7 @@
             this.txtEstudianteMatricula.Name = "txtEstudianteMatricula";
             this.txtEstudianteMatricula.Size = new System.Drawing.Size(98, 20);
             this.txtEstudianteMatricula.TabIndex = 77;
+            this.txtEstudianteMatricula.Leave += new System.EventHandler(this.txtEstudianteMatricula_Leave);
             // 
             // btnGuardar
             // 
@@ -171,6 +173,7 @@
             this.btnGuardar.TabIndex = 76;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label1
             // 
@@ -200,13 +203,13 @@
             this.label2.TabIndex = 86;
             this.label2.Text = "Contraseña";
             // 
-            // txtEstidiantePass
+            // txtEstudiantePass
             // 
-            this.txtEstidiantePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstidiantePass.Location = new System.Drawing.Point(63, 355);
-            this.txtEstidiantePass.Name = "txtEstidiantePass";
-            this.txtEstidiantePass.Size = new System.Drawing.Size(225, 20);
-            this.txtEstidiantePass.TabIndex = 85;
+            this.txtEstudiantePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstudiantePass.Location = new System.Drawing.Point(63, 355);
+            this.txtEstudiantePass.Name = "txtEstudiantePass";
+            this.txtEstudiantePass.Size = new System.Drawing.Size(225, 20);
+            this.txtEstudiantePass.TabIndex = 85;
             // 
             // FormEstudiantesAgregar
             // 
@@ -216,7 +219,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEstudianteCorreo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtEstidiantePass);
+            this.Controls.Add(this.txtEstudiantePass);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtEstudianteGrupo);
             this.Controls.Add(this.label4);
@@ -234,6 +237,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar estudiante";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEstudiantesAgregar_FormClosed);
+            this.Click += new System.EventHandler(this.FormEstudiantesAgregar_Click);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).EndInit();
@@ -260,6 +264,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtEstudianteCorreo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtEstidiantePass;
+        private System.Windows.Forms.TextBox txtEstudiantePass;
     }
 }

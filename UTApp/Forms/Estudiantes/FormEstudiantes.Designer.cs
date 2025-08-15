@@ -62,7 +62,9 @@
             this.EstudianteMatricula,
             this.EstudianteNombreCompleto});
             this.gridEstudiantes.Location = new System.Drawing.Point(17, 170);
+            this.gridEstudiantes.MultiSelect = false;
             this.gridEstudiantes.Name = "gridEstudiantes";
+            this.gridEstudiantes.ReadOnly = true;
             this.gridEstudiantes.RowHeadersVisible = false;
             this.gridEstudiantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridEstudiantes.Size = new System.Drawing.Size(310, 385);
@@ -74,6 +76,7 @@
             this.EstudianteMatricula.HeaderText = "Matrícula";
             this.EstudianteMatricula.MaxInputLength = 10;
             this.EstudianteMatricula.Name = "EstudianteMatricula";
+            this.EstudianteMatricula.ReadOnly = true;
             this.EstudianteMatricula.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.EstudianteMatricula.Width = 80;
             // 
@@ -84,6 +87,7 @@
             this.EstudianteNombreCompleto.HeaderText = "Nombre";
             this.EstudianteNombreCompleto.MinimumWidth = 20;
             this.EstudianteNombreCompleto.Name = "EstudianteNombreCompleto";
+            this.EstudianteNombreCompleto.ReadOnly = true;
             this.EstudianteNombreCompleto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // labelCatálogoMaterias
@@ -162,6 +166,7 @@
             this.pbAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbAgregar.TabIndex = 17;
             this.pbAgregar.TabStop = false;
+            this.pbAgregar.Click += new System.EventHandler(this.pbAgregar_Click);
             // 
             // pbEliminar
             // 

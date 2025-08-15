@@ -132,6 +132,7 @@
             this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEditar.TabIndex = 10;
             this.btnEditar.TabStop = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 

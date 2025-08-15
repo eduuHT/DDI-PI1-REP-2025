@@ -10,11 +10,31 @@ using System.Windows.Forms;
 
 namespace UTApp.Forms.Grupos
 {
-    public partial class FormGrupos : Form
+    public partial class FormGrupos : Form // Form Principal del Crud Grupos
     {
+        #region Constructors
         public FormGrupos()
         {
             InitializeComponent();
         }
+        #endregion
+
+        #region Events
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AbrirFormAgregarGrupo();
+        }
+
+        #endregion
+
+        #region Private Methods
+        private void AbrirFormAgregarGrupo()
+        {
+            var formAgregarGrupo = new FormAgregarGrupo(this);  // Crear una instancia del form secundario y pasarle la instancia del form principal
+            formAgregarGrupo.Show();
+            this.Hide();
+        }
+
+        #endregion
     }
 }

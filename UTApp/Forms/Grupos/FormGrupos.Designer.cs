@@ -154,6 +154,7 @@
             this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.TabStop = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtBusqueda
             // 

@@ -99,7 +99,7 @@
             // 
             // DTEntrega
             // 
-            this.DTEntrega.CustomFormat = "";
+            this.DTEntrega.CustomFormat = "dd/MM/yyyy                   HH:mm";
             this.DTEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTEntrega.Location = new System.Drawing.Point(122, 256);
             this.DTEntrega.MinDate = new System.DateTime(2025, 8, 13, 0, 0, 0, 0);
@@ -136,6 +136,7 @@
             // 
             // CBPlataforma
             // 
+            this.CBPlataforma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBPlataforma.FormattingEnabled = true;
             this.CBPlataforma.Location = new System.Drawing.Point(71, 225);
             this.CBPlataforma.Name = "CBPlataforma";
@@ -144,6 +145,7 @@
             // 
             // CBDocente
             // 
+            this.CBDocente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBDocente.FormattingEnabled = true;
             this.CBDocente.Location = new System.Drawing.Point(59, 187);
             this.CBDocente.Name = "CBDocente";
@@ -152,6 +154,7 @@
             // 
             // CBMateria
             // 
+            this.CBMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBMateria.FormattingEnabled = true;
             this.CBMateria.Location = new System.Drawing.Point(211, 149);
             this.CBMateria.Name = "CBMateria";
@@ -160,6 +163,7 @@
             // 
             // CBGrupo
             // 
+            this.CBGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBGrupo.FormattingEnabled = true;
             this.CBGrupo.Location = new System.Drawing.Point(59, 149);
             this.CBGrupo.Name = "CBGrupo";
@@ -246,6 +250,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarAsignacion";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditarAsignacion_FormClosed);
+            this.Load += new System.EventHandler(this.EditarAsignacion_Load);
             this.pnlBanner.ResumeLayout(false);
             this.pnlBanner.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();

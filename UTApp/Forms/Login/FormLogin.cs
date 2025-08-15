@@ -21,12 +21,20 @@ namespace UTApp
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-
+            txtPassword.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtUser.Text == User && txtPassword.Text == Password)
+            if (string.IsNullOrEmpty(txtUser.Text))
+            {
+                txtUser.Focus();
+            }
+            if (string.IsNullOrEmpty(txtPassword.Text))
+            {
+                txtPassword.Focus();
+            }
+            else if (txtUser.Text == User && txtPassword.Text == Password)
             {
                 FormMenuPrincipal menu_Principal = new FormMenuPrincipal();
                 this.Hide();

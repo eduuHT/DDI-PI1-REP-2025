@@ -137,6 +137,7 @@
             // 
             // CBGrupo
             // 
+            this.CBGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBGrupo.FormattingEnabled = true;
             this.CBGrupo.Location = new System.Drawing.Point(59, 150);
             this.CBGrupo.Name = "CBGrupo";
@@ -145,6 +146,7 @@
             // 
             // CBMateria
             // 
+            this.CBMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBMateria.FormattingEnabled = true;
             this.CBMateria.Location = new System.Drawing.Point(190, 150);
             this.CBMateria.Name = "CBMateria";
@@ -153,6 +155,7 @@
             // 
             // CBDocente
             // 
+            this.CBDocente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBDocente.FormattingEnabled = true;
             this.CBDocente.Location = new System.Drawing.Point(59, 188);
             this.CBDocente.Name = "CBDocente";
@@ -161,6 +164,7 @@
             // 
             // CBPlataforma
             // 
+            this.CBPlataforma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBPlataforma.FormattingEnabled = true;
             this.CBPlataforma.Location = new System.Drawing.Point(71, 226);
             this.CBPlataforma.Name = "CBPlataforma";
@@ -195,7 +199,7 @@
             // 
             // DTEntrega
             // 
-            this.DTEntrega.CustomFormat = "";
+            this.DTEntrega.CustomFormat = "dd/MM/yyyy                   HH:mm";
             this.DTEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTEntrega.Location = new System.Drawing.Point(105, 256);
             this.DTEntrega.MinDate = new System.DateTime(2025, 8, 13, 0, 0, 0, 0);

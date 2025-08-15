@@ -16,6 +16,7 @@ namespace UTApp.Forms.Asignaciones
     {
         AsignacionControlador controlador = new AsignacionControlador();
         List<Asignacion> asignaciones = new List<Asignacion>();
+        Asignacion actual = null;
         public FormAsignaciones()
         {
             InitializeComponent();
@@ -36,7 +37,22 @@ namespace UTApp.Forms.Asignaciones
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            
+            if (actual != null)
+            {
+                if (MessageBox.Show($"SEGURO QUE QUIERE ELIMINAR '{actual.AsignacionTitulo}'", "", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    if (controlador.EliminarAsignacion(actual.AsignacionID))
+                    {
+                        MessageBox.Show("La asignación se ha eliminado con éxito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.asignacionTableAdapter.Fill(this.uTApp_Integradora1DataSet.Asignacion);
+                        actual = null;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una asignacion primero", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -60,6 +76,23 @@ namespace UTApp.Forms.Asignaciones
         private void FormAsignaciones_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void gridAsignaciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (gridAsignaciones.Rows.Count > 0 && e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = gridAsignaciones.Rows[e.RowIndex];
+
+                actual = new Asignacion(
+                    Convert.ToInt32(fila.Cells["AsignacionID"].Value),
+                    fila.Cells["AsignacionTitulo"].Value.ToString(),
+                    fila.Cells["AsignacionDescripcion"].Value.ToString(),
+                    Convert.ToDateTime(fila.Cells["AsignacionFechaLimite"].Value),
+                    Convert.ToInt32(fila.Cells["ClaseID"].Value),
+                    Convert.ToInt32(fila.Cells["PlataformaID"].Value)
+                );
+            }
         }
     }
 }

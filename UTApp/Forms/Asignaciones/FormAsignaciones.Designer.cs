@@ -41,12 +41,12 @@
             this.uTApp_Integradora1DataSet = new UTApp.UTApp_Integradora1DataSet();
             this.asignacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.asignacionTableAdapter = new UTApp.UTApp_Integradora1DataSetTableAdapters.AsignacionTableAdapter();
-            this.asignacionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.asignacionTituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.asignacionDescripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.asignacionFechaLimiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.plataformaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.claseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AsignacionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AsignacionTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AsignacionDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AsignacionFechaLimite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlataformaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClaseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlBanner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAsignaciones)).BeginInit();
@@ -99,20 +99,22 @@
             this.gridAsignaciones.AutoGenerateColumns = false;
             this.gridAsignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridAsignaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.asignacionIDDataGridViewTextBoxColumn,
-            this.asignacionTituloDataGridViewTextBoxColumn,
-            this.asignacionDescripcionDataGridViewTextBoxColumn,
-            this.asignacionFechaLimiteDataGridViewTextBoxColumn,
-            this.plataformaIDDataGridViewTextBoxColumn,
-            this.claseIDDataGridViewTextBoxColumn});
+            this.AsignacionID,
+            this.AsignacionTitulo,
+            this.AsignacionDescripcion,
+            this.AsignacionFechaLimite,
+            this.PlataformaID,
+            this.ClaseID});
             this.gridAsignaciones.DataSource = this.asignacionBindingSource;
             this.gridAsignaciones.Location = new System.Drawing.Point(-1, 129);
             this.gridAsignaciones.MultiSelect = false;
             this.gridAsignaciones.Name = "gridAsignaciones";
             this.gridAsignaciones.ReadOnly = true;
             this.gridAsignaciones.RowHeadersVisible = false;
+            this.gridAsignaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridAsignaciones.Size = new System.Drawing.Size(345, 404);
             this.gridAsignaciones.TabIndex = 2;
+            this.gridAsignaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAsignaciones_CellClick);
             // 
             // btnScan
             // 
@@ -172,53 +174,53 @@
             // 
             this.asignacionTableAdapter.ClearBeforeFill = true;
             // 
-            // asignacionIDDataGridViewTextBoxColumn
+            // AsignacionID
             // 
-            this.asignacionIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.asignacionIDDataGridViewTextBoxColumn.DataPropertyName = "AsignacionID";
-            this.asignacionIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.asignacionIDDataGridViewTextBoxColumn.Name = "asignacionIDDataGridViewTextBoxColumn";
-            this.asignacionIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.asignacionIDDataGridViewTextBoxColumn.Width = 43;
+            this.AsignacionID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.AsignacionID.DataPropertyName = "AsignacionID";
+            this.AsignacionID.HeaderText = "ID";
+            this.AsignacionID.Name = "AsignacionID";
+            this.AsignacionID.ReadOnly = true;
+            this.AsignacionID.Width = 43;
             // 
-            // asignacionTituloDataGridViewTextBoxColumn
+            // AsignacionTitulo
             // 
-            this.asignacionTituloDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.asignacionTituloDataGridViewTextBoxColumn.DataPropertyName = "AsignacionTitulo";
-            this.asignacionTituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
-            this.asignacionTituloDataGridViewTextBoxColumn.Name = "asignacionTituloDataGridViewTextBoxColumn";
-            this.asignacionTituloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.AsignacionTitulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AsignacionTitulo.DataPropertyName = "AsignacionTitulo";
+            this.AsignacionTitulo.HeaderText = "Titulo";
+            this.AsignacionTitulo.Name = "AsignacionTitulo";
+            this.AsignacionTitulo.ReadOnly = true;
             // 
-            // asignacionDescripcionDataGridViewTextBoxColumn
+            // AsignacionDescripcion
             // 
-            this.asignacionDescripcionDataGridViewTextBoxColumn.DataPropertyName = "AsignacionDescripcion";
-            this.asignacionDescripcionDataGridViewTextBoxColumn.HeaderText = "AsignacionDescripcion";
-            this.asignacionDescripcionDataGridViewTextBoxColumn.Name = "asignacionDescripcionDataGridViewTextBoxColumn";
-            this.asignacionDescripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.asignacionDescripcionDataGridViewTextBoxColumn.Visible = false;
+            this.AsignacionDescripcion.DataPropertyName = "AsignacionDescripcion";
+            this.AsignacionDescripcion.HeaderText = "AsignacionDescripcion";
+            this.AsignacionDescripcion.Name = "AsignacionDescripcion";
+            this.AsignacionDescripcion.ReadOnly = true;
+            this.AsignacionDescripcion.Visible = false;
             // 
-            // asignacionFechaLimiteDataGridViewTextBoxColumn
+            // AsignacionFechaLimite
             // 
-            this.asignacionFechaLimiteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.asignacionFechaLimiteDataGridViewTextBoxColumn.DataPropertyName = "AsignacionFechaLimite";
-            this.asignacionFechaLimiteDataGridViewTextBoxColumn.HeaderText = "Entrega";
-            this.asignacionFechaLimiteDataGridViewTextBoxColumn.Name = "asignacionFechaLimiteDataGridViewTextBoxColumn";
-            this.asignacionFechaLimiteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.AsignacionFechaLimite.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AsignacionFechaLimite.DataPropertyName = "AsignacionFechaLimite";
+            this.AsignacionFechaLimite.HeaderText = "Entrega";
+            this.AsignacionFechaLimite.Name = "AsignacionFechaLimite";
+            this.AsignacionFechaLimite.ReadOnly = true;
             // 
-            // plataformaIDDataGridViewTextBoxColumn
+            // PlataformaID
             // 
-            this.plataformaIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.plataformaIDDataGridViewTextBoxColumn.DataPropertyName = "PlataformaID";
-            this.plataformaIDDataGridViewTextBoxColumn.HeaderText = "Plataforma";
-            this.plataformaIDDataGridViewTextBoxColumn.Name = "plataformaIDDataGridViewTextBoxColumn";
-            this.plataformaIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.PlataformaID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PlataformaID.DataPropertyName = "PlataformaID";
+            this.PlataformaID.HeaderText = "Plataforma";
+            this.PlataformaID.Name = "PlataformaID";
+            this.PlataformaID.ReadOnly = true;
             // 
-            // claseIDDataGridViewTextBoxColumn
+            // ClaseID
             // 
-            this.claseIDDataGridViewTextBoxColumn.DataPropertyName = "ClaseID";
-            this.claseIDDataGridViewTextBoxColumn.HeaderText = "Clase";
-            this.claseIDDataGridViewTextBoxColumn.Name = "claseIDDataGridViewTextBoxColumn";
-            this.claseIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ClaseID.DataPropertyName = "ClaseID";
+            this.ClaseID.HeaderText = "Clase";
+            this.ClaseID.Name = "ClaseID";
+            this.ClaseID.ReadOnly = true;
             // 
             // FormAsignaciones
             // 
@@ -267,11 +269,11 @@
         private UTApp_Integradora1DataSet uTApp_Integradora1DataSet;
         private System.Windows.Forms.BindingSource asignacionBindingSource;
         private UTApp_Integradora1DataSetTableAdapters.AsignacionTableAdapter asignacionTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn asignacionIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn asignacionTituloDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn asignacionDescripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn asignacionFechaLimiteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn plataformaIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn claseIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AsignacionID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AsignacionTitulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AsignacionDescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AsignacionFechaLimite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PlataformaID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClaseID;
     }
 }

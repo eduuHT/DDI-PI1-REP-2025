@@ -79,6 +79,7 @@ namespace UTApp.Forms.Asignaciones
         {
             LlenarLista();
             LimpiarCampos();
+            /*
             CBDocente.DisplayMember = ;
             CBDocente.ValueMember =;
             CBGrupo.DisplayMember =;
@@ -86,7 +87,7 @@ namespace UTApp.Forms.Asignaciones
             CBMateria.DisplayMember= ;
             CBMateria.ValueMember =;
             CBPlataforma.DisplayMember =;
-            CBPlataforma.ValueMember =;
+            CBPlataforma.ValueMember =;*/
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -110,13 +111,13 @@ namespace UTApp.Forms.Asignaciones
                     }
                     else
                     {
-
+                        MessageBox.Show("Ha ocurrido un error.....", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

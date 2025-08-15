@@ -19,7 +19,7 @@ namespace UTApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FormLogin());
-            Application.Run(new FormEstudiantesEditar());
+            Application.Run(new FormEstudiantes());
         }
     }
 }

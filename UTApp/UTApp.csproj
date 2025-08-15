@@ -65,6 +65,24 @@
     <Compile Include="Forms\Estudiantes\FormEstudiantes.Designer.cs">
       <DependentUpon>FormEstudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Grupos\FormAgregarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grupos\FormAgregarGrupo.Designer.cs">
+      <DependentUpon>FormAgregarGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grupos\FormEditarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grupos\FormEditarGrupo.Designer.cs">
+      <DependentUpon>FormEditarGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grupos\FormEliminarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grupos\FormEliminarGrupo.Designer.cs">
+      <DependentUpon>FormEliminarGrupo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Grupos\FormGrupos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +111,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Estudiantes\FormEstudiantes.resx">
       <DependentUpon>FormEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grupos\FormAgregarGrupo.resx">
+      <DependentUpon>FormAgregarGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grupos\FormEditarGrupo.resx">
+      <DependentUpon>FormEditarGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grupos\FormEliminarGrupo.resx">
+      <DependentUpon>FormEliminarGrupo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Grupos\FormGrupos.resx">
       <DependentUpon>FormGrupos.cs</DependentUpon>

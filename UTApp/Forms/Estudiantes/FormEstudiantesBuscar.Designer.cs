@@ -181,6 +181,7 @@
             // pbRegresar
             // 
             this.pbRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
             this.pbRegresar.Location = new System.Drawing.Point(25, 30);
             this.pbRegresar.Name = "pbRegresar";
             this.pbRegresar.Size = new System.Drawing.Size(25, 40);
@@ -249,6 +250,7 @@
             this.Name = "FormEstudiantesBuscar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar estudiante";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEstudiantesBuscar_FormClosed);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).EndInit();

@@ -128,6 +128,7 @@
             // pbRegresar
             // 
             this.pbRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
             this.pbRegresar.Location = new System.Drawing.Point(25, 30);
             this.pbRegresar.Name = "pbRegresar";
             this.pbRegresar.Size = new System.Drawing.Size(25, 40);
@@ -150,6 +151,7 @@
             // pbEditar
             // 
             this.pbEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbEditar.Image = global::UTApp.Properties.Resources.edit;
             this.pbEditar.Location = new System.Drawing.Point(255, 563);
             this.pbEditar.Name = "pbEditar";
             this.pbEditar.Size = new System.Drawing.Size(33, 33);
@@ -160,6 +162,7 @@
             // pbAgregar
             // 
             this.pbAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbAgregar.Image = global::UTApp.Properties.Resources.add;
             this.pbAgregar.Location = new System.Drawing.Point(216, 563);
             this.pbAgregar.Name = "pbAgregar";
             this.pbAgregar.Size = new System.Drawing.Size(33, 33);
@@ -170,6 +173,7 @@
             // pbEliminar
             // 
             this.pbEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbEliminar.Image = global::UTApp.Properties.Resources.delete;
             this.pbEliminar.Location = new System.Drawing.Point(294, 564);
             this.pbEliminar.Name = "pbEliminar";
             this.pbEliminar.Size = new System.Drawing.Size(33, 33);
@@ -180,6 +184,7 @@
             // pbBuscar
             // 
             this.pbBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbBuscar.Image = global::UTApp.Properties.Resources.scan;
             this.pbBuscar.Location = new System.Drawing.Point(294, 113);
             this.pbBuscar.Name = "pbBuscar";
             this.pbBuscar.Size = new System.Drawing.Size(33, 33);
@@ -206,6 +211,7 @@
             this.Name = "FormEstudiantes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estudiantes";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEstudiantes_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.gridEstudiantes)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();

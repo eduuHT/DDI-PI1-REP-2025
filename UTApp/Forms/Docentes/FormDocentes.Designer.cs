@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDocentes));
             this.gridDocentes = new System.Windows.Forms.DataGridView();
-            this.gridDocentesNumeroEmpleados = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridDocentesNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridDocentesClasesAsociadas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelCatálogoMaterias = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.botonOpciones = new System.Windows.Forms.PictureBox();
@@ -42,6 +39,9 @@
             this.pbEditar = new System.Windows.Forms.PictureBox();
             this.pbAgregar = new System.Windows.Forms.PictureBox();
             this.pbEliminar = new System.Windows.Forms.PictureBox();
+            this.gridDocentesNumeroEmpleados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridDocentesNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridDocentesClasesAsociadas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridDocentes)).BeginInit();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
@@ -68,28 +68,6 @@
             this.gridDocentes.RowHeadersVisible = false;
             this.gridDocentes.Size = new System.Drawing.Size(310, 385);
             this.gridDocentes.TabIndex = 23;
-            // 
-            // gridDocentesNumeroEmpleados
-            // 
-            this.gridDocentesNumeroEmpleados.HeaderText = "Número Empleado";
-            this.gridDocentesNumeroEmpleados.MaxInputLength = 5;
-            this.gridDocentesNumeroEmpleados.Name = "gridDocentesNumeroEmpleados";
-            this.gridDocentesNumeroEmpleados.Width = 60;
-            // 
-            // gridDocentesNombre
-            // 
-            this.gridDocentesNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.gridDocentesNombre.HeaderText = "Nombre";
-            this.gridDocentesNombre.MaxInputLength = 200;
-            this.gridDocentesNombre.Name = "gridDocentesNombre";
-            // 
-            // gridDocentesClasesAsociadas
-            // 
-            this.gridDocentesClasesAsociadas.HeaderText = "# Clases";
-            this.gridDocentesClasesAsociadas.MaxInputLength = 2;
-            this.gridDocentesClasesAsociadas.MinimumWidth = 2;
-            this.gridDocentesClasesAsociadas.Name = "gridDocentesClasesAsociadas";
-            this.gridDocentesClasesAsociadas.Width = 75;
             // 
             // labelCatálogoMaterias
             // 
@@ -126,6 +104,7 @@
             // pbRegresar
             // 
             this.pbRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
             this.pbRegresar.Location = new System.Drawing.Point(25, 30);
             this.pbRegresar.Name = "pbRegresar";
             this.pbRegresar.Size = new System.Drawing.Size(25, 40);
@@ -148,6 +127,7 @@
             // pbBuscar
             // 
             this.pbBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbBuscar.Image = global::UTApp.Properties.Resources.scan;
             this.pbBuscar.Location = new System.Drawing.Point(294, 113);
             this.pbBuscar.Name = "pbBuscar";
             this.pbBuscar.Size = new System.Drawing.Size(33, 33);
@@ -158,6 +138,7 @@
             // pbEditar
             // 
             this.pbEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbEditar.Image = global::UTApp.Properties.Resources.edit;
             this.pbEditar.Location = new System.Drawing.Point(255, 563);
             this.pbEditar.Name = "pbEditar";
             this.pbEditar.Size = new System.Drawing.Size(33, 33);
@@ -168,6 +149,7 @@
             // pbAgregar
             // 
             this.pbAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbAgregar.Image = global::UTApp.Properties.Resources.add;
             this.pbAgregar.Location = new System.Drawing.Point(216, 563);
             this.pbAgregar.Name = "pbAgregar";
             this.pbAgregar.Size = new System.Drawing.Size(33, 33);
@@ -178,12 +160,35 @@
             // pbEliminar
             // 
             this.pbEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbEliminar.Image = global::UTApp.Properties.Resources.delete;
             this.pbEliminar.Location = new System.Drawing.Point(294, 564);
             this.pbEliminar.Name = "pbEliminar";
             this.pbEliminar.Size = new System.Drawing.Size(33, 33);
             this.pbEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbEliminar.TabIndex = 22;
             this.pbEliminar.TabStop = false;
+            // 
+            // gridDocentesNumeroEmpleados
+            // 
+            this.gridDocentesNumeroEmpleados.HeaderText = "#Empleado";
+            this.gridDocentesNumeroEmpleados.MaxInputLength = 4;
+            this.gridDocentesNumeroEmpleados.Name = "gridDocentesNumeroEmpleados";
+            this.gridDocentesNumeroEmpleados.Width = 65;
+            // 
+            // gridDocentesNombre
+            // 
+            this.gridDocentesNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.gridDocentesNombre.HeaderText = "Nombre";
+            this.gridDocentesNombre.MaxInputLength = 200;
+            this.gridDocentesNombre.Name = "gridDocentesNombre";
+            // 
+            // gridDocentesClasesAsociadas
+            // 
+            this.gridDocentesClasesAsociadas.HeaderText = "#Clases";
+            this.gridDocentesClasesAsociadas.MaxInputLength = 2;
+            this.gridDocentesClasesAsociadas.MinimumWidth = 2;
+            this.gridDocentesClasesAsociadas.Name = "gridDocentesClasesAsociadas";
+            this.gridDocentesClasesAsociadas.Width = 60;
             // 
             // FormDocentes
             // 
@@ -204,6 +209,7 @@
             this.Name = "FormDocentes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Docentes";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDocentes_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.gridDocentes)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();

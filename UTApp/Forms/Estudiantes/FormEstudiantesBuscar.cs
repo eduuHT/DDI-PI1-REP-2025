@@ -16,5 +16,10 @@ namespace UTApp.Forms.Estudiantes
         {
             InitializeComponent();
         }
+
+        private void FormEstudiantesBuscar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

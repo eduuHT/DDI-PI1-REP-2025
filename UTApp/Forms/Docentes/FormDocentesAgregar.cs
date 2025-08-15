@@ -16,5 +16,10 @@ namespace UTApp.Forms.Docentes
         {
             InitializeComponent();
         }
+
+        private void FormDocentesAgregar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

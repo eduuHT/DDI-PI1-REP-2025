@@ -25,6 +25,10 @@ namespace UTApp.Forms.Grupos
             AbrirFormAgregarGrupo();
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            AbrirFormEliminarGrupo();
+        }
         #endregion
 
         #region Private Methods
@@ -35,6 +39,13 @@ namespace UTApp.Forms.Grupos
             this.Hide();
         }
 
+        private void AbrirFormEliminarGrupo()
+        {
+            var formEliminarGrupo = new FormEliminarGrupo(this);  // Crear una instancia del form secundario y pasarle la instancia del form principal
+            formEliminarGrupo.Show();
+            this.Hide();
+        }
         #endregion
+
     }
 }

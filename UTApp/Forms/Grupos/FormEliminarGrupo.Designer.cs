@@ -60,6 +60,7 @@
             this.btnRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRegresar.TabIndex = 1;
             this.btnRegresar.TabStop = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // lblGrupos
             // 
@@ -96,6 +97,7 @@
             this.btnCancelarEliminacion.TabIndex = 31;
             this.btnCancelarEliminacion.Text = "Cancelar";
             this.btnCancelarEliminacion.UseVisualStyleBackColor = false;
+            this.btnCancelarEliminacion.Click += new System.EventHandler(this.btnCancelarEliminacion_Click);
             // 
             // btnConfirmarEliminacion
             // 

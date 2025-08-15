@@ -12,7 +12,7 @@ namespace UTApp.Forms.Grupos
 {
     public partial class FormAgregarGrupo : Form // Form Secundario del Crud Grupos
     {
-        private FormGrupos _formPadre; // Variable para la instancia original del form Materias
+        private FormGrupos _formPadre; // Variable para la instancia original del form Grupos
 
         #region Constructors
         public FormAgregarGrupo()
@@ -38,7 +38,6 @@ namespace UTApp.Forms.Grupos
         {
             Regresar();
         }
-
         #endregion
 
         #region Private Methods

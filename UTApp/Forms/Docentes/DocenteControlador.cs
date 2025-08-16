@@ -76,7 +76,7 @@ namespace UTApp.Forms.Docentes
             }
         }
 
-        public bool EliminarDocente(int NumeroEmpleado)
+        public bool EliminarDocente(string empleado)
         {
             try
             {
@@ -89,7 +89,7 @@ namespace UTApp.Forms.Docentes
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@DocenteNumeroEmpleado", NumeroEmpleado);
+                cmd.Parameters.AddWithValue("@DocenteNumeroEmpleado", empleado);
 
                 cmd.ExecuteNonQuery();
 

@@ -16,7 +16,6 @@ namespace UTApp.Forms.Docentes
         public static string connectionString = "user id=sa;password=uts;server=.;database=UTApp_Integradora1";
         //public static string connectionString = "workstation id=UTApp_Integradora1.mssql.somee.com;packet size=4096;user id=LuisRomán123_SQLLogin_1;pwd=b7jxk7yxyk;data source=UTApp_Integradora1.mssql.somee.com;persist security info=False;initial catalog=UTApp_Integradora1;TrustServerCertificate=True";
 
-        EstudianteControlador controladorEst = new EstudianteControlador();
         DocenteControlador controladorDoc = new DocenteControlador();
         public FormDocentesBuscar()
         {
@@ -38,6 +37,8 @@ namespace UTApp.Forms.Docentes
             try
             {
                 txtDocenteEmpleado.Text = Convert.ToInt32(txtDocenteEmpleado.Text).ToString();
+                txtDocenteEmpleado.Text = txtDocenteEmpleado.Text.PadLeft(4, '0');
+
                 if (txtDocenteEmpleado.Text.Length == 4)
                 {
                     Docente docente = null;
@@ -60,7 +61,7 @@ namespace UTApp.Forms.Docentes
             }
             catch
             {
-                MessageBox.Show("Al parecer estás ingresando letras, intenta con números.","Ocurrió un problema");
+                MessageBox.Show("Al parecer estás ingresando letras, intenta solo con números.","Ocurrió un problema");
             }
         }
     }

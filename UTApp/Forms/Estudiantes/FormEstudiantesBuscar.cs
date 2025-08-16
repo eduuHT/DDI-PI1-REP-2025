@@ -48,7 +48,7 @@ namespace UTApp.Forms.Estudiantes
                     }
                     else
                     {
-                        MessageBox.Show($"No se ha encontrado ningún registro con la matrícula {txtEstudiantePass.Text}.");
+                        MessageBox.Show($"No se ha encontrado ningún registro con la matrícula {txtEstudianteMatricula.Text}.");
                     }
                 }
                 else

@@ -108,7 +108,7 @@ namespace UTApp.Forms.Estudiantes
                 return false;
             }
         }
-        public bool EliminarEstudiante(int matricula)
+        public bool EliminarEstudiante(string matricula)
         {
             try
             {

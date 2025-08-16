@@ -44,6 +44,8 @@
             this.labelIIngresarValores = new System.Windows.Forms.Label();
             this.txtEstudianteMatricula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.label = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
@@ -116,6 +118,7 @@
             // 
             // txtEstudianteCorreo
             // 
+            this.txtEstudianteCorreo.Enabled = false;
             this.txtEstudianteCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstudianteCorreo.Location = new System.Drawing.Point(126, 360);
             this.txtEstudianteCorreo.Name = "txtEstudianteCorreo";
@@ -134,6 +137,7 @@
             this.btnEliminar.TabIndex = 115;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label3
             // 
@@ -147,6 +151,7 @@
             // 
             // txtEstudianteGrupo
             // 
+            this.txtEstudianteGrupo.Enabled = false;
             this.txtEstudianteGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstudianteGrupo.Location = new System.Drawing.Point(126, 279);
             this.txtEstudianteGrupo.Name = "txtEstudianteGrupo";
@@ -165,6 +170,7 @@
             // 
             // txtEstudianteNombre
             // 
+            this.txtEstudianteNombre.Enabled = false;
             this.txtEstudianteNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstudianteNombre.Location = new System.Drawing.Point(126, 320);
             this.txtEstudianteNombre.Name = "txtEstudianteNombre";
@@ -177,13 +183,11 @@
             this.labelIIngresarValores.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIIngresarValores.Location = new System.Drawing.Point(25, 225);
             this.labelIIngresarValores.Name = "labelIIngresarValores";
-            this.labelIIngresarValores.Size = new System.Drawing.Size(242, 16);
+            this.labelIIngresarValores.Size = new System.Drawing.Size(0, 16);
             this.labelIIngresarValores.TabIndex = 108;
-            this.labelIIngresarValores.Text = "Confirmar estudiante a eliminar:";
             // 
             // txtEstudianteMatricula
             // 
-            this.txtEstudianteMatricula.Enabled = false;
             this.txtEstudianteMatricula.Location = new System.Drawing.Point(126, 174);
             this.txtEstudianteMatricula.Name = "txtEstudianteMatricula";
             this.txtEstudianteMatricula.Size = new System.Drawing.Size(90, 20);
@@ -199,11 +203,37 @@
             this.label1.TabIndex = 106;
             this.label1.Text = "Matrícula:";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBuscar.Location = new System.Drawing.Point(223, 171);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(94, 25);
+            this.btnBuscar.TabIndex = 120;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(25, 225);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(242, 16);
+            this.label.TabIndex = 124;
+            this.label.Text = "Confirmar estudiante a eliminar:";
+            // 
             // FormEstudiantesEliminar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 601);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtEstudianteCorreo);
             this.Controls.Add(this.btnEliminar);
@@ -249,5 +279,7 @@
         private System.Windows.Forms.Label labelIIngresarValores;
         private System.Windows.Forms.TextBox txtEstudianteMatricula;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label label;
     }
 }

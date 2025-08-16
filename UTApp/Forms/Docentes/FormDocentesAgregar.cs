@@ -98,78 +98,88 @@ namespace UTApp.Forms.Docentes
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             bool bandera = false;
-
-            if (bandera == false)
+            
+            try
             {
-                if (txtDocenteEmpleado.Text.Trim() == "" || txtDocenteEmpleado.Text.Trim().Length != 4)
+                txtDocenteEmpleado.Text = Convert.ToInt32(txtDocenteEmpleado.Text).ToString();
+                txtDocenteEmpleado.Text = txtDocenteEmpleado.Text.PadLeft(4, '0');
+
+                if (bandera == false)
                 {
-                    MessageBox.Show("La matrícula debe de contener 4 carácteres.");
-                    txtDocenteEmpleado.Focus();
-                    return;
-                }
-                else if (txtDocenteNombre.Text == "")
-                {
-                    MessageBox.Show("Es necesario ingresar un nombre.");
-                    txtDocenteNombre.Focus();
-                    return;
-                }
-                else if (txtDocenteTitulo.Text.Trim() == "")
-                {
-                    MessageBox.Show("No ha ingresado título académico.");
-                    txtDocenteTitulo.Focus();
-                    return;
-                }
-                else if (txtDocenteCorreo.Text.Trim() == "")
-                {
-                    MessageBox.Show("Introduza un correo electrónico.");
-                    txtDocenteCorreo.Focus();
-                    return;
-                }
-                else if (txtDocentePass.Text == "" || (txtDocentePass.Text.Length < 8 || txtDocentePass.Text.Length > 25))
-                {
-                    MessageBox.Show("Ingrese una contraseña de entre 8 y 25 carácteres.");
-                    txtDocentePass.Focus();
-                    return;
+                    if (txtDocenteEmpleado.Text == "" || txtDocenteEmpleado.Text.Length != 4)
+                    {
+                        MessageBox.Show("La matrícula debe de contener 4 carácteres.");
+                        txtDocenteEmpleado.Focus();
+                        return;
+                    }
+                    else if (txtDocenteNombre.Text == "")
+                    {
+                        MessageBox.Show("Es necesario ingresar un nombre.");
+                        txtDocenteNombre.Focus();
+                        return;
+                    }
+                    else if (txtDocenteTitulo.Text.Trim() == "")
+                    {
+                        MessageBox.Show("No ha ingresado título académico.");
+                        txtDocenteTitulo.Focus();
+                        return;
+                    }
+                    else if (txtDocenteCorreo.Text.Trim() == "")
+                    {
+                        MessageBox.Show("Introduza un correo electrónico.");
+                        txtDocenteCorreo.Focus();
+                        return;
+                    }
+                    else if (txtDocentePass.Text == "" || (txtDocentePass.Text.Length < 8 || txtDocentePass.Text.Length > 25))
+                    {
+                        MessageBox.Show("Ingrese una contraseña de entre 8 y 25 carácteres.");
+                        txtDocentePass.Focus();
+                        return;
+                    }
+                    else
+                    {
+                        bandera = true;
+                    }
                 }
                 else
                 {
                     bandera = true;
                 }
-            }
-            else
-            {
-                bandera = true;
-            }
 
-            if (bandera == true)
-            {
-                try
+                if (bandera == true)
                 {
-                    string numero = txtDocenteEmpleado.Text;
-                    string nombre = txtDocenteNombre.Text;
-                    string titulo = txtDocenteTitulo.Text;
-                    string correo = txtDocenteCorreo.Text.Trim();
-                    string pass = txtDocentePass.Text;
-
-                    Docente nuevoDocente = controladorDoc.BuscarCorreoDocente(correo);
-
-                    Estudiante estudiante = controladorEst.BuscarCorreoEstudiante(correo);
-
-                    if (nuevoDocente == null && estudiante == null)
+                    try
                     {
-                        nuevoDocente = new Docente(numero, nombre, titulo, correo, pass);
+                        string numero = txtDocenteEmpleado.Text;
+                        string nombre = txtDocenteNombre.Text;
+                        string titulo = txtDocenteTitulo.Text;
+                        string correo = txtDocenteCorreo.Text.Trim();
+                        string pass = txtDocentePass.Text;
 
-                        controladorDoc.AgregarDocente(nuevoDocente);
+                        Docente nuevoDocente = controladorDoc.BuscarCorreoDocente(correo);
 
-                        MessageBox.Show("El correo fue registrado con éxito.");
+                        Estudiante estudiante = controladorEst.BuscarCorreoEstudiante(correo);
+
+                        if (nuevoDocente == null && estudiante == null)
+                        {
+                            nuevoDocente = new Docente(numero, nombre, titulo, correo, pass);
+
+                            controladorDoc.AgregarDocente(nuevoDocente);
+
+                            MessageBox.Show("El correo fue registrado con éxito.");
+                        }
+                        else
+                            MessageBox.Show("El correo se registró previamente.");
                     }
-                    else
-                        MessageBox.Show("El correo se registró previamente.");
+                    catch
+                    {
+                        MessageBox.Show("Ocurrió un error, no se pudo registrar.");
+                    }
                 }
-                catch
-                {
-                    MessageBox.Show("Ocurrió un error, no se pudo registrar.");
-                }
+            }
+            catch
+            {
+                MessageBox.Show("Al parecer estás ingresando letras, intenta solo con números.", "Ocurrió un problema");
             }
         }
 

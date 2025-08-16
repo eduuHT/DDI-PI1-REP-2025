@@ -44,6 +44,7 @@
             this.labelMaterias = new System.Windows.Forms.Label();
             this.txtDocenteEmpleado = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
@@ -80,6 +81,7 @@
             this.btnEliminar.TabIndex = 130;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label3
             // 
@@ -186,9 +188,8 @@
             // 
             // txtDocenteEmpleado
             // 
-            this.txtDocenteEmpleado.Enabled = false;
             this.txtDocenteEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocenteEmpleado.Location = new System.Drawing.Point(133, 170);
+            this.txtDocenteEmpleado.Location = new System.Drawing.Point(126, 170);
             this.txtDocenteEmpleado.Name = "txtDocenteEmpleado";
             this.txtDocenteEmpleado.Size = new System.Drawing.Size(100, 20);
             this.txtDocenteEmpleado.TabIndex = 133;
@@ -197,17 +198,32 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 171);
+            this.label2.Location = new System.Drawing.Point(24, 171);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 16);
             this.label2.TabIndex = 134;
             this.label2.Text = "No. Empleado:";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBuscar.Location = new System.Drawing.Point(231, 168);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(94, 25);
+            this.btnBuscar.TabIndex = 136;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // FormDocentesEliminar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 601);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDocenteEmpleado);
@@ -253,5 +269,6 @@
         private System.Windows.Forms.Label labelMaterias;
         private System.Windows.Forms.TextBox txtDocenteEmpleado;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

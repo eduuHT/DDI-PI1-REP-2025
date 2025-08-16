@@ -30,79 +30,88 @@ namespace UTApp.Forms.Estudiantes
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            bool bandera = false;
-
-            if (bandera == false)
+            try
             {
-                if (txtEstudianteMatricula.Text.Trim() == "" || txtEstudianteMatricula.Text.Trim().Length != 10)
+                bool bandera = false;
+
+                if (bandera == false)
                 {
-                    MessageBox.Show("La matrícula debe de contener 10 carácteres.");
-                    txtEstudianteMatricula.Focus();
-                    return;
-                }
-                else if (txtEstudianteNombre.Text == "")
-                {
-                    MessageBox.Show("Es necesario ingresar un nombre con mínimo.");
-                    txtEstudianteNombre.Focus();
-                    return;
-                }
-                else if (txtEstudianteGrupo.Text.Trim() == "")
-                {
-                    MessageBox.Show("No ha ingresado un grupo.");
-                    txtEstudianteGrupo.Focus();
-                    return;
-                }
-                else if (txtEstudianteCorreo.Text.Trim() == "")
-                {
-                    MessageBox.Show("Introduza un correo electrónico.");
-                    txtEstudianteCorreo.Focus();
-                    return;
-                }
-                else if (txtEstudiantePass.Text == "" || (txtEstudiantePass.Text.Length < 8 || txtEstudiantePass.Text.Length > 25))
-                {
-                    MessageBox.Show("Ingrese una contraseña de entre 8 y 25 carácteres.");
-                    txtEstudiantePass.Focus();
-                    return;
+                    txtEstudianteMatricula.Text = Convert.ToInt32(txtEstudianteMatricula.Text).ToString();
+
+                    if (txtEstudianteMatricula.Text == "" || txtEstudianteMatricula.Text.Length != 10)
+                    {
+                        MessageBox.Show("La matrícula debe de contener 10 carácteres.");
+                        txtEstudianteMatricula.Focus();
+                        return;
+                    }
+                    else if (txtEstudianteNombre.Text == "")
+                    {
+                        MessageBox.Show("Es necesario ingresar un nombre con mínimo.");
+                        txtEstudianteNombre.Focus();
+                        return;
+                    }
+                    else if (txtEstudianteGrupo.Text.Trim() == "")
+                    {
+                        MessageBox.Show("No ha ingresado un grupo.");
+                        txtEstudianteGrupo.Focus();
+                        return;
+                    }
+                    else if (txtEstudianteCorreo.Text.Trim() == "")
+                    {
+                        MessageBox.Show("Introduza un correo electrónico.");
+                        txtEstudianteCorreo.Focus();
+                        return;
+                    }
+                    else if (txtEstudiantePass.Text == "" || (txtEstudiantePass.Text.Length < 8 || txtEstudiantePass.Text.Length > 25))
+                    {
+                        MessageBox.Show("Ingrese una contraseña de entre 8 y 25 carácteres.");
+                        txtEstudiantePass.Focus();
+                        return;
+                    }
+                    else
+                    {
+                        bandera = true;
+                    }
                 }
                 else
                 {
                     bandera = true;
                 }
-            }
-            else
-            {
-                bandera = true;
-            }
 
-            if (bandera == true)
-            {
-                try
+                if (bandera == true)
                 {
-                    string matricula = txtEstudianteMatricula.Text.Trim().ToUpper();
-                    string nombre = txtEstudianteNombre.Text;
-                    string correo = txtEstudianteCorreo.Text.Trim();
-                    string pass = txtEstudiantePass.Text;
-                    int grupo = Convert.ToInt32(txtEstudianteGrupo.Text);
-
-                    Estudiante nuevoEstudiante = controladorEst.BuscarCorreoEstudiante(correo);
-                    Docente docente = controladorDoc.BuscarCorreoDocente(correo);
-
-
-                    if (nuevoEstudiante == null && docente == null)
+                    try
                     {
-                        nuevoEstudiante = new Estudiante(matricula, nombre, correo, pass, grupo);
+                        string matricula = txtEstudianteMatricula.Text.Trim().ToUpper();
+                        string nombre = txtEstudianteNombre.Text;
+                        string correo = txtEstudianteCorreo.Text.Trim();
+                        string pass = txtEstudiantePass.Text;
+                        int grupo = Convert.ToInt32(txtEstudianteGrupo.Text);
 
-                        controladorEst.AgregarEstudiante(nuevoEstudiante);
+                        Estudiante nuevoEstudiante = controladorEst.BuscarCorreoEstudiante(correo);
+                        Docente docente = controladorDoc.BuscarCorreoDocente(correo);
 
-                        MessageBox.Show("El estudiante fue registrado con éxito.");
+
+                        if (nuevoEstudiante == null && docente == null)
+                        {
+                            nuevoEstudiante = new Estudiante(matricula, nombre, correo, pass, grupo);
+
+                            controladorEst.AgregarEstudiante(nuevoEstudiante);
+
+                            MessageBox.Show("El estudiante fue registrado con éxito.");
+                        }
+                        else
+                            MessageBox.Show("El correo se registró previamente.");
                     }
-                    else
-                        MessageBox.Show("El correo se registró previamente.");
+                    catch
+                    {
+                        MessageBox.Show("Ocurrió un error, no se pudo registrar.");
+                    }
                 }
-                catch
-                {
-                    MessageBox.Show("Ocurrió un error, no se pudo registrar.");
-                }
+            }
+            catch
+            {
+                MessageBox.Show("Al parecer estás ingresando letras, intenta solo con números.", "Ocurrió un problema");
             }
         }
 

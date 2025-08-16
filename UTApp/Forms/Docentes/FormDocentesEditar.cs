@@ -81,22 +81,43 @@ namespace UTApp.Forms.Docentes
                 string pass = txtDocentePass.Text;
 
                 Estudiante estudiante = controladorEst.BuscarCorreoEstudiante(correo);
-                Docente nuevoDocente = controladorDoc.BuscarCorreoDocente(correo);
+                Docente editDocente = controladorDoc.BuscarCorreoDocente(correo);
 
-
-                if (nuevoDocente == null && estudiante == null)
+                if (estudiante == null || editDocente.DocenteNumeroEmpleado == empleado)
                 {
-                    nuevoDocente = new Docente(empleado, nombre, titulo, correo, pass);
+                    editDocente = new Docente(empleado, nombre, titulo, correo, pass);
+                    List<Docente> listaDocentes = controladorDoc.ListarDocentes();
+                    bool bandera = false;
+                    Docente pruebaDocente = new Docente();
+                    int i = 0;
 
-                    bool prueba = controladorDoc.EditarDocente(nuevoDocente);
+                    do
+                    {
+                        pruebaDocente = listaDocentes[i];
 
-                    if (prueba)
+                        if (editDocente.DocenteNumeroEmpleado == pruebaDocente.DocenteNumeroEmpleado)
+                        {
+                            if (editDocente.DocenteNombreCompleto != pruebaDocente.DocenteNombreCompleto
+                                ||
+                                editDocente.DocenteEmail != pruebaDocente.DocenteEmail
+                                ||
+                                editDocente.DocenteTituloAcademico != pruebaDocente.DocenteTituloAcademico)
+                            {
+                                bandera = true;
+                            }
+                        }
+                        i++;
+                    } while (!bandera);
+
+                    bool cambio = controladorDoc.EditarDocente(editDocente);
+
+                    if (cambio && bandera)
                         MessageBox.Show("El docente fue actualizado con éxito.");
                     else
-                        MessageBox.Show("Ocurrió un error");
+                        MessageBox.Show("No fue posible realizar los cambios.");
                 }
                 else
-                    MessageBox.Show("El correo ya está ocupado.");
+                    MessageBox.Show("No fue posible realizar los cambios."); 
             }
             catch
             {

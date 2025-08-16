@@ -38,7 +38,7 @@
             this.txtDocenteEmpleado = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDocentePass = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -118,7 +118,6 @@
             // 
             // txtDocenteEmpleado
             // 
-            this.txtDocenteEmpleado.Enabled = false;
             this.txtDocenteEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDocenteEmpleado.Location = new System.Drawing.Point(133, 176);
             this.txtDocenteEmpleado.Name = "txtDocenteEmpleado";
@@ -137,6 +136,7 @@
             this.btnBuscar.TabIndex = 138;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label1
             // 
@@ -148,14 +148,14 @@
             this.label1.TabIndex = 149;
             this.label1.Text = "Título académico:";
             // 
-            // textBox2
+            // txtTitulo
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(133, 383);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 20);
-            this.textBox2.TabIndex = 148;
+            this.txtTitulo.Enabled = false;
+            this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.Location = new System.Drawing.Point(133, 383);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(180, 20);
+            this.txtTitulo.TabIndex = 148;
             // 
             // label7
             // 
@@ -231,7 +231,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 601);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtDocentePass);
             this.Controls.Add(this.label5);
@@ -252,6 +252,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDocentesBuscar";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDocentesBuscar_FormClosed);
+            this.Load += new System.EventHandler(this.FormDocentesBuscar_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).EndInit();
@@ -272,7 +273,7 @@
         private System.Windows.Forms.TextBox txtDocenteEmpleado;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDocentePass;
         private System.Windows.Forms.Label label5;

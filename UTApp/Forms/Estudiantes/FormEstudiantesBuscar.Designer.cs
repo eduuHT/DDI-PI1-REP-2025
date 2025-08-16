@@ -130,7 +130,6 @@
             // 
             // txtEstudianteMatricula
             // 
-            this.txtEstudianteMatricula.Enabled = false;
             this.txtEstudianteMatricula.Location = new System.Drawing.Point(135, 174);
             this.txtEstudianteMatricula.Name = "txtEstudianteMatricula";
             this.txtEstudianteMatricula.Size = new System.Drawing.Size(100, 20);
@@ -223,6 +222,7 @@
             this.btnBuscar.TabIndex = 141;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // FormEstudiantesBuscar
             // 

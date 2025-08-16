@@ -155,15 +155,15 @@ namespace UTApp.Forms.Estudiantes
                 {
                     prueba = new Estudiante(
                     // Matrícula
-                    dt.Rows[0].ItemArray[0].ToString(),
-                    // Nombre
                     dt.Rows[0].ItemArray[1].ToString(),
-                    // Email
+                    // Nombre
                     dt.Rows[0].ItemArray[2].ToString(),
+                    // Correo
+                    correo,
                     // Password
-                    dt.Rows[0].ItemArray[3].ToString(),
+                    dt.Rows[0].ItemArray[4].ToString(),
                     // GrupoID
-                    Convert.ToInt32(dt.Rows[0].ItemArray[4])
+                    Convert.ToInt32(dt.Rows[0].ItemArray[5])
                     );
                 }
 
@@ -172,6 +172,53 @@ namespace UTApp.Forms.Estudiantes
             catch
             {
                 return prueba;
+            }
+        }
+
+        public List<Estudiante> ListarEstudiantes()
+        {
+            SqlConnection con = new SqlConnection(Connection.connectionString);
+            
+            List<Estudiante> estudiantes = new List<Estudiante>();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("ListarEstudiantes", con);
+                DataTable tabla = new DataTable();
+                SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+
+                if (con.State == 0)
+                    con.Open();
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                adaptador.Fill(tabla);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    for (int i = 0; i < tabla.Rows.Count; i++)
+                    {
+                        Estudiante estudiante = new Estudiante(
+                            // Matricula
+                            tabla.Rows[i].ItemArray[1].ToString(),
+                            // Nombre
+                            tabla.Rows[i].ItemArray[2].ToString(),
+                            // Correo
+                            tabla.Rows[i].ItemArray[3].ToString(),
+                            // Password
+                            tabla.Rows[i].ItemArray[4].ToString(),
+                            // GrupoID
+                            Convert.ToInt32(tabla.Rows[i].ItemArray[5])
+                        );
+
+                        estudiantes.Add(estudiante);
+                    }
+                }
+
+                return estudiantes;
+            }
+            catch
+            {
+                return estudiantes;
             }
         }
     }

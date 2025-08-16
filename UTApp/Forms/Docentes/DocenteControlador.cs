@@ -162,15 +162,15 @@ namespace UTApp.Forms.Docentes
                 {
                     prueba = new Docente(
                     // Empleado
-                    dt.Rows[0].ItemArray[0].ToString(),
-                    //Nombre
                     dt.Rows[0].ItemArray[1].ToString(),
-                    //Título Académico
+                    //Nombre
                     dt.Rows[0].ItemArray[2].ToString(),
-                    //Email
+                    //Título Académico
                     dt.Rows[0].ItemArray[3].ToString(),
+                    //Email
+                    correo,
                     //Password
-                    dt.Rows[0].ItemArray[4].ToString()
+                    dt.Rows[0].ItemArray[5].ToString()
                     );
                 }
 
@@ -179,6 +179,53 @@ namespace UTApp.Forms.Docentes
             catch
             {
                 return prueba;
+            }
+        }
+
+        public List<Docente> ListarDocentes()
+        {
+            SqlConnection con = new SqlConnection(Connection.connectionString);
+
+            List<Docente> docentes = new List<Docente>();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("ListarDocentes", con);
+                DataTable tabla = new DataTable();
+                SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+
+                if (con.State == 0)
+                    con.Open();
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                adaptador.Fill(tabla);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    for (int i = 0; i < tabla.Rows.Count; i++)
+                    {
+                        Docente docente = new Docente(
+                            // Numero Empleado
+                            tabla.Rows[i].ItemArray[1].ToString(),
+                            // Nombre
+                            tabla.Rows[i].ItemArray[2].ToString(),
+                            // Titulo Académico
+                            tabla.Rows[i].ItemArray[3].ToString(),
+                            // Correo
+                            tabla.Rows[i].ItemArray[4].ToString(),
+                            // Password
+                            tabla.Rows[i].ItemArray[5].ToString()
+                        );
+
+                        docentes.Add(docente);
+                    }
+                }
+
+                return docentes;
+            }
+            catch
+            {
+                return docentes;
             }
         }
     }

@@ -76,29 +76,51 @@ namespace UTApp.Forms.Estudiantes
         {
             try
             {
-                string empleado = txtEstudianteMatricula.Text.Trim();
+                string matricula = txtEstudianteMatricula.Text;
                 string nombre = txtEstudianteNombre.Text;
                 string correo = txtEstudianteCorreo.Text.Trim();
                 string pass = txtEstudiantePass.Text;
                 int grupo = Convert.ToInt32(txtEstudianteGrupo.Text);
 
                 Docente docente = controladorDoc.BuscarCorreoDocente(correo);
-                Estudiante nuevoEstudiante = controladorEst.BuscarCorreoEstudiante(correo);
+                Estudiante editEstudiante = controladorEst.BuscarCorreoEstudiante(correo);
 
 
-                if (nuevoEstudiante == null && docente == null)
+                if (docente == null || editEstudiante != null)
                 {
-                    nuevoEstudiante = new Estudiante(empleado, nombre, correo, pass, grupo);
+                    editEstudiante = new Estudiante(matricula, nombre, correo, pass, grupo);
+                    List<Estudiante> listaEstudiantes = controladorEst.ListarEstudiantes();
+                    bool bandera = false;
+                    Estudiante pruebaEstudiante = new Estudiante();
+                    int i = 0;
 
-                    bool prueba = controladorEst.EditarEstudiante(nuevoEstudiante);
+                    do
+                    {
+                        pruebaEstudiante = listaEstudiantes[i];
 
-                    if (prueba)
+                        if (editEstudiante.EstudianteMatricula == pruebaEstudiante.EstudianteMatricula)
+                        {
+                            if (editEstudiante.EstudianteNombreCompleto != pruebaEstudiante.EstudianteNombreCompleto
+                                ||
+                                editEstudiante.EstudianteEmail != pruebaEstudiante.EstudianteEmail
+                                ||
+                                editEstudiante.GrupoID != pruebaEstudiante.GrupoID)
+                            {
+                                bandera = true;
+                            }
+                        }
+                        i++;
+                    } while (!bandera);
+
+                    bool cambio = controladorEst.EditarEstudiante(editEstudiante);
+
+                    if (cambio && bandera)
                         MessageBox.Show("El estudiante fue actualizado con éxito.");
                     else
-                        MessageBox.Show("Ocurrió un error");
+                        MessageBox.Show("No fue posible realizar los cambios.");
                 }
                 else
-                    MessageBox.Show("El correo ya está ocupado.");
+                    MessageBox.Show("El correo que ingresó ya está en uso.");
             }
             catch
             {

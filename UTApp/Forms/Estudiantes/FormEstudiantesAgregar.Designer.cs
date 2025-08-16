@@ -208,6 +208,7 @@
             this.txtEstudiantePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstudiantePass.Location = new System.Drawing.Point(63, 355);
             this.txtEstudiantePass.Name = "txtEstudiantePass";
+            this.txtEstudiantePass.PasswordChar = '•';
             this.txtEstudiantePass.Size = new System.Drawing.Size(225, 20);
             this.txtEstudiantePass.TabIndex = 85;
             // 
@@ -237,6 +238,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar estudiante";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEstudiantesAgregar_FormClosed);
+            this.Load += new System.EventHandler(this.FormEstudiantesAgregar_Load);
             this.Click += new System.EventHandler(this.FormEstudiantesAgregar_Click);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();

@@ -69,6 +69,7 @@
             this.gridEstudiantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridEstudiantes.Size = new System.Drawing.Size(310, 385);
             this.gridEstudiantes.TabIndex = 16;
+            this.gridEstudiantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridEstudiantes_CellContentClick);
             // 
             // EstudianteMatricula
             // 
@@ -155,6 +156,7 @@
             this.pbEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbEditar.TabIndex = 18;
             this.pbEditar.TabStop = false;
+            this.pbEditar.Click += new System.EventHandler(this.pbEditar_Click);
             // 
             // pbAgregar
             // 

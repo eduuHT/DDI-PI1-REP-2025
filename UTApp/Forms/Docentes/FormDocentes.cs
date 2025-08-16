@@ -40,5 +40,32 @@ namespace UTApp.Forms.Docentes
             this.Hide();
             nuevoDocente.Show();
         }
+
+        private string gridDocentes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string numeroEmpleado = "";
+
+            if (gridDocentes.Rows.Count > 0)
+            {
+                numeroEmpleado = gridDocentes[0, e.RowIndex].Value.ToString();
+            }
+
+            return numeroEmpleado;
+        }
+
+        private void pbEditar_Click(object sender, EventArgs e)
+        {
+            FormDocentesEditar editar = new FormDocentesEditar();
+            this.Hide();
+            editar.Show();
+        }
+        /*
+private void pbEditar_Click(object sender, EventArgs e)
+{
+   FormDocentesEditar editar = new FormDocentesEditar(numeroEmpleado);
+   this.Hide();
+
+}
+*/
     }
 }

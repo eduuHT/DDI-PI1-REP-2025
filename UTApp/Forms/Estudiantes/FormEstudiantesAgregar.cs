@@ -10,12 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UTApp.Forms.Estudiantes;
+using UTApp.Forms.Docentes;
 
 namespace UTApp.Forms.Estudiantes
 {
     public partial class FormEstudiantesAgregar : Form
     {
-        EstudianteControlador controlador = new EstudianteControlador();
+        EstudianteControlador controladorEst = new EstudianteControlador();
+        DocenteControlador controladorDoc = new DocenteControlador();
         public FormEstudiantesAgregar()
         {
             InitializeComponent();
@@ -74,20 +76,26 @@ namespace UTApp.Forms.Estudiantes
 
             if (bandera == true)
             {
-                string matricula = txtEstudianteMatricula.Text.Trim().ToUpper();
-                string nombre = txtEstudianteNombre.Text;
-                string correo = txtEstudianteCorreo.Text.Trim();
-                string pass = txtEstudiantePass.Text;
-                int grupo = Convert.ToInt32(txtEstudianteGrupo.Text);
-
-                Estudiante nuevoEstudiante = new Estudiante(matricula, nombre, correo, pass, grupo);
-
                 try
                 {
-                    bool confirmacion = controlador.AgregarEstudiante(nuevoEstudiante);
-                    bool correockecker = controlador.BuscarCorreoDocente(correo);
-                    if (confirmacion && correockecker)
-                        MessageBox.Show("El Docente fue registrado con éxito.");
+                    string matricula = txtEstudianteMatricula.Text.Trim().ToUpper();
+                    string nombre = txtEstudianteNombre.Text;
+                    string correo = txtEstudianteCorreo.Text.Trim();
+                    string pass = txtEstudiantePass.Text;
+                    int grupo = Convert.ToInt32(txtEstudianteGrupo.Text);
+
+                    Estudiante nuevoEstudiante = controladorEst.BuscarCorreoEstudiante(correo);
+                    Docente docente = controladorDoc.BuscarCorreoDocente(correo);
+
+
+                    if (nuevoEstudiante == null && docente == null)
+                    {
+                        nuevoEstudiante = new Estudiante(matricula, nombre, correo, pass, grupo);
+
+                        controladorEst.AgregarEstudiante(nuevoEstudiante);
+
+                        MessageBox.Show("El estudiante fue registrado con éxito.");
+                    }
                     else
                         MessageBox.Show("El correo se registró previamente.");
                 }
@@ -112,7 +120,7 @@ namespace UTApp.Forms.Estudiantes
 
         private void txtEstudianteMatricula_Leave(object sender, EventArgs e)
         {
-            Estudiante estudiante = controlador.BuscarEstudiante(txtEstudianteMatricula.Text);
+            Estudiante estudiante = controladorEst.BuscarEstudiante(txtEstudianteMatricula.Text);
 
             if (estudiante != null)
             {
@@ -148,7 +156,7 @@ namespace UTApp.Forms.Estudiantes
 
         private void FormEstudiantesAgregar_Click(object sender, EventArgs e)
         {
-            Estudiante estudiante = controlador.BuscarEstudiante(txtEstudianteMatricula.Text);
+            Estudiante estudiante = controladorEst.BuscarEstudiante(txtEstudianteMatricula.Text);
 
             if (estudiante == null && txtEstudianteNombre.Enabled == false)
             {
@@ -177,6 +185,11 @@ namespace UTApp.Forms.Estudiantes
                     txtEstudianteGrupo.Enabled = true;
                 }
             }
+        }
+
+        private void FormEstudiantesAgregar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

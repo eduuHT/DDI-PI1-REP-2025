@@ -159,6 +159,7 @@
             this.txtEstudianteMatricula.Name = "txtEstudianteMatricula";
             this.txtEstudianteMatricula.Size = new System.Drawing.Size(90, 20);
             this.txtEstudianteMatricula.TabIndex = 93;
+            this.txtEstudianteMatricula.Leave += new System.EventHandler(this.txtEstudianteMatricula_Leave);
             // 
             // label1
             // 
@@ -182,6 +183,7 @@
             this.btnGuardar.TabIndex = 101;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label2
             // 
@@ -233,6 +235,7 @@
             this.btnBuscar.TabIndex = 106;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // FormEstudiantesEditar
             // 
@@ -262,6 +265,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar estudiante";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEstudiantesEditar_FormClosed);
+            this.Load += new System.EventHandler(this.FormEstudiantesEditar_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).EndInit();

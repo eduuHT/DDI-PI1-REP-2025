@@ -13,12 +13,15 @@ namespace UTApp.Forms.Docentes
 {
     internal class DocenteControlador
     {
+        public static string connectionString = "user id=sa;password=uts;server=.;database=UTApp_Integradora1";
+        //public static string connectionString = "workstation id=UTApp_Integradora1.mssql.somee.com;packet size=4096;user id=LuisRomán123_SQLLogin_1;pwd=b7jxk7yxyk;data source=UTApp_Integradora1.mssql.somee.com;persist security info=False;initial catalog=UTApp_Integradora1;TrustServerCertificate=True";
+
         public DocenteControlador()
         {
 
         }
 
-        public bool AgregarDocente(Docente Docente)
+        public bool AgregarDocente(Docente docente)
         {
             try
             {
@@ -30,11 +33,11 @@ namespace UTApp.Forms.Docentes
                 SqlCommand cmd = new SqlCommand("RegistrarDocente", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@DocenteNumeroEmpleado", Docente.DocenteNumeroEmpleado);
-                cmd.Parameters.AddWithValue("@DocenteNombreCompleto", Docente.DocenteNombreCompleto);
-                cmd.Parameters.AddWithValue("@DocenteTituloAcademico", Docente.DocenteTituloAcademico);
-                cmd.Parameters.AddWithValue("@DocenteEmail", Docente.DocenteEmail);
-                cmd.Parameters.AddWithValue("@DocentePassword", Docente.DocentePassword);
+                cmd.Parameters.AddWithValue("@DocenteNumeroEmpleado", docente.DocenteNumeroEmpleado);
+                cmd.Parameters.AddWithValue("@DocenteNombreCompleto", docente.DocenteNombreCompleto);
+                cmd.Parameters.AddWithValue("@DocenteTituloAcademico", docente.DocenteTituloAcademico);
+                cmd.Parameters.AddWithValue("@DocenteEmail", docente.DocenteEmail);
+                cmd.Parameters.AddWithValue("@DocentePassword", docente.DocentePassword);
 
                 cmd.ExecuteNonQuery();
 
@@ -138,33 +141,46 @@ namespace UTApp.Forms.Docentes
                 return Docente;
             }
         }
-        
-        public bool BuscarCorreoEstudiante(string correo)
+
+        public Docente BuscarCorreoDocente(string correo)
         {
+            Docente prueba = null;
             try
             {
-                int prueba = 0;
-
-                SqlConnection con = new SqlConnection(Connection.connectionString);
+                SqlConnection con = new SqlConnection(connectionString);
+                SqlCommand cmd = new SqlCommand("BuscarCorreoDocente", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
 
                 if (con.State == 0)
                     con.Open();
 
-                SqlCommand cmd = new SqlCommand("BuscarCorreoEstudiante", con);
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@DocenteEmail", correo);
 
-                cmd.Parameters.AddWithValue("@EstudianteEmail", correo);
+                adaptador.Fill(dt);
 
-                prueba = cmd.ExecuteNonQuery();
-                if (prueba != 0)
-                    return false;
-                else
-                    return true;
-                
+                if (dt.Rows.Count > 0)
+                {
+                    prueba = new Docente(
+                    // Empleado
+                    dt.Rows[0].ItemArray[0].ToString(),
+                    //Nombre
+                    dt.Rows[0].ItemArray[1].ToString(),
+                    //Título Académico
+                    dt.Rows[0].ItemArray[2].ToString(),
+                    //Email
+                    dt.Rows[0].ItemArray[3].ToString(),
+                    //Password
+                    dt.Rows[0].ItemArray[4].ToString()
+                    );
+                }
+
+                return prueba;
             }
             catch
             {
-                return false;
+                return prueba;
             }
         }
     }

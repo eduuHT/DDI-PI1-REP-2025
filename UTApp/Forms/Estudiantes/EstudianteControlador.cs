@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
+using UTApp.Forms.Docentes;
 
 namespace UTApp.Forms.Estudiantes
 {
@@ -89,23 +90,17 @@ namespace UTApp.Forms.Estudiantes
         {
             try
             {
-                SqlConnection con = new SqlConnection(Connection.connectionString);
-
-                if (con.State == 0)
-                    con.Open();
-
-                SqlCommand cmd = new SqlCommand("EditarEstudiante", con);
-
+                SqlConnection conn = new SqlConnection(Connection.connectionString);
+                if (conn.State == 0)
+                    conn.Open();
+                SqlCommand cmd = new SqlCommand("EditarEstudiante", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 cmd.Parameters.AddWithValue("@EstudianteMatricula", estudiante.EstudianteMatricula);
                 cmd.Parameters.AddWithValue("@EstudianteNombreCompleto", estudiante.EstudianteNombreCompleto);
                 cmd.Parameters.AddWithValue("@EstudianteEmail", estudiante.EstudianteEmail);
                 cmd.Parameters.AddWithValue("@EstudiantePassword", estudiante.EstudiantePassword);
-                cmd.Parameters.AddWithValue("@EstudianteGrupoID", estudiante.GrupoID);
-
+                cmd.Parameters.AddWithValue("@GrupoID", estudiante.GrupoID);
                 cmd.ExecuteNonQuery();
-
                 return true;
             }
             catch
@@ -113,7 +108,6 @@ namespace UTApp.Forms.Estudiantes
                 return false;
             }
         }
-        
         public bool EliminarEstudiante(int matricula)
         {
             try
@@ -139,31 +133,45 @@ namespace UTApp.Forms.Estudiantes
             }
         }
 
-        public bool BuscarCorreoDocente(string correo)
+        public Estudiante BuscarCorreoEstudiante(string correo)
         {
+            Estudiante prueba = null;
             try
             {
-                int prueba = 0;
-
-                SqlConnection con = new SqlConnection(Connection.connectionString);
+                SqlConnection con = new SqlConnection(connectionString);
+                SqlCommand cmd = new SqlCommand("BuscarCorreoEstudiante", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
 
                 if (con.State == 0)
                     con.Open();
 
-                SqlCommand cmd = new SqlCommand("BuscarCorreoDocente", con);
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@EstudianteEmail", correo);
 
-                cmd.Parameters.AddWithValue("@DocenteEmail", correo);
+                adaptador.Fill(dt);
 
-                prueba = cmd.ExecuteNonQuery();
-                if (prueba != 0)
-                    return false;
-                else
-                    return true;
+                if (dt.Rows.Count > 0)
+                {
+                    prueba = new Estudiante(
+                    // Matrícula
+                    dt.Rows[0].ItemArray[0].ToString(),
+                    // Nombre
+                    dt.Rows[0].ItemArray[1].ToString(),
+                    // Email
+                    dt.Rows[0].ItemArray[2].ToString(),
+                    // Password
+                    dt.Rows[0].ItemArray[3].ToString(),
+                    // GrupoID
+                    Convert.ToInt32(dt.Rows[0].ItemArray[4])
+                    );
+                }
+
+                return prueba;
             }
             catch
             {
-                return false;
+                return prueba;
             }
         }
     }

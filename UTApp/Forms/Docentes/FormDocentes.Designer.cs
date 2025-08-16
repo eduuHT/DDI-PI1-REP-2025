@@ -164,6 +164,7 @@
             this.pbEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbEditar.TabIndex = 25;
             this.pbEditar.TabStop = false;
+            this.pbEditar.Click += new System.EventHandler(this.pbEditar_Click);
             // 
             // pbAgregar
             // 

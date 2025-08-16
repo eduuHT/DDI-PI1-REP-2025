@@ -4,14 +4,23 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UTApp.Forms.Docentes;
 
 namespace UTApp.Forms.Estudiantes
 {
     public partial class FormEstudiantesEditar : Form
     {
+        EstudianteControlador controladorEst = new EstudianteControlador();
+        DocenteControlador controladorDoc = new DocenteControlador();
+        public FormEstudiantesEditar(string matricula)
+        {
+            InitializeComponent();
+        }
+
         public FormEstudiantesEditar()
         {
             InitializeComponent();
@@ -20,6 +29,83 @@ namespace UTApp.Forms.Estudiantes
         private void FormEstudiantesEditar_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtEstudianteMatricula.Text != "" || txtEstudianteMatricula.Text.Length != 10)
+            {
+                if (txtEstudianteMatricula.Text.Length == 10)
+                {
+                    try
+                    {
+                        Estudiante estudianteEditando = null;
+                        estudianteEditando = controladorEst.BuscarEstudiante(txtEstudianteMatricula.Text);
+
+                        if (estudianteEditando != null)
+                        {
+                            txtEstudianteGrupo.Text = estudianteEditando.GrupoID.ToString();
+                            txtEstudianteNombre.Text = estudianteEditando.EstudianteNombreCompleto;
+                            txtEstudianteCorreo.Text = estudianteEditando.EstudianteEmail;
+                            txtEstudiantePass.Text = estudianteEditando.EstudiantePassword;
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Ocurrió un error.");
+                    }
+                }
+                else
+                    MessageBox.Show("Ingrese una matrícula de 10 carácteres.");
+                
+            }
+            else
+            {
+                MessageBox.Show("Ingrese una matrícula de 10 carácteres.");
+            }
+            
+        }
+
+        private void txtEstudianteMatricula_Leave(object sender, EventArgs e)
+        {
+            if (txtEstudianteMatricula.Text == "" || txtEstudianteMatricula.Text != "" || txtEstudianteMatricula.Text.Length != 10)
+            {
+                txtEstudianteGrupo.Text = "";
+                txtEstudianteNombre.Text = "";
+                txtEstudianteCorreo.Text = "";
+                txtEstudiantePass.Text = "";
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        { 
+            try
+            {
+                string matricula = txtEstudianteMatricula.Text.Trim().ToUpper();
+                string nombre = txtEstudianteNombre.Text;
+                string correo = txtEstudianteCorreo.Text.Trim();
+                string pass = txtEstudiantePass.Text;
+                int grupo = Convert.ToInt32(txtEstudianteGrupo.Text);
+
+                Estudiante nuevoEstudiante = new Estudiante(matricula, nombre, correo, pass, grupo);
+
+                Docente docente = controladorDoc.BuscarCorreoDocente(correo);
+
+                if (controladorEst.EditarEstudiante(nuevoEstudiante) && docente == null)
+                    MessageBox.Show("El estudiante fue editado con éxito.");
+                else
+                    MessageBox.Show("El correo se registró previamente.");
+            }
+            catch
+            {
+                MessageBox.Show("Ocurrió un error, no se pudo editar.");
+            }
+        }
+        
+
+        private void FormEstudiantesEditar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

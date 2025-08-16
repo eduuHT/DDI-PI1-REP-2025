@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UTApp.Forms.Docentes;
+using UTApp.Forms.Estudiantes;
 
 namespace UTApp.Forms.Docentes
 {
     public partial class FormDocentesAgregar : Form
     {
-        DocenteControlador controlador = new DocenteControlador();
+        EstudianteControlador controladorEst = new EstudianteControlador();
+        DocenteControlador controladorDoc = new DocenteControlador();
         public FormDocentesAgregar()
         {
             InitializeComponent();
@@ -26,7 +28,7 @@ namespace UTApp.Forms.Docentes
 
         private void txtDocenteEmpleado_Leave(object sender, EventArgs e)
         {
-            Docente Docente = controlador.BuscarDocente(txtDocenteEmpleado.Text);
+            Docente Docente = controladorDoc.BuscarDocente(txtDocenteEmpleado.Text);
 
             if (Docente != null)
             {
@@ -62,7 +64,7 @@ namespace UTApp.Forms.Docentes
         
         private void FormDocentesAgregar_Click(object sender, EventArgs e)
         {
-            Docente Docente = controlador.BuscarDocente(txtDocenteEmpleado.Text);
+            Docente Docente = controladorDoc.BuscarDocente(txtDocenteEmpleado.Text);
 
             if (Docente == null && txtDocenteNombre.Enabled == false)
             {
@@ -141,19 +143,26 @@ namespace UTApp.Forms.Docentes
 
             if (bandera == true)
             {
-                string empleado = txtDocenteEmpleado.Text.Trim().ToUpper();
-                string nombre = txtDocenteNombre.Text;
-                string titulo = txtDocenteTitulo.Text;
-                string correo = txtDocenteCorreo.Text.Trim();
-                string pass = txtDocentePass.Text;
-
-                Docente nuevoDocente = new Docente(empleado, nombre, titulo, correo, pass);
                 try
                 {
-                    bool confirmacion = controlador.AgregarDocente(nuevoDocente);
-                    bool correockecker = controlador.BuscarCorreoEstudiante(correo);
-                    if (confirmacion && correockecker)
-                        MessageBox.Show("El Docente fue registrado con éxito.");
+                    string numero = txtDocenteEmpleado.Text;
+                    string nombre = txtDocenteNombre.Text;
+                    string titulo = txtDocenteTitulo.Text;
+                    string correo = txtDocenteCorreo.Text.Trim();
+                    string pass = txtDocentePass.Text;
+
+                    Docente nuevoDocente = controladorDoc.BuscarCorreoDocente(correo);
+
+                    Estudiante estudiante = controladorEst.BuscarCorreoEstudiante(correo);
+
+                    if (nuevoDocente == null && estudiante == null)
+                    {
+                        nuevoDocente = new Docente(numero, nombre, titulo, correo, pass);
+
+                        controladorDoc.AgregarDocente(nuevoDocente);
+
+                        MessageBox.Show("El correo fue registrado con éxito.");
+                    }
                     else
                         MessageBox.Show("El correo se registró previamente.");
                 }
@@ -162,6 +171,11 @@ namespace UTApp.Forms.Docentes
                     MessageBox.Show("Ocurrió un error, no se pudo registrar.");
                 }
             }
+        }
+
+        private void FormDocentesAgregar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

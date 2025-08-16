@@ -235,6 +235,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Docente";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDocentesAgregar_FormClosed);
+            this.Load += new System.EventHandler(this.FormDocentesAgregar_Load);
             this.Click += new System.EventHandler(this.FormDocentesAgregar_Click);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();

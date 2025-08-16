@@ -41,5 +41,29 @@ namespace UTApp.Forms.Estudiantes
             this.Hide();
             nuevoAlumno.Show();
         }
+
+        private string gridEstudiantes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string matricula = "";
+
+            if (gridEstudiantes.Rows.Count > 0)
+            {
+                matricula = gridEstudiantes[0, e.RowIndex].Value.ToString();
+            }
+
+            return matricula;
+        }
+
+        private void gridEstudiantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pbEditar_Click(object sender, EventArgs e)
+        {
+            FormEstudiantesEditar editar = new FormEstudiantesEditar();
+            this.Hide();
+            editar.Show();
+        }
     }
 }

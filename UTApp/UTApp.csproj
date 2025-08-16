@@ -71,6 +71,12 @@
     <Compile Include="Forms\Asignaciones\FormAsignaciones.Designer.cs">
       <DependentUpon>FormAsignaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Asignaciones\ModoBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asignaciones\ModoBusqueda.Designer.cs">
+      <DependentUpon>ModoBusqueda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Docentes\FormDocentes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Asignaciones\FormAsignaciones.resx">
       <DependentUpon>FormAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asignaciones\ModoBusqueda.resx">
+      <DependentUpon>ModoBusqueda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Docentes\FormDocentes.resx">
       <DependentUpon>FormDocentes.cs</DependentUpon>

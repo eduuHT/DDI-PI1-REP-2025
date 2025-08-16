@@ -37,7 +37,7 @@ namespace UTApp.Forms.Asignaciones
         private void EditarAsignacion_Load(object sender, EventArgs e) // tmb asigna las propiedades una vez hechos los demás cruds
         {
             /*
-            CBDocente.DisplayMember = ;
+            CBDocente.DisplayMember =;
             CBDocente.ValueMember =;
             CBGrupo.DisplayMember =;
             CBGrupo.ValueMember =;

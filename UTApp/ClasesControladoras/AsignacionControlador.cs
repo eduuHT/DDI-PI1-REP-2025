@@ -100,7 +100,7 @@ namespace UTApp.Clases
             }
         }
 
-        public Asignacion BuscarAsignacion(int Busqueda, int ID)
+        public void BuscarAsignacion(int Busqueda, int ID)
         {
             SqlConnection conn = new SqlConnection(strConexion.stringConexion);
             Asignacion asignacion = null;
@@ -120,26 +120,11 @@ namespace UTApp.Clases
                 cmd.Parameters.AddWithValue("@ID", ID);
 
                 adaptador.Fill(tabla);
-
-                if(tabla.Rows.Count > 0)
-                {
-                    asignacion = new Asignacion(
-                    asignacion.AsignacionID = Convert.ToInt32(tabla.Rows[0].ItemArray[0]),
-                    asignacion.AsignacionTitulo = tabla.Rows[0].ItemArray[1].ToString(),
-                    asignacion.AsignacionDescripcion = tabla.Rows[0].ItemArray[2].ToString(),
-                    asignacion.AsignacionFechaLimite = Convert.ToDateTime(tabla.Rows[0].ItemArray[3]),
-                    asignacion.PlataformaID = Convert.ToInt32(tabla.Rows[0].ItemArray[4]),
-                    asignacion.ClaseID = Convert.ToInt32(tabla.Rows[0].ItemArray[5])
-                    );
-                }
-
-                return asignacion;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conn.Close();
-                return asignacion;
             }
         }
 

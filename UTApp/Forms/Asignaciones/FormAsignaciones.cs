@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UTApp.Clases;
 using UTApp.Forms.Menu_Principal;
+using Microsoft.VisualBasic;
 
 namespace UTApp.Forms.Asignaciones
 {
@@ -64,7 +65,8 @@ namespace UTApp.Forms.Asignaciones
 
         private void btnScan_Click(object sender, EventArgs e)
         {
-
+            ModoBusqueda modoBusqueda = new ModoBusqueda();
+            modoBusqueda.Show();
         }
         private void btnBack_Click(object sender, EventArgs e)
         {

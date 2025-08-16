@@ -12,9 +12,40 @@ namespace UTApp.Forms.Materias
 {
     public partial class FormAgregarMateria : Form
     {
+        private FormMaterias _formPadre;
+
+        #region Constructors
         public FormAgregarMateria()
         {
             InitializeComponent();
         }
+
+        public FormAgregarMateria(FormMaterias formPadre)
+        {
+            InitializeComponent();
+            _formPadre = formPadre;
+        }
+        #endregion
+
+        #region Events
+        private void btnCancelarAdicion_Click(object sender, EventArgs e)
+        {
+            Regresar();
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Regresar();
+        }
+        #endregion
+
+        #region Private Methods
+        private void Regresar()
+        {
+            _formPadre.Show();
+            this.Close();
+        }
+        #endregion
+
     }
 }

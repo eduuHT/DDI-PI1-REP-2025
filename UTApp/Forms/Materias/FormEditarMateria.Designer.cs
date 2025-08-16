@@ -62,6 +62,7 @@
             this.btnRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRegresar.TabIndex = 1;
             this.btnRegresar.TabStop = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // lblMaterias
             // 
@@ -98,6 +99,7 @@
             this.btnCancelarEdicionMateria.TabIndex = 25;
             this.btnCancelarEdicionMateria.Text = "Cancelar";
             this.btnCancelarEdicionMateria.UseVisualStyleBackColor = false;
+            this.btnCancelarEdicionMateria.Click += new System.EventHandler(this.btnCancelarEdicionMateria_Click);
             // 
             // btnEditarMateria
             // 

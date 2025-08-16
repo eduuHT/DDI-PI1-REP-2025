@@ -16,11 +16,6 @@ namespace UTApp.Forms.Estudiantes
     {
         EstudianteControlador controladorEst = new EstudianteControlador();
         DocenteControlador controladorDoc = new DocenteControlador();
-        public FormEstudiantesEditar(string matricula)
-        {
-            InitializeComponent();
-        }
-
         public FormEstudiantesEditar()
         {
             InitializeComponent();
@@ -78,23 +73,32 @@ namespace UTApp.Forms.Estudiantes
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
-        { 
+        {
             try
             {
-                string matricula = txtEstudianteMatricula.Text.Trim().ToUpper();
+                string empleado = txtEstudianteMatricula.Text.Trim();
                 string nombre = txtEstudianteNombre.Text;
                 string correo = txtEstudianteCorreo.Text.Trim();
                 string pass = txtEstudiantePass.Text;
                 int grupo = Convert.ToInt32(txtEstudianteGrupo.Text);
 
-                Estudiante nuevoEstudiante = new Estudiante(matricula, nombre, correo, pass, grupo);
-
                 Docente docente = controladorDoc.BuscarCorreoDocente(correo);
+                Estudiante nuevoEstudiante = controladorEst.BuscarCorreoEstudiante(correo);
 
-                if (controladorEst.EditarEstudiante(nuevoEstudiante) && docente == null)
-                    MessageBox.Show("El estudiante fue editado con éxito.");
+
+                if (nuevoEstudiante == null && docente == null)
+                {
+                    nuevoEstudiante = new Estudiante(empleado, nombre, correo, pass, grupo);
+
+                    bool prueba = controladorEst.EditarEstudiante(nuevoEstudiante);
+
+                    if (prueba)
+                        MessageBox.Show("El estudiante fue actualizado con éxito.");
+                    else
+                        MessageBox.Show("Ocurrió un error");
+                }
                 else
-                    MessageBox.Show("El correo se registró previamente.");
+                    MessageBox.Show("El correo ya está ocupado.");
             }
             catch
             {

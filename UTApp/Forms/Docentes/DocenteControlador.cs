@@ -59,14 +59,12 @@ namespace UTApp.Forms.Docentes
                     con.Open();
 
                 SqlCommand cmd = new SqlCommand("EditarDocente", con);
-
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@DocenteNumeroEmpleado", Docente.DocenteNumeroEmpleado);
                 cmd.Parameters.AddWithValue("@DocenteNombreCompleto", Docente.DocenteNombreCompleto);
                 cmd.Parameters.AddWithValue("@DocenteTituloAcademico", Docente.DocenteTituloAcademico);
                 cmd.Parameters.AddWithValue("@DocenteEmail", Docente.DocenteEmail);
-                cmd.Parameters.AddWithValue("@DocentePassword", Docente.DocentePassword);
 
                 cmd.ExecuteNonQuery();
 

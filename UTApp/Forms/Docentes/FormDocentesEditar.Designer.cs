@@ -39,13 +39,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDocenteNombre = new System.Windows.Forms.TextBox();
             this.labelIIngresarValores = new System.Windows.Forms.Label();
-            this.txtDocenteNombre_Apellido = new System.Windows.Forms.TextBox();
+            this.txtDocenteEmpleado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDocentePass = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDocenteTitulo = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
@@ -153,12 +153,13 @@
             this.labelIIngresarValores.TabIndex = 108;
             this.labelIIngresarValores.Text = " Nuevos datos para el docente:";
             // 
-            // txtDocenteNombre_Apellido
+            // txtDocenteEmpleado
             // 
-            this.txtDocenteNombre_Apellido.Location = new System.Drawing.Point(135, 167);
-            this.txtDocenteNombre_Apellido.Name = "txtDocenteNombre_Apellido";
-            this.txtDocenteNombre_Apellido.Size = new System.Drawing.Size(90, 20);
-            this.txtDocenteNombre_Apellido.TabIndex = 107;
+            this.txtDocenteEmpleado.Location = new System.Drawing.Point(135, 167);
+            this.txtDocenteEmpleado.Name = "txtDocenteEmpleado";
+            this.txtDocenteEmpleado.Size = new System.Drawing.Size(90, 20);
+            this.txtDocenteEmpleado.TabIndex = 107;
+            this.txtDocenteEmpleado.Leave += new System.EventHandler(this.txtDocenteEmpleado_Leave);
             // 
             // label1
             // 
@@ -202,6 +203,7 @@
             this.btnGuardar.TabIndex = 121;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label2
             // 
@@ -213,13 +215,13 @@
             this.label2.TabIndex = 123;
             this.label2.Text = "Título académico:";
             // 
-            // textBox1
+            // txtDocenteTitulo
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(135, 303);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 20);
-            this.textBox1.TabIndex = 122;
+            this.txtDocenteTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocenteTitulo.Location = new System.Drawing.Point(135, 303);
+            this.txtDocenteTitulo.Name = "txtDocenteTitulo";
+            this.txtDocenteTitulo.Size = new System.Drawing.Size(190, 20);
+            this.txtDocenteTitulo.TabIndex = 122;
             // 
             // btnBuscar
             // 
@@ -233,6 +235,7 @@
             this.btnBuscar.TabIndex = 124;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // FormDocentesEditar
             // 
@@ -241,7 +244,7 @@
             this.ClientSize = new System.Drawing.Size(344, 601);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDocenteTitulo);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtDocentePass);
@@ -250,7 +253,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtDocenteNombre);
             this.Controls.Add(this.labelIIngresarValores);
-            this.Controls.Add(this.txtDocenteNombre_Apellido);
+            this.Controls.Add(this.txtDocenteEmpleado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelCatálogoMaterias);
             this.Controls.Add(this.panelHeader);
@@ -283,13 +286,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDocenteNombre;
         private System.Windows.Forms.Label labelIIngresarValores;
-        private System.Windows.Forms.TextBox txtDocenteNombre_Apellido;
+        private System.Windows.Forms.TextBox txtDocenteEmpleado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDocentePass;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDocenteTitulo;
         private System.Windows.Forms.Button btnBuscar;
     }
 }

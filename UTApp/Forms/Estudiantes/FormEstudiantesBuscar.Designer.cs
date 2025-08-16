@@ -153,9 +153,9 @@
             this.labelCatálogoMaterias.ForeColor = System.Drawing.Color.Black;
             this.labelCatálogoMaterias.Location = new System.Drawing.Point(20, 120);
             this.labelCatálogoMaterias.Name = "labelCatálogoMaterias";
-            this.labelCatálogoMaterias.Size = new System.Drawing.Size(74, 23);
+            this.labelCatálogoMaterias.Size = new System.Drawing.Size(108, 23);
             this.labelCatálogoMaterias.TabIndex = 107;
-            this.labelCatálogoMaterias.Text = "Editar";
+            this.labelCatálogoMaterias.Text = "Buscador";
             // 
             // panelHeader
             // 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -13,6 +14,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
@@ -23,6 +25,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
@@ -32,6 +35,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+
+  <!-- Referencias -->
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,7 +50,10 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
+
+  <!-- Archivos de código -->
   <ItemGroup>
+    <!-- Clases originales de HEAD -->
     <Compile Include="ClasesControladoras\AsignacionControlador.cs" />
     <Compile Include="ClasesControladoras\ClaseControladora.cs" />
     <Compile Include="ClasesControladoras\PlataformaControlador.cs" />
@@ -53,6 +61,10 @@
     <Compile Include="Clases\Clase.cs" />
     <Compile Include="Clases\Plataforma.cs" />
     <Compile Include="Clases\strConexion.cs" />
+    <!-- Archivo agregado de CRUD_Estudiantes -->
+    <Compile Include="Connection.cs" />
+
+    <!-- Formularios Asignaciones -->
     <Compile Include="Forms\Asignaciones\AgregarAsignacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,18 +89,76 @@
     <Compile Include="Forms\Asignaciones\ModoBusqueda.Designer.cs">
       <DependentUpon>ModoBusqueda.cs</DependentUpon>
     </Compile>
+
+    <!-- Formularios Docentes de CRUD_Estudiantes -->
+    <Compile Include="Forms\Docentes\Docente.cs" />
+    <Compile Include="Forms\Docentes\DocenteControlador.cs" />
+
+    <!-- Resto de formularios (Docentes, Estudiantes, Grupos, Login, Materias, Menu) -->
     <Compile Include="Forms\Docentes\FormDocentes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Docentes\FormDocentes.Designer.cs">
       <DependentUpon>FormDocentes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Docentes\FormDocentesAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Docentes\FormDocentesAgregar.Designer.cs">
+      <DependentUpon>FormDocentesAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Docentes\FormDocentesBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Docentes\FormDocentesBuscar.Designer.cs">
+      <DependentUpon>FormDocentesBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Docentes\FormDocentesEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Docentes\FormDocentesEditar.Designer.cs">
+      <DependentUpon>FormDocentesEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Docentes\FormDocentesEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Docentes\FormDocentesEliminar.Designer.cs">
+      <DependentUpon>FormDocentesEliminar.cs</DependentUpon>
+    </Compile>
+    <!-- Formularios Estudiantes -->
+    <Compile Include="Forms\Estudiantes\Estudiante.cs" />
+    <Compile Include="Forms\Estudiantes\EstudianteControlador.cs" />
     <Compile Include="Forms\Estudiantes\FormEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Estudiantes\FormEstudiantes.Designer.cs">
       <DependentUpon>FormEstudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Estudiantes\FormEstudiantesAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Estudiantes\FormEstudiantesAgregar.Designer.cs">
+      <DependentUpon>FormEstudiantesAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Estudiantes\FormEstudiantesBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Estudiantes\FormEstudiantesBuscar.Designer.cs">
+      <DependentUpon>FormEstudiantesBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Estudiantes\FormEstudiantesEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Estudiantes\FormEstudiantesEditar.Designer.cs">
+      <DependentUpon>FormEstudiantesEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Estudiantes\FormEstudiantesEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Estudiantes\FormEstudiantesEliminar.Designer.cs">
+      <DependentUpon>FormEstudiantesEliminar.cs</DependentUpon>
+    </Compile>
+    <!-- Resto de formularios (Grupos, Login, Materias, Menu) -->
     <Compile Include="Forms\Grupos\FormGrupos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +183,7 @@
     <Compile Include="Forms\Menu Principal\FormMenuPrincipal.Designer.cs">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </Compile>
+
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UTApp_Integradora1DataSet.Designer.cs">
@@ -120,70 +191,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UTApp_Integradora1DataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\Asignaciones\AgregarAsignacion.resx">
-      <DependentUpon>AgregarAsignacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asignaciones\EditarAsignacion.resx">
-      <DependentUpon>EditarAsignacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asignaciones\FormAsignaciones.resx">
-      <DependentUpon>FormAsignaciones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asignaciones\ModoBusqueda.resx">
-      <DependentUpon>ModoBusqueda.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Docentes\FormDocentes.resx">
-      <DependentUpon>FormDocentes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Estudiantes\FormEstudiantes.resx">
-      <DependentUpon>FormEstudiantes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Grupos\FormGrupos.resx">
-      <DependentUpon>FormGrupos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Login\FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Materias\FormMaterias.resx">
-      <DependentUpon>FormMaterias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Menu Principal\FormMenuPrincipal.resx">
-      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <None Include="UTApp_Integradora1DataSet.xsc">
-      <DependentUpon>UTApp_Integradora1DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="UTApp_Integradora1DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>UTApp_Integradora1DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UTApp_Integradora1DataSet.xss">
-      <DependentUpon>UTApp_Integradora1DataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
+
+  <!-- Recursos -->
   <ItemGroup>
     <Content Include="Resources\add.png" />
     <Content Include="Resources\delete.png" />
@@ -196,5 +206,10 @@
     <Content Include="Resources\UTAppLogoBlanco.png" />
     <None Include="Resources\UTAppLogoBlanco1.png" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

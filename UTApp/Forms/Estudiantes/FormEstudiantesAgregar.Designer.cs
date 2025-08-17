@@ -45,6 +45,7 @@
             this.txtEstudianteCorreo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEstudiantePass = new System.Windows.Forms.TextBox();
+            this.cbGrupo = new System.Windows.Forms.ComboBox();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
@@ -215,11 +216,20 @@
             this.txtEstudiantePass.Size = new System.Drawing.Size(225, 20);
             this.txtEstudiantePass.TabIndex = 85;
             // 
+            // cbGrupo
+            // 
+            this.cbGrupo.FormattingEnabled = true;
+            this.cbGrupo.Location = new System.Drawing.Point(192, 142);
+            this.cbGrupo.Name = "cbGrupo";
+            this.cbGrupo.Size = new System.Drawing.Size(93, 21);
+            this.cbGrupo.TabIndex = 89;
+            // 
             // FormEstudiantesAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 601);
+            this.Controls.Add(this.cbGrupo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEstudianteCorreo);
             this.Controls.Add(this.label2);
@@ -270,5 +280,6 @@
         private System.Windows.Forms.TextBox txtEstudianteCorreo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtEstudiantePass;
+        private System.Windows.Forms.ComboBox cbGrupo;
     }
 }

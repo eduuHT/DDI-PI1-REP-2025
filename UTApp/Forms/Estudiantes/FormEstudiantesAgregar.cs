@@ -195,11 +195,6 @@ namespace UTApp.Forms.Estudiantes
             }
         }
 
-        private void FormEstudiantesAgregar_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtEstudianteMatricula_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -214,5 +209,31 @@ namespace UTApp.Forms.Estudiantes
             this.Hide();
             back.Show();
         }
+        /*
+        public void Limpiar()
+        {
+            txtEstudianteMatricula.Text = "";
+            cbGrupo.SelectedIndex = -1;
+            txtEstudianteNombre.Text = "";
+            txtEstudianteCorreo.Text = "";
+            txtEstudiantePass.Text = "";
+        }
+
+        public void ListaGrupos()
+        {
+            GrupoControlador controladorGrupo = new GrupoControlador();
+            List<Grupo> grupos = controladorGrupo.ListarGrupos();
+
+
+        }
+        private void FormEstudiantesAgregar_Load(object sender, EventArgs e)
+        {
+            Limpiar();
+            ListaGrupos();
+            cbGrupo.DataSource = grupos;
+            cbGrupo.DisplayMember = "grupoNombre";
+            cbGrupo.ValueMember = "grupoID";
+        }
+        */
     }
 }

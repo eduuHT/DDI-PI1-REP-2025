@@ -90,6 +90,8 @@
       <DependentUpon>FormGrupos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Grupos\Grupo.cs" />
+    <Compile Include="Forms\Grupos\GrupoBLL.cs" />
+    <Compile Include="Forms\Grupos\GrupoDAL.cs" />
     <Compile Include="Forms\Login\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>

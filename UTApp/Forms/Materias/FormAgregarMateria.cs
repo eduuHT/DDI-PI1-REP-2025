@@ -37,6 +37,11 @@ namespace UTApp.Forms.Materias
         {
             Regresar();
         }
+        private void btnConfirmarAdicion_Click(object sender, EventArgs e)
+        {
+            Materia materia = new Materia();
+            materia.Nombre = txtNombreMateria.Text;
+        }
         #endregion
 
         #region Private Methods

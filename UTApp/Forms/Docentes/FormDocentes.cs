@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UTApp.Forms.Estudiantes;
+using UTApp.Forms.Menu_Principal;
 
 namespace UTApp.Forms.Docentes
 {
@@ -58,13 +60,26 @@ namespace UTApp.Forms.Docentes
             this.Hide();
             editar.Show();
         }
-        /*
-private void pbEditar_Click(object sender, EventArgs e)
-{
-   FormDocentesEditar editar = new FormDocentesEditar(numeroEmpleado);
-   this.Hide();
 
-}
-*/
+        private void pbRegresar_Click(object sender, EventArgs e)
+        {
+            FormMenuPrincipal back = new FormMenuPrincipal();
+            this.Hide();
+            back.Show();
+        }
+
+        private void pbBuscar_Click(object sender, EventArgs e)
+        {
+            FormDocentesBuscar buscar = new FormDocentesBuscar();
+            this.Hide();
+            buscar.Show();
+        }
+
+        private void pbEliminar_Click(object sender, EventArgs e)
+        {
+            FormDocentesEliminar eliminar = new FormDocentesEliminar();
+            this.Hide();
+            eliminar.Show();
+        }
     }
 }

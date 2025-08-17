@@ -195,5 +195,12 @@ namespace UTApp.Forms.Docentes
                 e.Handled = true;
             }
         }
+
+        private void pbRegresar_Click(object sender, EventArgs e)
+        {
+            FormDocentes back = new FormDocentes();
+            this.Hide();
+            back.Show();
+        }
     }
 }

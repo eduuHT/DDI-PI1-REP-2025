@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UTApp.Forms.Estudiantes;
+using UTApp.Forms.Menu_Principal;
 
 namespace UTApp.Forms.Docentes
 {
@@ -149,6 +150,13 @@ namespace UTApp.Forms.Docentes
         private void FormDocentesEditar_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pbRegresar_Click(object sender, EventArgs e)
+        {
+            FormDocentes back = new FormDocentes();
+            this.Hide();
+            back.Show();
         }
     }
 }

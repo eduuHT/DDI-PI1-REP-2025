@@ -36,7 +36,6 @@ namespace UTApp.Forms.Estudiantes
 
                 if (bandera == false)
                 {
-                    txtEstudianteMatricula.Text = Convert.ToInt64(txtEstudianteMatricula.Text).ToString();
 
                     if (txtEstudianteMatricula.Text == "" || txtEstudianteMatricula.Text.Length != 10)
                     {
@@ -111,7 +110,7 @@ namespace UTApp.Forms.Estudiantes
             }
             catch
             {
-                MessageBox.Show("Al parecer estás ingresando letras, intenta solo con números.", "Ocurrió un problema");
+                MessageBox.Show("Ocurrió un problema");
             }
         }
 
@@ -207,6 +206,13 @@ namespace UTApp.Forms.Estudiantes
             {
                 e.Handled = true;
             }
+        }
+
+        private void pbRegresar_Click(object sender, EventArgs e)
+        {
+            FormEstudiantes back = new FormEstudiantes();
+            this.Hide();
+            back.Show();
         }
     }
 }

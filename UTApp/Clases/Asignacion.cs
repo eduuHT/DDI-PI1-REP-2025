@@ -14,6 +14,7 @@ namespace UTApp.Clases
         DateTime asignacionFechaLimite;
         int claseID;
         int plataformaID;
+        bool asignacionEntrega;
 
         public int AsignacionID { get => asignacionID; set => asignacionID = value; }
         public string AsignacionTitulo { get => asignacionTitulo; set => asignacionTitulo = value; }
@@ -21,6 +22,8 @@ namespace UTApp.Clases
         public DateTime AsignacionFechaLimite { get => asignacionFechaLimite; set => asignacionFechaLimite = value; }
         public int ClaseID { get => claseID; set => claseID = value; }
         public int PlataformaID { get => plataformaID; set => plataformaID = value; }
+        public bool AsignacionEntrega { get => asignacionEntrega; set => asignacionEntrega = value; }
+
         public Asignacion(int asignacionID, string asignacionTitulo, string asignacionDescripcion, DateTime asignacionFechaLimite, int claseID, int plataformaID)
         {
             this.asignacionID = asignacionID;
@@ -29,6 +32,7 @@ namespace UTApp.Clases
             this.asignacionFechaLimite = asignacionFechaLimite;
             this.claseID = claseID;
             this.plataformaID = plataformaID;
+            this.asignacionEntrega = false;
         }
     }
 }

@@ -87,6 +87,7 @@ namespace UTApp.Clases
                 cmd.Parameters.AddWithValue("@AsignacionFechaLimite", AsignacionEditar.AsignacionFechaLimite);
                 cmd.Parameters.AddWithValue("@ClaseID", AsignacionEditar.ClaseID);
                 cmd.Parameters.AddWithValue("@PlataformaID", AsignacionEditar.PlataformaID);
+                cmd.Parameters.AddWithValue("@AsignacionEntrega", AsignacionEditar.AsignacionEntrega);
 
                 cmd.ExecuteNonQuery();
                 

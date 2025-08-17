@@ -34,21 +34,21 @@
             this.EstudianteNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelCatálogoMaterias = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.botonOpciones = new System.Windows.Forms.PictureBox();
-            this.pbRegresar = new System.Windows.Forms.PictureBox();
             this.labelMaterias = new System.Windows.Forms.Label();
+            this.pbBuscar = new System.Windows.Forms.PictureBox();
             this.pbEditar = new System.Windows.Forms.PictureBox();
             this.pbAgregar = new System.Windows.Forms.PictureBox();
             this.pbEliminar = new System.Windows.Forms.PictureBox();
-            this.pbBuscar = new System.Windows.Forms.PictureBox();
+            this.botonOpciones = new System.Windows.Forms.PictureBox();
+            this.pbRegresar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridEstudiantes)).BeginInit();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAgregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
             this.SuspendLayout();
             // 
             // gridEstudiantes
@@ -113,27 +113,6 @@
             this.panelHeader.Size = new System.Drawing.Size(343, 94);
             this.panelHeader.TabIndex = 13;
             // 
-            // botonOpciones
-            // 
-            this.botonOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonOpciones.Location = new System.Drawing.Point(293, 46);
-            this.botonOpciones.Name = "botonOpciones";
-            this.botonOpciones.Size = new System.Drawing.Size(23, 24);
-            this.botonOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.botonOpciones.TabIndex = 2;
-            this.botonOpciones.TabStop = false;
-            // 
-            // pbRegresar
-            // 
-            this.pbRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
-            this.pbRegresar.Location = new System.Drawing.Point(25, 30);
-            this.pbRegresar.Name = "pbRegresar";
-            this.pbRegresar.Size = new System.Drawing.Size(25, 40);
-            this.pbRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRegresar.TabIndex = 1;
-            this.pbRegresar.TabStop = false;
-            // 
             // labelMaterias
             // 
             this.labelMaterias.AutoSize = true;
@@ -145,6 +124,17 @@
             this.labelMaterias.Size = new System.Drawing.Size(134, 25);
             this.labelMaterias.TabIndex = 0;
             this.labelMaterias.Text = "Estudiantes";
+            // 
+            // pbBuscar
+            // 
+            this.pbBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbBuscar.Image = global::UTApp.Properties.Resources.scan;
+            this.pbBuscar.Location = new System.Drawing.Point(294, 113);
+            this.pbBuscar.Name = "pbBuscar";
+            this.pbBuscar.Size = new System.Drawing.Size(33, 33);
+            this.pbBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBuscar.TabIndex = 27;
+            this.pbBuscar.TabStop = false;
             // 
             // pbEditar
             // 
@@ -181,16 +171,27 @@
             this.pbEliminar.TabIndex = 15;
             this.pbEliminar.TabStop = false;
             // 
-            // pbBuscar
+            // botonOpciones
             // 
-            this.pbBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbBuscar.Image = global::UTApp.Properties.Resources.scan;
-            this.pbBuscar.Location = new System.Drawing.Point(294, 113);
-            this.pbBuscar.Name = "pbBuscar";
-            this.pbBuscar.Size = new System.Drawing.Size(33, 33);
-            this.pbBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbBuscar.TabIndex = 27;
-            this.pbBuscar.TabStop = false;
+            this.botonOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonOpciones.Image = global::UTApp.Properties.Resources.dots;
+            this.botonOpciones.Location = new System.Drawing.Point(293, 46);
+            this.botonOpciones.Name = "botonOpciones";
+            this.botonOpciones.Size = new System.Drawing.Size(23, 24);
+            this.botonOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.botonOpciones.TabIndex = 2;
+            this.botonOpciones.TabStop = false;
+            // 
+            // pbRegresar
+            // 
+            this.pbRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
+            this.pbRegresar.Location = new System.Drawing.Point(25, 30);
+            this.pbRegresar.Name = "pbRegresar";
+            this.pbRegresar.Size = new System.Drawing.Size(25, 40);
+            this.pbRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRegresar.TabIndex = 1;
+            this.pbRegresar.TabStop = false;
             // 
             // FormEstudiantes
             // 
@@ -216,12 +217,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridEstudiantes)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAgregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

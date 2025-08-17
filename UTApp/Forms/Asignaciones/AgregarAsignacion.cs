@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UTApp.Clases;
 using UTApp.ClasesControladoras;
+using UTApp.Forms.Docentes;
 
 namespace UTApp.Forms.Asignaciones
 {
@@ -17,7 +18,10 @@ namespace UTApp.Forms.Asignaciones
         AsignacionControlador controlador = new AsignacionControlador();
         ClaseControladora claseControlador = new ClaseControladora();
         PlataformaControlador plataformaControlador = new PlataformaControlador();
+        DocenteControlador DocenteControlador = new DocenteControlador();
         List<Asignacion> asignaciones = new List<Asignacion>();
+        List<Docente> docentes = new List<Docente>();
+        List<Plataforma> plataformas = new List<Plataforma>();
         public AgregarAsignacion()
         {
             InitializeComponent();
@@ -38,16 +42,18 @@ namespace UTApp.Forms.Asignaciones
         public void LlenarLista()
         {
             asignaciones = controlador.ListarAsignaciones();
+            docentes = DocenteControlador.ListarDocentes();
+            plataformas = plataformaControlador.ListarPlataformas();
         }
 
         public void LimpiarCampos()
         {
             txtDescripcion.Text = string.Empty;
             txtTitulo.Text = string.Empty;
-            CBGrupo.Text = string.Empty;
-            CBDocente.Text = string.Empty;
-            CBMateria.Text = string.Empty;
-            CBPlataforma.Text = string.Empty;
+            CBGrupo.SelectedIndex = -1;
+            CBDocente.SelectedIndex = -1;
+            CBMateria.SelectedIndex = -1;
+            CBPlataforma.SelectedIndex = -1;
             DTEntrega.Text = string.Empty;
         }
         public bool ValidarCampos()
@@ -79,15 +85,24 @@ namespace UTApp.Forms.Asignaciones
         {
             LlenarLista();
             LimpiarCampos();
+            CBGrupo.DataSource = null;
+            CBPlataforma.DataSource = null;
+            CBDocente.DataSource = null;
+            CBPlataforma.DataSource = null;
+            CBDocente.DataSource = docentes;
+            CBPlataforma.DataSource = plataformas;
+            CBDocente.DisplayMember = "docenteNombreCompleto";
+            CBDocente.ValueMember = "docenteNumeroEmpleado";
+            CBPlataforma.DisplayMember ="plataformaNombre";
+            CBPlataforma.ValueMember = "plataformaID";
             /*
-            CBDocente.DisplayMember = ;
-            CBDocente.ValueMember =;
             CBGrupo.DisplayMember =;
             CBGrupo.ValueMember =;
+            CBGrupo.DataSource =;
+            CBGrupo.DataSource =;
             CBMateria.DisplayMember= ;
             CBMateria.ValueMember =;
-            CBPlataforma.DisplayMember =;
-            CBPlataforma.ValueMember =;*/
+            CBPlataforma.DataSource =;;*/
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

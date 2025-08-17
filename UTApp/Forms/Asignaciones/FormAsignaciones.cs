@@ -26,7 +26,6 @@ namespace UTApp.Forms.Asignaciones
         private void FormAsignaciones_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'uTApp_Integradora1DataSet.Asignacion' Puede moverla o quitarla según sea necesario.
-            this.asignacionTableAdapter.Fill(this.uTApp_Integradora1DataSet.Asignacion);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

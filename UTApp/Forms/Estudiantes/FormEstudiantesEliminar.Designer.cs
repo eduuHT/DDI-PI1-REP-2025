@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEstudiantesEliminar));
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.botonOpciones = new System.Windows.Forms.PictureBox();
-            this.pbRegresar = new System.Windows.Forms.PictureBox();
             this.labelMaterias = new System.Windows.Forms.Label();
             this.labelCatálogoMaterias = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,6 +44,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label = new System.Windows.Forms.Label();
+            this.botonOpciones = new System.Windows.Forms.PictureBox();
+            this.pbRegresar = new System.Windows.Forms.PictureBox();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
@@ -61,27 +61,6 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(343, 94);
             this.panelHeader.TabIndex = 15;
-            // 
-            // botonOpciones
-            // 
-            this.botonOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonOpciones.Location = new System.Drawing.Point(293, 46);
-            this.botonOpciones.Name = "botonOpciones";
-            this.botonOpciones.Size = new System.Drawing.Size(23, 24);
-            this.botonOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.botonOpciones.TabIndex = 2;
-            this.botonOpciones.TabStop = false;
-            // 
-            // pbRegresar
-            // 
-            this.pbRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
-            this.pbRegresar.Location = new System.Drawing.Point(25, 30);
-            this.pbRegresar.Name = "pbRegresar";
-            this.pbRegresar.Size = new System.Drawing.Size(25, 40);
-            this.pbRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRegresar.TabIndex = 1;
-            this.pbRegresar.TabStop = false;
             // 
             // labelMaterias
             // 
@@ -226,6 +205,28 @@
             this.label.Size = new System.Drawing.Size(242, 16);
             this.label.TabIndex = 124;
             this.label.Text = "Confirmar estudiante a eliminar:";
+            // 
+            // botonOpciones
+            // 
+            this.botonOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonOpciones.Image = global::UTApp.Properties.Resources.dots;
+            this.botonOpciones.Location = new System.Drawing.Point(293, 46);
+            this.botonOpciones.Name = "botonOpciones";
+            this.botonOpciones.Size = new System.Drawing.Size(23, 24);
+            this.botonOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.botonOpciones.TabIndex = 2;
+            this.botonOpciones.TabStop = false;
+            // 
+            // pbRegresar
+            // 
+            this.pbRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
+            this.pbRegresar.Location = new System.Drawing.Point(25, 30);
+            this.pbRegresar.Name = "pbRegresar";
+            this.pbRegresar.Size = new System.Drawing.Size(25, 40);
+            this.pbRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRegresar.TabIndex = 1;
+            this.pbRegresar.TabStop = false;
             // 
             // FormEstudiantesEliminar
             // 

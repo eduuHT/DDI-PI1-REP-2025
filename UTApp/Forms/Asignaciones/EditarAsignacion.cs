@@ -7,11 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UTApp.Clases;
+using UTApp.ClasesControladoras;
+using UTApp.Forms.Docentes;
 
 namespace UTApp.Forms.Asignaciones
 {
     public partial class EditarAsignacion : Form
     {
+        AsignacionControlador controlador = new AsignacionControlador();
+        ClaseControladora claseControlador = new ClaseControladora();
+        PlataformaControlador plataformaControlador = new PlataformaControlador();
+        DocenteControlador DocenteControlador = new DocenteControlador();
+        List<Asignacion> asignaciones = new List<Asignacion>();
+        List<Docente> docentes = new List<Docente>();
+        List<Plataforma> plataformas = new List<Plataforma>();
         public EditarAsignacion()
         {
             InitializeComponent();
@@ -33,18 +43,37 @@ namespace UTApp.Forms.Asignaciones
         {
             Application.Exit();
         }
+        public void LlenarLista()
+        {
+            asignaciones = controlador.ListarAsignaciones();
+            docentes = DocenteControlador.ListarDocentes();
+            plataformas = plataformaControlador.ListarPlataformas();
+        }
+        public void LimpiarCampos()
+        {
+            txtDescripcion.Text = string.Empty;
+            txtTitulo.Text = string.Empty;
+            CBGrupo.SelectedIndex = -1;
+            CBDocente.SelectedIndex = -1;
+            CBMateria.SelectedIndex = -1;
+            CBPlataforma.SelectedIndex = -1;
+            DTEntrega.Text = string.Empty;
+        }
 
         private void EditarAsignacion_Load(object sender, EventArgs e) // tmb asigna las propiedades una vez hechos los demás cruds
         {
-            /*
-            CBDocente.DisplayMember =;
-            CBDocente.ValueMember =;
-            CBGrupo.DisplayMember =;
-            CBGrupo.ValueMember =;
-            CBMateria.DisplayMember = ;
-            CBMateria.ValueMember =;
-            CBPlataforma.DisplayMember =;
-            CBPlataforma.ValueMember =;*/
+            LlenarLista();
+            LimpiarCampos();
+            CBGrupo.DataSource = null;
+            CBPlataforma.DataSource = null;
+            CBDocente.DataSource = null;
+            CBPlataforma.DataSource = null;
+            CBDocente.DataSource = docentes;
+            CBPlataforma.DataSource = plataformas;
+            CBDocente.DisplayMember = "docenteNombreCompleto";
+            CBDocente.ValueMember = "docenteNumeroEmpleado";
+            CBPlataforma.DisplayMember = "plataformaNombre";
+            CBPlataforma.ValueMember = "plataformaID";
         }
         public void LlenarCampos() // Acuerdate de modificarla para llenarla con el click del grid
         {

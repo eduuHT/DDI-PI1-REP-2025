@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDocentesEliminar));
             this.label5 = new System.Windows.Forms.Label();
             this.txtDocenteCorreo = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -156,6 +155,7 @@
             // botonOpciones
             // 
             this.botonOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonOpciones.Image = global::UTApp.Properties.Resources.dots;
             this.botonOpciones.Location = new System.Drawing.Point(293, 46);
             this.botonOpciones.Name = "botonOpciones";
             this.botonOpciones.Size = new System.Drawing.Size(23, 24);
@@ -237,7 +237,6 @@
             this.Controls.Add(this.label);
             this.Controls.Add(this.labelCatálogoMaterias);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormDocentesEliminar";

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UTApp.Forms.Asignaciones;
+using UTApp.Forms.Docentes;
+using UTApp.Forms.Estudiantes;
 
 namespace UTApp.Forms.Menu_Principal
 {
@@ -42,12 +44,17 @@ namespace UTApp.Forms.Menu_Principal
 
         private void btnEstudiantes_Click(object sender, EventArgs e)
         {
-
+            FormEstudiantes formEstudiantes = new FormEstudiantes();
+            formEstudiantes.Show();
+            this.Hide();
         }
+
 
         private void btnDocentes_Click(object sender, EventArgs e)
         {
-
+            FormDocentes formDocentes = new FormDocentes();
+            formDocentes.Show();
+            this.Hide();
         }
     }
 }

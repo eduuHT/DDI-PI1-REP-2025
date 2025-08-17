@@ -34,28 +34,28 @@
             this.btnBack = new System.Windows.Forms.PictureBox();
             this.lblAsignaciones = new System.Windows.Forms.Label();
             this.gridAsignaciones = new System.Windows.Forms.DataGridView();
-            this.btnScan = new System.Windows.Forms.PictureBox();
-            this.btnEdit = new System.Windows.Forms.PictureBox();
-            this.btnDelete = new System.Windows.Forms.PictureBox();
-            this.btnAdd = new System.Windows.Forms.PictureBox();
-            this.uTApp_Integradora1DataSet = new UTApp.UTApp_Integradora1DataSet();
-            this.asignacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.asignacionTableAdapter = new UTApp.UTApp_Integradora1DataSetTableAdapters.AsignacionTableAdapter();
             this.AsignacionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AsignacionTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AsignacionDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AsignacionFechaLimite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlataformaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClaseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asignacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uTApp_Integradora1DataSet = new UTApp.UTApp_Integradora1DataSet();
+            this.asignacionTableAdapter = new UTApp.UTApp_Integradora1DataSetTableAdapters.AsignacionTableAdapter();
+            this.btnScan = new System.Windows.Forms.PictureBox();
+            this.btnEdit = new System.Windows.Forms.PictureBox();
+            this.btnDelete = new System.Windows.Forms.PictureBox();
+            this.btnAdd = new System.Windows.Forms.PictureBox();
             this.pnlBanner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAsignaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asignacionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uTApp_Integradora1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnScan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uTApp_Integradora1DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.asignacionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBanner
@@ -116,64 +116,6 @@
             this.gridAsignaciones.TabIndex = 2;
             this.gridAsignaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAsignaciones_CellClick);
             // 
-            // btnScan
-            // 
-            this.btnScan.Image = global::UTApp.Properties.Resources.scan;
-            this.btnScan.Location = new System.Drawing.Point(269, 539);
-            this.btnScan.Name = "btnScan";
-            this.btnScan.Size = new System.Drawing.Size(49, 50);
-            this.btnScan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnScan.TabIndex = 6;
-            this.btnScan.TabStop = false;
-            this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Image = global::UTApp.Properties.Resources.edit;
-            this.btnEdit.Location = new System.Drawing.Point(214, 539);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(49, 50);
-            this.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEdit.TabIndex = 5;
-            this.btnEdit.TabStop = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Image = global::UTApp.Properties.Resources.delete;
-            this.btnDelete.Location = new System.Drawing.Point(159, 539);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(49, 50);
-            this.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.TabStop = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Image = global::UTApp.Properties.Resources.add;
-            this.btnAdd.Location = new System.Drawing.Point(104, 539);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(49, 50);
-            this.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.TabStop = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // uTApp_Integradora1DataSet
-            // 
-            this.uTApp_Integradora1DataSet.DataSetName = "UTApp_Integradora1DataSet";
-            this.uTApp_Integradora1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // asignacionBindingSource
-            // 
-            this.asignacionBindingSource.DataMember = "Asignacion";
-            this.asignacionBindingSource.DataSource = this.uTApp_Integradora1DataSet;
-            // 
-            // asignacionTableAdapter
-            // 
-            this.asignacionTableAdapter.ClearBeforeFill = true;
-            // 
             // AsignacionID
             // 
             this.AsignacionID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -222,6 +164,64 @@
             this.ClaseID.Name = "ClaseID";
             this.ClaseID.ReadOnly = true;
             // 
+            // asignacionBindingSource
+            // 
+            this.asignacionBindingSource.DataMember = "Asignacion";
+            this.asignacionBindingSource.DataSource = this.uTApp_Integradora1DataSet;
+            // 
+            // uTApp_Integradora1DataSet
+            // 
+            this.uTApp_Integradora1DataSet.DataSetName = "UTApp_Integradora1DataSet";
+            this.uTApp_Integradora1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // asignacionTableAdapter
+            // 
+            this.asignacionTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnScan
+            // 
+            this.btnScan.Image = global::UTApp.Properties.Resources.scan;
+            this.btnScan.Location = new System.Drawing.Point(269, 539);
+            this.btnScan.Name = "btnScan";
+            this.btnScan.Size = new System.Drawing.Size(49, 50);
+            this.btnScan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnScan.TabIndex = 6;
+            this.btnScan.TabStop = false;
+            this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::UTApp.Properties.Resources.edit;
+            this.btnEdit.Location = new System.Drawing.Point(214, 539);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(49, 50);
+            this.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEdit.TabIndex = 5;
+            this.btnEdit.TabStop = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Image = global::UTApp.Properties.Resources.delete;
+            this.btnDelete.Location = new System.Drawing.Point(159, 539);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(49, 50);
+            this.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.TabStop = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Image = global::UTApp.Properties.Resources.add;
+            this.btnAdd.Location = new System.Drawing.Point(104, 539);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(49, 50);
+            this.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.TabStop = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // FormAsignaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,12 +246,12 @@
             this.pnlBanner.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAsignaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asignacionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uTApp_Integradora1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnScan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uTApp_Integradora1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.asignacionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

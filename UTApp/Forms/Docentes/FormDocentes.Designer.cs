@@ -113,6 +113,7 @@
             // botonOpciones
             // 
             this.botonOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonOpciones.Image = global::UTApp.Properties.Resources.dots;
             this.botonOpciones.Location = new System.Drawing.Point(293, 46);
             this.botonOpciones.Name = "botonOpciones";
             this.botonOpciones.Size = new System.Drawing.Size(23, 24);

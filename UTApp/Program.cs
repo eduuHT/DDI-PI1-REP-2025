@@ -18,8 +18,7 @@ namespace UTApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FormLogin());
-            Application.Run(new FormEstudiantesAgregar());
+            Application.Run(new FormLogin());
         }
     }
 }

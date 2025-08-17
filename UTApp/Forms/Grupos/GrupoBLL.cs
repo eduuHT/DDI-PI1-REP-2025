@@ -23,5 +23,10 @@ namespace UTApp.Forms.Grupos
 
             return grupo;
         }
+
+       public List<Grupo> GetGrupos()
+        {
+         return _grupoDAl.GetGrupos(); 
+        }
     }
 }

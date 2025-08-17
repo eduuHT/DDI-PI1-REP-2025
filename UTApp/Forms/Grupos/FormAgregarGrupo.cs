@@ -44,19 +44,26 @@ namespace UTApp.Forms.Grupos
         }
         private void btnConfirmarAdicion_Click(object sender, EventArgs e)
         {
-            Grupo grupo = new Grupo();
-            grupo.Nombre = txtNombreGrupo.Text;
-
-            _grupoBLL.GuardarGrupo(grupo);
+            GuardarGrupo();
+            Regresar();
         }
         #endregion
 
         #region Private Methods
         private void Regresar()
         {
-            // mostrar de nuevo el form principal y ocultar este form secundario
+            // mostrar de nuevo el form principal, actualizar el grid y cerrar este form secundario
             _formPadre.Show();
+            _formPadre.LlenarGrid();
             this.Close();
+        }
+
+        private void GuardarGrupo()
+        {
+            Grupo grupo = new Grupo();
+            grupo.Nombre = txtNombreGrupo.Text;
+
+            _grupoBLL.GuardarGrupo(grupo);
         }
 
         #endregion

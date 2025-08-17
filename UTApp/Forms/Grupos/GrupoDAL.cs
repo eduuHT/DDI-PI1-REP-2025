@@ -33,5 +33,39 @@ namespace UTApp.Forms.Grupos
                 conn.Close();
             }
         }
+
+        public List<Grupo> GetGrupos()
+        {
+            List<Grupo> grupos = new List<Grupo>();
+
+            try
+            {
+                conn.Open();
+
+                SqlCommand command = new SqlCommand("GetGrupos", conn);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    grupos.Add(new Grupo
+                    {
+                        Id = int.Parse(reader["GrupoID"].ToString()),
+                        Nombre = reader["GrupoNombre"].ToString()
+                    });
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return grupos;
+        }
     }
 }

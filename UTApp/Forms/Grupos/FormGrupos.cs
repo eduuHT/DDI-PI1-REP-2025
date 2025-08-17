@@ -12,14 +12,22 @@ namespace UTApp.Forms.Grupos
 {
     public partial class FormGrupos : Form // Form Principal del Crud Grupos
     {
+        private GrupoBLL _grupoBLL;
+
         #region Constructors
         public FormGrupos()
         {
             InitializeComponent();
+            _grupoBLL = new GrupoBLL();
         }
         #endregion
 
         #region Events
+        private void FormGrupos_Load(object sender, EventArgs e)
+        {
+            LlenarGrid();
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             AbrirFormAgregarGrupo();
@@ -56,7 +64,13 @@ namespace UTApp.Forms.Grupos
             formEditarGrupo.Show();
             this.Hide();
         }
+        public void LlenarGrid()
+        {
+            List<Grupo> grupos = _grupoBLL.GetGrupos();
+            gridGrupos.DataSource = grupos;
+        }
         #endregion
+
 
     }
 }

@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGrupos));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.btnRegresar = new System.Windows.Forms.PictureBox();
             this.lblGrupos = new System.Windows.Forms.Label();
             this.lblCatálogo = new System.Windows.Forms.Label();
             this.gridGrupos = new System.Windows.Forms.DataGridView();
-            this.GrupoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GrupoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditar = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new System.Windows.Forms.PictureBox();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.PictureBox();
+            this.grupoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridGrupos)).BeginInit();
@@ -48,6 +50,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -99,28 +102,18 @@
             this.gridGrupos.AllowUserToAddRows = false;
             this.gridGrupos.AllowUserToDeleteRows = false;
             this.gridGrupos.AllowUserToResizeRows = false;
+            this.gridGrupos.AutoGenerateColumns = false;
             this.gridGrupos.BackgroundColor = System.Drawing.Color.SeaGreen;
             this.gridGrupos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridGrupos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.GrupoID,
-            this.GrupoNombre});
+            this.idDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn});
+            this.gridGrupos.DataSource = this.grupoBindingSource;
             this.gridGrupos.Location = new System.Drawing.Point(12, 202);
             this.gridGrupos.Name = "gridGrupos";
             this.gridGrupos.RowHeadersVisible = false;
             this.gridGrupos.Size = new System.Drawing.Size(320, 350);
             this.gridGrupos.TabIndex = 6;
-            // 
-            // GrupoID
-            // 
-            this.GrupoID.HeaderText = "ID";
-            this.GrupoID.Name = "GrupoID";
-            this.GrupoID.Width = 75;
-            // 
-            // GrupoNombre
-            // 
-            this.GrupoNombre.HeaderText = "Nombre";
-            this.GrupoNombre.Name = "GrupoNombre";
-            this.GrupoNombre.Width = 240;
             // 
             // btnEditar
             // 
@@ -176,6 +169,22 @@
             this.btnBuscar.TabIndex = 13;
             this.btnBuscar.TabStop = false;
             // 
+            // grupoBindingSource
+            // 
+            this.grupoBindingSource.DataSource = typeof(UTApp.Forms.Grupos.Grupo);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
             // FormGrupos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,6 +205,7 @@
             this.Name = "FormGrupos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grupos";
+            this.Load += new System.EventHandler(this.FormGrupos_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
@@ -204,6 +214,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grupoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,12 +227,13 @@
         private System.Windows.Forms.Label lblGrupos;
         private System.Windows.Forms.Label lblCatálogo;
         private System.Windows.Forms.DataGridView gridGrupos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GrupoID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GrupoNombre;
         private System.Windows.Forms.PictureBox btnEditar;
         private System.Windows.Forms.PictureBox btnEliminar;
         private System.Windows.Forms.PictureBox btnAgregar;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.PictureBox btnBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource grupoBindingSource;
     }
 }

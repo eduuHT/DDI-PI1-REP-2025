@@ -18,7 +18,7 @@ namespace UTApp.Forms.Asignaciones
         AsignacionControlador controlador = new AsignacionControlador();
         List<Asignacion> asignaciones = new List<Asignacion>();
         DocenteControlador DocenteControlador = new DocenteControlador();
-        List<Docente> docentes = new List<Docente>();
+        List<ClaseDocenteID> docentes = new List<ClaseDocenteID>();
         PlataformaControlador plataformaControlador = new PlataformaControlador();
         List<Plataforma> plataformas = new List<Plataforma>();
         ClaseControladora claseControlador = new ClaseControladora();
@@ -46,7 +46,7 @@ namespace UTApp.Forms.Asignaciones
         public void LlenarLista()
         {
             asignaciones = controlador.ListarAsignaciones();
-            docentes = DocenteControlador.ListarDocentes();
+            docentes = DocenteControlador.ListarDocentesID();
             plataformas = plataformaControlador.ListarPlataformas();
         }
         public void LimpiarCampos()
@@ -71,7 +71,7 @@ namespace UTApp.Forms.Asignaciones
             CBDocente.DataSource = docentes;
             CBPlataforma.DataSource = plataformas;
             CBDocente.DisplayMember = "docenteNombreCompleto";
-            CBDocente.ValueMember = "docenteNumeroEmpleado";
+            CBDocente.ValueMember = "docenteID";
             CBPlataforma.DisplayMember = "plataformaNombre";
             CBPlataforma.ValueMember = "plataformaID";
         }

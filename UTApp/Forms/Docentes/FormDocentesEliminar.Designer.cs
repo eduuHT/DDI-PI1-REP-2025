@@ -193,6 +193,7 @@
             this.txtDocenteEmpleado.Name = "txtDocenteEmpleado";
             this.txtDocenteEmpleado.Size = new System.Drawing.Size(100, 20);
             this.txtDocenteEmpleado.TabIndex = 133;
+            this.txtDocenteEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocenteEmpleado_KeyPress);
             // 
             // label2
             // 

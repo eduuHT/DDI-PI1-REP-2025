@@ -83,6 +83,7 @@
     <Compile Include="Forms\Asignaciones\ModoBusqueda.Designer.cs">
       <DependentUpon>ModoBusqueda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Docentes\ClaseDocenteID.cs" />
     <!-- Formularios Docentes de CRUD_Estudiantes -->
     <Compile Include="Forms\Docentes\Docente.cs" />
     <Compile Include="Forms\Docentes\DocenteControlador.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="Forms\Docentes\FormDocentesEliminar.Designer.cs">
       <DependentUpon>FormDocentesEliminar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Estudiantes\ClaseEstudianteID.cs" />
     <!-- Formularios Estudiantes -->
     <Compile Include="Forms\Estudiantes\Estudiante.cs" />
     <Compile Include="Forms\Estudiantes\EstudianteControlador.cs" />

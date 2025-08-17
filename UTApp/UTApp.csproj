@@ -89,6 +89,7 @@
     <Compile Include="Forms\Grupos\FormGrupos.Designer.cs">
       <DependentUpon>FormGrupos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Grupos\Grupo.cs" />
     <Compile Include="Forms\Login\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>

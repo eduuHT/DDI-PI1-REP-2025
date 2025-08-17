@@ -16,12 +16,12 @@ namespace UTApp.Forms.Asignaciones
     public partial class EditarAsignacion : Form
     {
         AsignacionControlador controlador = new AsignacionControlador();
-        ClaseControladora claseControlador = new ClaseControladora();
-        PlataformaControlador plataformaControlador = new PlataformaControlador();
-        DocenteControlador DocenteControlador = new DocenteControlador();
         List<Asignacion> asignaciones = new List<Asignacion>();
+        DocenteControlador DocenteControlador = new DocenteControlador();
         List<Docente> docentes = new List<Docente>();
+        PlataformaControlador plataformaControlador = new PlataformaControlador();
         List<Plataforma> plataformas = new List<Plataforma>();
+        ClaseControladora claseControlador = new ClaseControladora();
         public EditarAsignacion()
         {
             InitializeComponent();

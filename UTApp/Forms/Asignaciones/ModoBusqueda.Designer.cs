@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModoBusqueda));
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CBFiltro = new System.Windows.Forms.ComboBox();
+            this.CBEntidad = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -48,21 +48,28 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Filtrar por:";
             // 
-            // comboBox1
+            // CBFiltro
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(71, 47);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(264, 21);
-            this.comboBox1.TabIndex = 1;
+            this.CBFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBFiltro.FormattingEnabled = true;
+            this.CBFiltro.Items.AddRange(new object[] {
+            "Materia",
+            "Docente",
+            "Grupo"});
+            this.CBFiltro.Location = new System.Drawing.Point(71, 47);
+            this.CBFiltro.Name = "CBFiltro";
+            this.CBFiltro.Size = new System.Drawing.Size(264, 21);
+            this.CBFiltro.TabIndex = 1;
+            this.CBFiltro.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // comboBox2
+            // CBEntidad
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(71, 83);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(264, 21);
-            this.comboBox2.TabIndex = 3;
+            this.CBEntidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBEntidad.FormattingEnabled = true;
+            this.CBEntidad.Location = new System.Drawing.Point(71, 83);
+            this.CBEntidad.Name = "CBEntidad";
+            this.CBEntidad.Size = new System.Drawing.Size(264, 21);
+            this.CBEntidad.TabIndex = 3;
             // 
             // label2
             // 
@@ -108,9 +115,9 @@
             this.ClientSize = new System.Drawing.Size(347, 154);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.CBEntidad);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CBFiltro);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -127,8 +134,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox CBFiltro;
+        private System.Windows.Forms.ComboBox CBEntidad;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAgregar;

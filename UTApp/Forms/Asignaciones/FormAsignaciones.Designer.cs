@@ -34,12 +34,6 @@
             this.btnBack = new System.Windows.Forms.PictureBox();
             this.lblAsignaciones = new System.Windows.Forms.Label();
             this.gridAsignaciones = new System.Windows.Forms.DataGridView();
-            this.AsignacionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AsignacionTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AsignacionDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AsignacionFechaLimite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlataformaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClaseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asignacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uTApp_Integradora1DataSet = new UTApp.UTApp_Integradora1DataSet();
             this.asignacionTableAdapter = new UTApp.UTApp_Integradora1DataSetTableAdapters.AsignacionTableAdapter();
@@ -47,6 +41,12 @@
             this.btnEdit = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.PictureBox();
             this.btnAdd = new System.Windows.Forms.PictureBox();
+            this.AsignacionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AsignacionTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AsignacionDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AsignacionFechaLimite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlataformaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClaseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlBanner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAsignaciones)).BeginInit();
@@ -116,54 +116,6 @@
             this.gridAsignaciones.TabIndex = 2;
             this.gridAsignaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAsignaciones_CellClick);
             // 
-            // AsignacionID
-            // 
-            this.AsignacionID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.AsignacionID.DataPropertyName = "AsignacionID";
-            this.AsignacionID.HeaderText = "ID";
-            this.AsignacionID.Name = "AsignacionID";
-            this.AsignacionID.ReadOnly = true;
-            this.AsignacionID.Width = 43;
-            // 
-            // AsignacionTitulo
-            // 
-            this.AsignacionTitulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AsignacionTitulo.DataPropertyName = "AsignacionTitulo";
-            this.AsignacionTitulo.HeaderText = "Titulo";
-            this.AsignacionTitulo.Name = "AsignacionTitulo";
-            this.AsignacionTitulo.ReadOnly = true;
-            // 
-            // AsignacionDescripcion
-            // 
-            this.AsignacionDescripcion.DataPropertyName = "AsignacionDescripcion";
-            this.AsignacionDescripcion.HeaderText = "AsignacionDescripcion";
-            this.AsignacionDescripcion.Name = "AsignacionDescripcion";
-            this.AsignacionDescripcion.ReadOnly = true;
-            this.AsignacionDescripcion.Visible = false;
-            // 
-            // AsignacionFechaLimite
-            // 
-            this.AsignacionFechaLimite.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AsignacionFechaLimite.DataPropertyName = "AsignacionFechaLimite";
-            this.AsignacionFechaLimite.HeaderText = "Entrega";
-            this.AsignacionFechaLimite.Name = "AsignacionFechaLimite";
-            this.AsignacionFechaLimite.ReadOnly = true;
-            // 
-            // PlataformaID
-            // 
-            this.PlataformaID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PlataformaID.DataPropertyName = "PlataformaID";
-            this.PlataformaID.HeaderText = "Plataforma";
-            this.PlataformaID.Name = "PlataformaID";
-            this.PlataformaID.ReadOnly = true;
-            // 
-            // ClaseID
-            // 
-            this.ClaseID.DataPropertyName = "ClaseID";
-            this.ClaseID.HeaderText = "Clase";
-            this.ClaseID.Name = "ClaseID";
-            this.ClaseID.ReadOnly = true;
-            // 
             // asignacionBindingSource
             // 
             this.asignacionBindingSource.DataMember = "Asignacion";
@@ -221,6 +173,54 @@
             this.btnAdd.TabIndex = 3;
             this.btnAdd.TabStop = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // AsignacionID
+            // 
+            this.AsignacionID.DataPropertyName = "AsignacionID";
+            this.AsignacionID.HeaderText = "ID";
+            this.AsignacionID.Name = "AsignacionID";
+            this.AsignacionID.ReadOnly = true;
+            this.AsignacionID.Width = 20;
+            // 
+            // AsignacionTitulo
+            // 
+            this.AsignacionTitulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AsignacionTitulo.DataPropertyName = "AsignacionTitulo";
+            this.AsignacionTitulo.HeaderText = "Titulo";
+            this.AsignacionTitulo.Name = "AsignacionTitulo";
+            this.AsignacionTitulo.ReadOnly = true;
+            // 
+            // AsignacionDescripcion
+            // 
+            this.AsignacionDescripcion.DataPropertyName = "AsignacionDescripcion";
+            this.AsignacionDescripcion.HeaderText = "AsignacionDescripcion";
+            this.AsignacionDescripcion.Name = "AsignacionDescripcion";
+            this.AsignacionDescripcion.ReadOnly = true;
+            this.AsignacionDescripcion.Visible = false;
+            // 
+            // AsignacionFechaLimite
+            // 
+            this.AsignacionFechaLimite.DataPropertyName = "AsignacionFechaLimite";
+            this.AsignacionFechaLimite.HeaderText = "Caducidad";
+            this.AsignacionFechaLimite.Name = "AsignacionFechaLimite";
+            this.AsignacionFechaLimite.ReadOnly = true;
+            this.AsignacionFechaLimite.Width = 130;
+            // 
+            // PlataformaID
+            // 
+            this.PlataformaID.DataPropertyName = "PlataformaID";
+            this.PlataformaID.HeaderText = "Plataforma";
+            this.PlataformaID.Name = "PlataformaID";
+            this.PlataformaID.ReadOnly = true;
+            this.PlataformaID.Width = 60;
+            // 
+            // ClaseID
+            // 
+            this.ClaseID.DataPropertyName = "ClaseID";
+            this.ClaseID.HeaderText = "Clase";
+            this.ClaseID.Name = "ClaseID";
+            this.ClaseID.ReadOnly = true;
+            this.ClaseID.Width = 40;
             // 
             // FormAsignaciones
             // 

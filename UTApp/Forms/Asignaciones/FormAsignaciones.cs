@@ -25,9 +25,13 @@ namespace UTApp.Forms.Asignaciones
 
         private void FormAsignaciones_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'uTApp_Integradora1DataSet.Asignacion' Puede moverla o quitarla según sea necesario.
+            LlenarGrid();
+            gridAsignaciones.DataSource = asignaciones;
         }
-
+        public void LlenarGrid()
+        {
+            asignaciones = controlador.ListarAsignaciones();
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AgregarAsignacion agregar = new AgregarAsignacion();
@@ -39,13 +43,14 @@ namespace UTApp.Forms.Asignaciones
         {
             if (actual != null)
             {
-                if (MessageBox.Show($"SEGURO QUE QUIERE ELIMINAR '{actual.AsignacionTitulo}'", "", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show($"¿SEGURO QUE QUIERE ELIMINAR '{actual.AsignacionTitulo}'?", "", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     if (controlador.EliminarAsignacion(actual.AsignacionID))
                     {
                         MessageBox.Show("La asignación se ha eliminado con éxito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.asignacionTableAdapter.Fill(this.uTApp_Integradora1DataSet.Asignacion);
                         actual = null;
+                        LlenarGrid();
                     }
                 }
             }

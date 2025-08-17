@@ -131,6 +131,7 @@
             this.pbRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbRegresar.TabIndex = 1;
             this.pbRegresar.TabStop = false;
+            this.pbRegresar.Click += new System.EventHandler(this.pbRegresar_Click);
             // 
             // labelMaterias
             // 
@@ -154,6 +155,7 @@
             this.pbBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbBuscar.TabIndex = 26;
             this.pbBuscar.TabStop = false;
+            this.pbBuscar.Click += new System.EventHandler(this.pbBuscar_Click);
             // 
             // pbEditar
             // 
@@ -189,6 +191,7 @@
             this.pbEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbEliminar.TabIndex = 22;
             this.pbEliminar.TabStop = false;
+            this.pbEliminar.Click += new System.EventHandler(this.pbEliminar_Click);
             // 
             // FormDocentes
             // 

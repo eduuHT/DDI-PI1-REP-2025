@@ -148,5 +148,12 @@ namespace UTApp.Forms.Estudiantes
                 e.Handled = true;
             }
         }
+
+        private void pbRegresar_Click(object sender, EventArgs e)
+        {
+            FormEstudiantes back = new FormEstudiantes();
+            this.Hide();
+            back.Show();
+        }
     }
 }

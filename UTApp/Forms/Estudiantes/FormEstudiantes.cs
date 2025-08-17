@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UTApp.Forms.Menu_Principal;
 
 namespace UTApp.Forms.Estudiantes
 {
@@ -36,9 +37,9 @@ namespace UTApp.Forms.Estudiantes
 
         private void pbAgregar_Click(object sender, EventArgs e)
         {
-            FormEstudiantesAgregar nuevoAlumno = new FormEstudiantesAgregar();
+            FormEstudiantesAgregar agregar = new FormEstudiantesAgregar();
             this.Hide();
-            nuevoAlumno.Show();
+            agregar.Show();
         }
 
         private string gridEstudiantes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -63,6 +64,27 @@ namespace UTApp.Forms.Estudiantes
             FormEstudiantesEditar editar = new FormEstudiantesEditar();
             this.Hide();
             editar.Show();
+        }
+
+        private void pbRegresar_Click(object sender, EventArgs e)
+        {
+            FormMenuPrincipal back = new FormMenuPrincipal();
+            this.Hide();
+            back.Show();
+        }
+
+        private void pbBuscar_Click(object sender, EventArgs e)
+        {
+            FormEstudiantesBuscar buscar = new FormEstudiantesBuscar();
+            this.Hide();
+            buscar.Show();
+        }
+
+        private void pbEliminar_Click(object sender, EventArgs e)
+        {
+            FormEstudiantesEliminar eliminar = new FormEstudiantesEliminar();
+            this.Hide();
+            eliminar.Show();
         }
     }
 }

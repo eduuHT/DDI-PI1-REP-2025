@@ -82,6 +82,7 @@
             this.pbRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbRegresar.TabIndex = 1;
             this.pbRegresar.TabStop = false;
+            this.pbRegresar.Click += new System.EventHandler(this.pbRegresar_Click);
             // 
             // labelMaterias
             // 

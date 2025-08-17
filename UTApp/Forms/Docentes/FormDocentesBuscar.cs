@@ -64,5 +64,13 @@ namespace UTApp.Forms.Docentes
                 MessageBox.Show("Al parecer estás ingresando letras, intenta solo con números.","Ocurrió un problema");
             }
         }
+
+        private void txtDocenteEmpleado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

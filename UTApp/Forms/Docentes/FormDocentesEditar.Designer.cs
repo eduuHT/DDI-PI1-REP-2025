@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDocentesEditar));
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.botonOpciones = new System.Windows.Forms.PictureBox();
+            this.pbRegresar = new System.Windows.Forms.PictureBox();
             this.labelMaterias = new System.Windows.Forms.Label();
             this.labelCatálogoMaterias = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtDocenteTitulo = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.botonOpciones = new System.Windows.Forms.PictureBox();
-            this.pbRegresar = new System.Windows.Forms.PictureBox();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
@@ -62,6 +62,28 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(343, 94);
             this.panelHeader.TabIndex = 21;
+            // 
+            // botonOpciones
+            // 
+            this.botonOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonOpciones.Image = global::UTApp.Properties.Resources.dots;
+            this.botonOpciones.Location = new System.Drawing.Point(293, 46);
+            this.botonOpciones.Name = "botonOpciones";
+            this.botonOpciones.Size = new System.Drawing.Size(23, 24);
+            this.botonOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.botonOpciones.TabIndex = 2;
+            this.botonOpciones.TabStop = false;
+            // 
+            // pbRegresar
+            // 
+            this.pbRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
+            this.pbRegresar.Location = new System.Drawing.Point(25, 30);
+            this.pbRegresar.Name = "pbRegresar";
+            this.pbRegresar.Size = new System.Drawing.Size(25, 40);
+            this.pbRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRegresar.TabIndex = 1;
+            this.pbRegresar.TabStop = false;
             // 
             // labelMaterias
             // 
@@ -138,6 +160,7 @@
             this.txtDocenteEmpleado.Name = "txtDocenteEmpleado";
             this.txtDocenteEmpleado.Size = new System.Drawing.Size(90, 20);
             this.txtDocenteEmpleado.TabIndex = 107;
+            this.txtDocenteEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocenteEmpleado_KeyPress);
             this.txtDocenteEmpleado.Leave += new System.EventHandler(this.txtDocenteEmpleado_Leave);
             // 
             // label1
@@ -216,28 +239,6 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // botonOpciones
-            // 
-            this.botonOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonOpciones.Image = global::UTApp.Properties.Resources.dots;
-            this.botonOpciones.Location = new System.Drawing.Point(293, 46);
-            this.botonOpciones.Name = "botonOpciones";
-            this.botonOpciones.Size = new System.Drawing.Size(23, 24);
-            this.botonOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.botonOpciones.TabIndex = 2;
-            this.botonOpciones.TabStop = false;
-            // 
-            // pbRegresar
-            // 
-            this.pbRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbRegresar.Image = global::UTApp.Properties.Resources.left_chevron;
-            this.pbRegresar.Location = new System.Drawing.Point(25, 30);
-            this.pbRegresar.Name = "pbRegresar";
-            this.pbRegresar.Size = new System.Drawing.Size(25, 40);
-            this.pbRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRegresar.TabIndex = 1;
-            this.pbRegresar.TabStop = false;
-            // 
             // FormDocentesEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,6 +267,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDocentesEditar";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDocentesEditar_FormClosed);
+            this.Load += new System.EventHandler(this.FormDocentesEditar_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).EndInit();

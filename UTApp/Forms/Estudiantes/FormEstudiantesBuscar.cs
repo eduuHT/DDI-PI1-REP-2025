@@ -60,5 +60,13 @@ namespace UTApp.Forms.Estudiantes
                 MessageBox.Show("Al parecer estás ingresando letras, intenta con números.", "Ocurrió un problema");
             }
         }
+
+        private void txtEstudianteMatricula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

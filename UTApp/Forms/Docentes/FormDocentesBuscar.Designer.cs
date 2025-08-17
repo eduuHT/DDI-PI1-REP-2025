@@ -124,6 +124,7 @@
             this.txtDocenteEmpleado.Name = "txtDocenteEmpleado";
             this.txtDocenteEmpleado.Size = new System.Drawing.Size(118, 20);
             this.txtDocenteEmpleado.TabIndex = 135;
+            this.txtDocenteEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocenteEmpleado_KeyPress);
             // 
             // btnBuscar
             // 

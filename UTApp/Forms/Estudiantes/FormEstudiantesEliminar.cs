@@ -88,5 +88,18 @@ namespace UTApp.Forms.Estudiantes
                     MessageBox.Show("Al parecer estás ingresando letras, intenta con números.");
             }
         }
+
+        private void txtEstudianteMatricula_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEstudianteMatricula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

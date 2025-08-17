@@ -74,6 +74,8 @@ namespace UTApp.Forms.Estudiantes
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            Estudiante editEstudiante = null;
+            Estudiante pruebaEstudiante = null;
             try
             {
                 string matricula = txtEstudianteMatricula.Text;
@@ -83,21 +85,21 @@ namespace UTApp.Forms.Estudiantes
                 int grupo = Convert.ToInt32(txtEstudianteGrupo.Text);
 
                 Docente docente = controladorDoc.BuscarCorreoDocente(correo);
-                Estudiante editEstudiante = controladorEst.BuscarCorreoEstudiante(correo);
-
+                editEstudiante = controladorEst.BuscarCorreoEstudiante(correo);
 
                 if (docente == null || editEstudiante != null)
                 {
                     editEstudiante = new Estudiante(matricula, nombre, correo, pass, grupo);
                     List<Estudiante> listaEstudiantes = controladorEst.ListarEstudiantes();
                     bool bandera = false;
-                    Estudiante pruebaEstudiante = new Estudiante();
+                    pruebaEstudiante = new Estudiante();
                     int i = 0;
+                    
 
                     do
                     {
                         pruebaEstudiante = listaEstudiantes[i];
-
+                        
                         if (editEstudiante.EstudianteMatricula == pruebaEstudiante.EstudianteMatricula)
                         {
                             if (editEstudiante.EstudianteNombreCompleto != pruebaEstudiante.EstudianteNombreCompleto
@@ -115,8 +117,6 @@ namespace UTApp.Forms.Estudiantes
                     bool cambio = controladorEst.EditarEstudiante(editEstudiante);
 
                     if (cambio && bandera)
-                        MessageBox.Show("El estudiante fue actualizado con éxito.");
-                    else
                         MessageBox.Show("No fue posible realizar los cambios.");
                 }
                 else
@@ -124,7 +124,14 @@ namespace UTApp.Forms.Estudiantes
             }
             catch
             {
-                MessageBox.Show("Ocurrió un error, no se pudo editar.");
+                if (editEstudiante.EstudianteNombreCompleto == pruebaEstudiante.EstudianteNombreCompleto
+                    &&
+                    editEstudiante.EstudianteEmail == pruebaEstudiante.EstudianteEmail
+                    &&
+                    editEstudiante.GrupoID == pruebaEstudiante.GrupoID)
+                    MessageBox.Show("No ha habido actualización en los datos.");
+                else
+                    MessageBox.Show("Ocurrió un error, no se pudo editar.");
             }
         }
         
@@ -132,6 +139,14 @@ namespace UTApp.Forms.Estudiantes
         private void FormEstudiantesEditar_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtEstudianteMatricula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

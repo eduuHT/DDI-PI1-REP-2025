@@ -27,6 +27,9 @@ namespace UTApp.Forms.Docentes
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            txtDocenteEmpleado.Text = Convert.ToInt32(txtDocenteEmpleado.Text).ToString();
+            txtDocenteEmpleado.Text = txtDocenteEmpleado.Text.PadLeft(4, '0');
+
             if (txtDocenteEmpleado.Text != "" || txtDocentePass.Text.Length != 4)
             {
                 if (txtDocenteEmpleado.Text.Length == 4)
@@ -72,6 +75,9 @@ namespace UTApp.Forms.Docentes
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            Docente editDocente = null;
+            Docente pruebaDocente = null;
+
             try
             {
                 string empleado = txtDocenteEmpleado.Text.Trim();
@@ -81,14 +87,14 @@ namespace UTApp.Forms.Docentes
                 string pass = txtDocentePass.Text;
 
                 Estudiante estudiante = controladorEst.BuscarCorreoEstudiante(correo);
-                Docente editDocente = controladorDoc.BuscarCorreoDocente(correo);
+                editDocente = controladorDoc.BuscarCorreoDocente(correo);
 
                 if (estudiante == null || editDocente.DocenteNumeroEmpleado == empleado)
                 {
                     editDocente = new Docente(empleado, nombre, titulo, correo, pass);
                     List<Docente> listaDocentes = controladorDoc.ListarDocentes();
                     bool bandera = false;
-                    Docente pruebaDocente = new Docente();
+                    pruebaDocente = new Docente();
                     int i = 0;
 
                     do
@@ -121,8 +127,28 @@ namespace UTApp.Forms.Docentes
             }
             catch
             {
-                MessageBox.Show("Ocurrió un error, no se pudo editar.");
+                if (editDocente.DocenteNombreCompleto == pruebaDocente.DocenteNombreCompleto
+                    &&
+                    editDocente.DocenteEmail == pruebaDocente.DocenteEmail
+                    &&
+                    editDocente.DocenteTituloAcademico == pruebaDocente.DocenteTituloAcademico)
+                    MessageBox.Show("No ha habido actualización en los datos.");
+                else
+                    MessageBox.Show("Ocurrió un error, no se pudo editar.");
             }
+        }
+
+        private void txtDocenteEmpleado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void FormDocentesEditar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

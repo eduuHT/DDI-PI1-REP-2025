@@ -36,7 +36,7 @@ namespace UTApp.Forms.Estudiantes
 
                 if (bandera == false)
                 {
-                    txtEstudianteMatricula.Text = Convert.ToInt32(txtEstudianteMatricula.Text).ToString();
+                    txtEstudianteMatricula.Text = Convert.ToInt64(txtEstudianteMatricula.Text).ToString();
 
                     if (txtEstudianteMatricula.Text == "" || txtEstudianteMatricula.Text.Length != 10)
                     {
@@ -199,6 +199,14 @@ namespace UTApp.Forms.Estudiantes
         private void FormEstudiantesAgregar_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtEstudianteMatricula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

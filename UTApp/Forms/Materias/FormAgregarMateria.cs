@@ -12,17 +12,21 @@ namespace UTApp.Forms.Materias
 {
     public partial class FormAgregarMateria : Form
     {
+        #region Variables
         private FormMaterias _formPadre;
+
+        private MateriaBLL _materiaBLL;
+        #endregion
 
         #region Constructors
         public FormAgregarMateria()
         {
             InitializeComponent();
+            _materiaBLL = new MateriaBLL();
         }
 
-        public FormAgregarMateria(FormMaterias formPadre)
+        public FormAgregarMateria(FormMaterias formPadre) : this()
         {
-            InitializeComponent();
             _formPadre = formPadre;
         }
         #endregion
@@ -41,6 +45,8 @@ namespace UTApp.Forms.Materias
         {
             Materia materia = new Materia();
             materia.Nombre = txtNombreMateria.Text;
+
+            _materiaBLL.GuardarMateria(materia);
         }
         #endregion
 

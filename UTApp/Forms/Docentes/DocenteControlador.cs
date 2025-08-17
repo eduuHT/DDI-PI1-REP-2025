@@ -228,5 +228,54 @@ namespace UTApp.Forms.Docentes
                 return docentes;
             }
         }
+
+        public List<ClaseDocenteID> ListarDocentesID()
+        {
+            SqlConnection con = new SqlConnection(Connection.connectionString);
+
+            List<ClaseDocenteID> docentes = new List<ClaseDocenteID>();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("ListarDocentes", con);
+                DataTable tabla = new DataTable();
+                SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+
+                if (con.State == 0)
+                    con.Open();
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                adaptador.Fill(tabla);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    for (int i = 0; i < tabla.Rows.Count; i++)
+                    {
+                        ClaseDocenteID docente = new ClaseDocenteID(
+                            // DocenteID
+                            Convert.ToInt32(tabla.Rows[i].ItemArray[0]),
+                            // Numero Empleado
+                            tabla.Rows[i].ItemArray[1].ToString(),
+                            // Nombre
+                            tabla.Rows[i].ItemArray[2].ToString(),
+                            // Titulo Académico
+                            tabla.Rows[i].ItemArray[3].ToString(),
+                            // Correo
+                            tabla.Rows[i].ItemArray[4].ToString(),
+                            // Password
+                            tabla.Rows[i].ItemArray[5].ToString()
+                        );
+
+                        docentes.Add(docente);
+                    }
+                }
+
+                return docentes;
+            }
+            catch
+            {
+                return docentes;
+            }
+        }
     }
 }

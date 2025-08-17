@@ -221,5 +221,54 @@ namespace UTApp.Forms.Estudiantes
                 return estudiantes;
             }
         }
+
+        public List<ClaseEstudianteID> ListarEstudiantesID()
+        {
+            SqlConnection con = new SqlConnection(Connection.connectionString);
+
+            List<ClaseEstudianteID> estudiantes = new List<ClaseEstudianteID>();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("ListarEstudiantes", con);
+                DataTable tabla = new DataTable();
+                SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+
+                if (con.State == 0)
+                    con.Open();
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                adaptador.Fill(tabla);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    for (int i = 0; i < tabla.Rows.Count; i++)
+                    {
+                        ClaseEstudianteID estudiante = new ClaseEstudianteID(
+                            // EstudianteID
+                            Convert.ToInt32(tabla.Rows[i].ItemArray[0]),
+                            // Matricula
+                            tabla.Rows[i].ItemArray[1].ToString(),
+                            // Nombre
+                            tabla.Rows[i].ItemArray[2].ToString(),
+                            // Correo
+                            tabla.Rows[i].ItemArray[3].ToString(),
+                            // Password
+                            tabla.Rows[i].ItemArray[4].ToString(),
+                            // GrupoID
+                            Convert.ToInt32(tabla.Rows[i].ItemArray[5])
+                        );
+
+                        estudiantes.Add(estudiante);
+                    }
+                }
+
+                return estudiantes;
+            }
+            catch
+            {
+                return estudiantes;
+            }
+        }
     }
 }

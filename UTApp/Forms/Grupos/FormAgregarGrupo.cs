@@ -38,6 +38,12 @@ namespace UTApp.Forms.Grupos
         {
             Regresar();
         }
+        private void btnConfirmarAdicion_Click(object sender, EventArgs e)
+        {
+            Grupo grupo = new Grupo();
+
+            grupo.Nombre = txtNombreGrupo.Text;
+        }
         #endregion
 
         #region Private Methods
@@ -49,5 +55,6 @@ namespace UTApp.Forms.Grupos
         }
 
         #endregion
+
     }
 }

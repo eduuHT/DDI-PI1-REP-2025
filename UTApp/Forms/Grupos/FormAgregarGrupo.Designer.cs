@@ -110,6 +110,7 @@
             this.btnConfirmarAdicion.TabIndex = 19;
             this.btnConfirmarAdicion.Text = "Agregar";
             this.btnConfirmarAdicion.UseVisualStyleBackColor = false;
+            this.btnConfirmarAdicion.Click += new System.EventHandler(this.btnConfirmarAdicion_Click);
             // 
             // txtNombreGrupo
             // 

@@ -102,6 +102,8 @@
       <DependentUpon>FormMaterias.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Materias\Materia.cs" />
+    <Compile Include="Forms\Materias\MateriaBLL.cs" />
+    <Compile Include="Forms\Materias\MateriaDAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Asignaciones\FormAsignaciones.resx">

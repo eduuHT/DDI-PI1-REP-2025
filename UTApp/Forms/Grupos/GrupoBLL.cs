@@ -8,5 +8,20 @@ namespace UTApp.Forms.Grupos
 {
     internal class GrupoBLL
     {
+        private GrupoDAL _grupoDAl;
+
+        #region Constructors
+        public GrupoBLL()
+        {
+            _grupoDAl = new GrupoDAL();
+        }
+        #endregion
+
+        public Grupo GuardarGrupo(Grupo grupo)
+        {
+            _grupoDAl.InsertGrupo(grupo);
+
+            return grupo;
+        }
     }
 }

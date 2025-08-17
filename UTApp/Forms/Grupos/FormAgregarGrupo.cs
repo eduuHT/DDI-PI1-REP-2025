@@ -12,17 +12,21 @@ namespace UTApp.Forms.Grupos
 {
     public partial class FormAgregarGrupo : Form // Form Secundario del Crud Grupos
     {
+        #region Variables
         private FormGrupos _formPadre; // Variable para la instancia original del form Grupos
+
+        private GrupoBLL _grupoBLL; // Variable para instancia de la capa de Lógica de Negocio
+        #endregion
 
         #region Constructors
         public FormAgregarGrupo()
         {
             InitializeComponent();
+            _grupoBLL = new GrupoBLL();
         }
 
-        public FormAgregarGrupo(FormGrupos formPadre) // Overload que toma la instancia del form original de Grupos y la asigna a la variable _formPadre
+        public FormAgregarGrupo(FormGrupos formPadre) : this()// Overload que toma la instancia del form original de Grupos y la asigna a la variable _formPadre
         {
-            InitializeComponent();
             _formPadre = formPadre;
         }
 
@@ -41,8 +45,9 @@ namespace UTApp.Forms.Grupos
         private void btnConfirmarAdicion_Click(object sender, EventArgs e)
         {
             Grupo grupo = new Grupo();
-
             grupo.Nombre = txtNombreGrupo.Text;
+
+            _grupoBLL.GuardarGrupo(grupo);
         }
         #endregion
 

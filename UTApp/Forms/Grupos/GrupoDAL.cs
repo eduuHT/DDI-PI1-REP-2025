@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,5 +10,28 @@ namespace UTApp.Forms.Grupos
 {
     internal class GrupoDAL
     {
+        private SqlConnection conn = new SqlConnection("workstation id=UTApp_Integradora1.mssql.somee.com;packet size=4096;user id=LuisRomán123_SQLLogin_1;pwd=b7jxk7yxyk;data source=UTApp_Integradora1.mssql.somee.com;persist security info=False;initial catalog=UTApp_Integradora1;TrustServerCertificate=True");
+
+        public void InsertGrupo(Grupo grupo)
+        {
+            try
+            {
+                conn.Open();
+
+                SqlCommand command = new SqlCommand("InsertGrupo", conn);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@GrupoNombre", grupo.Nombre);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }

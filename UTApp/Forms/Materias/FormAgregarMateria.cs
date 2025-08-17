@@ -43,10 +43,8 @@ namespace UTApp.Forms.Materias
         }
         private void btnConfirmarAdicion_Click(object sender, EventArgs e)
         {
-            Materia materia = new Materia();
-            materia.Nombre = txtNombreMateria.Text;
-
-            _materiaBLL.GuardarMateria(materia);
+            GuardarMateria();
+            Regresar();
         }
         #endregion
 
@@ -54,7 +52,16 @@ namespace UTApp.Forms.Materias
         private void Regresar()
         {
             _formPadre.Show();
+            _formPadre.LlenarGrid();
             this.Close();
+        }
+
+        private void GuardarMateria()
+        {
+            Materia materia = new Materia();
+            materia.Nombre = txtNombreMateria.Text;
+
+            _materiaBLL.GuardarMateria(materia);
         }
         #endregion
 

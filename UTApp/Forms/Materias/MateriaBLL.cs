@@ -23,5 +23,10 @@ namespace UTApp.Forms.Materias
 
             return materia;
         }
+
+        public List<Materia> GetMaterias()
+        {
+            return _materiaDAL.GetMaterias();
+        }
     }
 }

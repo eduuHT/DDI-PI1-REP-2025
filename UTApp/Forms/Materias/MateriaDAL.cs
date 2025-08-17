@@ -33,5 +33,39 @@ namespace UTApp.Forms.Materias
                 conn.Close();
             }
         }
+
+        public List<Materia> GetMaterias()
+        {
+            List<Materia> materias = new List<Materia>();
+
+            try
+            {
+                conn.Open();
+
+                SqlCommand command = new SqlCommand("GetMaterias", conn);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    materias.Add(new Materia()
+                    {
+                        Id = int.Parse(reader["MateriaID"].ToString()),
+                        Nombre = reader["MateriaNombre"].ToString()
+                    });
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return materias;
+        }
     }
 }

@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMaterias));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.btnRegresar = new System.Windows.Forms.PictureBox();
             this.lblMaterias = new System.Windows.Forms.Label();
             this.lblCatalogo = new System.Windows.Forms.Label();
             this.gridMaterias = new System.Windows.Forms.DataGridView();
-            this.MateriaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MateriaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnEditar = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new System.Windows.Forms.PictureBox();
@@ -44,6 +46,7 @@
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMaterias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materiaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).BeginInit();
@@ -99,28 +102,34 @@
             this.gridMaterias.AllowUserToAddRows = false;
             this.gridMaterias.AllowUserToDeleteRows = false;
             this.gridMaterias.AllowUserToResizeRows = false;
+            this.gridMaterias.AutoGenerateColumns = false;
             this.gridMaterias.BackgroundColor = System.Drawing.Color.SeaGreen;
             this.gridMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MateriaID,
-            this.MateriaNombre});
+            this.idDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn});
+            this.gridMaterias.DataSource = this.materiaBindingSource;
             this.gridMaterias.Location = new System.Drawing.Point(12, 202);
             this.gridMaterias.Name = "gridMaterias";
             this.gridMaterias.RowHeadersVisible = false;
             this.gridMaterias.Size = new System.Drawing.Size(320, 350);
             this.gridMaterias.TabIndex = 6;
             // 
-            // MateriaID
+            // idDataGridViewTextBoxColumn
             // 
-            this.MateriaID.HeaderText = "ID";
-            this.MateriaID.Name = "MateriaID";
-            this.MateriaID.Width = 50;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             // 
-            // MateriaNombre
+            // nombreDataGridViewTextBoxColumn
             // 
-            this.MateriaNombre.HeaderText = "Nombre";
-            this.MateriaNombre.Name = "MateriaNombre";
-            this.MateriaNombre.Width = 500;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // materiaBindingSource
+            // 
+            this.materiaBindingSource.DataSource = typeof(UTApp.Forms.Materias.Materia);
             // 
             // btnEditar
             // 
@@ -196,10 +205,12 @@
             this.Name = "FormMaterias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Materias";
+            this.Load += new System.EventHandler(this.FormMaterias_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMaterias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materiaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).EndInit();
@@ -216,12 +227,13 @@
         private System.Windows.Forms.Label lblMaterias;
         private System.Windows.Forms.Label lblCatalogo;
         private System.Windows.Forms.DataGridView gridMaterias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MateriaID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MateriaNombre;
         private System.Windows.Forms.PictureBox btnEditar;
         private System.Windows.Forms.PictureBox btnEliminar;
         private System.Windows.Forms.PictureBox btnAgregar;
         private System.Windows.Forms.PictureBox btnBuscar;
         private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource materiaBindingSource;
     }
 }

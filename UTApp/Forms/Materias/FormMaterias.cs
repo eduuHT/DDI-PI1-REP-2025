@@ -12,15 +12,22 @@ namespace UTApp.Forms.Materias
 {
     public partial class FormMaterias : Form
     {
+        private MateriaBLL _materiaBLL;
 
         #region Constructors
         public FormMaterias()
         {
             InitializeComponent();
+            _materiaBLL = new MateriaBLL();
         }
         #endregion
 
         #region Events
+        private void FormMaterias_Load(object sender, EventArgs e)
+        {
+            LlenarGrid();
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             AbrirFormAgregarMateria();
@@ -57,6 +64,13 @@ namespace UTApp.Forms.Materias
             formEditarMateria.Show();
             this.Hide();
         }
+
+        public void LlenarGrid()
+        {
+            List<Materia> materias = _materiaBLL.GetMaterias();
+            gridMaterias.DataSource = materias;
+        }
         #endregion
+
     }
 }

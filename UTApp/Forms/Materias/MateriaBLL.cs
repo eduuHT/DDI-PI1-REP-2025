@@ -24,9 +24,9 @@ namespace UTApp.Forms.Materias
             return materia;
         }
 
-        public List<Materia> GetMaterias()
+        public List<Materia> ObtenerMaterias(string busquedaText = null)
         {
-            return _materiaDAL.GetMaterias();
+            return _materiaDAL.GetMaterias(busquedaText);
         }
 
         public void ActualizarMateria(Materia materia)

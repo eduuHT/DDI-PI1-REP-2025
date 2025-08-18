@@ -42,6 +42,11 @@ namespace UTApp.Forms.Materias
         {
             AbrirFormEditarMateria();
         }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            LlenarGrid(txtBusqueda.Text);
+            txtBusqueda.Text = string.Empty;
+        }
 
         #endregion
 
@@ -65,9 +70,9 @@ namespace UTApp.Forms.Materias
             this.Hide();
         }
 
-        public void LlenarGrid()
+        public void LlenarGrid(string busquedaText = null)
         {
-            List<Materia> materias = _materiaBLL.GetMaterias();
+            List<Materia> materias = _materiaBLL.ObtenerMaterias(busquedaText);
             gridMaterias.DataSource = materias;
         }
         #endregion

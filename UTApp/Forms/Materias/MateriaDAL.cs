@@ -34,7 +34,7 @@ namespace UTApp.Forms.Materias
             }
         }
 
-        public List<Materia> GetMaterias()
+        public List<Materia> GetMaterias(string busqueda = null)
         {
             List<Materia> materias = new List<Materia>();
 
@@ -42,17 +42,39 @@ namespace UTApp.Forms.Materias
             {
                 conn.Open();
 
-                SqlCommand command = new SqlCommand("GetMaterias", conn);
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
+                if (!string.IsNullOrEmpty(busqueda))
                 {
-                    materias.Add(new Materia()
+                    SqlCommand command = new SqlCommand("GetMateriaById", conn);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@MateriaID", busqueda);
+                    command.ExecuteNonQuery();
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
                     {
-                        Id = int.Parse(reader["MateriaID"].ToString()),
-                        Nombre = reader["MateriaNombre"].ToString()
-                    });
+                        materias.Add(new Materia()
+                        {
+                            Id = int.Parse(reader["MateriaID"].ToString()),
+                            Nombre = reader["MateriaNombre"].ToString()
+                        });
+                    }
+                }
+                else
+                {
+                    SqlCommand command = new SqlCommand("GetMaterias", conn);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        materias.Add(new Materia()
+                        {
+                            Id = int.Parse(reader["MateriaID"].ToString()),
+                            Nombre = reader["MateriaNombre"].ToString()
+                        });
+                    }
                 }
             }
             catch (Exception)

@@ -12,17 +12,21 @@ namespace UTApp.Forms.Grupos
 {
     public partial class FormEliminarGrupo : Form // Form Secundario del Crud Grupos
     {
+        #region Variables
         private FormGrupos _formPadre; // Variable para la instancia original del form Grupos
+
+        private GrupoBLL _grupoBLL; // Variable para instancia de la capa de Lógica de Negocio
+        #endregion
 
         #region Constructors
         public FormEliminarGrupo()
         {
             InitializeComponent();
+            _grupoBLL = new GrupoBLL();
         }
 
-        public FormEliminarGrupo(FormGrupos formPadre) // Overload que toma la instancia del form original de Grupos y la asigna a la variable _formPadre
+        public FormEliminarGrupo(FormGrupos formPadre) : this() // Overload que toma la instancia del form original de Grupos y la asigna a la variable _formPadre
         {
-            InitializeComponent();
             _formPadre = formPadre;
         }
 
@@ -38,6 +42,11 @@ namespace UTApp.Forms.Grupos
         {
             Regresar();
         }
+        private void btnConfirmarEliminacion_Click(object sender, EventArgs e)
+        {
+            EliminarGrupo();
+            Regresar();
+        }
         #endregion
 
         #region Private Methods
@@ -45,9 +54,16 @@ namespace UTApp.Forms.Grupos
         {
             // mostrar de nuevo el form principal y ocultar este form secundario
             _formPadre.Show();
+            _formPadre.LlenarGrid();
             this.Close();
         }
 
+        private void EliminarGrupo()
+        {
+            int id = int.Parse(txtGrupoEliminadoID.Text);
+
+            _grupoBLL.EliminarGrupo(id);
+        }
         #endregion
 
     }

@@ -110,6 +110,7 @@
             this.btnConfirmarEliminacion.TabIndex = 30;
             this.btnConfirmarEliminacion.Text = "Eliminar";
             this.btnConfirmarEliminacion.UseVisualStyleBackColor = false;
+            this.btnConfirmarEliminacion.Click += new System.EventHandler(this.btnConfirmarEliminacion_Click);
             // 
             // txtGrupoEliminadoID
             // 

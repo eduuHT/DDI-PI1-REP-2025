@@ -33,5 +33,10 @@ namespace UTApp.Forms.Grupos
         {
             _grupoDAl.UpdateGrupo(grupo);
         }
+
+        public void EliminarGrupo(int grupoId)
+        {
+            _grupoDAl.DeleteGrupo(grupoId);
+        }
     }
 }

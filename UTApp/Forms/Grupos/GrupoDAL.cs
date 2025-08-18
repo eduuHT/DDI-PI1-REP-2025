@@ -91,5 +91,28 @@ namespace UTApp.Forms.Grupos
                 conn.Close();
             }
         }
+
+        public void DeleteGrupo(int grupoId)
+        {
+            try
+            {
+                conn.Open();
+
+                SqlCommand command = new SqlCommand("DeleteGrupo", conn);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@GrupoID", grupoId);
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }

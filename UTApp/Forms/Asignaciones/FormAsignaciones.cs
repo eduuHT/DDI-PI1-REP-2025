@@ -26,11 +26,16 @@ namespace UTApp.Forms.Asignaciones
         private void FormAsignaciones_Load(object sender, EventArgs e)
         {
             LlenarGrid();
-            gridAsignaciones.DataSource = asignaciones;
+        }
+        public void ActualizarGrid(DataTable tabla)
+        {
+            gridAsignaciones.DataSource = null;
+            gridAsignaciones.DataSource = tabla;
         }
         public void LlenarGrid()
         {
             asignaciones = controlador.ListarAsignaciones();
+            gridAsignaciones.DataSource = asignaciones;
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -48,7 +53,6 @@ namespace UTApp.Forms.Asignaciones
                     if (controlador.EliminarAsignacion(actual.AsignacionID))
                     {
                         MessageBox.Show("La asignación se ha eliminado con éxito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.asignacionTableAdapter.Fill(this.uTApp_Integradora1DataSet.Asignacion);
                         actual = null;
                         LlenarGrid();
                     }
@@ -62,14 +66,21 @@ namespace UTApp.Forms.Asignaciones
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            EditarAsignacion editar = new EditarAsignacion();
-            editar.Show();
-            this.Hide();
+            if (actual != null)
+            {
+                EditarAsignacion editar = new EditarAsignacion(actual);
+                editar.Show();
+                this.Hide();
+            }
+             else
+            {
+                MessageBox.Show("Seleccione una asignacion primero", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
-        private void btnScan_Click(object sender, EventArgs e)
+        public void btnScan_Click(object sender, EventArgs e)
         {
-            ModoBusqueda modoBusqueda = new ModoBusqueda();
+            ModoBusqueda modoBusqueda = new ModoBusqueda(this);
             modoBusqueda.Show();
         }
         private void btnBack_Click(object sender, EventArgs e)
@@ -91,12 +102,12 @@ namespace UTApp.Forms.Asignaciones
                 DataGridViewRow fila = gridAsignaciones.Rows[e.RowIndex];
 
                 actual = new Asignacion(
-                    Convert.ToInt32(fila.Cells["AsignacionID"].Value),
-                    fila.Cells["AsignacionTitulo"].Value.ToString(),
-                    fila.Cells["AsignacionDescripcion"].Value.ToString(),
-                    Convert.ToDateTime(fila.Cells["AsignacionFechaLimite"].Value),
-                    Convert.ToInt32(fila.Cells["ClaseID"].Value),
-                    Convert.ToInt32(fila.Cells["PlataformaID"].Value)
+                    Convert.ToInt32(fila.Cells[0].Value),
+                    fila.Cells[1].Value.ToString(),
+                    fila.Cells[2].Value.ToString(),
+                    Convert.ToDateTime(fila.Cells[3].Value),
+                    Convert.ToInt32(fila.Cells[4].Value),
+                    Convert.ToInt32(fila.Cells[5].Value)
                 );
             }
         }

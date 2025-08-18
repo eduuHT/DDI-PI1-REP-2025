@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using UTApp.Clases;
 using UTApp.ClasesControladoras;
 using UTApp.Forms.Docentes;
+using UTApp.Forms.Grupos;
+using UTApp.Forms.Materias;
 
 namespace UTApp.Forms.Asignaciones
 {
@@ -19,9 +21,13 @@ namespace UTApp.Forms.Asignaciones
         ClaseControladora claseControlador = new ClaseControladora();
         PlataformaControlador plataformaControlador = new PlataformaControlador();
         DocenteControlador DocenteControlador = new DocenteControlador();
+        GrupoDAL grupoControlador = new GrupoDAL();
+        MateriaDAL materiaControlador = new MateriaDAL();
         List<Asignacion> asignaciones = new List<Asignacion>();
         List<ClaseDocenteID> docentes = new List<ClaseDocenteID>();
         List<Plataforma> plataformas = new List<Plataforma>();
+        List<Grupo> grupos = new List<Grupo>();
+        List<Materia> materias = new List<Materia>();
         public AgregarAsignacion()
         {
             InitializeComponent();
@@ -44,6 +50,8 @@ namespace UTApp.Forms.Asignaciones
             asignaciones = controlador.ListarAsignaciones();
             docentes = DocenteControlador.ListarDocentesID();
             plataformas = plataformaControlador.ListarPlataformas();
+            grupos = grupoControlador.GetGrupos();
+            materias = materiaControlador.GetMaterias();
         }
 
         public void LimpiarCampos()
@@ -85,24 +93,23 @@ namespace UTApp.Forms.Asignaciones
         {
             LlenarLista();
             LimpiarCampos();
-            CBGrupo.DataSource = null;
-            CBPlataforma.DataSource = null;
-            CBDocente.DataSource = null;
-            CBPlataforma.DataSource = null;
+
             CBDocente.DataSource = docentes;
-            CBPlataforma.DataSource = plataformas;
             CBDocente.DisplayMember = "docenteNombreCompleto";
             CBDocente.ValueMember = "docenteID";
-            CBPlataforma.DisplayMember ="plataformaNombre";
-            CBPlataforma.ValueMember = "plataformaID";
-            /*
-            CBGrupo.DisplayMember =;
-            CBGrupo.ValueMember =;
-            CBGrupo.DataSource =;
-            CBGrupo.DataSource =;
-            CBMateria.DisplayMember= ;
-            CBMateria.ValueMember =;
-            CBPlataforma.DataSource =;;*/
+
+            CBPlataforma.DataSource = plataformas;
+            CBPlataforma.DisplayMember ="PlataformaNombre";
+            CBPlataforma.ValueMember = "PlataformaID";
+
+            CBMateria.DataSource = materias;
+            CBMateria.DisplayMember = "Nombre";
+            CBMateria.ValueMember = "Id";
+
+            CBGrupo.DataSource = grupos;
+            CBGrupo.DisplayMember = "Nombre";
+            CBGrupo.ValueMember = "Id";
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -113,20 +120,28 @@ namespace UTApp.Forms.Asignaciones
                 {
                     string titulo = txtTitulo.Text;
                     string descripcion = txtDescripcion.Text;
-                    int Docente = CBDocente.SelectedIndex;
-                    int Materia = CBMateria.SelectedIndex;
-                    int Grupo = CBPlataforma.SelectedIndex;
-                    int plataforma = CBPlataforma.SelectedIndex;
+                    int Docente = Convert.ToInt32(CBDocente.SelectedValue);
+                    int Materia = Convert.ToInt32(CBMateria.SelectedValue);
+                    int Grupo = Convert.ToInt32(CBGrupo.SelectedValue);
+                    int plataforma = Convert.ToInt32(CBPlataforma.SelectedValue);
                     DateTime entrega = DTEntrega.Value;
                     int clase = claseControlador.BuscarClase(Materia,Grupo,Docente);
-
-                    if (controlador.InsertarAsignacion(titulo, descripcion, entrega, clase, plataforma))
+                    
+                    if (clase == -1)
                     {
-                        MessageBox.Show("La asignación se ha insertado con éxito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        claseControlador.InsertarClase(Docente, Materia, Grupo);
+                        clase = claseControlador.BuscarClase(Materia, Grupo, Docente);
+                        if (controlador.InsertarAsignacion(titulo, descripcion, entrega, clase, plataforma))
+                        {
+                            MessageBox.Show("La asignación se ha insertado con éxito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Ha ocurrido un error.....", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (controlador.InsertarAsignacion(titulo, descripcion, entrega, clase, plataforma))
+                        {
+                            MessageBox.Show("La asignación se ha insertado con éxito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
             }
@@ -134,6 +149,11 @@ namespace UTApp.Forms.Asignaciones
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void pnlBanner_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

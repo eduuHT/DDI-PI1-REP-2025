@@ -10,21 +10,29 @@ using System.Windows.Forms;
 using UTApp.Clases;
 using UTApp.ClasesControladoras;
 using UTApp.Forms.Docentes;
+using UTApp.Forms.Grupos;
+using UTApp.Forms.Materias;
 
 namespace UTApp.Forms.Asignaciones
 {
     public partial class EditarAsignacion : Form
     {
         AsignacionControlador controlador = new AsignacionControlador();
-        List<Asignacion> asignaciones = new List<Asignacion>();
-        DocenteControlador DocenteControlador = new DocenteControlador();
-        List<ClaseDocenteID> docentes = new List<ClaseDocenteID>();
-        PlataformaControlador plataformaControlador = new PlataformaControlador();
-        List<Plataforma> plataformas = new List<Plataforma>();
         ClaseControladora claseControlador = new ClaseControladora();
-        public EditarAsignacion()
+        PlataformaControlador plataformaControlador = new PlataformaControlador();
+        DocenteControlador DocenteControlador = new DocenteControlador();
+        GrupoDAL grupoControlador = new GrupoDAL();
+        MateriaDAL materiaControlador = new MateriaDAL();
+        List<Asignacion> asignaciones = new List<Asignacion>();
+        List<ClaseDocenteID> docentes = new List<ClaseDocenteID>();
+        List<Plataforma> plataformas = new List<Plataforma>();
+        List<Grupo> grupos = new List<Grupo>();
+        List<Materia> materias = new List<Materia>();
+        Asignacion Actual = null;
+        public EditarAsignacion(Asignacion actual)
         {
             InitializeComponent();
+            Actual = actual;
         }
 
         private void lblAsignaciones_Click(object sender, EventArgs e)
@@ -48,6 +56,8 @@ namespace UTApp.Forms.Asignaciones
             asignaciones = controlador.ListarAsignaciones();
             docentes = DocenteControlador.ListarDocentesID();
             plataformas = plataformaControlador.ListarPlataformas();
+            grupos = grupoControlador.GetGrupos();
+            materias = materiaControlador.GetMaterias();
         }
         public void LimpiarCampos()
         {
@@ -63,27 +73,33 @@ namespace UTApp.Forms.Asignaciones
         private void EditarAsignacion_Load(object sender, EventArgs e) // tmb asigna las propiedades una vez hechos los demás cruds
         {
             LlenarLista();
-            LimpiarCampos();
-            CBGrupo.DataSource = null;
-            CBPlataforma.DataSource = null;
-            CBDocente.DataSource = null;
-            CBPlataforma.DataSource = null;
+            LlenarCampos();
+
             CBDocente.DataSource = docentes;
-            CBPlataforma.DataSource = plataformas;
             CBDocente.DisplayMember = "docenteNombreCompleto";
             CBDocente.ValueMember = "docenteID";
+
+            CBPlataforma.DataSource = plataformas;
             CBPlataforma.DisplayMember = "plataformaNombre";
             CBPlataforma.ValueMember = "plataformaID";
+
+            CBMateria.DataSource = materias;
+            CBMateria.DisplayMember = "Nombre";
+            CBMateria.ValueMember = "Id";
+
+            CBGrupo.DataSource = grupos;
+            CBGrupo.DisplayMember = "Nombre";
+            CBGrupo.ValueMember = "Id";
         }
         public void LlenarCampos() // Acuerdate de modificarla para llenarla con el click del grid
         {
-            txtDescripcion.Text = string.Empty;
-            txtTitulo.Text = string.Empty;
+            txtDescripcion.Text = Actual.AsignacionDescripcion;
+            txtTitulo.Text = Actual.AsignacionTitulo;
             CBGrupo.Text = string.Empty;
             CBDocente.Text = string.Empty;
             CBMateria.Text = string.Empty;
             CBPlataforma.Text = string.Empty;
-            DTEntrega.Text = string.Empty;
+            DTEntrega.Value = Actual.AsignacionFechaLimite;
         }
         public bool ValidarCampos()
         {
@@ -102,6 +118,54 @@ namespace UTApp.Forms.Asignaciones
             {
                 MessageBox.Show("Favor de llenar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ValidarCampos())
+                {
+                    Asignacion nueva = null;
+                    string titulo = txtTitulo.Text;
+                    string descripcion = txtDescripcion.Text;
+                    int Docente = Convert.ToInt32(CBDocente.SelectedValue);
+                    int Materia = Convert.ToInt32(CBMateria.SelectedValue);
+                    int Grupo = Convert.ToInt32(CBGrupo.SelectedValue);
+                    int plataforma = Convert.ToInt32(CBPlataforma.SelectedValue);
+                    DateTime entrega = DTEntrega.Value;
+                    int clase = claseControlador.BuscarClase(Materia, Grupo, Docente);
+                    if (clase == -1)
+                    {
+                        claseControlador.InsertarClase(Docente, Materia, Grupo);
+                        clase = claseControlador.BuscarClase(Materia, Grupo, Docente);
+
+                        nueva = new Asignacion(Actual.AsignacionID, titulo, descripcion, entrega, clase, plataforma);
+
+                        if (controlador.EditarAsignacion(nueva))
+                        {
+                            MessageBox.Show("La asignación se ha editado con éxito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else
+                    {
+                        nueva = new Asignacion(Actual.AsignacionID, titulo, descripcion, entrega, clase, plataforma);
+                        if (controlador.EditarAsignacion(nueva))
+                        {
+                            MessageBox.Show("La asignación se ha editado con éxito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    pictureBox1_Click(sender,e);
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido editar", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UTApp.Clases;
 using UTApp.Forms.Docentes;
+using UTApp.Forms.Grupos;
+using UTApp.Forms.Materias;
 
 namespace UTApp.Forms.Asignaciones
 {
@@ -16,33 +18,31 @@ namespace UTApp.Forms.Asignaciones
     {
         DocenteControlador DocenteControlador = new DocenteControlador();
         AsignacionControlador controlador = new AsignacionControlador();
+        MateriaDAL materiaDAL = new MateriaDAL();
+        GrupoDAL grupoDAL = new GrupoDAL();
         int busqueda;
         int entidad;
-        public ModoBusqueda()
+        private FormAsignaciones _formAsignaciones;
+        public ModoBusqueda(FormAsignaciones formAsignaciones)
         {
             InitializeComponent();
+            _formAsignaciones = formAsignaciones;
         }
 
         private void ModoBusqueda_Load(object sender, EventArgs e)
         {
-            CBFiltro.DataSource = DocenteControlador.ListarDocentes();
         }
 
         public void llenarGridBusqueda()
         {
-            try
-            {
-                controlador.BuscarAsignacion(busqueda, entidad);
-            }
-            catch
-            {
-
-            }
+            controlador.BuscarAsignacion(busqueda,entidad);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+            int entidad = Convert.ToInt32(CBEntidad.SelectedValue);
+            var tabla = controlador.BuscarAsignacion(busqueda, entidad);
+            _formAsignaciones.ActualizarGrid(tabla);
             this.Close();
         }
 
@@ -52,17 +52,22 @@ namespace UTApp.Forms.Asignaciones
             {
                 case 0:
                     busqueda = 0;
+                    CBEntidad.DataSource = materiaDAL.GetMaterias();
+                    CBEntidad.DisplayMember = "Nombre";
+                    CBEntidad.ValueMember = "Id";
                     break;
                 case 1:
                     busqueda = 1;
-                    CBEntidad.DataSource = DocenteControlador.ListarDocentes();
+                    CBEntidad.DataSource = DocenteControlador.ListarDocentesID();
                     CBEntidad.DisplayMember = "docenteNombreCompleto";
-                    CBEntidad.ValueMember = "docenteNumeroEmpleado";
+                    CBEntidad.ValueMember = "docenteID";
                     break;
                 case 2:
                     busqueda = 2;
+                    CBEntidad.DataSource = grupoDAL.GetGrupos();
+                    CBEntidad.DisplayMember = "Nombre";
+                    CBEntidad.ValueMember = "Id";
                     break;
-
             }
         }
     }

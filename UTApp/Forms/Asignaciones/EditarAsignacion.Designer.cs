@@ -96,6 +96,7 @@
             this.btnAgregar.TabIndex = 36;
             this.btnAgregar.Text = "Editar Asignacion";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // DTEntrega
             // 

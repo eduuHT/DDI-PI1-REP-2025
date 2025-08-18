@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UTApp.Clases
 {
-    internal class Asignacion
+    public class Asignacion
     {
         int asignacionID;
         string asignacionTitulo;

@@ -46,7 +46,7 @@ namespace UTApp.ClasesControladoras
             SqlConnection conn = new SqlConnection(strConexion.stringConexion);
             try
             {
-                SqlCommand cmd = new SqlCommand("BuscarAsignacion", conn);
+                SqlCommand cmd = new SqlCommand("BuscarClase", conn);
 
                 cmd.CommandType = CommandType.StoredProcedure;
 

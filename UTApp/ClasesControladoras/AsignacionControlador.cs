@@ -100,32 +100,26 @@ namespace UTApp.Clases
                 return false;
             }
         }
-
-        public void BuscarAsignacion(int Busqueda, int ID)
+        public DataTable BuscarAsignacion(int Busqueda, int ID)
         {
-            SqlConnection conn = new SqlConnection(strConexion.stringConexion);
-            Asignacion asignacion = null;
-            try
+            using (SqlConnection conn = new SqlConnection(strConexion.stringConexion))
             {
-                SqlCommand cmd = new SqlCommand("BuscarAsignacion", conn);
                 DataTable tabla = new DataTable();
-                SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
-
-                if (conn.State == ConnectionState.Closed)
+                try
                 {
-                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("BuscarAsignacion", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ModoBusqueda", Busqueda);
+                    cmd.Parameters.AddWithValue("@ID", ID);
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+                    adaptador.Fill(tabla);
                 }
-
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@ModoBusqueda", Busqueda);
-                cmd.Parameters.AddWithValue("@ID", ID);
-
-                adaptador.Fill(tabla);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                conn.Close();
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                return tabla;
             }
         }
 

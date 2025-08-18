@@ -60,6 +60,7 @@
             this.pnlBanner.Name = "pnlBanner";
             this.pnlBanner.Size = new System.Drawing.Size(356, 96);
             this.pnlBanner.TabIndex = 3;
+            this.pnlBanner.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBanner_Paint);
             // 
             // pictureBox1
             // 

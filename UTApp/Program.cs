@@ -17,10 +17,6 @@ namespace UTApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Iniciar con mi form para testear
-            FormMaterias formMaterias = new FormMaterias();
-            formMaterias.Show();
-
             Application.Run(new FormLogin());
         }
     }

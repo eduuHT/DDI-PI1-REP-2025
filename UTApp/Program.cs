@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UTApp.Forms.Materias;
+using UTApp.Forms.Grupos;
 using UTApp.Forms.Docentes;
 using UTApp.Forms.Estudiantes;
 
@@ -19,6 +21,7 @@ namespace UTApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormLogin());
+
         }
     }
 }

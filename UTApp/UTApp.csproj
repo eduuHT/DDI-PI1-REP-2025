@@ -128,6 +128,24 @@
     <Compile Include="Forms\Estudiantes\FormEstudiantes.Designer.cs">
       <DependentUpon>FormEstudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Grupos\FormAgregarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grupos\FormAgregarGrupo.Designer.cs">
+      <DependentUpon>FormAgregarGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grupos\FormEditarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grupos\FormEditarGrupo.Designer.cs">
+      <DependentUpon>FormEditarGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grupos\FormEliminarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grupos\FormEliminarGrupo.Designer.cs">
+      <DependentUpon>FormEliminarGrupo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Estudiantes\FormEstudiantesAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,11 +177,32 @@
     <Compile Include="Forms\Grupos\FormGrupos.Designer.cs">
       <DependentUpon>FormGrupos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Grupos\Grupo.cs" />
+    <Compile Include="Forms\Grupos\GrupoBLL.cs" />
+    <Compile Include="Forms\Grupos\GrupoDAL.cs" />
     <Compile Include="Forms\Login\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Login\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Materias\FormAgregarMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Materias\FormAgregarMateria.Designer.cs">
+      <DependentUpon>FormAgregarMateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Materias\FormEditarMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Materias\FormEditarMateria.Designer.cs">
+      <DependentUpon>FormEditarMateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Materias\FormEliminarMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Materias\FormEliminarMateria.Designer.cs">
+      <DependentUpon>FormEliminarMateria.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Materias\FormMaterias.cs">
       <SubType>Form</SubType>
@@ -171,6 +210,9 @@
     <Compile Include="Forms\Materias\FormMaterias.Designer.cs">
       <DependentUpon>FormMaterias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Materias\Materia.cs" />
+    <Compile Include="Forms\Materias\MateriaBLL.cs" />
+    <Compile Include="Forms\Materias\MateriaDAL.cs" />
     <Compile Include="Forms\Menu Principal\FormMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +279,18 @@
     <EmbeddedResource Include="Forms\Estudiantes\FormEstudiantes.resx">
       <DependentUpon>FormEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grupos\FormAgregarGrupo.resx">
+      <DependentUpon>FormAgregarGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grupos\FormEditarGrupo.resx">
+      <DependentUpon>FormEditarGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grupos\FormEliminarGrupo.resx">
+      <DependentUpon>FormEliminarGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grupos\FormGrupos.resx">
+      <DependentUpon>FormGrupos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Estudiantes\FormEstudiantesAgregar.resx">
       <DependentUpon>FormEstudiantesAgregar.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +305,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Materias\FormAgregarMateria.resx">
+      <DependentUpon>FormAgregarMateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Materias\FormEditarMateria.resx">
+      <DependentUpon>FormEditarMateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Materias\FormEliminarMateria.resx">
+      <DependentUpon>FormEliminarMateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Materias\FormMaterias.resx">
+      <DependentUpon>FormMaterias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Menu Principal\FormMenuPrincipal.resx">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>

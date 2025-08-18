@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UTApp.Forms.Menu_Principal;
 
 namespace UTApp.Forms.Materias
 {
@@ -77,5 +78,11 @@ namespace UTApp.Forms.Materias
         }
         #endregion
 
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            FormMenuPrincipal back = new FormMenuPrincipal();
+            back.Show();
+            this.Hide();
+        }
     }
 }

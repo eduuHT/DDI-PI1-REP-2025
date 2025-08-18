@@ -28,5 +28,10 @@ namespace UTApp.Forms.Materias
         {
             return _materiaDAL.GetMaterias();
         }
+
+        public void ActualizarGrupo(Materia materia)
+        {
+            _materiaDAL.UpdateMateria(materia);
+        }
     }
 }

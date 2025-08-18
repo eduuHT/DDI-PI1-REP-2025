@@ -32,8 +32,8 @@
             this.btnRegresar = new System.Windows.Forms.PictureBox();
             this.lblMaterias = new System.Windows.Forms.Label();
             this.lblEditarMateria = new System.Windows.Forms.Label();
-            this.btnCancelarEdicionMateria = new System.Windows.Forms.Button();
-            this.btnEditarMateria = new System.Windows.Forms.Button();
+            this.btnCancelarEdicion = new System.Windows.Forms.Button();
+            this.btnConfirmarEdicion = new System.Windows.Forms.Button();
             this.txtNuevoNombre = new System.Windows.Forms.TextBox();
             this.lblNuevoNombre = new System.Windows.Forms.Label();
             this.txtMateriaEditadaID = new System.Windows.Forms.TextBox();
@@ -87,31 +87,32 @@
             this.lblEditarMateria.TabIndex = 26;
             this.lblEditarMateria.Text = "Editar Materia";
             // 
-            // btnCancelarEdicionMateria
+            // btnCancelarEdicion
             // 
-            this.btnCancelarEdicionMateria.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCancelarEdicionMateria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelarEdicionMateria.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarEdicionMateria.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnCancelarEdicionMateria.Location = new System.Drawing.Point(11, 550);
-            this.btnCancelarEdicionMateria.Name = "btnCancelarEdicionMateria";
-            this.btnCancelarEdicionMateria.Size = new System.Drawing.Size(150, 40);
-            this.btnCancelarEdicionMateria.TabIndex = 25;
-            this.btnCancelarEdicionMateria.Text = "Cancelar";
-            this.btnCancelarEdicionMateria.UseVisualStyleBackColor = false;
-            this.btnCancelarEdicionMateria.Click += new System.EventHandler(this.btnCancelarEdicionMateria_Click);
+            this.btnCancelarEdicion.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCancelarEdicion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelarEdicion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarEdicion.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnCancelarEdicion.Location = new System.Drawing.Point(11, 550);
+            this.btnCancelarEdicion.Name = "btnCancelarEdicion";
+            this.btnCancelarEdicion.Size = new System.Drawing.Size(150, 40);
+            this.btnCancelarEdicion.TabIndex = 25;
+            this.btnCancelarEdicion.Text = "Cancelar";
+            this.btnCancelarEdicion.UseVisualStyleBackColor = false;
+            this.btnCancelarEdicion.Click += new System.EventHandler(this.btnCancelarEdicion_Click);
             // 
-            // btnEditarMateria
+            // btnConfirmarEdicion
             // 
-            this.btnEditarMateria.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnEditarMateria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarMateria.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarMateria.Location = new System.Drawing.Point(182, 550);
-            this.btnEditarMateria.Name = "btnEditarMateria";
-            this.btnEditarMateria.Size = new System.Drawing.Size(150, 40);
-            this.btnEditarMateria.TabIndex = 24;
-            this.btnEditarMateria.Text = "Editar";
-            this.btnEditarMateria.UseVisualStyleBackColor = false;
+            this.btnConfirmarEdicion.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnConfirmarEdicion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmarEdicion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmarEdicion.Location = new System.Drawing.Point(182, 550);
+            this.btnConfirmarEdicion.Name = "btnConfirmarEdicion";
+            this.btnConfirmarEdicion.Size = new System.Drawing.Size(150, 40);
+            this.btnConfirmarEdicion.TabIndex = 24;
+            this.btnConfirmarEdicion.Text = "Editar";
+            this.btnConfirmarEdicion.UseVisualStyleBackColor = false;
+            this.btnConfirmarEdicion.Click += new System.EventHandler(this.btnConfirmarEdicion_Click);
             // 
             // txtNuevoNombre
             // 
@@ -153,8 +154,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 601);
             this.Controls.Add(this.lblEditarMateria);
-            this.Controls.Add(this.btnCancelarEdicionMateria);
-            this.Controls.Add(this.btnEditarMateria);
+            this.Controls.Add(this.btnCancelarEdicion);
+            this.Controls.Add(this.btnConfirmarEdicion);
             this.Controls.Add(this.txtNuevoNombre);
             this.Controls.Add(this.lblNuevoNombre);
             this.Controls.Add(this.txtMateriaEditadaID);
@@ -181,8 +182,8 @@
         private System.Windows.Forms.PictureBox btnRegresar;
         private System.Windows.Forms.Label lblMaterias;
         private System.Windows.Forms.Label lblEditarMateria;
-        private System.Windows.Forms.Button btnCancelarEdicionMateria;
-        private System.Windows.Forms.Button btnEditarMateria;
+        private System.Windows.Forms.Button btnCancelarEdicion;
+        private System.Windows.Forms.Button btnConfirmarEdicion;
         private System.Windows.Forms.TextBox txtNuevoNombre;
         private System.Windows.Forms.Label lblNuevoNombre;
         private System.Windows.Forms.TextBox txtMateriaEditadaID;

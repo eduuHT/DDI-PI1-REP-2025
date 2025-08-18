@@ -12,28 +12,39 @@ namespace UTApp.Forms.Materias
 {
     public partial class FormEditarMateria : Form
     {
+        #region Variables
         private FormMaterias _formPadre;
+
+        private MateriaBLL _materiaBLL;
+        #endregion
+
         #region Constructors
         public FormEditarMateria()
         {
             InitializeComponent();
+            _materiaBLL = new MateriaBLL();
         }
 
-        public FormEditarMateria(FormMaterias formPadre)
+        public FormEditarMateria(FormMaterias formPadre) : this()
         {
-            InitializeComponent();
             _formPadre = formPadre;
         }
         #endregion
 
         #region Events
-        private void btnCancelarEdicionMateria_Click(object sender, EventArgs e)
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Regresar();
+        }
+        private void btnCancelarEdicion_Click(object sender, EventArgs e)
         {
             Regresar();
         }
 
-        private void btnRegresar_Click(object sender, EventArgs e)
+        private void btnConfirmarEdicion_Click(object sender, EventArgs e)
         {
+            EditarMateria();
             Regresar();
         }
         #endregion
@@ -42,7 +53,21 @@ namespace UTApp.Forms.Materias
         private void Regresar()
         {
             _formPadre.Show();
+            _formPadre.LlenarGrid();
             this.Close();
+        }
+        private void EditarMateria()
+        {
+            int id = int.Parse(txtMateriaEditadaID.Text);
+            string nombre = txtNuevoNombre.Text;
+
+            Materia materiaActualizada = new Materia
+            {
+                Id = id,
+                Nombre = nombre,
+            };
+
+            _materiaBLL.ActualizarGrupo(materiaActualizada);
         }
         #endregion
 

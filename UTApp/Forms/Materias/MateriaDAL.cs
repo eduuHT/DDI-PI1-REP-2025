@@ -67,5 +67,30 @@ namespace UTApp.Forms.Materias
 
             return materias;
         }
+
+        public void UpdateMateria(Materia materia)
+        {
+            try
+            {
+                conn.Open();
+
+                SqlCommand command = new SqlCommand("UpdateMateria", conn);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@MateriaID", materia.Id);
+                command.Parameters.AddWithValue("@MateriaNombre", materia.Nombre);
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }

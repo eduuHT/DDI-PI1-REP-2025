@@ -112,6 +112,7 @@
             this.btnConfirmarEdicion.TabIndex = 24;
             this.btnConfirmarEdicion.Text = "Editar";
             this.btnConfirmarEdicion.UseVisualStyleBackColor = false;
+            this.btnConfirmarEdicion.Click += new System.EventHandler(this.btnConfirmarEdicion_Click);
             // 
             // txtNuevoNombre
             // 

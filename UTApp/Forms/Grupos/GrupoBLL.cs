@@ -28,5 +28,10 @@ namespace UTApp.Forms.Grupos
         {
          return _grupoDAl.GetGrupos(); 
         }
+
+        public void ActualizarGrupo(Grupo grupo)
+        {
+            _grupoDAl.UpdateGrupo(grupo);
+        }
     }
 }

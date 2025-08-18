@@ -12,17 +12,21 @@ namespace UTApp.Forms.Grupos
 {
     public partial class FormEditarGrupo : Form
     {
+        #region Variables
         private FormGrupos _formPadre; // Variable para la instancia original del form Grupos
+
+        private GrupoBLL _grupoBLL;
+        #endregion
 
         #region Constructors
         public FormEditarGrupo()
         {
             InitializeComponent();
+            _grupoBLL = new GrupoBLL();
         }
 
-        public FormEditarGrupo(FormGrupos formPadre) // Overload que toma la instancia del form original de Grupos y la asigna a la variable _formPadre
+        public FormEditarGrupo(FormGrupos formPadre) : this()// Overload que toma la instancia del form original de Grupos y la asigna a la variable _formPadre
         {
-            InitializeComponent();
             _formPadre = formPadre;
         }
 
@@ -39,6 +43,11 @@ namespace UTApp.Forms.Grupos
             Regresar();
         }
         
+        private void btnConfirmarEdicion_Click(object sender, EventArgs e)
+        {
+            EditarGrupo();
+            Regresar();
+        }
         #endregion
 
         #region Private Methods
@@ -46,9 +55,27 @@ namespace UTApp.Forms.Grupos
         {
             // mostrar de nuevo el form principal y ocultar este form secundario
             _formPadre.Show();
+            _formPadre.LlenarGrid();
             this.Close();
         }
 
+        private void EditarGrupo()
+        {
+            // Obtener los datos editados desde los controles del formulario
+            int id = int.Parse(txtGrupoEditadoID.Text);
+            string nombre = txtNuevoNombre.Text;
+
+            // Crear el objeto Grupo con los datos actualizados
+            Grupo grupoActualizado = new Grupo
+            {
+                Id = id,
+                Nombre = nombre
+            };
+
+            _grupoBLL.ActualizarGrupo(grupoActualizado);
+        }
+
         #endregion
+
     }
 }

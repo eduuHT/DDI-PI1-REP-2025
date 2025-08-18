@@ -67,5 +67,29 @@ namespace UTApp.Forms.Grupos
 
             return grupos;
         }
+
+        public void UpdateGrupo(Grupo grupo)
+        {
+            try
+            {
+                conn.Open();
+
+                SqlCommand command = new SqlCommand("UpdateGrupo", conn);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@GrupoID", grupo.Id);
+                command.Parameters.AddWithValue("@GrupoNombre", grupo.Nombre);
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }

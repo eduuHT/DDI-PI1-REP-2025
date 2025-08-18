@@ -17,10 +17,6 @@ namespace UTApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Iniciar con mi form para hacer pruebas
-            FormGrupos formGrupos = new FormGrupos();
-            formGrupos.Show();
-
             Application.Run(new FormLogin());
 
         }

@@ -12,17 +12,21 @@ namespace UTApp.Forms.Materias
 {
     public partial class FormEliminarMateria : Form
     {
+        #region Variables
         private FormMaterias _formPadre;
+        
+        private MateriaBLL _materiaBLL;
+        #endregion
 
         #region Constructors
         public FormEliminarMateria()
         {
             InitializeComponent();
+            _materiaBLL = new MateriaBLL();
         }
 
-        public FormEliminarMateria(FormMaterias formPadre)
+        public FormEliminarMateria(FormMaterias formPadre) : this()
         {
-            InitializeComponent();
             _formPadre = formPadre;
         }
         #endregion
@@ -37,13 +41,26 @@ namespace UTApp.Forms.Materias
         {
             Regresar();
         }
+        private void btnConfirmarEliminacion_Click(object sender, EventArgs e)
+        {
+            EliminarMateria();
+            Regresar();
+        }
         #endregion
 
         #region Private Methods
         private void Regresar()
         {
             _formPadre.Show();
+            _formPadre.LlenarGrid();
             this.Close();
+        }
+
+        private void EliminarMateria()
+        {
+            int id = int.Parse(txtMateriaEliminadaID.Text);
+
+            _materiaBLL.EliminarMateria(id);
         }
         #endregion
 

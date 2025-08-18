@@ -92,5 +92,29 @@ namespace UTApp.Forms.Materias
                 conn.Close();
             }
         }
+
+        public void DeleteMateria(int materiaId)
+        {
+            try
+            {
+                conn.Open();
+
+                SqlCommand command = new SqlCommand("DeleteMateria", conn);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@MateriaID", materiaId);
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }

@@ -67,7 +67,7 @@ namespace UTApp.Forms.Materias
                 Nombre = nombre,
             };
 
-            _materiaBLL.ActualizarGrupo(materiaActualizada);
+            _materiaBLL.ActualizarMateria(materiaActualizada);
         }
         #endregion
 

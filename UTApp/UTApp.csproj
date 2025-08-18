@@ -98,12 +98,33 @@
     <Compile Include="Forms\Login\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Materias\FormAgregarMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Materias\FormAgregarMateria.Designer.cs">
+      <DependentUpon>FormAgregarMateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Materias\FormEditarMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Materias\FormEditarMateria.Designer.cs">
+      <DependentUpon>FormEditarMateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Materias\FormEliminarMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Materias\FormEliminarMateria.Designer.cs">
+      <DependentUpon>FormEliminarMateria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Materias\FormMaterias.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Materias\FormMaterias.Designer.cs">
       <DependentUpon>FormMaterias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Materias\Materia.cs" />
+    <Compile Include="Forms\Materias\MateriaBLL.cs" />
+    <Compile Include="Forms\Materias\MateriaDAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Asignaciones\FormAsignaciones.resx">
@@ -130,6 +151,15 @@
     <EmbeddedResource Include="Forms\Login\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Materias\FormAgregarMateria.resx">
+      <DependentUpon>FormAgregarMateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Materias\FormEditarMateria.resx">
+      <DependentUpon>FormEditarMateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Materias\FormEliminarMateria.resx">
+      <DependentUpon>FormEliminarMateria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Materias\FormMaterias.resx">
       <DependentUpon>FormMaterias.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +183,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="UTApp.Forms.Materias.Materia.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -34,7 +34,7 @@ namespace UTApp.Forms.Grupos
             }
         }
 
-        public List<Grupo> GetGrupos()
+        public List<Grupo> GetGrupos(string busqueda = null)
         {
             List<Grupo> grupos = new List<Grupo>();
 
@@ -42,17 +42,39 @@ namespace UTApp.Forms.Grupos
             {
                 conn.Open();
 
-                SqlCommand command = new SqlCommand("GetGrupos", conn);
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
+                if (!string.IsNullOrEmpty(busqueda))
                 {
-                    grupos.Add(new Grupo
+                    SqlCommand command = new SqlCommand("GetGrupoById", conn);
+                    command.CommandType = CommandType.StoredProcedure;
+                    
+                    command.Parameters.AddWithValue("@GrupoID", busqueda);
+                    command.ExecuteNonQuery();
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
                     {
-                        Id = int.Parse(reader["GrupoID"].ToString()),
-                        Nombre = reader["GrupoNombre"].ToString()
-                    });
+                        grupos.Add(new Grupo
+                        {
+                            Id = int.Parse(reader["GrupoID"].ToString()),
+                            Nombre = reader["GrupoNombre"].ToString()
+                        });
+                    }
+                }
+                else
+                {
+                    SqlCommand command = new SqlCommand("GetGrupos", conn);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        grupos.Add(new Grupo
+                        {
+                            Id = int.Parse(reader["GrupoID"].ToString()),
+                            Nombre = reader["GrupoNombre"].ToString()
+                        });
+                    }
                 }
             }
             catch (Exception)

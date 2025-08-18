@@ -32,7 +32,6 @@ namespace UTApp.Forms.Grupos
         {
             AbrirFormAgregarGrupo();
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             AbrirFormEliminarGrupo();
@@ -40,6 +39,11 @@ namespace UTApp.Forms.Grupos
         private void btnEditar_Click(object sender, EventArgs e)
         {
             AbrirFormEditarGrupo();
+        }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            LlenarGrid(txtBusqueda.Text);
+            txtBusqueda.Text = string.Empty;
         }
         #endregion
 
@@ -64,13 +68,12 @@ namespace UTApp.Forms.Grupos
             formEditarGrupo.Show();
             this.Hide();
         }
-        public void LlenarGrid()
+        public void LlenarGrid(string busquedaText = null)
         {
-            List<Grupo> grupos = _grupoBLL.GetGrupos();
+            List<Grupo> grupos = _grupoBLL.ObtenerGrupos(busquedaText);
             gridGrupos.DataSource = grupos;
         }
+
         #endregion
-
-
     }
 }

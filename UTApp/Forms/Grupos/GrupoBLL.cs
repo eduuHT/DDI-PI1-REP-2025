@@ -24,9 +24,9 @@ namespace UTApp.Forms.Grupos
             return grupo;
         }
 
-       public List<Grupo> GetGrupos()
+       public List<Grupo> ObtenerGrupos(string busquedaText = null)
         {
-         return _grupoDAl.GetGrupos(); 
+         return _grupoDAl.GetGrupos(busquedaText); 
         }
 
         public void ActualizarGrupo(Grupo grupo)

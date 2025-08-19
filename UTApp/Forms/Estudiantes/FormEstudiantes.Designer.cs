@@ -34,7 +34,6 @@
             this.EstudianteNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelCatálogoMaterias = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.botonOpciones = new System.Windows.Forms.PictureBox();
             this.pbRegresar = new System.Windows.Forms.PictureBox();
             this.labelMaterias = new System.Windows.Forms.Label();
             this.pbBuscar = new System.Windows.Forms.PictureBox();
@@ -43,7 +42,6 @@
             this.pbEliminar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridEstudiantes)).BeginInit();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditar)).BeginInit();
@@ -105,24 +103,12 @@
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.SeaGreen;
-            this.panelHeader.Controls.Add(this.botonOpciones);
             this.panelHeader.Controls.Add(this.pbRegresar);
             this.panelHeader.Controls.Add(this.labelMaterias);
             this.panelHeader.Location = new System.Drawing.Point(1, -2);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(343, 94);
             this.panelHeader.TabIndex = 13;
-            // 
-            // botonOpciones
-            // 
-            this.botonOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonOpciones.Image = global::UTApp.Properties.Resources.dots;
-            this.botonOpciones.Location = new System.Drawing.Point(293, 46);
-            this.botonOpciones.Name = "botonOpciones";
-            this.botonOpciones.Size = new System.Drawing.Size(23, 24);
-            this.botonOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.botonOpciones.TabIndex = 2;
-            this.botonOpciones.TabStop = false;
             // 
             // pbRegresar
             // 
@@ -220,7 +206,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridEstudiantes)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditar)).EndInit();
@@ -239,7 +224,6 @@
         private System.Windows.Forms.PictureBox pbEliminar;
         private System.Windows.Forms.Label labelCatálogoMaterias;
         private System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.PictureBox botonOpciones;
         private System.Windows.Forms.PictureBox pbRegresar;
         private System.Windows.Forms.Label labelMaterias;
         private System.Windows.Forms.PictureBox pbBuscar;

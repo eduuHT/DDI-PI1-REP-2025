@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDocentesAgregar));
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.botonOpciones = new System.Windows.Forms.PictureBox();
             this.pbRegresar = new System.Windows.Forms.PictureBox();
             this.labelMaterias = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,31 +45,18 @@
             this.txtDocenteEmpleado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.SeaGreen;
-            this.panelHeader.Controls.Add(this.botonOpciones);
             this.panelHeader.Controls.Add(this.pbRegresar);
             this.panelHeader.Controls.Add(this.labelMaterias);
             this.panelHeader.Location = new System.Drawing.Point(1, -2);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(343, 94);
             this.panelHeader.TabIndex = 21;
-            // 
-            // botonOpciones
-            // 
-            this.botonOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonOpciones.Image = global::UTApp.Properties.Resources.dots;
-            this.botonOpciones.Location = new System.Drawing.Point(293, 46);
-            this.botonOpciones.Name = "botonOpciones";
-            this.botonOpciones.Size = new System.Drawing.Size(23, 24);
-            this.botonOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.botonOpciones.TabIndex = 2;
-            this.botonOpciones.TabStop = false;
             // 
             // pbRegresar
             // 
@@ -242,7 +228,6 @@
             this.Click += new System.EventHandler(this.FormDocentesAgregar_Click);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -252,7 +237,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.PictureBox botonOpciones;
         private System.Windows.Forms.PictureBox pbRegresar;
         private System.Windows.Forms.Label labelMaterias;
         private System.Windows.Forms.Label label2;

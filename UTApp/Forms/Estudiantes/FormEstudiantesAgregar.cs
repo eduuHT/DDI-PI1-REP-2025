@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UTApp.Forms.Estudiantes;
 using UTApp.Forms.Docentes;
+using UTApp.Forms.Grupos;
 
 namespace UTApp.Forms.Estudiantes
 {
@@ -18,6 +19,8 @@ namespace UTApp.Forms.Estudiantes
     {
         EstudianteControlador controladorEst = new EstudianteControlador();
         DocenteControlador controladorDoc = new DocenteControlador();
+        GrupoDAL controladorGrupo = new GrupoDAL();
+
         public FormEstudiantesAgregar()
         {
             InitializeComponent();
@@ -47,12 +50,6 @@ namespace UTApp.Forms.Estudiantes
                     {
                         MessageBox.Show("Es necesario ingresar un nombre con mínimo.");
                         txtEstudianteNombre.Focus();
-                        return;
-                    }
-                    else if (txtEstudianteGrupo.Text.Trim() == "")
-                    {
-                        MessageBox.Show("No ha ingresado un grupo.");
-                        txtEstudianteGrupo.Focus();
                         return;
                     }
                     else if (txtEstudianteCorreo.Text.Trim() == "")
@@ -85,7 +82,7 @@ namespace UTApp.Forms.Estudiantes
                         string nombre = txtEstudianteNombre.Text;
                         string correo = txtEstudianteCorreo.Text.Trim();
                         string pass = txtEstudiantePass.Text;
-                        int grupo = Convert.ToInt32(txtEstudianteGrupo.Text);
+                        int grupo = Convert.ToInt32(cbGrupo.SelectedValue);
 
                         Estudiante nuevoEstudiante = controladorEst.BuscarCorreoEstudiante(correo);
                         Docente docente = controladorDoc.BuscarCorreoDocente(correo);
@@ -114,24 +111,13 @@ namespace UTApp.Forms.Estudiantes
             }
         }
 
-        private void txtEstudianteGrupo_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                txtEstudianteGrupo.Text = Convert.ToInt32(txtEstudianteGrupo.Text).ToString();
-            }
-            catch
-            {
-                txtEstudianteGrupo.Text = "\0";
-            }
-        }
-
         private void txtEstudianteMatricula_Leave(object sender, EventArgs e)
         {
             Estudiante estudiante = controladorEst.BuscarEstudiante(txtEstudianteMatricula.Text);
 
             if (estudiante != null)
             {
+                List<Grupo> grupos = controladorGrupo.GetGrupos();
                 txtEstudianteNombre.Text = estudiante.EstudianteNombreCompleto;
                 txtEstudianteNombre.Enabled = false;
 
@@ -142,8 +128,8 @@ namespace UTApp.Forms.Estudiantes
                 txtEstudiantePass.Text = estudiante.EstudiantePassword;
                 txtEstudiantePass.Enabled = false;
 
-                txtEstudianteGrupo.Text = estudiante.GrupoID.ToString();
-                txtEstudianteGrupo.Enabled = false;
+                cbGrupo.SelectedIndex = (estudiante.GrupoID) - 1;
+                cbGrupo.Enabled = false;
             }
             else if (txtEstudianteNombre.Enabled == false)
             {
@@ -156,9 +142,6 @@ namespace UTApp.Forms.Estudiantes
                 txtEstudiantePass.PasswordChar = '\0';
                 txtEstudiantePass.Text = "";
                 txtEstudiantePass.Enabled = true;
-
-                txtEstudianteGrupo.Text = "";
-                txtEstudianteGrupo.Enabled = true;
             }
         }
 
@@ -186,12 +169,6 @@ namespace UTApp.Forms.Estudiantes
                     txtEstudiantePass.PasswordChar = '\0';
                     txtEstudiantePass.Enabled = true;
                 }
-
-                if (txtEstudianteGrupo.Text != "")
-                {
-                    txtEstudianteGrupo.Text = "";
-                    txtEstudianteGrupo.Enabled = true;
-                }
             }
         }
 
@@ -209,7 +186,40 @@ namespace UTApp.Forms.Estudiantes
             this.Hide();
             back.Show();
         }
-        /*
+
+        private void FormEstudiantesAgregar_Load(object sender, EventArgs e)
+        {
+            txtEstudianteMatricula.CharacterCasing = CharacterCasing.Upper;
+            txtEstudianteMatricula.MaxLength = 10;
+            txtEstudianteNombre.MaxLength = 200;
+            txtEstudianteCorreo.MaxLength = 200;
+
+            Limpiar();
+            List<Grupo> grupos = null;
+            grupos = controladorGrupo.GetGrupos();
+            cbGrupo.DataSource = grupos;
+            cbGrupo.DisplayMember = "Nombre";
+            cbGrupo.ValueMember = "Id";
+        }
+
+        private void txtEstudianteMatricula_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtEstudianteMatricula.Text))
+                return;
+
+            string matricula = txtEstudianteMatricula.Text;
+
+            if (matricula.Length >= 1)
+            {
+                if (matricula[0] != 'L' && 
+                   matricula[0] != '0' && matricula[0] != '1' && matricula[0] != '2' && matricula[0] != '3' && matricula[0] != '4' &&
+                   matricula[0] != '5' && matricula[0] != '6' && matricula[0] != '7' && matricula[0] != '8' && matricula[0] != '9')
+                {
+                    MessageBox.Show("Solo se permite la letra 'L' o números como primer carácter.");
+                    txtEstudianteMatricula.Text = "";
+                }
+            }
+        }
         public void Limpiar()
         {
             txtEstudianteMatricula.Text = "";
@@ -218,22 +228,5 @@ namespace UTApp.Forms.Estudiantes
             txtEstudianteCorreo.Text = "";
             txtEstudiantePass.Text = "";
         }
-
-        public void ListaGrupos()
-        {
-            GrupoControlador controladorGrupo = new GrupoControlador();
-            List<Grupo> grupos = controladorGrupo.ListarGrupos();
-
-
-        }
-        private void FormEstudiantesAgregar_Load(object sender, EventArgs e)
-        {
-            Limpiar();
-            ListaGrupos();
-            cbGrupo.DataSource = grupos;
-            cbGrupo.DisplayMember = "grupoNombre";
-            cbGrupo.ValueMember = "grupoID";
-        }
-        */
     }
 }

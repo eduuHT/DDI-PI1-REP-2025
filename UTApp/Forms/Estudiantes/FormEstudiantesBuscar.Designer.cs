@@ -134,6 +134,7 @@
             this.txtEstudianteMatricula.Name = "txtEstudianteMatricula";
             this.txtEstudianteMatricula.Size = new System.Drawing.Size(100, 20);
             this.txtEstudianteMatricula.TabIndex = 109;
+            this.txtEstudianteMatricula.TextChanged += new System.EventHandler(this.txtEstudianteMatricula_TextChanged);
             this.txtEstudianteMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstudianteMatricula_KeyPress);
             // 
             // label1
@@ -254,6 +255,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar estudiante";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEstudiantesBuscar_FormClosed);
+            this.Load += new System.EventHandler(this.FormEstudiantesBuscar_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).EndInit();

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UTApp.Forms.Docentes;
+using UTApp.Forms.Grupos;
 
 namespace UTApp.Forms.Estudiantes
 {
@@ -16,6 +17,8 @@ namespace UTApp.Forms.Estudiantes
     {
         EstudianteControlador controladorEst = new EstudianteControlador();
         DocenteControlador controladorDoc = new DocenteControlador();
+        GrupoDAL controladorGrupo = new GrupoDAL();
+
         public FormEstudiantesEditar()
         {
             InitializeComponent();
@@ -32,6 +35,12 @@ namespace UTApp.Forms.Estudiantes
             {
                 if (txtEstudianteMatricula.Text.Length == 10)
                 {
+                    List<Grupo> grupos = null;
+                    grupos = controladorGrupo.GetGrupos();
+                    cbGrupo.DataSource = grupos;
+                    cbGrupo.DisplayMember = "Nombre";
+                    cbGrupo.ValueMember = "Id";
+
                     try
                     {
                         Estudiante estudianteEditando = null;
@@ -39,7 +48,7 @@ namespace UTApp.Forms.Estudiantes
 
                         if (estudianteEditando != null)
                         {
-                            txtEstudianteGrupo.Text = estudianteEditando.GrupoID.ToString();
+                            cbGrupo.SelectedIndex = (estudianteEditando.GrupoID) - 1;
                             txtEstudianteNombre.Text = estudianteEditando.EstudianteNombreCompleto;
                             txtEstudianteCorreo.Text = estudianteEditando.EstudianteEmail;
                             txtEstudiantePass.Text = estudianteEditando.EstudiantePassword;
@@ -65,7 +74,7 @@ namespace UTApp.Forms.Estudiantes
         {
             if (txtEstudianteMatricula.Text == "" || txtEstudianteMatricula.Text != "" || txtEstudianteMatricula.Text.Length != 10)
             {
-                txtEstudianteGrupo.Text = "";
+                cbGrupo.DataSource = null;
                 txtEstudianteNombre.Text = "";
                 txtEstudianteCorreo.Text = "";
                 txtEstudiantePass.Text = "";
@@ -82,7 +91,7 @@ namespace UTApp.Forms.Estudiantes
                 string nombre = txtEstudianteNombre.Text;
                 string correo = txtEstudianteCorreo.Text.Trim();
                 string pass = txtEstudiantePass.Text;
-                int grupo = Convert.ToInt32(txtEstudianteGrupo.Text);
+                int grupo = Convert.ToInt32(cbGrupo.SelectedValue);
 
                 Docente docente = controladorDoc.BuscarCorreoDocente(correo);
                 editEstudiante = controladorEst.BuscarCorreoEstudiante(correo);
@@ -94,12 +103,12 @@ namespace UTApp.Forms.Estudiantes
                     bool bandera = false;
                     pruebaEstudiante = new Estudiante();
                     int i = 0;
-                    
+
 
                     do
                     {
                         pruebaEstudiante = listaEstudiantes[i];
-                        
+
                         if (editEstudiante.EstudianteMatricula == pruebaEstudiante.EstudianteMatricula)
                         {
                             if (editEstudiante.EstudianteNombreCompleto != pruebaEstudiante.EstudianteNombreCompleto
@@ -117,7 +126,7 @@ namespace UTApp.Forms.Estudiantes
                     bool cambio = controladorEst.EditarEstudiante(editEstudiante);
 
                     if (cambio && bandera)
-                        MessageBox.Show("No fue posible realizar los cambios.");
+                        MessageBox.Show("Los cambios se han realizado con éxito.");
                 }
                 else
                     MessageBox.Show("El correo que ingresó ya está en uso.");
@@ -138,7 +147,12 @@ namespace UTApp.Forms.Estudiantes
 
         private void FormEstudiantesEditar_Load(object sender, EventArgs e)
         {
+            txtEstudianteMatricula.CharacterCasing = CharacterCasing.Upper;
+            txtEstudianteMatricula.MaxLength = 10;
+            txtEstudianteNombre.MaxLength = 200;
+            txtEstudianteCorreo.MaxLength = 200;
 
+            Limpiar();
         }
 
         private void txtEstudianteMatricula_KeyPress(object sender, KeyPressEventArgs e)
@@ -154,6 +168,34 @@ namespace UTApp.Forms.Estudiantes
             FormEstudiantes back = new FormEstudiantes();
             this.Hide();
             back.Show();
+        }
+
+        public void Limpiar()
+        {
+            txtEstudianteMatricula.Text = "";
+            cbGrupo.SelectedIndex = -1;
+            txtEstudianteNombre.Text = "";
+            txtEstudianteCorreo.Text = "";
+            txtEstudiantePass.Text = "";
+        }
+
+        private void txtEstudianteMatricula_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtEstudianteMatricula.Text))
+                return;
+
+            string matricula = txtEstudianteMatricula.Text;
+
+            if (matricula.Length >= 1)
+            {
+                if (matricula[0] != 'L' && matricula[0] != 'I' &&
+                   matricula[0] != '0' && matricula[0] != '1' && matricula[0] != '2' && matricula[0] != '3' && matricula[0] != '4' &&
+                   matricula[0] != '5' && matricula[0] != '6' && matricula[0] != '7' && matricula[0] != '8' && matricula[0] != '9')
+                {
+                    MessageBox.Show("Solo se permite la letra 'L' o 'I' como primer carácter.");
+                    txtEstudianteMatricula.Text = "";
+                }
+            }
         }
     }
 }

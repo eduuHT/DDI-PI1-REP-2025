@@ -28,6 +28,7 @@ namespace UTApp.Forms.Docentes
 
         private void txtDocenteEmpleado_Leave(object sender, EventArgs e)
         {
+            txtDocenteEmpleado.Text = txtDocenteEmpleado.Text.PadLeft(4, '0');
             Docente Docente = controladorDoc.BuscarDocente(txtDocenteEmpleado.Text);
 
             if (Docente != null)
@@ -98,48 +99,41 @@ namespace UTApp.Forms.Docentes
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             bool bandera = false;
-            
+
             try
             {
                 txtDocenteEmpleado.Text = Convert.ToInt32(txtDocenteEmpleado.Text).ToString();
                 txtDocenteEmpleado.Text = txtDocenteEmpleado.Text.PadLeft(4, '0');
 
-                if (bandera == false)
+                if (txtDocenteEmpleado.Text == "" || txtDocenteEmpleado.Text.Length != 4)
                 {
-                    if (txtDocenteEmpleado.Text == "" || txtDocenteEmpleado.Text.Length != 4)
-                    {
-                        MessageBox.Show("La matrícula debe de contener 4 carácteres.");
-                        txtDocenteEmpleado.Focus();
-                        return;
-                    }
-                    else if (txtDocenteNombre.Text == "")
-                    {
-                        MessageBox.Show("Es necesario ingresar un nombre.");
-                        txtDocenteNombre.Focus();
-                        return;
-                    }
-                    else if (txtDocenteTitulo.Text.Trim() == "")
-                    {
-                        MessageBox.Show("No ha ingresado título académico.");
-                        txtDocenteTitulo.Focus();
-                        return;
-                    }
-                    else if (txtDocenteCorreo.Text.Trim() == "")
-                    {
-                        MessageBox.Show("Introduza un correo electrónico.");
-                        txtDocenteCorreo.Focus();
-                        return;
-                    }
-                    else if (txtDocentePass.Text == "" || (txtDocentePass.Text.Length < 8 || txtDocentePass.Text.Length > 25))
-                    {
-                        MessageBox.Show("Ingrese una contraseña de entre 8 y 25 carácteres.");
-                        txtDocentePass.Focus();
-                        return;
-                    }
-                    else
-                    {
-                        bandera = true;
-                    }
+                    MessageBox.Show("La matrícula debe de contener 4 carácteres.");
+                    txtDocenteEmpleado.Focus();
+                    return;
+                }
+                else if (txtDocenteNombre.Text == "")
+                {
+                    MessageBox.Show("Es necesario ingresar un nombre.");
+                    txtDocenteNombre.Focus();
+                    return;
+                }
+                else if (txtDocenteTitulo.Text.Trim() == "")
+                {
+                    MessageBox.Show("No ha ingresado título académico.");
+                    txtDocenteTitulo.Focus();
+                    return;
+                }
+                else if (txtDocenteCorreo.Text.Trim() == "")
+                {
+                    MessageBox.Show("Introduza un correo electrónico.");
+                    txtDocenteCorreo.Focus();
+                    return;
+                }
+                else if (txtDocentePass.Text == "" || (txtDocentePass.Text.Length < 8 || txtDocentePass.Text.Length > 25))
+                {
+                    MessageBox.Show("Ingrese una contraseña de entre 8 y 25 carácteres.");
+                    txtDocentePass.Focus();
+                    return;
                 }
                 else
                 {
@@ -166,7 +160,7 @@ namespace UTApp.Forms.Docentes
 
                             controladorDoc.AgregarDocente(nuevoDocente);
 
-                            MessageBox.Show("El correo fue registrado con éxito.");
+                            MessageBox.Show("El docente fue registrado con éxito.");
                         }
                         else
                             MessageBox.Show("El correo se registró previamente.");
@@ -179,13 +173,17 @@ namespace UTApp.Forms.Docentes
             }
             catch
             {
-                MessageBox.Show("Al parecer estás ingresando letras, intenta solo con números.", "Ocurrió un problema");
+                MessageBox.Show("Ocurrió un problema.");
             }
         }
 
         private void FormDocentesAgregar_Load(object sender, EventArgs e)
         {
-
+            txtDocenteEmpleado.MaxLength = 4;
+            txtDocenteNombre.MaxLength = 200;
+            txtDocenteTitulo.MaxLength = 200;
+            txtDocenteCorreo.MaxLength = 200;
+            txtDocentePass.MaxLength = 25;
         }
 
         private void txtDocenteEmpleado_KeyPress(object sender, KeyPressEventArgs e)

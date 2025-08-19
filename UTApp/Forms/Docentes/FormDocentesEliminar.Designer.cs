@@ -245,6 +245,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDocentesEliminar";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDocentesEliminar_FormClosed);
+            this.Load += new System.EventHandler(this.FormDocentesEliminar_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).EndInit();

@@ -35,7 +35,6 @@
             this.labelMaterias = new System.Windows.Forms.Label();
             this.labelCatálogoMaterias = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtEstudianteGrupo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEstudianteNombre = new System.Windows.Forms.TextBox();
             this.labelIIngresarValores = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtEstudiantePass = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.cbGrupo = new System.Windows.Forms.ComboBox();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
@@ -119,14 +119,6 @@
             this.label3.TabIndex = 100;
             this.label3.Text = "Grupo:";
             // 
-            // txtEstudianteGrupo
-            // 
-            this.txtEstudianteGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstudianteGrupo.Location = new System.Drawing.Point(126, 279);
-            this.txtEstudianteGrupo.Name = "txtEstudianteGrupo";
-            this.txtEstudianteGrupo.Size = new System.Drawing.Size(95, 20);
-            this.txtEstudianteGrupo.TabIndex = 99;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -161,6 +153,7 @@
             this.txtEstudianteMatricula.Name = "txtEstudianteMatricula";
             this.txtEstudianteMatricula.Size = new System.Drawing.Size(90, 20);
             this.txtEstudianteMatricula.TabIndex = 93;
+            this.txtEstudianteMatricula.TextChanged += new System.EventHandler(this.txtEstudianteMatricula_TextChanged);
             this.txtEstudianteMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstudianteMatricula_KeyPress);
             this.txtEstudianteMatricula.Leave += new System.EventHandler(this.txtEstudianteMatricula_Leave);
             // 
@@ -240,11 +233,20 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // cbGrupo
+            // 
+            this.cbGrupo.FormattingEnabled = true;
+            this.cbGrupo.Location = new System.Drawing.Point(126, 279);
+            this.cbGrupo.Name = "cbGrupo";
+            this.cbGrupo.Size = new System.Drawing.Size(95, 21);
+            this.cbGrupo.TabIndex = 107;
+            // 
             // FormEstudiantesEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 601);
+            this.Controls.Add(this.cbGrupo);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtEstudianteCorreo);
@@ -252,7 +254,6 @@
             this.Controls.Add(this.txtEstudiantePass);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtEstudianteGrupo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtEstudianteNombre);
             this.Controls.Add(this.labelIIngresarValores);
@@ -286,7 +287,6 @@
         private System.Windows.Forms.Label labelMaterias;
         private System.Windows.Forms.Label labelCatálogoMaterias;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtEstudianteGrupo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEstudianteNombre;
         private System.Windows.Forms.Label labelIIngresarValores;
@@ -298,5 +298,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtEstudiantePass;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.ComboBox cbGrupo;
     }
 }

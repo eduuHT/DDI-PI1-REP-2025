@@ -28,7 +28,6 @@ namespace UTApp.Forms.Docentes
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            txtDocenteEmpleado.Text = Convert.ToInt32(txtDocenteEmpleado.Text).ToString();
             txtDocenteEmpleado.Text = txtDocenteEmpleado.Text.PadLeft(4, '0');
 
             if (txtDocenteEmpleado.Text != "" || txtDocentePass.Text.Length != 4)
@@ -121,10 +120,10 @@ namespace UTApp.Forms.Docentes
                     if (cambio && bandera)
                         MessageBox.Show("El docente fue actualizado con éxito.");
                     else
-                        MessageBox.Show("No fue posible realizar los cambios.");
+                        MessageBox.Show("El correo ingresado ya está ocupado.");
                 }
                 else
-                    MessageBox.Show("No fue posible realizar los cambios."); 
+                    MessageBox.Show("No fue posible realizar los cambios.");
             }
             catch
             {
@@ -149,7 +148,10 @@ namespace UTApp.Forms.Docentes
 
         private void FormDocentesEditar_Load(object sender, EventArgs e)
         {
-
+            txtDocenteEmpleado.MaxLength = 4;
+            txtDocenteNombre.MaxLength = 200;
+            txtDocenteTitulo.MaxLength = 200;
+            txtDocenteCorreo.MaxLength = 200;
         }
 
         private void pbRegresar_Click(object sender, EventArgs e)

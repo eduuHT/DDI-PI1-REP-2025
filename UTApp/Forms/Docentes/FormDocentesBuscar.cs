@@ -30,7 +30,7 @@ namespace UTApp.Forms.Docentes
 
         private void FormDocentesBuscar_Load(object sender, EventArgs e)
         {
-
+            txtDocenteEmpleado.MaxLength = 4;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -40,29 +40,24 @@ namespace UTApp.Forms.Docentes
                 txtDocenteEmpleado.Text = Convert.ToInt32(txtDocenteEmpleado.Text).ToString();
                 txtDocenteEmpleado.Text = txtDocenteEmpleado.Text.PadLeft(4, '0');
 
-                if (txtDocenteEmpleado.Text.Length == 4)
-                {
-                    Docente docente = null;
-                    docente = controladorDoc.BuscarDocente(txtDocenteEmpleado.Text);
+                Docente docente = null;
+                docente = controladorDoc.BuscarDocente(txtDocenteEmpleado.Text);
 
-                    if (docente != null)
-                    {
-                        txtDocenteNombre.Text = docente.DocenteNombreCompleto;
-                        txtTitulo.Text = docente.DocenteTituloAcademico;
-                        txtDocenteCorreo.Text = docente.DocenteEmail;
-                        txtDocentePass.Text = docente.DocentePassword;
-                    }
-                    else
-                    {
-                        MessageBox.Show($"No se ha encontrado ningún registro con el número de empleado {txtDocenteEmpleado.Text}.");
-                    }
+                if (docente != null)
+                {
+                    txtDocenteNombre.Text = docente.DocenteNombreCompleto;
+                    txtTitulo.Text = docente.DocenteTituloAcademico;
+                    txtDocenteCorreo.Text = docente.DocenteEmail;
+                    txtDocentePass.Text = docente.DocentePassword;
                 }
                 else
-                    MessageBox.Show("El número de empleado debe ser de 4 números.");
+                {
+                    MessageBox.Show($"No se ha encontrado ningún registro con el número de empleado {txtDocenteEmpleado.Text}.");
+                }
             }
             catch
             {
-                MessageBox.Show("Al parecer estás ingresando letras, intenta solo con números.","Ocurrió un problema");
+                MessageBox.Show("Ocurrió un problema.");
             }
         }
 

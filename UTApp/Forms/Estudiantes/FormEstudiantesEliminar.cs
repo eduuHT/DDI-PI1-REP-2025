@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UTApp.Forms.Docentes;
+using UTApp.Forms.Grupos;
 
 namespace UTApp.Forms.Estudiantes
 {
@@ -17,7 +18,7 @@ namespace UTApp.Forms.Estudiantes
         //public static string connectionString = "workstation id=UTApp_Integradora1.mssql.somee.com;packet size=4096;user id=LuisRomán123_SQLLogin_1;pwd=b7jxk7yxyk;data source=UTApp_Integradora1.mssql.somee.com;persist security info=False;initial catalog=UTApp_Integradora1;TrustServerCertificate=True";
 
         EstudianteControlador controladorEst = new EstudianteControlador();
-        DocenteControlador controladorDoc = new DocenteControlador();
+        GrupoDAL controladorGrupo = new GrupoDAL();
         public FormEstudiantesEliminar()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace UTApp.Forms.Estudiantes
             try
             {
                 bool elimino = false;
-                txtEstudianteMatricula.Text = Convert.ToInt32(txtEstudianteMatricula.Text).ToString();
+                txtEstudianteMatricula.Text = Convert.ToInt64(txtEstudianteMatricula.Text).ToString();
 
                 if (MessageBox.Show($"¿Desea eliminar el estudiante {txtEstudianteMatricula.Text}?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -51,7 +52,7 @@ namespace UTApp.Forms.Estudiantes
             {
                 MessageBox.Show("Al parecer estás ingresando letras, intenta solo con números.");
             }
-            
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -67,7 +68,14 @@ namespace UTApp.Forms.Estudiantes
 
                     if (estudiante != null)
                     {
-                        txtEstudianteGrupo.Text = estudiante.GrupoID.ToString();
+                        List<Grupo> grupos = controladorGrupo.GetGrupos();
+                        int i = 0;
+                        do
+                        {
+                            i++;
+                        } while (estudiante.GrupoID != grupos[i].Id);
+
+                        txtEstudianteGrupo.Text = grupos[i].Nombre;
                         txtEstudianteNombre.Text = estudiante.EstudianteNombreCompleto;
                         txtEstudianteCorreo.Text = estudiante.EstudianteEmail;
                     }
@@ -82,16 +90,27 @@ namespace UTApp.Forms.Estudiantes
             }
             catch
             {
-                if (txtEstudianteMatricula.Text == "")
-                    MessageBox.Show("Ingrese una matrícula.");
-                else
-                    MessageBox.Show("Al parecer estás ingresando letras, intenta con números.");
+                MessageBox.Show("Ocurrió un problema.");
             }
         }
 
         private void txtEstudianteMatricula_TextChanged(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtEstudianteMatricula.Text))
+                return;
 
+            string matricula = txtEstudianteMatricula.Text;
+
+            if (matricula.Length > 0)
+            {
+                if (matricula[0] != 'L' && matricula[0] != 'I' &&
+                   matricula[0] != '0' && matricula[0] != '1' && matricula[0] != '2' && matricula[0] != '3' && matricula[0] != '4' &&
+                   matricula[0] != '5' && matricula[0] != '6' && matricula[0] != '7' && matricula[0] != '8' && matricula[0] != '9')
+                {
+                    MessageBox.Show("Solo se permite la letra 'L' o 'I' como primer carácter.");
+                    txtEstudianteMatricula.Text = "";
+                }
+            }
         }
 
         private void txtEstudianteMatricula_KeyPress(object sender, KeyPressEventArgs e)
@@ -107,6 +126,12 @@ namespace UTApp.Forms.Estudiantes
             FormEstudiantes back = new FormEstudiantes();
             this.Hide();
             back.Show();
+        }
+
+        private void FormEstudiantesEliminar_Load(object sender, EventArgs e)
+        {
+            txtEstudianteMatricula.CharacterCasing = CharacterCasing.Upper;
+            txtEstudianteMatricula.MaxLength = 10;
         }
     }
 }

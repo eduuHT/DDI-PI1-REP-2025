@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UTApp.Forms.Docentes;
+using UTApp.Forms.Grupos;
 
 namespace UTApp.Forms.Estudiantes
 {
@@ -18,6 +19,8 @@ namespace UTApp.Forms.Estudiantes
 
         EstudianteControlador controladorEst = new EstudianteControlador();
         DocenteControlador controladorDoc = new DocenteControlador();
+        GrupoDAL controladorGrupo = new GrupoDAL();
+
         public FormEstudiantesBuscar()
         {
             InitializeComponent();
@@ -32,8 +35,6 @@ namespace UTApp.Forms.Estudiantes
         {
             try
             {
-                txtEstudianteMatricula.Text = Convert.ToInt32(txtEstudianteMatricula).ToString();
-
                 if (txtEstudianteMatricula.Text.Length == 10)
                 {
                     Estudiante estudiante = null;
@@ -41,7 +42,9 @@ namespace UTApp.Forms.Estudiantes
 
                     if (estudiante != null)
                     {
-                        txtEstudianteGrupo.Text = estudiante.GrupoID.ToString();
+                        List<Grupo> grupos = controladorGrupo.GetGrupos();
+
+                        txtEstudianteGrupo.Text = grupos[estudiante.GrupoID-1].Nombre;
                         txtEstudianteNombre.Text = estudiante.EstudianteNombreCompleto;
                         txtEstudianteCorreo.Text = estudiante.EstudianteEmail;
                         txtEstudiantePass.Text = estudiante.EstudiantePassword;
@@ -53,11 +56,10 @@ namespace UTApp.Forms.Estudiantes
                 }
                 else
                     MessageBox.Show("La matrícula debe ser de 10 números.");
-                
             }
             catch
             {
-                MessageBox.Show("Al parecer estás ingresando letras, intenta con números.", "Ocurrió un problema");
+                MessageBox.Show("Ocurrió un problema.");
             }
         }
 
@@ -74,6 +76,31 @@ namespace UTApp.Forms.Estudiantes
             FormEstudiantes back = new FormEstudiantes();
             this.Hide();
             back.Show();
+        }
+
+        private void FormEstudiantesBuscar_Load(object sender, EventArgs e)
+        {
+            txtEstudianteMatricula.CharacterCasing = CharacterCasing.Upper;
+            txtEstudianteMatricula.MaxLength = 10;
+        }
+
+        private void txtEstudianteMatricula_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtEstudianteMatricula.Text))
+                return;
+
+            string matricula = txtEstudianteMatricula.Text;
+
+            if (matricula.Length >= 1)
+            {
+                if (matricula[0] != 'L' &&
+                   matricula[0] != '0' && matricula[0] != '1' && matricula[0] != '2' && matricula[0] != '3' && matricula[0] != '4' &&
+                   matricula[0] != '5' && matricula[0] != '6' && matricula[0] != '7' && matricula[0] != '8' && matricula[0] != '9')
+                {
+                    MessageBox.Show("Solo se permite la letra 'L' o números como primer carácter.");
+                    txtEstudianteMatricula.Text = "";
+                }
+            }
         }
     }
 }

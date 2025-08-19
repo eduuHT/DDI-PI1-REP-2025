@@ -35,7 +35,6 @@
             this.labelMaterias = new System.Windows.Forms.Label();
             this.labelCatálogoMaterias = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtEstudianteGrupo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEstudianteNombre = new System.Windows.Forms.TextBox();
             this.Nombre = new System.Windows.Forms.Label();
@@ -118,15 +117,6 @@
             this.label3.TabIndex = 84;
             this.label3.Text = "Grupo";
             // 
-            // txtEstudianteGrupo
-            // 
-            this.txtEstudianteGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstudianteGrupo.Location = new System.Drawing.Point(192, 182);
-            this.txtEstudianteGrupo.Name = "txtEstudianteGrupo";
-            this.txtEstudianteGrupo.Size = new System.Drawing.Size(93, 20);
-            this.txtEstudianteGrupo.TabIndex = 83;
-            this.txtEstudianteGrupo.Leave += new System.EventHandler(this.txtEstudianteGrupo_Leave);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -162,6 +152,7 @@
             this.txtEstudianteMatricula.Name = "txtEstudianteMatricula";
             this.txtEstudianteMatricula.Size = new System.Drawing.Size(98, 20);
             this.txtEstudianteMatricula.TabIndex = 77;
+            this.txtEstudianteMatricula.TextChanged += new System.EventHandler(this.txtEstudianteMatricula_TextChanged);
             this.txtEstudianteMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstudianteMatricula_KeyPress);
             this.txtEstudianteMatricula.Leave += new System.EventHandler(this.txtEstudianteMatricula_Leave);
             // 
@@ -219,7 +210,7 @@
             // cbGrupo
             // 
             this.cbGrupo.FormattingEnabled = true;
-            this.cbGrupo.Location = new System.Drawing.Point(192, 142);
+            this.cbGrupo.Location = new System.Drawing.Point(192, 182);
             this.cbGrupo.Name = "cbGrupo";
             this.cbGrupo.Size = new System.Drawing.Size(93, 21);
             this.cbGrupo.TabIndex = 89;
@@ -235,7 +226,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtEstudiantePass);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtEstudianteGrupo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtEstudianteNombre);
             this.Controls.Add(this.Nombre);
@@ -251,6 +241,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar estudiante";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEstudiantesAgregar_FormClosed);
+            this.Load += new System.EventHandler(this.FormEstudiantesAgregar_Load);
             this.Click += new System.EventHandler(this.FormEstudiantesAgregar_Click);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
@@ -269,7 +260,6 @@
         private System.Windows.Forms.Label labelMaterias;
         private System.Windows.Forms.Label labelCatálogoMaterias;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtEstudianteGrupo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEstudianteNombre;
         private System.Windows.Forms.Label Nombre;

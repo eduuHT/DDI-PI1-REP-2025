@@ -35,24 +35,19 @@ namespace UTApp.Forms.Docentes
                 txtDocenteEmpleado.Text = Convert.ToInt32(txtDocenteEmpleado.Text).ToString();
                 txtDocenteEmpleado.Text = txtDocenteEmpleado.Text.PadLeft(4, '0');
 
-                if (txtDocenteEmpleado.Text.Length == 4)
-                {
-                    Docente docente = null;
-                    docente = controladorDoc.BuscarDocente(txtDocenteEmpleado.Text);
+                Docente docente = null;
+                docente = controladorDoc.BuscarDocente(txtDocenteEmpleado.Text);
 
-                    if (docente != null)
-                    {
-                        txtDocenteNombre.Text = docente.DocenteNombreCompleto;
-                        txtDocenteTitulo.Text = docente.DocenteTituloAcademico;
-                        txtDocenteCorreo.Text = docente.DocenteEmail;
-                    }
-                    else
-                    {
-                        MessageBox.Show($"No se ha encontrado ningún registro con el número de empleado {txtDocenteEmpleado.Text}.");
-                    }
+                if (docente != null)
+                {
+                    txtDocenteNombre.Text = docente.DocenteNombreCompleto;
+                    txtDocenteTitulo.Text = docente.DocenteTituloAcademico;
+                    txtDocenteCorreo.Text = docente.DocenteEmail;
                 }
                 else
-                    MessageBox.Show("El número de empleado debe ser de 4 números.");
+                {
+                    MessageBox.Show($"No se ha encontrado ningún registro con el número de empleado {txtDocenteEmpleado.Text}.");
+                }
             }
             catch
             {
@@ -63,16 +58,15 @@ namespace UTApp.Forms.Docentes
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             bool elimino = false;
-            txtDocenteEmpleado.Text = Convert.ToInt32(txtDocenteEmpleado.Text).ToString();
             txtDocenteEmpleado.Text = txtDocenteEmpleado.Text.PadLeft(4, '0');
 
-            if (MessageBox.Show($"¿Desea eliminar el estudiante {txtDocenteEmpleado.Text}?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show($"¿Desea eliminar el docente {txtDocenteEmpleado.Text}?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 elimino = controladorDoc.EliminarDocente(txtDocenteEmpleado.Text);
 
                 if (elimino == true)
                 {
-                    MessageBox.Show("El estudiante ha sido eliminado.");
+                    MessageBox.Show("El docente ha sido eliminado.");
 
                     txtDocenteEmpleado.Text = "";
                     txtDocenteNombre.Text = "";
@@ -97,6 +91,11 @@ namespace UTApp.Forms.Docentes
             FormDocentes back = new FormDocentes();
             this.Hide();
             back.Show();
+        }
+
+        private void FormDocentesEliminar_Load(object sender, EventArgs e)
+        {
+            txtDocenteEmpleado.MaxLength = 4;
         }
     }
 }

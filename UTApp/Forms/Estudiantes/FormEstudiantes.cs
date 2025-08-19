@@ -28,7 +28,7 @@ namespace UTApp.Forms.Estudiantes
 
         private void FormEstudiantes_Load(object sender, EventArgs e)
         {
-            string consulta = "SELECT EstudianteMatricula, EstudianteNombreCompleto FROM Estudiante";
+            string consulta = "SELECT EstudianteMatricula, EstudianteNombreCompleto, GrupoID FROM Estudiante";
             SqlDataAdapter adapter = new SqlDataAdapter(consulta, connectionString);
             DataTable dt = new DataTable();
             adapter.Fill(dt);

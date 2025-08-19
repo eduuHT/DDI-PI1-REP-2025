@@ -257,6 +257,7 @@
             this.Name = "FormEstudiantesEliminar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eliminar estudiante";
+            this.Load += new System.EventHandler(this.FormEstudiantesEliminar_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonOpciones)).EndInit();

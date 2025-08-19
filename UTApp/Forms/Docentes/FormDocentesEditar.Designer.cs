@@ -130,6 +130,7 @@
             this.txtDocenteNombre.Name = "txtDocenteNombre";
             this.txtDocenteNombre.Size = new System.Drawing.Size(190, 20);
             this.txtDocenteNombre.TabIndex = 113;
+            this.txtDocenteNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocenteNombre_KeyPress);
             // 
             // labelIIngresarValores
             // 
@@ -211,6 +212,7 @@
             this.txtDocenteTitulo.Name = "txtDocenteTitulo";
             this.txtDocenteTitulo.Size = new System.Drawing.Size(190, 20);
             this.txtDocenteTitulo.TabIndex = 122;
+            this.txtDocenteTitulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocenteTitulo_KeyPress);
             // 
             // btnBuscar
             // 
@@ -252,7 +254,7 @@
             this.MinimizeBox = false;
             this.Name = "FormDocentesEditar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormDocentesEditar";
+            this.Text = "UTApp";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDocentesEditar_FormClosed);
             this.Load += new System.EventHandler(this.FormDocentesEditar_Load);
             this.panelHeader.ResumeLayout(false);

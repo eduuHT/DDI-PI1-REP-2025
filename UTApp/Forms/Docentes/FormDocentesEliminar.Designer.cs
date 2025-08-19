@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDocentesEliminar));
             this.label5 = new System.Windows.Forms.Label();
             this.txtDocenteCorreo = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -225,11 +226,12 @@
             this.Controls.Add(this.label);
             this.Controls.Add(this.labelCatálogoMaterias);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormDocentesEliminar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormDocentesEliminar";
+            this.Text = "UTApp";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDocentesEliminar_FormClosed);
             this.Load += new System.EventHandler(this.FormDocentesEliminar_Load);
             this.panelHeader.ResumeLayout(false);

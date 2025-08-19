@@ -117,6 +117,7 @@
             this.txtDocenteTitulo.Name = "txtDocenteTitulo";
             this.txtDocenteTitulo.Size = new System.Drawing.Size(225, 20);
             this.txtDocenteTitulo.TabIndex = 93;
+            this.txtDocenteTitulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocenteTitulo_KeyPress);
             // 
             // Nombre
             // 
@@ -160,6 +161,7 @@
             this.txtDocenteNombre.Name = "txtDocenteNombre";
             this.txtDocenteNombre.Size = new System.Drawing.Size(225, 20);
             this.txtDocenteNombre.TabIndex = 91;
+            this.txtDocenteNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocenteNombre_KeyPress);
             // 
             // label3
             // 
@@ -222,7 +224,7 @@
             this.MinimizeBox = false;
             this.Name = "FormDocentesAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Agregar Docente";
+            this.Text = "UTApp";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDocentesAgregar_FormClosed);
             this.Load += new System.EventHandler(this.FormDocentesAgregar_Load);
             this.Click += new System.EventHandler(this.FormDocentesAgregar_Click);

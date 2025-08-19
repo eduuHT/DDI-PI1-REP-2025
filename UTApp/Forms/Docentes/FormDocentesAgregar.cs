@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UTApp.Forms.Docentes;
 using UTApp.Forms.Estudiantes;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace UTApp.Forms.Docentes
 {
@@ -158,12 +159,15 @@ namespace UTApp.Forms.Docentes
                         {
                             nuevoDocente = new Docente(numero, nombre, titulo, correo, pass);
 
-                            controladorDoc.AgregarDocente(nuevoDocente);
+                            bool check = controladorDoc.AgregarDocente(nuevoDocente);
 
-                            MessageBox.Show("El docente fue registrado con éxito.");
+                            if (check)
+                                MessageBox.Show("El docente fue registrado con éxito.");
+                            else
+                                MessageBox.Show("El docente con ese número de empleado ya está registrado.");
                         }
                         else
-                            MessageBox.Show("El correo se registró previamente.");
+                            MessageBox.Show("El correo o el número de empleado se registró previamente.");
                     }
                     catch
                     {
@@ -184,6 +188,8 @@ namespace UTApp.Forms.Docentes
             txtDocenteTitulo.MaxLength = 200;
             txtDocenteCorreo.MaxLength = 200;
             txtDocentePass.MaxLength = 25;
+
+            txtDocenteEmpleado.Focus();
         }
 
         private void txtDocenteEmpleado_KeyPress(object sender, KeyPressEventArgs e)
@@ -199,6 +205,32 @@ namespace UTApp.Forms.Docentes
             FormDocentes back = new FormDocentes();
             this.Hide();
             back.Show();
+        }
+
+        private void txtDocenteNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            if (!char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDocenteTitulo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            if (!char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

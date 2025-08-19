@@ -120,6 +120,7 @@
             this.txtEstudianteNombre.Name = "txtEstudianteNombre";
             this.txtEstudianteNombre.Size = new System.Drawing.Size(225, 20);
             this.txtEstudianteNombre.TabIndex = 81;
+            this.txtEstudianteNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstudianteNombre_KeyPress);
             // 
             // Nombre
             // 
@@ -225,7 +226,7 @@
             this.MinimizeBox = false;
             this.Name = "FormEstudiantesAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Agregar estudiante";
+            this.Text = "UTApp";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEstudiantesAgregar_FormClosed);
             this.Load += new System.EventHandler(this.FormEstudiantesAgregar_Load);
             this.Click += new System.EventHandler(this.FormEstudiantesAgregar_Click);

@@ -153,14 +153,26 @@ namespace UTApp.Forms.Estudiantes
             txtEstudianteCorreo.MaxLength = 200;
 
             Limpiar();
+
+            txtEstudianteMatricula.Focus();
         }
 
         private void txtEstudianteMatricula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            TextBox txt = (TextBox)sender;
+
+
+            if (char.IsControl(e.KeyChar))
+                return;
+
+            if ((e.KeyChar == 'L' || e.KeyChar == 'l') && txt.Text.Length == 0)
+                return;
+
+
+            if (char.IsDigit(e.KeyChar))
+                return;
+
+            e.Handled = true;
         }
 
         private void pbRegresar_Click(object sender, EventArgs e)
@@ -195,6 +207,19 @@ namespace UTApp.Forms.Estudiantes
                     MessageBox.Show("Solo se permite la letra 'L' o 'I' como primer carácter.");
                     txtEstudianteMatricula.Text = "";
                 }
+            }
+        }
+
+        private void txtEstudianteNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            if (!char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

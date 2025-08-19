@@ -31,6 +31,8 @@ namespace UTApp.Forms.Docentes
         private void FormDocentesBuscar_Load(object sender, EventArgs e)
         {
             txtDocenteEmpleado.MaxLength = 4;
+
+            txtDocenteEmpleado.Focus();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

@@ -122,6 +122,7 @@
             this.txtEstudianteNombre.Name = "txtEstudianteNombre";
             this.txtEstudianteNombre.Size = new System.Drawing.Size(190, 20);
             this.txtEstudianteNombre.TabIndex = 97;
+            this.txtEstudianteNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstudianteNombre_KeyPress);
             // 
             // labelIIngresarValores
             // 
@@ -201,7 +202,6 @@
             this.txtEstudiantePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstudiantePass.Location = new System.Drawing.Point(126, 401);
             this.txtEstudiantePass.Name = "txtEstudiantePass";
-            this.txtEstudiantePass.PasswordChar = '•';
             this.txtEstudiantePass.Size = new System.Drawing.Size(190, 20);
             this.txtEstudiantePass.TabIndex = 102;
             // 
@@ -253,7 +253,7 @@
             this.MinimizeBox = false;
             this.Name = "FormEstudiantesEditar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Editar estudiante";
+            this.Text = "UTApp";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEstudiantesEditar_FormClosed);
             this.Load += new System.EventHandler(this.FormEstudiantesEditar_Load);
             this.panelHeader.ResumeLayout(false);

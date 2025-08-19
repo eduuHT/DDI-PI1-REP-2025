@@ -239,7 +239,7 @@
             this.MinimizeBox = false;
             this.Name = "FormEstudiantesBuscar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Buscar estudiante";
+            this.Text = "UTApp";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEstudiantesBuscar_FormClosed);
             this.Load += new System.EventHandler(this.FormEstudiantesBuscar_Load);
             this.panelHeader.ResumeLayout(false);

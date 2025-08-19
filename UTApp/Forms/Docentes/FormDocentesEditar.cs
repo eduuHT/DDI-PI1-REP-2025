@@ -152,6 +152,8 @@ namespace UTApp.Forms.Docentes
             txtDocenteNombre.MaxLength = 200;
             txtDocenteTitulo.MaxLength = 200;
             txtDocenteCorreo.MaxLength = 200;
+
+            txtDocenteEmpleado.Focus();
         }
 
         private void pbRegresar_Click(object sender, EventArgs e)
@@ -159,6 +161,32 @@ namespace UTApp.Forms.Docentes
             FormDocentes back = new FormDocentes();
             this.Hide();
             back.Show();
+        }
+
+        private void txtDocenteNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            if (!char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDocenteTitulo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            if (!char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

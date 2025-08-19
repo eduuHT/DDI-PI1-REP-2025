@@ -180,7 +180,6 @@
             this.txtEstudianteMatricula.Name = "txtEstudianteMatricula";
             this.txtEstudianteMatricula.Size = new System.Drawing.Size(90, 20);
             this.txtEstudianteMatricula.TabIndex = 107;
-            this.txtEstudianteMatricula.TextChanged += new System.EventHandler(this.txtEstudianteMatricula_TextChanged);
             this.txtEstudianteMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstudianteMatricula_KeyPress);
             // 
             // label1
@@ -242,7 +241,7 @@
             this.MinimizeBox = false;
             this.Name = "FormEstudiantesEliminar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Eliminar estudiante";
+            this.Text = "UTApp";
             this.Load += new System.EventHandler(this.FormEstudiantesEliminar_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();

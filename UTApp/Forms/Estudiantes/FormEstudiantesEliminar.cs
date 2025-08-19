@@ -69,7 +69,7 @@ namespace UTApp.Forms.Estudiantes
                     if (estudiante != null)
                     {
                         List<Grupo> grupos = controladorGrupo.GetGrupos();
-                        int i = 0;
+                        int i = -1;
                         do
                         {
                             i++;
@@ -94,31 +94,22 @@ namespace UTApp.Forms.Estudiantes
             }
         }
 
-        private void txtEstudianteMatricula_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtEstudianteMatricula.Text))
-                return;
-
-            string matricula = txtEstudianteMatricula.Text;
-
-            if (matricula.Length > 0)
-            {
-                if (matricula[0] != 'L' && matricula[0] != 'I' &&
-                   matricula[0] != '0' && matricula[0] != '1' && matricula[0] != '2' && matricula[0] != '3' && matricula[0] != '4' &&
-                   matricula[0] != '5' && matricula[0] != '6' && matricula[0] != '7' && matricula[0] != '8' && matricula[0] != '9')
-                {
-                    MessageBox.Show("Solo se permite la letra 'L' o 'I' como primer carácter.");
-                    txtEstudianteMatricula.Text = "";
-                }
-            }
-        }
-
         private void txtEstudianteMatricula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            TextBox txt = (TextBox)sender;
+
+
+            if (char.IsControl(e.KeyChar))
+                return;
+
+            if ((e.KeyChar == 'L' || e.KeyChar == 'l') && txt.Text.Length == 0)
+                return;
+
+
+            if (char.IsDigit(e.KeyChar))
+                return;
+
+            e.Handled = true;
         }
 
         private void pbRegresar_Click(object sender, EventArgs e)
@@ -132,6 +123,8 @@ namespace UTApp.Forms.Estudiantes
         {
             txtEstudianteMatricula.CharacterCasing = CharacterCasing.Upper;
             txtEstudianteMatricula.MaxLength = 10;
+
+            txtEstudianteMatricula.Focus();
         }
     }
 }

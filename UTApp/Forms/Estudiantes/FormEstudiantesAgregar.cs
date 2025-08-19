@@ -92,12 +92,15 @@ namespace UTApp.Forms.Estudiantes
                         {
                             nuevoEstudiante = new Estudiante(matricula, nombre, correo, pass, grupo);
 
-                            controladorEst.AgregarEstudiante(nuevoEstudiante);
+                            bool check = controladorEst.AgregarEstudiante(nuevoEstudiante);
 
-                            MessageBox.Show("El estudiante fue registrado con éxito.");
+                            if (check)
+                                MessageBox.Show("El estudiante fue registrado con éxito.");
+                            else
+                                MessageBox.Show("El estudiante con esa matrícula ya está registrado.");
                         }
                         else
-                            MessageBox.Show("El correo se registró previamente.");
+                            MessageBox.Show("El correo o la matrícula se registró previamente.");
                     }
                     catch
                     {
@@ -174,10 +177,20 @@ namespace UTApp.Forms.Estudiantes
 
         private void txtEstudianteMatricula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            TextBox txt = (TextBox)sender;
+
+            
+            if (char.IsControl(e.KeyChar))
+                return;
+
+            if ((e.KeyChar == 'L' || e.KeyChar == 'l') && txt.Text.Length == 0)
+                return;
+
+            
+            if (char.IsDigit(e.KeyChar))
+                return;
+
+            e.Handled = true;
         }
 
         private void pbRegresar_Click(object sender, EventArgs e)
@@ -189,6 +202,7 @@ namespace UTApp.Forms.Estudiantes
 
         private void FormEstudiantesAgregar_Load(object sender, EventArgs e)
         {
+            txtEstudianteMatricula.Focus();
             txtEstudianteMatricula.CharacterCasing = CharacterCasing.Upper;
             txtEstudianteMatricula.MaxLength = 10;
             txtEstudianteNombre.MaxLength = 200;
@@ -215,8 +229,7 @@ namespace UTApp.Forms.Estudiantes
                    matricula[0] != '0' && matricula[0] != '1' && matricula[0] != '2' && matricula[0] != '3' && matricula[0] != '4' &&
                    matricula[0] != '5' && matricula[0] != '6' && matricula[0] != '7' && matricula[0] != '8' && matricula[0] != '9')
                 {
-                    MessageBox.Show("Solo se permite la letra 'L' o números como primer carácter.");
-                    txtEstudianteMatricula.Text = "";
+
                 }
             }
         }
@@ -227,6 +240,19 @@ namespace UTApp.Forms.Estudiantes
             txtEstudianteNombre.Text = "";
             txtEstudianteCorreo.Text = "";
             txtEstudiantePass.Text = "";
+        }
+
+        private void txtEstudianteNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            if (!char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

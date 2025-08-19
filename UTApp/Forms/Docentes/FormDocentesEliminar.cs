@@ -96,6 +96,8 @@ namespace UTApp.Forms.Docentes
         private void FormDocentesEliminar_Load(object sender, EventArgs e)
         {
             txtDocenteEmpleado.MaxLength = 4;
+
+            txtDocenteEmpleado.Focus();
         }
     }
 }

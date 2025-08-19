@@ -65,10 +65,20 @@ namespace UTApp.Forms.Estudiantes
 
         private void txtEstudianteMatricula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            TextBox txt = (TextBox)sender;
+
+
+            if (char.IsControl(e.KeyChar))
+                return;
+
+            if ((e.KeyChar == 'L' || e.KeyChar == 'l') && txt.Text.Length == 0)
+                return;
+
+
+            if (char.IsDigit(e.KeyChar))
+                return;
+
+            e.Handled = true;
         }
 
         private void pbRegresar_Click(object sender, EventArgs e)
@@ -82,6 +92,8 @@ namespace UTApp.Forms.Estudiantes
         {
             txtEstudianteMatricula.CharacterCasing = CharacterCasing.Upper;
             txtEstudianteMatricula.MaxLength = 10;
+
+            txtEstudianteMatricula.Focus();
         }
 
         private void txtEstudianteMatricula_TextChanged(object sender, EventArgs e)

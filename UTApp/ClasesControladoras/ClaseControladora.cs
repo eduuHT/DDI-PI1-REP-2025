@@ -67,7 +67,10 @@ namespace UTApp.ClasesControladoras
 
                 cmd.ExecuteNonQuery();
 
-                return (int)ClaseID.Value;
+                if (ClaseID.Value == DBNull.Value)
+                    return -1;
+
+                return Convert.ToInt32(ClaseID.Value);
             }
             catch (Exception ex)
             {

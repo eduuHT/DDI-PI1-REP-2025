@@ -177,14 +177,15 @@
             // AsignacionID
             // 
             this.AsignacionID.DataPropertyName = "AsignacionID";
-            this.AsignacionID.HeaderText = "AsignacionID";
+            this.AsignacionID.HeaderText = "ID";
             this.AsignacionID.Name = "AsignacionID";
             this.AsignacionID.ReadOnly = true;
+            this.AsignacionID.Width = 40;
             // 
             // AsignacionTitulo
             // 
             this.AsignacionTitulo.DataPropertyName = "AsignacionTitulo";
-            this.AsignacionTitulo.HeaderText = "AsignacionTitulo";
+            this.AsignacionTitulo.HeaderText = "Titulo";
             this.AsignacionTitulo.Name = "AsignacionTitulo";
             this.AsignacionTitulo.ReadOnly = true;
             // 
@@ -195,25 +196,28 @@
             this.asignacionDescripcionDataGridViewTextBoxColumn.Name = "asignacionDescripcionDataGridViewTextBoxColumn";
             this.asignacionDescripcionDataGridViewTextBoxColumn.ReadOnly = true;
             this.asignacionDescripcionDataGridViewTextBoxColumn.Visible = false;
+            this.asignacionDescripcionDataGridViewTextBoxColumn.Width = 80;
             // 
             // AsignacionFechaLimite
             // 
             this.AsignacionFechaLimite.DataPropertyName = "AsignacionFechaLimite";
-            this.AsignacionFechaLimite.HeaderText = "AsignacionFechaLimite";
+            this.AsignacionFechaLimite.HeaderText = "Entrega";
             this.AsignacionFechaLimite.Name = "AsignacionFechaLimite";
             this.AsignacionFechaLimite.ReadOnly = true;
+            this.AsignacionFechaLimite.Width = 150;
             // 
             // ClaseID
             // 
             this.ClaseID.DataPropertyName = "PlataformaID";
-            this.ClaseID.HeaderText = "ClaseID";
+            this.ClaseID.HeaderText = "Clase";
             this.ClaseID.Name = "ClaseID";
             this.ClaseID.ReadOnly = true;
+            this.ClaseID.Width = 60;
             // 
             // PlataformaID
             // 
             this.PlataformaID.DataPropertyName = "ClaseID";
-            this.PlataformaID.HeaderText = "PlataformaID";
+            this.PlataformaID.HeaderText = "Plataforma";
             this.PlataformaID.Name = "PlataformaID";
             this.PlataformaID.ReadOnly = true;
             // 

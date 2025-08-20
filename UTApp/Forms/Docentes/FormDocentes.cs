@@ -28,7 +28,7 @@ namespace UTApp.Forms.Docentes
 
         private void FormDocentes_Load(object sender, EventArgs e)
         {
-            string consulta = "SELECT DocenteNumeroEmpleado, DocenteNombreCompleto FROM Docente";
+            string consulta = "SELECT DocenteNumeroEmpleado, DocenteNombreCompleto FROM Docente ORDER BY DocenteNumeroEmpleado";
             SqlDataAdapter adapter = new SqlDataAdapter(consulta, connectionString);
             DataTable dt = new DataTable();
             adapter.Fill(dt);

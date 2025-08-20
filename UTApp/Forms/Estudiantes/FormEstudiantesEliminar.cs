@@ -29,7 +29,6 @@ namespace UTApp.Forms.Estudiantes
             try
             {
                 bool elimino = false;
-                txtEstudianteMatricula.Text = Convert.ToInt64(txtEstudianteMatricula.Text).ToString();
 
                 if (MessageBox.Show($"¿Desea eliminar el estudiante {txtEstudianteMatricula.Text}?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -44,13 +43,11 @@ namespace UTApp.Forms.Estudiantes
                         txtEstudianteCorreo.Text = "";
                         txtEstudianteGrupo.Text = "";
                     }
-                    else
-                        MessageBox.Show("El cliente no se eliminó.");
                 }
             }
             catch
             {
-                MessageBox.Show("Al parecer estás ingresando letras, intenta solo con números.");
+                MessageBox.Show("Ocurrió un error.");
             }
 
         }

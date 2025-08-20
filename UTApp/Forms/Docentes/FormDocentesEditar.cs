@@ -36,8 +36,11 @@ namespace UTApp.Forms.Docentes
                 if (docenteEditando != null)
                 {
                     txtDocenteEmpleado.Text = txtDocenteEmpleado.Text.PadLeft(4, '0');
+                    txtDocenteNombre.Enabled = true;
                     txtDocenteNombre.Text = docenteEditando.DocenteNombreCompleto;
+                    txtDocenteTitulo.Enabled = true;
                     txtDocenteTitulo.Text = docenteEditando.DocenteTituloAcademico;
+                    txtDocenteCorreo.Enabled = true;
                     txtDocenteCorreo.Text = docenteEditando.DocenteEmail;
                     txtDocentePass.Text = docenteEditando.DocentePassword;
                     btnGuardar.Enabled = true;
@@ -121,8 +124,11 @@ namespace UTApp.Forms.Docentes
         private void FormDocentesEditar_Load(object sender, EventArgs e)
         {
             txtDocenteEmpleado.MaxLength = 4;
+            txtDocenteNombre.Enabled = false;
             txtDocenteNombre.MaxLength = 200;
+            txtDocenteTitulo.Enabled = false;
             txtDocenteTitulo.MaxLength = 200;
+            txtDocenteCorreo.Enabled = false;
             txtDocenteCorreo.MaxLength = 200;
             btnGuardar.Enabled = false;
 
@@ -138,40 +144,40 @@ namespace UTApp.Forms.Docentes
 
         private void txtDocenteNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsControl(e.KeyChar))
-            {
-                return;
-            }
-
-            if (!char.IsLetter(e.KeyChar))
-            {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
                 e.Handled = true;
-            }
         }
 
         private void txtDocenteTitulo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsControl(e.KeyChar))
-            {
-                return;
-            }
-
-            if (!char.IsLetter(e.KeyChar))
-            {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
                 e.Handled = true;
-            }
         }
 
         private void txtDocenteEmpleado_TextChanged(object sender, EventArgs e)
         {
             if (txtDocenteTitulo.Text != "")
             {
+                txtDocenteNombre.Enabled = false;
                 txtDocenteNombre.Text = "";
+                txtDocenteTitulo.Enabled = false;
                 txtDocenteTitulo.Text = "";
+                txtDocenteCorreo.Enabled = false;
                 txtDocenteCorreo.Text = "";
                 txtDocentePass.Text = "";
                 btnGuardar.Enabled = false;
             }
+        }
+
+        private void txtDocenteCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetterOrDigit(e.KeyChar) ||  e.KeyChar == '@' || e.KeyChar == '.' ||
+                e.KeyChar == '-' || e.KeyChar == '_' || char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+                e.Handled = true;
         }
     }
 }

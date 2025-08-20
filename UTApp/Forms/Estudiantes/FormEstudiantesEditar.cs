@@ -46,8 +46,11 @@ namespace UTApp.Forms.Estudiantes
 
                     if (estudianteEditando != null)
                     {
+                        cbGrupo.Enabled = true;
                         cbGrupo.SelectedIndex = (estudianteEditando.GrupoID) - 1;
+                        txtEstudianteNombre.Enabled = true;
                         txtEstudianteNombre.Text = estudianteEditando.EstudianteNombreCompleto;
+                        txtEstudianteCorreo.Enabled = true;
                         txtEstudianteCorreo.Text = estudianteEditando.EstudianteEmail;
                         txtEstudiantePass.Text = estudianteEditando.EstudiantePassword;
                         btnGuardar.Enabled = true;
@@ -69,8 +72,11 @@ namespace UTApp.Forms.Estudiantes
         {
             if (txtEstudianteMatricula.Text == "" || txtEstudianteMatricula.Text != "" || txtEstudianteMatricula.Text.Length != 10)
             {
+                cbGrupo.Enabled = false;
                 cbGrupo.DataSource = null;
+                txtEstudianteNombre.Enabled = false;
                 txtEstudianteNombre.Text = "";
+                txtEstudianteCorreo.Enabled = false;
                 txtEstudianteCorreo.Text = "";
                 txtEstudiantePass.Text = "";
                 btnGuardar.Enabled = false;
@@ -145,8 +151,11 @@ namespace UTApp.Forms.Estudiantes
         {
             txtEstudianteMatricula.CharacterCasing = CharacterCasing.Upper;
             txtEstudianteMatricula.MaxLength = 10;
+            txtEstudianteNombre.Enabled = false;
             txtEstudianteNombre.MaxLength = 200;
+            txtEstudianteCorreo.Enabled = false;
             txtEstudianteCorreo.MaxLength = 200;
+            cbGrupo.Enabled = false;
             btnGuardar.Enabled = false;
 
             Limpiar();
@@ -198,15 +207,19 @@ namespace UTApp.Forms.Estudiantes
 
         private void txtEstudianteNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsControl(e.KeyChar))
-            {
-                return;
-            }
-
-            if (!char.IsLetter(e.KeyChar))
-            {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
                 e.Handled = true;
+        }
+
+        private void txtEstudianteCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '@' || e.KeyChar == '.' ||
+                e.KeyChar == '-' || e.KeyChar == '_' || char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
             }
+            else
+                e.Handled = true;
         }
     }
 }

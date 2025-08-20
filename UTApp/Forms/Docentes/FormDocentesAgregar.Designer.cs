@@ -99,6 +99,7 @@
             this.txtDocenteCorreo.Name = "txtDocenteCorreo";
             this.txtDocenteCorreo.Size = new System.Drawing.Size(225, 20);
             this.txtDocenteCorreo.TabIndex = 99;
+            this.txtDocenteCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocenteCorreo_KeyPress);
             // 
             // label6
             // 

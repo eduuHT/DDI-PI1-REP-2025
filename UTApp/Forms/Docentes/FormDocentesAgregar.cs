@@ -210,28 +210,25 @@ namespace UTApp.Forms.Docentes
 
         private void txtDocenteNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsControl(e.KeyChar))
-            {
-                return;
-            }
-
-            if (!char.IsLetter(e.KeyChar))
-            {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
                 e.Handled = true;
-            }
         }
 
         private void txtDocenteTitulo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsControl(e.KeyChar))
-            {
-                return;
-            }
-
-            if (!char.IsLetter(e.KeyChar))
-            {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
                 e.Handled = true;
+        }
+
+        private void txtDocenteCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '@' || e.KeyChar == '.' ||
+                e.KeyChar == '-' || e.KeyChar == '_' || char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
             }
+            else
+                e.Handled = true;
         }
     }
 }

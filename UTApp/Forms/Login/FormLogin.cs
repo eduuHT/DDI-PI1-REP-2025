@@ -49,9 +49,5 @@ namespace UTApp
         {
             MessageBox.Show($"Hagamos como que hiciste un proceso de recuperación\n\n\n Usuario:{User}\n Contraseña:{Password}","",MessageBoxButtons.OK);
         }
-
-        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
-        {
-        }
     }
 }

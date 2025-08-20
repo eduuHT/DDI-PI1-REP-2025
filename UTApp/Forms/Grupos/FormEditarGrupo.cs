@@ -75,7 +75,12 @@ namespace UTApp.Forms.Grupos
             _grupoBLL.ActualizarGrupo(grupoActualizado);
         }
 
+
         #endregion
 
+        private void FormEditarGrupo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

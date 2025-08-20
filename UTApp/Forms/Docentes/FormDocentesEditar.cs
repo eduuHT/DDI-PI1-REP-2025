@@ -28,48 +28,20 @@ namespace UTApp.Forms.Docentes
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            txtDocenteEmpleado.Text = txtDocenteEmpleado.Text.PadLeft(4, '0');
-
-            if (txtDocenteEmpleado.Text != "" || txtDocentePass.Text.Length != 4)
+            if (txtDocenteEmpleado.Text.Length > 0)
             {
-                if (txtDocenteEmpleado.Text.Length == 4)
+                Docente docenteEditando = null;
+                docenteEditando = controladorDoc.BuscarDocente(txtDocenteEmpleado.Text.PadLeft(4, '0'));
+
+                if (docenteEditando != null)
                 {
-                    try
-                    {
-                        Docente docenteEditando = null;
-                        docenteEditando = controladorDoc.BuscarDocente(txtDocenteEmpleado.Text);
-
-                        if (docenteEditando != null)
-                        {
-                            txtDocenteNombre.Text = docenteEditando.DocenteNombreCompleto;
-                            txtDocenteTitulo.Text = docenteEditando.DocenteTituloAcademico;
-                            txtDocenteCorreo.Text = docenteEditando.DocenteEmail;
-                            txtDocentePass.Text = docenteEditando.DocentePassword;
-                        }
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Ocurrió un error.");
-                    }
+                    txtDocenteEmpleado.Text = txtDocenteEmpleado.Text.PadLeft(4, '0');
+                    txtDocenteNombre.Text = docenteEditando.DocenteNombreCompleto;
+                    txtDocenteTitulo.Text = docenteEditando.DocenteTituloAcademico;
+                    txtDocenteCorreo.Text = docenteEditando.DocenteEmail;
+                    txtDocentePass.Text = docenteEditando.DocentePassword;
+                    btnGuardar.Enabled = true;
                 }
-                else
-                    MessageBox.Show("Ingrese un número de empleado de 4 carácteres.");
-
-            }
-            else
-            {
-                MessageBox.Show("Ingrese un número de empleado de 4 carácteres.");
-            }
-        }
-
-        private void txtDocenteEmpleado_Leave(object sender, EventArgs e)
-        {
-            if (txtDocenteEmpleado.Text == "" || txtDocenteEmpleado.Text != "" || txtDocenteEmpleado.Text.Length != 4)
-            {
-                txtDocenteNombre.Text = "";
-                txtDocenteTitulo.Text = "";
-                txtDocenteCorreo.Text = "";
-                txtDocentePass.Text = "";
             }
         }
 
@@ -152,6 +124,7 @@ namespace UTApp.Forms.Docentes
             txtDocenteNombre.MaxLength = 200;
             txtDocenteTitulo.MaxLength = 200;
             txtDocenteCorreo.MaxLength = 200;
+            btnGuardar.Enabled = false;
 
             txtDocenteEmpleado.Focus();
         }
@@ -186,6 +159,18 @@ namespace UTApp.Forms.Docentes
             if (!char.IsLetter(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void txtDocenteEmpleado_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDocenteTitulo.Text != "")
+            {
+                txtDocenteNombre.Text = "";
+                txtDocenteTitulo.Text = "";
+                txtDocenteCorreo.Text = "";
+                txtDocentePass.Text = "";
+                btnGuardar.Enabled = false;
             }
         }
     }

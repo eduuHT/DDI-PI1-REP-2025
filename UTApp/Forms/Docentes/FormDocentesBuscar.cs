@@ -14,9 +14,6 @@ namespace UTApp.Forms.Docentes
 {
     public partial class FormDocentesBuscar : Form
     {
-        public static string connectionString = "user id=sa;password=uts;server=.;database=UTApp_Integradora1";
-        //public static string connectionString = "workstation id=UTApp_Integradora1.mssql.somee.com;packet size=4096;user id=LuisRomán123_SQLLogin_1;pwd=b7jxk7yxyk;data source=UTApp_Integradora1.mssql.somee.com;persist security info=False;initial catalog=UTApp_Integradora1;TrustServerCertificate=True";
-
         DocenteControlador controladorDoc = new DocenteControlador();
         public FormDocentesBuscar()
         {
@@ -39,23 +36,28 @@ namespace UTApp.Forms.Docentes
         {
             try
             {
-                txtDocenteEmpleado.Text = Convert.ToInt32(txtDocenteEmpleado.Text).ToString();
-                txtDocenteEmpleado.Text = txtDocenteEmpleado.Text.PadLeft(4, '0');
-
-                Docente docente = null;
-                docente = controladorDoc.BuscarDocente(txtDocenteEmpleado.Text);
-
-                if (docente != null)
+                if (txtDocenteEmpleado.Text.Length > 0)
                 {
-                    txtDocenteNombre.Text = docente.DocenteNombreCompleto;
-                    txtTitulo.Text = docente.DocenteTituloAcademico;
-                    txtDocenteCorreo.Text = docente.DocenteEmail;
-                    txtDocentePass.Text = docente.DocentePassword;
+                    txtDocenteEmpleado.Text = txtDocenteEmpleado.Text.PadLeft(4, '0');
+
+                    Docente docente = null;
+                    docente = controladorDoc.BuscarDocente(txtDocenteEmpleado.Text);
+
+                    if (docente != null)
+                    {
+                        txtDocenteNombre.Text = docente.DocenteNombreCompleto;
+                        txtDocenteTitulo.Text = docente.DocenteTituloAcademico;
+                        txtDocenteCorreo.Text = docente.DocenteEmail;
+                        txtDocentePass.Text = docente.DocentePassword;
+                    }
+                    else
+                    {
+                        MessageBox.Show($"No se ha encontrado ningún registro con el número de empleado {txtDocenteEmpleado.Text}.");
+                        txtDocenteEmpleado.Focus();
+                    }
                 }
                 else
-                {
-                    MessageBox.Show($"No se ha encontrado ningún registro con el número de empleado {txtDocenteEmpleado.Text}.");
-                }
+                    txtDocenteEmpleado.Focus();
             }
             catch
             {
@@ -76,6 +78,14 @@ namespace UTApp.Forms.Docentes
             FormDocentes back = new FormDocentes();
             this.Hide();
             back.Show();
+        }
+
+        private void txtDocenteEmpleado_TextChanged(object sender, EventArgs e)
+        {
+            txtDocenteNombre.Text = "";
+            txtDocenteTitulo.Text = "";
+            txtDocenteCorreo.Text = "";
+            txtDocentePass.Text = "";
         }
     }
 }

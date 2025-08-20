@@ -33,9 +33,7 @@ namespace UTApp.Forms.Estudiantes
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (txtEstudianteMatricula.Text.Length == 10)
+            if (txtEstudianteMatricula.Text.Length == 10)
                 {
                     Estudiante estudiante = null;
                     estudiante = controladorEst.BuscarEstudiante(txtEstudianteMatricula.Text);
@@ -55,12 +53,10 @@ namespace UTApp.Forms.Estudiantes
                     }
                 }
                 else
-                    MessageBox.Show("La matrícula debe ser de 10 números.");
-            }
-            catch
-            {
-                MessageBox.Show("Ocurrió un problema.");
-            }
+                {
+                    MessageBox.Show("La matrícula debe contener de 10 números.");
+                    txtEstudianteMatricula.Focus();
+                }     
         }
 
         private void txtEstudianteMatricula_KeyPress(object sender, KeyPressEventArgs e)
@@ -98,21 +94,9 @@ namespace UTApp.Forms.Estudiantes
 
         private void txtEstudianteMatricula_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtEstudianteMatricula.Text))
-                return;
-
-            string matricula = txtEstudianteMatricula.Text;
-
-            if (matricula.Length >= 1)
-            {
-                if (matricula[0] != 'L' &&
-                   matricula[0] != '0' && matricula[0] != '1' && matricula[0] != '2' && matricula[0] != '3' && matricula[0] != '4' &&
-                   matricula[0] != '5' && matricula[0] != '6' && matricula[0] != '7' && matricula[0] != '8' && matricula[0] != '9')
-                {
-                    MessageBox.Show("Solo se permite la letra 'L' o números como primer carácter.");
-                    txtEstudianteMatricula.Text = "";
-                }
-            }
+            txtEstudianteNombre.Text = "";
+            txtEstudianteCorreo.Text = "";
+            txtEstudianteGrupo.Text = "";
         }
     }
 }

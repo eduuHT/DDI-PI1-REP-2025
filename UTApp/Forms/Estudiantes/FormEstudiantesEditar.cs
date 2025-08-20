@@ -31,43 +31,38 @@ namespace UTApp.Forms.Estudiantes
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (txtEstudianteMatricula.Text != "" || txtEstudianteMatricula.Text.Length != 10)
+            if (txtEstudianteMatricula.Text.Length == 10)
             {
-                if (txtEstudianteMatricula.Text.Length == 10)
+                List<Grupo> grupos = null;
+                grupos = controladorGrupo.GetGrupos();
+                cbGrupo.DataSource = grupos;
+                cbGrupo.DisplayMember = "Nombre";
+                cbGrupo.ValueMember = "Id";
+
+                try
                 {
-                    List<Grupo> grupos = null;
-                    grupos = controladorGrupo.GetGrupos();
-                    cbGrupo.DataSource = grupos;
-                    cbGrupo.DisplayMember = "Nombre";
-                    cbGrupo.ValueMember = "Id";
+                    Estudiante estudianteEditando = null;
+                    estudianteEditando = controladorEst.BuscarEstudiante(txtEstudianteMatricula.Text);
 
-                    try
+                    if (estudianteEditando != null)
                     {
-                        Estudiante estudianteEditando = null;
-                        estudianteEditando = controladorEst.BuscarEstudiante(txtEstudianteMatricula.Text);
-
-                        if (estudianteEditando != null)
-                        {
-                            cbGrupo.SelectedIndex = (estudianteEditando.GrupoID) - 1;
-                            txtEstudianteNombre.Text = estudianteEditando.EstudianteNombreCompleto;
-                            txtEstudianteCorreo.Text = estudianteEditando.EstudianteEmail;
-                            txtEstudiantePass.Text = estudianteEditando.EstudiantePassword;
-                        }
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Ocurrió un error.");
+                        cbGrupo.SelectedIndex = (estudianteEditando.GrupoID) - 1;
+                        txtEstudianteNombre.Text = estudianteEditando.EstudianteNombreCompleto;
+                        txtEstudianteCorreo.Text = estudianteEditando.EstudianteEmail;
+                        txtEstudiantePass.Text = estudianteEditando.EstudiantePassword;
+                        btnGuardar.Enabled = true;
                     }
                 }
-                else
-                    MessageBox.Show("Ingrese una matrícula de 10 carácteres.");
-                
+                catch
+                {
+                    MessageBox.Show("Ocurrió un error.");
+                }
             }
             else
             {
                 MessageBox.Show("Ingrese una matrícula de 10 carácteres.");
+                txtEstudianteMatricula.Focus();
             }
-            
         }
 
         private void txtEstudianteMatricula_Leave(object sender, EventArgs e)
@@ -78,6 +73,7 @@ namespace UTApp.Forms.Estudiantes
                 txtEstudianteNombre.Text = "";
                 txtEstudianteCorreo.Text = "";
                 txtEstudiantePass.Text = "";
+                btnGuardar.Enabled = false;
             }
         }
 
@@ -151,6 +147,7 @@ namespace UTApp.Forms.Estudiantes
             txtEstudianteMatricula.MaxLength = 10;
             txtEstudianteNombre.MaxLength = 200;
             txtEstudianteCorreo.MaxLength = 200;
+            btnGuardar.Enabled = false;
 
             Limpiar();
 
@@ -193,21 +190,10 @@ namespace UTApp.Forms.Estudiantes
 
         private void txtEstudianteMatricula_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtEstudianteMatricula.Text))
-                return;
-
-            string matricula = txtEstudianteMatricula.Text;
-
-            if (matricula.Length >= 1)
-            {
-                if (matricula[0] != 'L' && matricula[0] != 'I' &&
-                   matricula[0] != '0' && matricula[0] != '1' && matricula[0] != '2' && matricula[0] != '3' && matricula[0] != '4' &&
-                   matricula[0] != '5' && matricula[0] != '6' && matricula[0] != '7' && matricula[0] != '8' && matricula[0] != '9')
-                {
-                    MessageBox.Show("Solo se permite la letra 'L' o 'I' como primer carácter.");
-                    txtEstudianteMatricula.Text = "";
-                }
-            }
+            txtEstudianteNombre.Text = "";
+            txtEstudianteCorreo.Text = "";
+            cbGrupo.DataSource = null;
+            btnGuardar.Enabled = false;
         }
 
         private void txtEstudianteNombre_KeyPress(object sender, KeyPressEventArgs e)

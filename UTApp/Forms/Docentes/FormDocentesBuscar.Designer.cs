@@ -37,7 +37,7 @@
             this.txtDocenteEmpleado = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
+            this.txtDocenteTitulo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDocentePass = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -111,6 +111,7 @@
             this.txtDocenteEmpleado.Name = "txtDocenteEmpleado";
             this.txtDocenteEmpleado.Size = new System.Drawing.Size(118, 20);
             this.txtDocenteEmpleado.TabIndex = 135;
+            this.txtDocenteEmpleado.TextChanged += new System.EventHandler(this.txtDocenteEmpleado_TextChanged);
             this.txtDocenteEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocenteEmpleado_KeyPress);
             // 
             // btnBuscar
@@ -137,14 +138,14 @@
             this.label1.TabIndex = 149;
             this.label1.Text = "Título académico:";
             // 
-            // txtTitulo
+            // txtDocenteTitulo
             // 
-            this.txtTitulo.Enabled = false;
-            this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitulo.Location = new System.Drawing.Point(133, 383);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(180, 20);
-            this.txtTitulo.TabIndex = 148;
+            this.txtDocenteTitulo.Enabled = false;
+            this.txtDocenteTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocenteTitulo.Location = new System.Drawing.Point(133, 383);
+            this.txtDocenteTitulo.Name = "txtDocenteTitulo";
+            this.txtDocenteTitulo.Size = new System.Drawing.Size(180, 20);
+            this.txtDocenteTitulo.TabIndex = 148;
             // 
             // label7
             // 
@@ -220,7 +221,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 601);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtTitulo);
+            this.Controls.Add(this.txtDocenteTitulo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtDocentePass);
             this.Controls.Add(this.label5);
@@ -260,7 +261,7 @@
         private System.Windows.Forms.TextBox txtDocenteEmpleado;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTitulo;
+        private System.Windows.Forms.TextBox txtDocenteTitulo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDocentePass;
         private System.Windows.Forms.Label label5;

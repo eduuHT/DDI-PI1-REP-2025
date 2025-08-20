@@ -29,44 +29,46 @@ namespace UTApp.Forms.Docentes
 
         private void txtDocenteEmpleado_Leave(object sender, EventArgs e)
         {
-            txtDocenteEmpleado.Text = txtDocenteEmpleado.Text.PadLeft(4, '0');
-            Docente Docente = controladorDoc.BuscarDocente(txtDocenteEmpleado.Text);
-
-            if (Docente != null)
+            if (txtDocenteEmpleado.Text.Length > 0)
             {
-                txtDocenteNombre.Text = Docente.DocenteNombreCompleto;
-                txtDocenteNombre.Enabled = false;
+                Docente Docente = controladorDoc.BuscarDocente(txtDocenteEmpleado.Text.PadLeft(4, '0'));
 
-                txtDocenteTitulo.Text = Docente.DocenteTituloAcademico;
-                txtDocenteTitulo.Enabled = false;
+                if (Docente != null)
+                {
+                    txtDocenteNombre.Text = Docente.DocenteNombreCompleto;
+                    txtDocenteNombre.Enabled = false;
 
-                txtDocenteCorreo.Text = Docente.DocenteEmail;
-                txtDocenteCorreo.Enabled = false;
+                    txtDocenteTitulo.Text = Docente.DocenteTituloAcademico;
+                    txtDocenteTitulo.Enabled = false;
 
-                txtDocentePass.PasswordChar = '•';
-                txtDocentePass.Text = Docente.DocentePassword;
-                txtDocentePass.Enabled = false;
-            }
-            else if (txtDocenteNombre.Enabled ==  false)
-            {
-                txtDocenteNombre.Text = "";
-                txtDocenteNombre.Enabled = true;
+                    txtDocenteCorreo.Text = Docente.DocenteEmail;
+                    txtDocenteCorreo.Enabled = false;
 
-                txtDocenteTitulo.Text = "";
-                txtDocenteTitulo.Enabled = true;
+                    txtDocentePass.PasswordChar = '•';
+                    txtDocentePass.Text = Docente.DocentePassword;
+                    txtDocentePass.Enabled = false;
+                }
+                else if (txtDocenteNombre.Enabled == false)
+                {
+                    txtDocenteNombre.Text = "";
+                    txtDocenteNombre.Enabled = true;
 
-                txtDocenteCorreo.Text = "";
-                txtDocenteCorreo.Enabled = true;
+                    txtDocenteTitulo.Text = "";
+                    txtDocenteTitulo.Enabled = true;
 
-                txtDocentePass.PasswordChar = '\0';
-                txtDocentePass.Text = "";
-                txtDocentePass.Enabled = true;
+                    txtDocenteCorreo.Text = "";
+                    txtDocenteCorreo.Enabled = true;
+
+                    txtDocentePass.PasswordChar = '\0';
+                    txtDocentePass.Text = "";
+                    txtDocentePass.Enabled = true;
+                }
             }
         }
         
         private void FormDocentesAgregar_Click(object sender, EventArgs e)
         {
-            Docente Docente = controladorDoc.BuscarDocente(txtDocenteEmpleado.Text);
+            Docente Docente = controladorDoc.BuscarDocente(txtDocenteEmpleado.Text.PadLeft(4, '0'));
 
             if (Docente == null && txtDocenteNombre.Enabled == false)
             {
@@ -100,84 +102,83 @@ namespace UTApp.Forms.Docentes
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             bool bandera = false;
-
-            try
+            if (txtDocenteEmpleado.Text.Length > 0 && txtDocenteEmpleado.Text.PadLeft(4, '0') != "0000")
             {
-                txtDocenteEmpleado.Text = Convert.ToInt32(txtDocenteEmpleado.Text).ToString();
-                txtDocenteEmpleado.Text = txtDocenteEmpleado.Text.PadLeft(4, '0');
-
-                if (txtDocenteEmpleado.Text == "" || txtDocenteEmpleado.Text.Length != 4)
+                try
                 {
-                    MessageBox.Show("La matrícula debe de contener 4 carácteres.");
-                    txtDocenteEmpleado.Focus();
-                    return;
-                }
-                else if (txtDocenteNombre.Text == "")
-                {
-                    MessageBox.Show("Es necesario ingresar un nombre.");
-                    txtDocenteNombre.Focus();
-                    return;
-                }
-                else if (txtDocenteTitulo.Text.Trim() == "")
-                {
-                    MessageBox.Show("No ha ingresado título académico.");
-                    txtDocenteTitulo.Focus();
-                    return;
-                }
-                else if (txtDocenteCorreo.Text.Trim() == "")
-                {
-                    MessageBox.Show("Introduza un correo electrónico.");
-                    txtDocenteCorreo.Focus();
-                    return;
-                }
-                else if (txtDocentePass.Text == "" || (txtDocentePass.Text.Length < 8 || txtDocentePass.Text.Length > 25))
-                {
-                    MessageBox.Show("Ingrese una contraseña de entre 8 y 25 carácteres.");
-                    txtDocentePass.Focus();
-                    return;
-                }
-                else
-                {
-                    bandera = true;
-                }
-
-                if (bandera == true)
-                {
-                    try
+                    if (txtDocenteNombre.Text == "")
                     {
-                        string numero = txtDocenteEmpleado.Text;
-                        string nombre = txtDocenteNombre.Text;
-                        string titulo = txtDocenteTitulo.Text;
-                        string correo = txtDocenteCorreo.Text.Trim();
-                        string pass = txtDocentePass.Text;
+                        MessageBox.Show("Es necesario ingresar un nombre.");
+                        txtDocenteNombre.Focus();
+                        return;
+                    }
+                    else if (txtDocenteTitulo.Text.Trim() == "")
+                    {
+                        MessageBox.Show("No ha ingresado título académico.");
+                        txtDocenteTitulo.Focus();
+                        return;
+                    }
+                    else if (txtDocenteCorreo.Text.Trim() == "")
+                    {
+                        MessageBox.Show("Introduza un correo electrónico.");
+                        txtDocenteCorreo.Focus();
+                        return;
+                    }
+                    else if (txtDocentePass.Text == "" || (txtDocentePass.Text.Length < 8 || txtDocentePass.Text.Length > 25))
+                    {
+                        MessageBox.Show("Ingrese una contraseña de entre 8 y 25 carácteres.");
+                        txtDocentePass.Focus();
+                        return;
+                    }
+                    else
+                    {
+                        bandera = true;
+                    }
 
-                        Docente nuevoDocente = controladorDoc.BuscarCorreoDocente(correo);
-
-                        Estudiante estudiante = controladorEst.BuscarCorreoEstudiante(correo);
-
-                        if (nuevoDocente == null && estudiante == null)
+                    if (bandera == true)
+                    {
+                        try
                         {
-                            nuevoDocente = new Docente(numero, nombre, titulo, correo, pass);
+                            string numero = txtDocenteEmpleado.Text;
+                            string nombre = txtDocenteNombre.Text;
+                            string titulo = txtDocenteTitulo.Text;
+                            string correo = txtDocenteCorreo.Text.Trim();
+                            string pass = txtDocentePass.Text;
 
-                            bool check = controladorDoc.AgregarDocente(nuevoDocente);
+                            Docente nuevoDocente = controladorDoc.BuscarCorreoDocente(correo);
 
-                            if (check)
-                                MessageBox.Show("El docente fue registrado con éxito.");
+                            Estudiante estudiante = controladorEst.BuscarCorreoEstudiante(correo);
+
+                            if (nuevoDocente == null && estudiante == null)
+                            {
+                                nuevoDocente = new Docente(numero, nombre, titulo, correo, pass);
+
+                                bool check = controladorDoc.AgregarDocente(nuevoDocente);
+
+                                if (check)
+                                    MessageBox.Show("El docente fue registrado con éxito.");
+                                else
+                                    MessageBox.Show("El docente con ese número de empleado ya está registrado.");
+                            }
                             else
-                                MessageBox.Show("El docente con ese número de empleado ya está registrado.");
+                                MessageBox.Show("El correo o el número de empleado se registró previamente.");
                         }
-                        else
-                            MessageBox.Show("El correo o el número de empleado se registró previamente.");
+                        catch
+                        {
+                            MessageBox.Show("Ocurrió un error, no se pudo registrar.");
+                        }
                     }
-                    catch
-                    {
-                        MessageBox.Show("Ocurrió un error, no se pudo registrar.");
-                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Ocurrió un problema.");
                 }
             }
-            catch
+            else
             {
-                MessageBox.Show("Ocurrió un problema.");
+                MessageBox.Show("Ingrese número de empleado.");
+                txtDocenteEmpleado.Text = "";
+                txtDocenteEmpleado.Focus();
             }
         }
 

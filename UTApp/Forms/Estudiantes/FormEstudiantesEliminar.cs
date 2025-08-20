@@ -78,6 +78,7 @@ namespace UTApp.Forms.Estudiantes
                         txtEstudianteGrupo.Text = grupos[i].Nombre;
                         txtEstudianteNombre.Text = estudiante.EstudianteNombreCompleto;
                         txtEstudianteCorreo.Text = estudiante.EstudianteEmail;
+                        btnEliminar.Enabled = true;
                     }
                     else
                     {
@@ -123,8 +124,17 @@ namespace UTApp.Forms.Estudiantes
         {
             txtEstudianteMatricula.CharacterCasing = CharacterCasing.Upper;
             txtEstudianteMatricula.MaxLength = 10;
+            btnEliminar.Enabled = false;
 
             txtEstudianteMatricula.Focus();
+        }
+
+        private void txtEstudianteMatricula_TextChanged(object sender, EventArgs e)
+        {
+            txtEstudianteNombre.Text = "";
+            txtEstudianteCorreo.Text = "";
+            txtEstudianteGrupo.Text = "";
+            btnEliminar.Enabled = false;
         }
     }
 }

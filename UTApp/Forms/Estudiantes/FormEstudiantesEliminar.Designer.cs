@@ -180,6 +180,7 @@
             this.txtEstudianteMatricula.Name = "txtEstudianteMatricula";
             this.txtEstudianteMatricula.Size = new System.Drawing.Size(90, 20);
             this.txtEstudianteMatricula.TabIndex = 107;
+            this.txtEstudianteMatricula.TextChanged += new System.EventHandler(this.txtEstudianteMatricula_TextChanged);
             this.txtEstudianteMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstudianteMatricula_KeyPress);
             // 
             // label1

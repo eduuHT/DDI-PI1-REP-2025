@@ -212,6 +212,7 @@
             this.Name = "FormGrupos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grupos";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormGrupos_FormClosed);
             this.Load += new System.EventHandler(this.FormGrupos_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();

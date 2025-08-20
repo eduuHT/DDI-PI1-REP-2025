@@ -71,5 +71,9 @@ namespace UTApp.Forms.Materias
         }
         #endregion
 
+        private void FormEditarMateria_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

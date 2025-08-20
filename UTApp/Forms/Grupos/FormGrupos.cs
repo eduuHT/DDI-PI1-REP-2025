@@ -83,5 +83,10 @@ namespace UTApp.Forms.Grupos
             back.Show();
             this.Hide();
         }
+
+        private void FormGrupos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

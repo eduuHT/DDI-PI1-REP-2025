@@ -66,5 +66,9 @@ namespace UTApp.Forms.Grupos
         }
         #endregion
 
+        private void FormEliminarGrupo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

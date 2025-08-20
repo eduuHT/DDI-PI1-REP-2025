@@ -84,5 +84,10 @@ namespace UTApp.Forms.Materias
             back.Show();
             this.Hide();
         }
+
+        private void FormMaterias_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

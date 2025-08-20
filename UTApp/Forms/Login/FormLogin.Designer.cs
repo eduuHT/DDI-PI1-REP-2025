@@ -33,7 +33,6 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.lklRecuperarContraseña = new System.Windows.Forms.LinkLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -81,19 +80,6 @@
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Contraseña:";
             // 
-            // lklRecuperarContraseña
-            // 
-            this.lklRecuperarContraseña.AutoSize = true;
-            this.lklRecuperarContraseña.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lklRecuperarContraseña.LinkColor = System.Drawing.Color.White;
-            this.lklRecuperarContraseña.Location = new System.Drawing.Point(154, 174);
-            this.lklRecuperarContraseña.Name = "lklRecuperarContraseña";
-            this.lklRecuperarContraseña.Size = new System.Drawing.Size(154, 20);
-            this.lklRecuperarContraseña.TabIndex = 4;
-            this.lklRecuperarContraseña.TabStop = true;
-            this.lklRecuperarContraseña.Text = "Recuperar Contraseña";
-            this.lklRecuperarContraseña.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklRecuperarContraseña_LinkClicked);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.MediumSeaGreen;
@@ -128,7 +114,6 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.lblPassword);
-            this.panel1.Controls.Add(this.lklRecuperarContraseña);
             this.panel1.Location = new System.Drawing.Point(12, 166);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(320, 233);
@@ -177,7 +162,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.LinkLabel lklRecuperarContraseña;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;

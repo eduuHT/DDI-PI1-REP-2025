@@ -146,12 +146,12 @@ namespace UTApp.Clases
                     for(int i = 0; i < tabla.Rows.Count; i++)
                     {
                         Asignacion nueva = new Asignacion(
-                        Convert.ToInt32(tabla.Rows[i].ItemArray[0]),
-                        tabla.Rows[i].ItemArray[1].ToString(),
-                        tabla.Rows[i].ItemArray[2].ToString(),
-                        Convert.ToDateTime(tabla.Rows[i].ItemArray[3]),
-                        Convert.ToInt32(tabla.Rows[i].ItemArray[4]),
-                        Convert.ToInt32(tabla.Rows[i].ItemArray[5])
+                        Convert.ToInt32(tabla.Rows[i]["AsignacionID"]),
+                        tabla.Rows[i]["AsignacionTitulo"].ToString(),
+                        tabla.Rows[i]["AsignacionDescripcion"].ToString(),
+                        Convert.ToDateTime(tabla.Rows[i]["AsignacionFechaLimite"]),
+                        Convert.ToInt32(tabla.Rows[i]["ClaseID"]),
+                        Convert.ToInt32(tabla.Rows[i]["PlataformaID"])
                         );
                         asignaciones.Add(nueva);
                     }

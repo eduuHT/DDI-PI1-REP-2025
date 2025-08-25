@@ -208,7 +208,7 @@
             // 
             // ClaseID
             // 
-            this.ClaseID.DataPropertyName = "PlataformaID";
+            this.ClaseID.DataPropertyName = "ClaseID";
             this.ClaseID.HeaderText = "Clase";
             this.ClaseID.Name = "ClaseID";
             this.ClaseID.ReadOnly = true;
@@ -216,7 +216,7 @@
             // 
             // PlataformaID
             // 
-            this.PlataformaID.DataPropertyName = "ClaseID";
+            this.PlataformaID.DataPropertyName = "PlataformaID";
             this.PlataformaID.HeaderText = "Plataforma";
             this.PlataformaID.Name = "PlataformaID";
             this.PlataformaID.ReadOnly = true;

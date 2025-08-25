@@ -68,7 +68,11 @@ namespace UTApp.Forms.Grupos
 
         private void FormEliminarGrupo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+        }
+
+        private void FormEliminarGrupo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

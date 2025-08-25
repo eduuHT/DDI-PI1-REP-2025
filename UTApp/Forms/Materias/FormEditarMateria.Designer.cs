@@ -169,6 +169,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Materia";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEditarMateria_FormClosed);
+            this.Load += new System.EventHandler(this.FormEditarMateria_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();

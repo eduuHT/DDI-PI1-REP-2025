@@ -67,7 +67,11 @@ namespace UTApp.Forms.Materias
 
         private void FormAgregarMateria_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+        }
+
+        private void FormAgregarMateria_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -80,7 +80,11 @@ namespace UTApp.Forms.Grupos
 
         private void FormEditarGrupo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+        }
+
+        private void FormEditarGrupo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

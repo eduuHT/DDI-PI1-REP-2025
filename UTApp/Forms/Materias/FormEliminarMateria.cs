@@ -66,7 +66,11 @@ namespace UTApp.Forms.Materias
 
         private void FormEliminarMateria_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+        }
+
+        private void FormEliminarMateria_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

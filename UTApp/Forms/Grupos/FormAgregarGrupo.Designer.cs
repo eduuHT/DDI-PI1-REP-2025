@@ -148,6 +148,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Grupo";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAgregarGrupo_FormClosed);
+            this.Load += new System.EventHandler(this.FormAgregarGrupo_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();

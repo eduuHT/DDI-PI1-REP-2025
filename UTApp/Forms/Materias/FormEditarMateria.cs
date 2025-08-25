@@ -73,7 +73,11 @@ namespace UTApp.Forms.Materias
 
         private void FormEditarMateria_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+        }
+
+        private void FormEditarMateria_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

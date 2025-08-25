@@ -147,6 +147,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Materia";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAgregarMateria_FormClosed);
+            this.Load += new System.EventHandler(this.FormAgregarMateria_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();

@@ -148,6 +148,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eliminar Grupo";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEliminarGrupo_FormClosed);
+            this.Load += new System.EventHandler(this.FormEliminarGrupo_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();

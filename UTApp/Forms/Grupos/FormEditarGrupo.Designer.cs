@@ -169,6 +169,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Grupo";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEditarGrupo_FormClosed);
+            this.Load += new System.EventHandler(this.FormEditarGrupo_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();

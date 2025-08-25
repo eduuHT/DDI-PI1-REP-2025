@@ -70,7 +70,11 @@ namespace UTApp.Forms.Grupos
 
         private void FormAgregarGrupo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+        }
+
+        private void FormAgregarGrupo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
